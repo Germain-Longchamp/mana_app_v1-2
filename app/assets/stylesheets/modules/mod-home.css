@@ -1,0 +1,25 @@
+/*************************************
+Module Homepage
+*************************************/
+.mod-home {
+	min-height: 100vh;
+	background: #e3e3e3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mod-home__content {
+	text-align: center;
+}
+
+.mod-home__content h1 {
+	font-size: 35px;
+	line-height: 1.2;
+	margin-bottom: 30px;
+}
+
+.mod-home__content h1 span {
+	font-size: 50px;
+	color: #3789c5;
+}
