@@ -1,6 +1,25 @@
 /*************************************
 Module Homepage
 *************************************/
+
+/*Provisoiry nav*/
+.prov-nav {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: right;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.prov-nav a {
+	text-decoration: none;
+	color: #000;
+}
+
+/*end nav*/
 .mod-home {
 	position: relative;
 	min-height: 100vh;
