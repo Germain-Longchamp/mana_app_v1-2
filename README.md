@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* J'ajoute un premier texte de read me pour voir comment ça fonctionne
