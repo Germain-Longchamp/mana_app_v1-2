@@ -2,14 +2,38 @@
 Module Homepage
 *************************************/
 .mod-home {
+	position: relative;
 	min-height: 100vh;
-	background: #e3e3e3;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+.mod-home:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: "";
+	background: #fff;
+	opacity: .5;
+}
+
+.mod-home__bkg {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}
+
 .mod-home__content {
+	position: relative;
+	z-index: 2;
 	text-align: center;
 }
 
