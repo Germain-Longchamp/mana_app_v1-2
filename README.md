@@ -7,3 +7,4 @@ Things you have to know about this application :
 
 * Create by Germain Longchamp and Calvin Ponsot, 
 * Development start 08/03/2021
+* Je change un texte
