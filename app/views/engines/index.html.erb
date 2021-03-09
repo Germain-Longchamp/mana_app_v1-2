@@ -24,4 +24,10 @@
   </tbody>
 </table>
 
-<%= link_to 'Ajouter une machine', new_engine_path %>
+
+<br>
+<%= link_to 'Connectez-vous', new_user_session_path %>
+<br>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<br>
+<%= link_to "Modifier mon profil", edit_user_registration_path(current_user) %>
