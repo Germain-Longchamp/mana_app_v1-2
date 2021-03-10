@@ -25,15 +25,24 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-
 gem 'bootsnap', '>= 1.4.2', require: false
 
+
+# Gems add by me
 gem 'devise'
 # Add avatar or images gem
 gem "paperclip", "~> 6.0.0"
 # Jquery rails
 gem "jquery-rails"
 
+gem "popper_js", "~> 1.11.1"
+gem "bootstrap", "4.0.0.alpha6"
+source "https://rails-assets.org" do
+  gem "rails-assets-tether", ">= 1.3.3"
+end
+
+
+# Group gems environment
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
