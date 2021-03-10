@@ -252,7 +252,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   jbuilder (~> 2.7)
-  jquery-rails
+  jquery-rails (~> 4.3, >= 4.3.5)
   listen (~> 3.2)
   paperclip (~> 6.0.0)
   popper_js (~> 1.11.1)

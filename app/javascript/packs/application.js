@@ -15,3 +15,10 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+//= require jquery
+//= require jquery_ujs
+//= require popper
+//= require tether
+//= require bootstrap-sprockets
+//= require_tree .
