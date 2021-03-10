@@ -27,6 +27,9 @@
 /storage/*
 !/storage/.keep
 
+# Ignore User assets
+/public/system/users
+
 /public/assets
 .byebug_history
 
