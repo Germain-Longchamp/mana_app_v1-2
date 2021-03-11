@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Tag.create(name: "Famille 1")
-Tag.create(name: "Famille 2")
-Tag.create(name: "Famille 3")
-Tag.create(name: "Famille 4")
+Tag.create(name: "famille-1")
+Tag.create(name: "famille-2")
+Tag.create(name: "famille-3")
+Tag.create(name: "famille-4")
