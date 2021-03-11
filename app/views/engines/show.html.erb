@@ -1,14 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @engine.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @engine.description %>
-</p>
+<div class = 'col-md-8 offset-2'>
+  <h1><%=@engine.name %></h1>
+  <p><%=@engine.description %></p>
+  <p><small>Tags: <%= raw @engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small</p>
+</div>
 
 <%= link_to 'Edit', edit_engine_path(@engine) %> |
 <%= link_to 'Back', engines_path %>

@@ -1,3 +1,4 @@
+<!--
 <%= form_with(model: engine, local: true) do |form| %>
   <% if engine.errors.any? %>
     <div id="error_explanation">
@@ -24,4 +25,27 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
+-->
+
+
+<%= simple_form_for @engine, url: engines_path do |f| %>
+
+  <% if engine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(engine.errors.count, "error") %> prohibited this engine from being saved:</h2>
+
+      <ul>
+        <% engine.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>
+  <%= f.submit "Soumettre", class: 'btn btn-lg btn-primary float-right' %>
 <% end %>

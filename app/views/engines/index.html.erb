@@ -15,6 +15,7 @@
     <% @engines.each do |engine| %>
       <tr>
         <td><%= engine.name %></td>
+        <td>Famille: <%= raw engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></td>
         <td><%= engine.description %></td>
         <td><%= link_to 'Show', engine %></td>
         <td><%= link_to 'Edit', edit_engine_path(engine) %></td>
