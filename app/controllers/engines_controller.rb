@@ -2,8 +2,13 @@ class EnginesController < ApplicationController
   before_action :set_engine, only: %i[ show edit update destroy ]
 
   # GET /engines or /engines.json
+
+  #def index
+  #  @engines = Engine.all
+  #end
+
   def index
-    @engines = Engine.all
+    params[:tag] ? @engines = Engine.tagged_with(params[:tag]) : @engines = Engine.all
   end
 
   # GET /engines/1 or /engines/1.json
@@ -64,6 +69,6 @@ class EnginesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def engine_params
-      params.require(:engine).permit(:name, :description)
+      params.require(:engine).permit(:name, :description, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
 end
