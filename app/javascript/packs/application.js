@@ -1,16 +1,16 @@
-require("@rails/ujs").start()
-require("turbolinks")
+//require("@rails/ujs").start()
+//require("turbolinks")
 require("@rails/activestorage").start()
 require("channels")
 
+
+//= require rails-ujs
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require chosen
-//= require popper
-//= require tether
-//= require bootstrap-sprockets
-//= require_tree .
-
+//= require turbolinks
+//= require_tree
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
