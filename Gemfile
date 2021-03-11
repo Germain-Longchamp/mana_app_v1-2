@@ -34,6 +34,7 @@ gem 'devise'
 gem "paperclip", "~> 6.0.0"
 # Jquery rails
 gem "jquery-rails"
+gem 'chosen-rails'
 
 gem "popper_js", "~> 1.11.1"
 gem "bootstrap", "4.0.0.alpha6"

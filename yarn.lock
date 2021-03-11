@@ -1885,6 +1885,11 @@ chokidar@^3.4.1:
   optionalDependencies:
     fsevents "~2.3.1"
 
+chosen-js@^1.8.7:
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/chosen-js/-/chosen-js-1.8.7.tgz#9bfa5597f5081d602ff4ae904af9aef33265bb1d"
+  integrity sha512-eVdrZJ2U5ISdObkgsi0od5vIJdLwq1P1Xa/Vj/mgxkMZf14DlgobfB6nrlFi3kW4kkvKLsKk4NDqZj1MU1DCpw==
+
 chownr@^1.1.1, chownr@^1.1.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"
@@ -4074,7 +4079,7 @@ jquery-ujs@^1.2.2:
   dependencies:
     jquery ">=1.8.0"
 
-jquery@>=1.8.0:
+jquery@>=1.8.0, jquery@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==

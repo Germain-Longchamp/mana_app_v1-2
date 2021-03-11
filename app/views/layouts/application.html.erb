@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -15,7 +16,7 @@
   </body>
 
   <script>
-    $(document).on('turbolinks:load', function () {
+    $(document).ready(function() {
       $('#engine_tag_ids').chosen({
         allow_single_deselect: true,
         width: '100%'
