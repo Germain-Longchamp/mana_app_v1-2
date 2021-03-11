@@ -33,7 +33,7 @@ gem 'devise'
 # Add avatar or images gem
 gem "paperclip", "~> 6.0.0"
 # Jquery rails
-gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem "jquery-rails"
 
 gem "popper_js", "~> 1.11.1"
 gem "bootstrap", "4.0.0.alpha6"
