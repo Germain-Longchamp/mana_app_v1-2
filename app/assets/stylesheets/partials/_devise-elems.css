@@ -1,0 +1,36 @@
+/*----Devise Notices----*/
+.devise-msg {
+	position: absolute;
+	z-index: 100;
+	left: calc(50% - 200px);
+	top: calc(50% - 125px);
+	background: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+	height: 250px;
+	width: 400px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.devise-msg.displayed {
+	display: flex;
+}
+
+.devise-msg__close {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+.devise-msg__close i {
+	transition: all .2s ease-out;
+	font-size: 18px;
+}
+
+.devise-msg__close:hover i {
+	color: #3789c5;
+	cursor: pointer;
+}

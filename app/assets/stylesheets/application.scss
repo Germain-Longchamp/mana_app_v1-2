@@ -23,6 +23,7 @@
 4 - Import Partials Styles
 **************************************/
 @import "partials/_navigation";
+@import "partials/_devise-elems";
 
 /**************************************
 5 - Import Components Styles
@@ -32,4 +33,3 @@
 6 - Import Modules Styles
 **************************************/
 @import "main";
-@import "modules/mod-home";
