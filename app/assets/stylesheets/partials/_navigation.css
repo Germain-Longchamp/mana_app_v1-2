@@ -1,3 +1,13 @@
-.main-nav {
-    background: red;
+.main-header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+}
+
+.main-header__logo img {
+    height: 80px;
+    width: auto;
 }

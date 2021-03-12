@@ -1,3 +1,12 @@
-<div class="main-nav">
-    <%= link_to 'Parc de machines', engines_path %>
+<div class="main-header">
+    <div class="wrapper">
+        <div class="main-header__inner d-flex align-items-center">
+            <div class="main-header__logo">
+                <img src="<%= asset_path 'logo_mana_sample.png' %>">
+            </div>
+            <div class="main-header__nav">
+                <%= link_to 'Parc de machines', engines_path %>
+            </div>
+        </div>
+    </div>
 </div>

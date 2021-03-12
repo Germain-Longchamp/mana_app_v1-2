@@ -1,47 +1,35 @@
+/**************************************
+1 - Ruby requires
+**************************************/
+
 /*
  *= require_tree .
  *= require_self
  *= require chosen
  */
 
-/*
-@import url('https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css');
-*/
-
 /**************************************
-Import Typos
+2 - Import Typos
 **************************************/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /**************************************
-Import Libraries
+3 - Import Libraries
 **************************************/
 @import "bootstrap";
 @import "chosen";
 
 /**************************************
-Import Partials Styles
+4 - Import Partials Styles
 **************************************/
 @import "partials/_navigation";
 
 /**************************************
-Import Components Styles
+5 - Import Components Styles
 **************************************/
 
 /**************************************
-Import Modules Styles
+6 - Import Modules Styles
 **************************************/
+@import "main";
 @import "modules/mod-home";
-
-/**************************************
-General declaration
-**************************************/
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
-}
