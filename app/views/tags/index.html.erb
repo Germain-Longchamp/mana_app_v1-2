@@ -1,0 +1,14 @@
+<section class="mod-tags-list">
+	<div class="wrapper">
+		<h1>Types de machines</h1>
+		<table>
+		  <tbody>
+		    <% @tags.each do |tag| %>
+		      <tr>
+		        <td><%= tag.name %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+</section>

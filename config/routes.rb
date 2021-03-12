@@ -4,8 +4,10 @@ Rails.application.routes.draw do
    resources :users, only: [:show, :edit, :update]
    resources :engines
 
+
    # link tags to engines with the respective tag
    get 'tags/:tag', to: 'engines#index', as: :tag
+   get 'tags', to: 'tags#index'
 
    root to: 'home#index'
    
