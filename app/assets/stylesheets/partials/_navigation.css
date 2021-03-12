@@ -1,3 +1,4 @@
+/*----Layout----*/
 .main-header {
     position: fixed;
     z-index: 1000;
@@ -7,7 +8,42 @@
     background: #fff;
 }
 
-.main-header__logo img {
+/*----Logo style----*/
+.main-header__logo a img {
     height: 80px;
     width: auto;
+    transition: all .2s ease-out;
+}
+
+.main-header__logo a:hover img {
+    opacity: .6;
+}
+
+/*----Nav style----*/
+.main-header__nav nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.main-header__nav nav ul li a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .2s ease-out;
+}
+
+.main-header__nav nav ul li a:hover {
+    text-decoration: none;
+    color: #3789c5;
+}
+
+.main-header__nav nav ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.nav__log a span {
+    margin-left: 5px;
+}
+
+.nav__log a i {
+    color: #3789c5;
 }

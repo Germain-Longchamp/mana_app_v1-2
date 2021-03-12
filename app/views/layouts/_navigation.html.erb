@@ -1,12 +1,23 @@
 <div class="main-header">
     <div class="wrapper">
-        <div class="main-header__inner d-flex align-items-center">
+        <div class="main-header__inner d-flex align-items-center justify-content-between">
             <div class="main-header__logo">
-                <img src="<%= asset_path 'logo_mana_sample.png' %>">
+                <a href="/"><img src="<%= asset_path 'logo_mana_sample.png' %>"></a>              
             </div>
             <div class="main-header__nav">
-                <%= link_to 'Parc de machines', engines_path %>
+                <nav>
+                    <ul class="p0 m0">
+                        <% if user_signed_in? %>
+                        <li><%= link_to 'Parc machines', engines_path %></li>
+                        <li class="nav__log"><%= link_to raw('<i class="fas fa-sign-out-alt"></i><span>Déconnexion</span>'), destroy_user_session_path, method: :delete %></li>
+                        <% else %>
+                        <li class="nav__log"><%= link_to raw('<i class="fas fa-sign-in-alt"></i><span>Connexion</span>'), new_user_session_path %></li>
+                        <% end %>
+                    </ul>
+                </nav>               
             </div>
+
         </div>
     </div>
 </div>
+

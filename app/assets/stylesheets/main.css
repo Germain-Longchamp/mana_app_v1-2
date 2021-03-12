@@ -9,8 +9,25 @@ body {
     line-height: 1.5;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background: none;
+}
+
 /*--General Classes--*/
 .wrapper {
     max-width: 90%;
     margin: 0 auto;
+}
+
+/*--Padding and Margin Classes--*/
+.p0 {
+    padding: 0px;
+}
+
+.m0 {
+    margin: 0px;
 }
