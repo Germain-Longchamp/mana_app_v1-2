@@ -2,11 +2,6 @@ class EnginesController < ApplicationController
   before_action :set_engine, only: %i[ show edit update destroy ]
 
   # GET /engines or /engines.json
-
-  #def index
-  #  @engines = Engine.all
-  #end
-
   def index
     params[:tag] ? @engines = Engine.tagged_with(params[:tag]) : @engines = Engine.all
   end
