@@ -23,16 +23,25 @@
       <div class="col-md-12 engine-card">
         <div class="engine-card__inner d-flex align-items-center">
             <%# Engine name %>
-            <div class="engine-card__name"><%= engine.name %></div>
+            <div class="engine-card__name">
+              <%= link_to engine.name, engine %>
+            </div>
             <%# Engine categories %>
             <div class="engine-card__categories">
-              <%= raw engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+              <% engine.tags.map(&:name).map.each do |t| %>
+              <a href="<%= tag_path(t) %>"><i class="fas fa-tag"></i><%= t %></a>
+              <% end %>
             </div>
             <%# Engine actions %>
             <div class="engine-card__actions">
-              <%= link_to 'Voir', engine %>
-              <%= link_to 'Mettre à jour', edit_engine_path(engine) %>
-              <%= link_to 'Supprimer', engine, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <span class="engine-card__action-btn">
+                <i class="fas fa-cog"></i>
+                <div class="engine-card__action-items">
+                  <%= link_to 'Voir', engine %>
+                  <%= link_to 'Mettre à jour', edit_engine_path(engine) %>
+                  <%= link_to 'Supprimer', engine, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              </span>
             </div>
         </div>
       </div>

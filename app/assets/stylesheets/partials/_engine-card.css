@@ -9,21 +9,17 @@
     display: block;
     height: 1px;
     width: 100%;
-    border-bottom: 1px solid #b0b0b0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .engine-card:hover {
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-.engine-card:hover:after {
-    border-color: transparent;
+    background: var(--light-grey-color);
 }
 
 .engine-card__inner {
+    position: relative;
     height: 50px;
+    padding-right: 40px;
 }
 
 .engine-card__name {
@@ -32,4 +28,84 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     font-weight: 600;
+    padding-right: 15px;
+    margin-right: 15px;
+    border-right: 1px solid var(--border-color);
+}
+
+.engine-card__name a {
+    color: var(--black-color) !important;
+}
+
+.engine-card__categories {
+    width: 100px;
+    padding-right: 15px;
+    margin-right: 15px;
+    border-right: 1px solid var(--border-color);
+}
+
+.engine-card__categories a, .engine-card__categories a:hover {
+    color: var(--white-color) !important;
+    background: var(--main-color);
+    font-size: 12px;
+    text-decoration: none;
+    padding: 2px 4px 2px 4px;
+    border-radius: 4px;
+}
+
+.engine-card__categories a i {
+    margin-right: 3px;
+    font-size: 10px;
+}
+
+.engine-card__categories a:not(:last-child) {
+    margin-right: 3px;
+}
+
+.engine-card__actions {
+    position: absolute;
+    right: 15px;
+}
+
+.engine-card__action-btn {
+    position: relative;
+    padding: 8px;
+}
+
+.engine-card__action-items {
+    position: absolute;
+    background: var(--white-color);
+    transition: all .5s ease-out;
+    opacity: 0;
+    z-index: 0;
+}
+
+.engine-card__action-btn:hover {
+    cursor: pointer;
+}
+
+.engine-card__action-btn i {
+    transition: all .5s ease-out;
+}
+
+.engine-card__action-items {
+    padding: 10px;
+    width: 120px;
+}
+
+.engine-card__action-items a {
+    font-size: 12px;
+    display: block;
+}
+
+.engine-card__action-btn:hover i {
+    color: var(--main-color);
+}
+
+.engine-card__action-btn:hover .engine-card__action-items {
+    opacity: 1;
+    z-index: 10;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
