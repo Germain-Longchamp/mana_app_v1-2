@@ -1,12 +1,13 @@
 <div style="margin-top:200px;">
-	
-	Nous sommes sur la methode new
+	<div class="container">
+    	<h2>Créer un nouvelle famille</h2>
 
 
-    <div>
-        <%= simple_form_for @tag do |f| %>
-          <%= f.input :name %>
-          <%= f.submit "Soumettre", class: 'btn btn-lg btn-primary float-right' %>
-        <% end %>
+        <div>
+            <%= simple_form_for @tag do |f| %>
+              <%= f.input :name %>
+              <%= f.submit "Soumettre", class: 'btn btn-lg btn-primary float-right' %>
+            <% end %>
+        </div>
     </div>
 </div>
