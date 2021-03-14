@@ -6,7 +6,7 @@
 		    <% @tags.each do |tag| %>
 		      <tr>
 		        <td><%= tag.name %></td>
-		        <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' } %> *fonctionne que lorsque le tag n'est pas relié à une machine*</td>
+		        <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		      </tr>
 		    <% end %>
 		  </tbody>
