@@ -1,42 +1,58 @@
-<p id="notice"><%= notice %></p>
+<%####### Devise notices ######%>
+<div class="devise-msg connect">
+  <div class="devise-msg__close"><i class="fas fa-times"></i></div>
+  <p id="notice"><%= notice %></p>
+</div>
 
-<h1>Engines</h1>
+<%###### Start Module Index Engines #####%>
+<div class="mod mod-engines-index">
+  <div class="container">
+    <%# Row heading %>
+    <div class="row mod__heading">
+      <div class="col-md-12">
+        <h1>Parc machines</h1>
+      </div>
+    </div>
+    <%# Row Features %>
+    <div class="row">
+      
+    </div>
+    <%# Row Engines List %>
+    <div class="row">
+      <% @engines.each do |engine| %>
+      <div class="col-md-12 engine-card">
+        <div class="engine-card__inner d-flex align-items-center">
+            <%# Engine name %>
+            <div class="engine-card__name"><%= engine.name %></div>
+            <%# Engine categories %>
+            <div class="engine-card__categories">
+              <%= raw engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+            </div>
+            <%# Engine actions %>
+            <div class="engine-card__actions">
+              <%= link_to 'Voir', engine %>
+              <%= link_to 'Mettre à jour', edit_engine_path(engine) %>
+              <%= link_to 'Supprimer', engine, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @engines.each do |engine| %>
-      <tr>
-        <td><%= engine.name %></td>
-        <td>Famille: <%= raw engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></td>
-        <td><%= engine.description %></td>
-        <td><%= link_to 'Show', engine %></td>
-        <td><%= link_to 'Edit', edit_engine_path(engine) %></td>
-        <td><%= link_to 'Destroy', engine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<br>
-<% if user_signed_in? %>
-<%= link_to 'Ajouter une machine', new_engine_path %>
-<br>
-<%= link_to 'Voir les familles', tags_path %>
-<br>
-<%= link_to "Modifier mon compte", edit_user_registration_path(current_user) %>
-<br>
-<%= link_to "Mon compte", user_path(current_user) %>
-<br>
-<%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to 'Connectez-vous', new_user_session_path %>
-<% end %>
+  <br>
+  <% if user_signed_in? %>
+  <%= link_to 'Ajouter une machine', new_engine_path %>
+  <br>
+  <%= link_to 'Voir les familles', tags_path %>
+  <br>
+  <%= link_to "Modifier mon compte", edit_user_registration_path(current_user) %>
+  <br>
+  <%= link_to "Mon compte", user_path(current_user) %>
+  <br>
+  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
+  <% else %>
+  <%= link_to 'Connectez-vous', new_user_session_path %>
+  <% end %>
+</div>

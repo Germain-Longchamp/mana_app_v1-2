@@ -1,3 +1,8 @@
+/*--Root datas--*/
+:root {
+    --main-color: #3789c5;
+}
+
 /*--Global Styles--*/
 * {
     margin: 0;
@@ -7,6 +12,10 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
+}
+
+h1 {
+    font-weight: 700;
 }
 
 a {
@@ -21,6 +30,15 @@ a:hover {
 .wrapper {
     max-width: 90%;
     margin: 0 auto;
+}
+
+.mod__heading {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.mod__heading h1 {
+    color: var(--main-color);
 }
 
 /*--Padding and Margin Classes--*/
