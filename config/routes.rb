@@ -14,6 +14,10 @@ Rails.application.routes.draw do
    
    delete 'tags/:id', to: 'tags#destroy'
 
+
+   get 'about', to: 'about#index'
+   get 'about/founders', to: 'about#founders'
+
    root to: 'home#index'
    
 end
