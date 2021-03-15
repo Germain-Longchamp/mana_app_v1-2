@@ -10,7 +10,7 @@
     <%# Row heading %>
     <div class="row mod__heading">
       <div class="col-md-12">
-        <h1>Parc machines</h1>
+        <h1>Parc machines <% if params[:tag] %>- <%= params[:tag] %><% end %></h1>
       </div>
     </div>
     <%# Row Features %>
@@ -22,7 +22,7 @@
             <div class="mod-engines-index__filter tag">
               <span>Filtrer par :</span>
               <span class="filter-item-select">
-                <span class="filter-item-select__btn">Famille <i class="fas fa-chevron-down"></i></span>
+                <span class="filter-item-select__btn"><% if params[:tag] %><%= params[:tag] %><% else %>Choisir<% end %> <i class="fas fa-chevron-down"></i></span>
                 <ul class="filter-item-select__dropdown">
                   <li><a class="d-block" href="/engines">Tous</a></li>
                   <% @tags.map(&:name).map.each do |t| %>
