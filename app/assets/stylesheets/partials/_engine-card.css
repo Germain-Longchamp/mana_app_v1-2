@@ -75,7 +75,7 @@
 .engine-card__action-items {
     position: absolute;
     background: var(--white-color);
-    transition: all .5s ease-out;
+    transition: all .4s ease-out;
     opacity: 0;
     z-index: 0;
 }
