@@ -1,14 +1,15 @@
 <div class="mod-tag-new">
 	<div class="container">
         <div class="row">
-                    <h2>Créer un nouvelle famille</h2>
-        <div>
-            <%= simple_form_for @tag do |f| %>
-              <%= f.input :name %>
-              <%= f.submit "Soumettre", class: 'btn btn-lg btn-primary float-right' %>
-            <% end %>
+            <div class="col-md-12">
+                <h2>Créer un nouvelle famille</h2>
+                <div>
+                    <%= simple_form_for @tag do |f| %>
+                      <%= f.input :name %>
+                      <%= f.submit "Soumettre", class: 'btn btn-lg btn-primary float-right' %>
+                    <% end %>
+                </div>
+            </div>
         </div>
-        </div>
-
     </div>
 </div>

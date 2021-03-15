@@ -1,1 +1,15 @@
-<h1>Nous allons editer un tag</h1>
+<div class="mod-tag-new">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Modifier la famille</h2>
+                <div>
+                    <%= simple_form_for @tag do |f| %>
+                      <%= f.input :name %>
+                      <%= f.submit "Soumettre", class: 'btn btn-lg btn-primary float-right' %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
