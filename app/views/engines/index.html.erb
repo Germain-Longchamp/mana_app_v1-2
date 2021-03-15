@@ -43,7 +43,11 @@
         <div class="engine-card__inner d-flex align-items-center">
             <%# Engine name %>
             <div class="engine-card__name">
+              <% if engine.name != "" %>
               <%= link_to engine.name, engine %>
+              <% else %>
+              <%= link_to engine.internal_name, engine %>
+              <% end %>
             </div>
             <%# Engine categories %>
             <div class="engine-card__categories">
