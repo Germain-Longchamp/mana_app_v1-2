@@ -1,7 +1,10 @@
 <%= link_to 'Back', engines_path %>
 
-
-<div class = 'col-md-8 offset-2'>
-  <h1 class = "text-center">New Engine</h1>
-  <%= render 'form', engine: @engine %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <h1 class = "text-center">Ajouter une nouvelle machine</h1>
+          <%= render 'form', engine: @engine %>
+        </div>
+    </div>
 </div>
