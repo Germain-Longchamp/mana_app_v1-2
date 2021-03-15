@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_083228) do
+ActiveRecord::Schema.define(version: 2021_03_15_151336) do
 
   create_table "engines", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "internal_name"
   end
 
   create_table "taggings", force: :cascade do |t|

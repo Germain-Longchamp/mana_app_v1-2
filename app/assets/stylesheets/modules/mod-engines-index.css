@@ -26,12 +26,14 @@
     position: absolute;
     z-index: -10;
     left: 0px;
-    width: 100%;
+    width: auto;
     list-style: none;
     background: #fff;
     border: 1px solid var(--border-color);
     opacity: 0;
     transition: all .2s ease-out;
+    overflow: scroll;
+    max-height: 500px;
 }
 
 .filter-item-select__dropdown.visible {
