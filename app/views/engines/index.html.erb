@@ -50,8 +50,8 @@
             </div>
             <%# Engine categories %>
             <div class="engine-card__categories">
-              <% engine.tags.map(&:name).map.each do |t| %>
-              <a href="<%= tag_path(t) %>"><i class="fas fa-tag"></i><%= t %></a>
+              <% engine.tags.map.each do |t| %>
+              <a href="<%= tag_path(t.name) %>" style="background:<%= t.tag_color %>;"><i class="fas fa-tag"></i><%= t.name %></a>
               <% end %>
             </div>
             <%# Engine actions %>

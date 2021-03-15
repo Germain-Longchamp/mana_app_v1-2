@@ -46,7 +46,7 @@
 
 .engine-card__categories a, .engine-card__categories a:hover {
     color: var(--white-color) !important;
-    background: var(--main-color);
+    background: #3789c5;
     font-size: 12px;
     text-decoration: none;
     padding: 2px 4px 2px 4px;

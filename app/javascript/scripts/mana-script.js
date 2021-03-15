@@ -1,4 +1,11 @@
 $(document).on('ready turbolinks:load', function() {
+    //------------- Chosen Library
+    $('#engine_tag_ids').chosen({
+        max_selected_options: 1,
+        allow_single_deselect: true,
+        width: '100%'
+    });
+
     // ------------ Manage Device Notice Visibility
     var deviseMsg = $('#notice');
     var deviseBox = $('.devise-msg');

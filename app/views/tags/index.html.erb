@@ -6,6 +6,7 @@
 		    <% @tags.each do |tag| %>
 		      <tr>
 		        <td><%= tag.name %></td>
+		        <td><%= tag.tag_color %></td>
 		        <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		        <td><%= link_to 'Mettre à jour', edit_tag_path(tag) %></td>
 		      </tr>
