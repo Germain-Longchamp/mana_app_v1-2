@@ -24,6 +24,7 @@ h1 {
 
 a {
     text-decoration: none;
+    color: var(--black-color);
 }
 
 a:hover {
@@ -38,7 +39,7 @@ a:hover {
 
 .mod__heading {
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .mod__heading h1 {

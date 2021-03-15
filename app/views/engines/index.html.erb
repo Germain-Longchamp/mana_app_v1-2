@@ -15,7 +15,26 @@
     </div>
     <%# Row Features %>
     <div class="row">
-      
+      <div class="col-md-12">
+        <div class="mod-engines-index__features">
+          <%# Filters feature %>
+          <div class="mod-engines-index__filters">
+            <div class="mod-engines-index__filter tag">
+              <span>Filtrer par :</span>
+              <span class="filter-item-select">
+                <span class="filter-item-select__btn">Famille <i class="fas fa-chevron-down"></i></span>
+                <ul class="filter-item-select__dropdown">
+                  <li><a class="d-block" href="/engines">Tous</a></li>
+                  <% @tags.map(&:name).map.each do |t| %>
+                  <li><a class="d-block" href="<%= tag_path(t) %>"><%= t %></a></li>
+                  <% end %>
+                </ul>
+              </span>
+            </div>           
+          </div>
+          <%# Add Engine %>
+        </div>
+      </div>
     </div>
     <%# Row Engines List %>
     <div class="row">

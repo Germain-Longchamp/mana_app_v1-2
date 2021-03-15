@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('ready turbolinks:load', function() {
     // Manage Device Notice Visibility
     var deviseMsg = $('#notice');
     var deviseBox = $('.devise-msg');
@@ -12,5 +12,13 @@ $(document).ready(function() {
 
     deviseClose.click(function() {
         deviseBox.hide();
+    });
+
+    // Manage click on filter Engines Index
+    var selectBtn = $('.filter-item-select__btn');
+    var selectDrop = $('.filter-item-select__dropdown');
+
+    $(selectBtn).click(function() {
+        selectDrop.toggleClass('visible');
     });
 });
