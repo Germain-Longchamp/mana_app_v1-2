@@ -1,2 +1,17 @@
-<h1>Rooms#edit</h1>
-<p>Find me in app/views/rooms/edit.html.erb</p>
+<%#-------Module New Room------- %>
+<div class="mod mod-new-room">
+    <div class="container">
+        <%# Row heading %>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Modifier la salle</h1>
+            </div>
+        </div>
+        <%# Row form %>
+        <div class="row">
+            <div class="col-md-12">
+                <%= render 'form', room: @room %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,9 +9,14 @@
         </div>
         <%# Row Listing %>
         <div class="row">
+            <% @rooms.each do |room| %>
             <div class="col-md-12">
-                ici listing salles
+                
+                <%= room.name %>
+                <%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' } %>
+                
             </div>
+            <% end %>
         </div>
         <%# Row features %>
         <div class="row">
