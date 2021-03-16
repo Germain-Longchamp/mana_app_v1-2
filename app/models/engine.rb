@@ -1,6 +1,7 @@
 class Engine < ApplicationRecord
     has_many :taggings, dependent: :delete_all
     has_many :tags, through: :taggings
+    belongs_to :room
 
     def self.tagged_with(name)
         Tag.find_by!(name: name).engines
