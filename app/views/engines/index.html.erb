@@ -43,9 +43,9 @@
             <%# Engine name %>
             <div class="engine-card__name">
               <% if engine.name != "" %>
-              <%= link_to engine.name, engine %>
+              <%= link_to engine.name, engine, :title => engine.name %>
               <% else %>
-              <%= link_to engine.internal_name, engine %>
+              <%= link_to engine.internal_name, engine, :title => engine.internal_name %>
               <% end %>
             </div>
             <%# Engine categories %>
@@ -81,14 +81,6 @@
   </div>
 
 
-<!-- Loop For Rooms
-<% @rooms.map.each do |r| %>
-<%= r.name %>
-<%= r.id %>
-<% end %>
--->
-  
-
   <br>
   <% if user_signed_in? %>
   <%= link_to 'Ajouter une machine', new_engine_path %>
@@ -106,3 +98,10 @@
   <%= link_to 'Connectez-vous', new_user_session_path %>
   <% end %>
 </div>
+
+<!-- Loop For Rooms
+<% @rooms.map.each do |r| %>
+<%= r.name %>
+<%= r.id %>
+<% end %>
+-->

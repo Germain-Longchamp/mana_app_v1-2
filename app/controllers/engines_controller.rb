@@ -5,11 +5,14 @@ class EnginesController < ApplicationController
   # GET /engines or /engines.json
   def index
     # GET all engines and permit filter by tag
-    params[:tag] ? @engines = Engine.tagged_with(params[:tag]) : @engines = Engine.all
+    # .joins(:room)
+    params[:tag] ? @engines = Engine.tagged_with(params[:tag]) : @engines = Engine.all 
     # GET all tags on engines index
     @tags = Tag.all
     # GET all rooms on engines index
     @rooms = Room.all
+
+
   end
 
   # GET /engines/1 or /engines/1.json

@@ -23,7 +23,7 @@
 }
 
 .engine-card__name {
-    width: 200px;
+    width: 250px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -75,6 +75,8 @@
 }
 
 .engine-card__update {
+    position: absolute;
+    right: 60px;
     font-size: 12px;
     font-style: italic;
 }
