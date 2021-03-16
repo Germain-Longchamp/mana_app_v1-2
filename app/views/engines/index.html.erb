@@ -54,6 +54,10 @@
               <a href="<%= tag_path(t.name) %>" style="background:<%= t.tag_color %>;"><i class="fas fa-tag"></i><%= t.name %></a>
               <% end %>
             </div>
+            <%# Update Engine date %>
+            <div class="engine-card__update">
+              <span>MAJ : </span><%= engine.updated_at.strftime('%d/%m/%y') %>
+            </div>         
             <%# Engine actions %>
             <div class="engine-card__actions">
               <span class="engine-card__action-btn">
@@ -71,10 +75,13 @@
     </div>
   </div>
 
+
+<!-- Loop For Rooms
 <% @rooms.map.each do |r| %>
 <%= r.name %>
 <%= r.id %>
 <% end %>
+-->
   
 
   <br>
