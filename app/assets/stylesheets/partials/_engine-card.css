@@ -62,6 +62,18 @@
     margin-right: 3px;
 }
 
+.engine-card__room {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid var(--border-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.engine-card__room i {
+    font-size: 12px;
+}
+
 .engine-card__update {
     font-size: 12px;
     font-style: italic;
