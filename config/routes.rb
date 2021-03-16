@@ -18,6 +18,9 @@ Rails.application.routes.draw do
    patch 'tags/:id', to: 'tags#update'
    delete 'tags/:id', to: 'tags#destroy'
 
+   # Routes for Rooms
+   resources :rooms
+
    # About pages
    get 'about', to: 'about#index'
    get 'about/founders', to: 'about#founders'
