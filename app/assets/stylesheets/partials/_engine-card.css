@@ -64,6 +64,7 @@
 
 .engine-card__update {
     font-size: 12px;
+    font-style: italic;
 }
 
 .engine-card__actions {
