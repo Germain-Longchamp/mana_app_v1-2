@@ -12,7 +12,6 @@ class EnginesController < ApplicationController
     # GET all rooms on engines index
     @rooms = Room.all
 
-
   end
 
   # GET /engines/1 or /engines/1.json

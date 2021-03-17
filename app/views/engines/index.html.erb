@@ -57,7 +57,17 @@
             <%# Engine Room %>
             <div class="engine-card__room">
               <i class="fas fa-map-marker"></i>
-              <span>Salle</span>
+              <%# Code affichage room a ameliorer, le gerer dans le controller %>
+              <span>
+                <% @rooms.map.each do |r| %>
+                  <% if r.id == engine.room_id %>
+                  <%= r.name %>
+                  <% end %>
+                <% end %>
+                <% if engine.room_id.nil? %>
+                NA
+                <% end %>
+              </span>
             </div>
             <%# Update Engine date %>
             <div class="engine-card__update">
@@ -98,10 +108,3 @@
   <%= link_to 'Connectez-vous', new_user_session_path %>
   <% end %>
 </div>
-
-<!-- Loop For Rooms
-<% @rooms.map.each do |r| %>
-<%= r.name %>
-<%= r.id %>
-<% end %>
--->
