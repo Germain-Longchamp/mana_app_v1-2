@@ -1,15 +1,21 @@
 <%#-------Call Nav-------%>
 <%= render partial: '/layouts/navigation-app' %>
 
-
 <%#------Module Show Engine-------%>
 <p id="notice"><%= notice %></p>
 
-<div class = 'col-md-8 offset-2'>
-  <h1><%=@engine.name %></h1>
-  <p><%=@engine.description %></p>
-  <p><small>Tags: <%= raw @engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small</p>
+<div class="mod mod-show-engine">
+  <div class="container-fluid">
+    <div class="row">
+      <div class = "col-md-12">
+        <h1><%=@engine.name %></h1>
+        <p><%=@engine.description %></p>
+        <p><small>Tags: <%= raw @engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small</p>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 <%= link_to 'Edit', edit_engine_path(@engine) %> |
 <%= link_to 'Back', engines_path %>

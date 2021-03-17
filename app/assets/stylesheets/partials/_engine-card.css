@@ -68,6 +68,7 @@
     border-right: 1px solid var(--border-color);
     font-size: 14px;
     font-weight: 500;
+    width: 80px;
 }
 
 .engine-card__room i {
@@ -88,11 +89,12 @@
 
 .engine-card__action-btn {
     position: relative;
-    padding: 8px;
+    padding: 5px;
 }
 
 .engine-card__action-items {
     position: absolute;
+    right: 0px;
     background: var(--white-color);
     transition: all .4s ease-out;
     opacity: 0;

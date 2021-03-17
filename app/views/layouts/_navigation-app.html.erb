@@ -1,3 +1,38 @@
-<div class="_nav-app">
-	nav app
+<div class="nav-app">
+	<div class="nav-app__inner">
+		<%# Engines actions %>
+		<div class="nav-app__part-actions">
+			<div class="nav-app__part-title">Machines</div>
+			<ul class="nav-app__list-actions p0 m0">
+				<li><%= link_to 'Parc exploitation', engines_path %></li>
+				<li><%= link_to 'Ajouter une machine', new_engine_path %></li>
+			</ul>
+		</div>
+		<%# Settings actions %>
+		<div class="nav-app__part-actions last">
+			<div class="nav-app__part-title">Paramètres</div>
+			<ul class="nav-app__list-actions p0 m0">
+				<li><%= link_to 'Gérer les familles', tags_path %></li>
+				<li><%= link_to 'Gérer les salles', rooms_path %></li>
+			</ul>
+		</div>
+		<%# Bottom actions %>
+		<div class="nav-app__bt-actions">
+			<%# Log out button %>
+			<span class="nav-app__log-out">
+				<%= link_to raw('<span>Déconnexion</span><i class="fas fa-sign-out-alt"></i>'), destroy_user_session_path, method: :delete %>
+			</span>		  	
+		</div>
+	</div>
 </div>
+
+
+<!--
+
+<% if user_signed_in? %>
+		  <br>
+		  <%= link_to "Modifier mon compte", edit_user_registration_path(current_user) %>
+		  <br>
+		  <%= link_to "Mon compte", user_path(current_user) %>
+		  <% end%>
+-->

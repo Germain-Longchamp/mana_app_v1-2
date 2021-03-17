@@ -1,0 +1,72 @@
+/*---Navigation App style---*/
+.nav-app {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+	width: 250px;
+	background: var(--main-color);
+}
+
+.nav-app__inner {
+	position: relative;
+	height: 100%;
+	padding: 20px 15px 20px 15px;
+}
+
+.nav-app__part-actions:not(.last) {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid var(--white-color);
+}
+
+.nav-app__part-title {
+	font-size: 20px;
+	color: var(--white-color);
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+ul.nav-app__list-actions {
+	list-style: none;
+}
+
+ul.nav-app__list-actions li a {
+	color: var(--light-grey-color);
+	font-size: 14px;
+	transition: all .2s ease-out;
+}
+
+ul.nav-app__list-actions li a:hover {
+	color: var(--white-color) !important;
+	text-decoration: none;
+}
+
+.nav-app__bt-actions {
+	position: absolute;
+	bottom: 0px;
+	left: 15px;
+	right: 15px;
+	bottom: 10px;
+}
+
+.nav-app__log-out a {
+	color: var(--white-color) !important;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.nav-app__log-out a span {
+	font-size: 14px;
+	margin-right: 5px;
+}
+
+.nav-app__log-out a i {
+	font-size: 25px;
+}
+
+.nav-app__log-out a:hover {
+	text-decoration: none;
+}

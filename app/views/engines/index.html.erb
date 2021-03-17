@@ -9,7 +9,7 @@
 
 <%###### Start Module Index Engines #####%>
 <div class="mod mod-engines-index">
-  <div class="container">
+  <div class="container-fluid">
     <%# Row heading %>
     <div class="row mod__heading">
       <div class="col-md-12">
@@ -92,22 +92,4 @@
       <% end %>
     </div>
   </div>
-
-
-  <br>
-  <% if user_signed_in? %>
-  <%= link_to 'Ajouter une machine', new_engine_path %>
-  <br>
-  <%= link_to 'Voir les familles', tags_path %>
-  <br>
-  <%= link_to 'Voir les salles', rooms_path %>
-  <br>
-  <%= link_to "Modifier mon compte", edit_user_registration_path(current_user) %>
-  <br>
-  <%= link_to "Mon compte", user_path(current_user) %>
-  <br>
-  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
-  <% else %>
-  <%= link_to 'Connectez-vous', new_user_session_path %>
-  <% end %>
 </div>

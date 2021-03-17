@@ -22,7 +22,7 @@ h1 {
     font-weight: 700;
 }
 
-a {
+a, a:visited {
     text-decoration: none;
     color: var(--black-color);
 }
@@ -35,15 +35,6 @@ a:hover {
 .wrapper {
     max-width: 90%;
     margin: 0 auto;
-}
-
-.mod__heading {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.mod__heading h1 {
-    color: var(--main-color);
 }
 
 /*--Padding and Margin Classes--*/
