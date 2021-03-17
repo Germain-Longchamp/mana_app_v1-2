@@ -1,5 +1,13 @@
 <div class="nav-app">
 	<div class="nav-app__inner">
+		<%# User actions %>
+		<div class="nav-app__user-actions">
+			<div class="nav-app__current-user">
+				<i class="fas fa-user"></i>
+				<span><%= current_user.firstname %> <%= current_user.lastname %></span>
+				<%= link_to raw('<i class="fas fa-cog"></i>'), user_path(current_user) %>
+			</div>
+		</div>
 		<%# Engines actions %>
 		<div class="nav-app__part-actions">
 			<div class="nav-app__part-title">Machines</div>

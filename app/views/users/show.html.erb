@@ -3,9 +3,20 @@
 
 
 <%#-------Module Show User-------%>
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="mod mod-show-user">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Users#show</h1>
+                <p>Find me in app/views/users/show.html.erb</p>
 
+                <img src="<%= current_user.avatar %>">
 
-
-<img src="<%= current_user.avatar %>">
+                <div>
+                    <%= link_to "Modifier mon compte", edit_user_registration_path(current_user) %>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
