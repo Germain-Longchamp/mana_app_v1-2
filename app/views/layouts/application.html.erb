@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ManaAppV12</title>
+    <title>ManaAppV1.2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+     <script src="https://kit.fontawesome.com/73ab8ba4c6.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= render partial: 'layouts/navigation' %>
+
     <%= yield %>
   </body>
 
-  <script src="https://kit.fontawesome.com/73ab8ba4c6.js" crossorigin="anonymous"></script>
 </html>
 
