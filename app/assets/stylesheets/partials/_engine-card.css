@@ -4,16 +4,31 @@
     transition: all .2s ease-out;
 }
 
+.engine-card:not(.heading):hover {
+    background: var(--light-grey-color);
+}
+
+.engine-card.heading {
+    background: var(--main-color);
+    border-bottom: 0px;
+}
+
+.engine-card.heading .engine-card__room, .engine-card.heading .engine-card__name {
+    color: var(--white-color);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.engine-card.heading .engine-card__room, .engine-card.heading .engine-card__name, .engine-card.heading .engine-card__categories {
+    border-right: 1px solid var(--white-color);
+}
+
 .engine-card:not(:last-child):after {
     content: "";
     display: block;
     height: 1px;
     width: 100%;
     border-bottom: 1px solid var(--border-color);
-}
-
-.engine-card:hover {
-    background: var(--light-grey-color);
 }
 
 .engine-card__inner {

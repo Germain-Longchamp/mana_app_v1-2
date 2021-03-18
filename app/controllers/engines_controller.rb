@@ -6,11 +6,19 @@ class EnginesController < ApplicationController
   def index
     # GET all engines and permit filter by tag
     # .joins(:room)
-    params[:tag] ? @engines = Engine.tagged_with(params[:tag]) : @engines = Engine.all 
     # GET all tags on engines index
     @tags = Tag.all
     # GET all rooms on engines index
     @rooms = Room.all
+
+    @engines = Engine.all.includes(:rooms)
+
+    if params[:tag].present?
+      @engines = Engine.tagged_with(params[:tag])
+    else
+      @engines = Engine.all
+    end
+    
 
   end
 

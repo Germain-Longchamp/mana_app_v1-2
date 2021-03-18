@@ -18,7 +18,7 @@
     </div>
     <%# Row Features %>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 p0">
         <div class="mod-engines-index__features">
           <%# Filters feature %>
           <div class="mod-engines-index__filters">
@@ -40,6 +40,24 @@
     </div>
     <%# Row Engines List %>
     <div class="row">
+      <%# Heading list %>
+      <div class="col-md-12 engine-card heading">
+        <div class="engine-card__inner d-flex align-items-center">
+            <%# Engine name %>
+            <div class="engine-card__name">
+              Nom
+            </div>
+            <%# Engine categories %>
+            <div class="engine-card__categories">
+              <a>Famille</a>
+            </div>
+            <%# Engine Room %>
+            <div class="engine-card__room">
+              <span>Salle</span>
+            </div>      
+
+        </div>
+      </div>
       <% @engines.each do |engine| %>
       <div class="col-md-12 engine-card">
         <div class="engine-card__inner d-flex align-items-center">
