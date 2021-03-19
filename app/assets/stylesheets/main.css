@@ -5,6 +5,8 @@
     --border-color: #b0b0b0;
     --light-grey-color: #ebebeb;
     --main-color: #3789c5;
+    --error-color: #C44D4B;
+    --success-color: #63B92D;
 }
 
 /*--Global Styles--*/
@@ -44,4 +46,9 @@ a:hover {
 
 .m0 {
     margin: 0px;
+}
+
+/*--Text classes--*/
+.txt-error-color {
+    color: var(--error-color);
 }
