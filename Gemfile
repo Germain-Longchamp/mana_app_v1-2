@@ -34,6 +34,7 @@ gem 'devise'
 gem "paperclip", "~> 6.0.0"
 # Jquery rails
 gem "jquery-rails"
+gem "jquery-ui-rails"
 gem 'chosen-rails'
 
 gem "popper_js", "~> 1.11.1"
@@ -43,6 +44,7 @@ source "https://rails-assets.org" do
   gem "rails-assets-chosen"
 end
 gem "simple_form"
+gem "simple-form-datepicker"
 
 
 # Group gems environment
