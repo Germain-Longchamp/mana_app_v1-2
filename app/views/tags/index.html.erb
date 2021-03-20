@@ -2,23 +2,27 @@
 <%= render partial: '/layouts/navigation-app' %>
 
 <%#-------module Index Tag-------%>
-<section class="mod-tags-list">
-	<div class="wrapper">
-		<h1>Types de machines</h1>
-		<table>
-		  <tbody>
-		    <% @tags.each do |tag| %>
-		      <tr>
-		        <td><%= tag.name %></td>
-		        <td><%= tag.tag_color %></td>
-		        <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		        <td><%= link_to 'Mettre à jour', edit_tag_path(tag) %></td>
-		      </tr>
-		    <% end %>
-		  </tbody>
-		</table>
-	</div>
-	<div>
-		<%= link_to 'Ajouter une famille', tag_new_path %>
+<section class="mod mod-tags-list">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Types de machines</h1>
+				<table>
+				  <tbody>
+				    <% @tags.each do |tag| %>
+				      <tr>
+				        <td><%= tag.name %></td>
+				        <td><%= tag.tag_color %></td>
+				        <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				        <td><%= link_to 'Mettre à jour', edit_tag_path(tag) %></td>
+				      </tr>
+				    <% end %>
+				  </tbody>
+				</table>
+			
+
+				<%= link_to 'Ajouter une famille', tag_new_path %>
+			</div>
+		</div>
 	</div>
 </section>
