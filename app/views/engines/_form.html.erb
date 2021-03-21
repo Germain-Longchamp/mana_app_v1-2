@@ -19,7 +19,7 @@
 
   <%= f.association :room, as: :select, collection: Room.order(:id), :label => "Salle affectée" %>
 
-  <%= f.input :initial_date, :as => :datepicker %>
+  <%= f.input :initial_date, as: :date, html5: true %>
 
   <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
 <% end %>

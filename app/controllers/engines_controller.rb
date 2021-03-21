@@ -11,15 +11,12 @@ class EnginesController < ApplicationController
     # GET all rooms on engines index
     @rooms = Room.all
 
-    @engines = Engine.all.includes(:rooms)
-
     if params[:tag].present?
       @engines = Engine.tagged_with(params[:tag])
     else
       @engines = Engine.all
     end
     
-
   end
 
   # GET /engines/1 or /engines/1.json
