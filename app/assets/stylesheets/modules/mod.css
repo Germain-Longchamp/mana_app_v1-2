@@ -9,6 +9,6 @@
 	color: var(--main-color);
 }
 
-.mod__heading {
+.mod .row.heading {
 	margin-bottom: 20px;
 }
