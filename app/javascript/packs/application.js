@@ -4,7 +4,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 //= require jquery
-//= require jquery-ui.all
+//= require jquery-ui
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require_tree .
