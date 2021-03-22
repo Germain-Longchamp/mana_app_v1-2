@@ -21,6 +21,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-md-8">
+				<div class="card-listing">
+					<div class="card-listing__heading">Machines récemment mises à jour :</div>
+					<div class="card-listing__list">
+						<% @engines_updated.each do |engine| %>
+						<div class="card-listing__name"><%= engine.name %></div>
+						<% end %>
+					</div>					
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
