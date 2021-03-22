@@ -1,1 +1,36 @@
+.card-number-txt {
+    background: var(--light-grey-color);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 11px 0px rgba(184, 184, 184, 1);
+}
 
+.card-number-txt__exerg {
+    color: var(--success-color);
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.card-number-txt__txt {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.card-number-txt__link {
+    font-size: 10px;
+    text-align: right;
+}
+
+.card-number-txt__link a {
+    text-decoration: underline;
+}
+
+.card-number-txt__link i {
+    margin-left: 5px;
+    transition: all .2s ease-out;
+}
+
+.card-number-txt__link:hover i {
+    transform: translateX(3px);
+}

@@ -13,9 +13,12 @@
 		<!--Row info-->
 		<div class="row mod-board_cards">
 			<div class="col-md-4">
-				<div class="board-index__card-number">
-					<span><%= @engines.length() %></span>
-					<div>machines identifiées dans le parc d'exploitation</div>
+				<div class="card-number-txt">
+					<span class="card-number-txt__exerg"><%= @engines.length() %></span>
+					<div class="card-number-txt__txt">machines identifiées dans le parc d'exploitation</div>
+					<div class="card-number-txt__link">
+						<a href="<%= engines_path %>">Accéder au parc d'exploitation<i class="fas fa-chevron-right"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>
