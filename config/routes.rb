@@ -28,6 +28,9 @@ Rails.application.routes.draw do
    # Settings pages
    get 'settings', to: 'settings#index'
 
+   # Tableau de bord path
+   get 'board', to: 'board#index'
+
    # Home root
    root to: 'home#index'
    
