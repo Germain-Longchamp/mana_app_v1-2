@@ -8,21 +8,29 @@
 				<%= link_to raw('<i class="fas fa-cog"></i>'), user_path(current_user) %>
 			</div>
 		</div>
+		<%# Bord actions %>
+		<div class="nav-app__part-actions">
+			<a href="<%= engines_path %>" class="nav-app__card-action">
+				<i class="fab fa-trello"></i>
+				<div class="nav-app__card-action-title">Tableau de bord</div>
+				<div class="nav-app__card-action-desc">Accéder aux donnnées compilées et actions principales</div>
+			</a>
+		</div>
 		<%# Engines actions %>
 		<div class="nav-app__part-actions">
-			<div class="nav-app__part-title">Machines</div>
-			<ul class="nav-app__list-actions p0 m0">
-				<li><%= link_to 'Parc exploitation', engines_path %></li>
-				<li><%= link_to 'Ajouter une machine', new_engine_path %></li>
-			</ul>
+			<a href="<%= engines_path %>" class="nav-app__card-action">
+				<i class="fas fa-cubes"></i>
+				<div class="nav-app__card-action-title">Parc d'exploitation</div>
+				<div class="nav-app__card-action-desc">Accéder à l'ensemble des machines en exploitation sur la plateforme.</div>
+			</a>
 		</div>
 		<%# Settings actions %>
 		<div class="nav-app__part-actions last">
-			<div class="nav-app__part-title">Paramètres</div>
-			<ul class="nav-app__list-actions p0 m0">
-				<li><%= link_to 'Gérer les familles', tags_path %></li>
-				<li><%= link_to 'Gérer les salles', rooms_path %></li>
-			</ul>
+			<a href="<%= settings_path %>" class="nav-app__card-action">
+				<i class="fas fa-cogs"></i>
+				<div class="nav-app__card-action-title">Paramètres</div>
+				<div class="nav-app__card-action-desc">Modifier les paramètres de la plateforme, du parc matériel, des utilisateurs.</div>
+			</a>
 		</div>
 		<%# Bottom actions %>
 		<div class="nav-app__bt-actions">
