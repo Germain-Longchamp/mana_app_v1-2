@@ -7,8 +7,16 @@
 }
 
 /*---Filter feature---*/
-.mod-engines-index__filters span {
+.mod-engines-index__length, .mod-engines-index__filters span {
     font-size: 14px;
+}
+
+.mod-engines-index__length {
+    margin-right: 20px;
+}
+
+.mod-engines-index__length-numb {
+    font-weight: 600;
 }
 
 .filter-item-select {

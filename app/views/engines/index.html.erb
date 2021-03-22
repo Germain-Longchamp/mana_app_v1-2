@@ -21,10 +21,11 @@
       <div class="col-md-12 p0">
         <div class="mod-engines-index__features">
           <%# Filters feature %>
-          <div class="mod-engines-index__filters">
+          <div class="mod-engines-index__filters d-flex align-items-center">
             <!--Number engines-->
-            <div>
-              <%= @engines.length() %>
+            <div class="mod-engines-index__length">
+              <span>Total :</span>
+              <span class="mod-engines-index__length-numb"><%= @engines.length() %></span>             
             </div>
             <!--Tag filter-->
             <div class="mod-engines-index__filter tag">
