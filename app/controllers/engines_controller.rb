@@ -13,6 +13,8 @@ class EnginesController < ApplicationController
 
     if params[:tag].present?
       @engines = Engine.tagged_with(params[:tag])
+    elsif params[:room].present?
+      @engines = Engine.roomed_with(params[:room])
     else
       @engines = Engine.all
     end

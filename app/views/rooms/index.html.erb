@@ -12,14 +12,19 @@
         </div>
         <%# Row Listing %>
         <div class="row">
-            <% @rooms.each do |room| %>
             <div class="col-md-12">
-                
-                <%= room.name %>
-                <%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' } %>
-                
+                <table>
+                  <tbody>
+                    <% @rooms.each do |room| %>
+                      <tr>
+                        <td><%= room.name %></td>
+                        <td>(machines associées : <%= room.engines.length() %>)</td>
+                        <td><%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
             </div>
-            <% end %>
         </div>
         <%# Row features %>
         <div class="row">

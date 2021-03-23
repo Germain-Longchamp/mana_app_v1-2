@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
    # link tags to engines with the respective tag
    get 'tags/:tag', to: 'engines#index', as: :tag
+   get 'rooms/:room', to: 'engines#index', as: :room
    
    # Tags /index /create /new /destroy
    get 'tags', to: 'tags#index'
