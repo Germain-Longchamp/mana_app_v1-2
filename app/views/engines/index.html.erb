@@ -13,7 +13,10 @@
     <%# Row heading %>
     <div class="row heading">
       <div class="col-md-12 p0">
-        <h1>Parc machines <% if params[:tag] %>- <%= params[:tag] %><% end %></h1>
+        <div class="d-flex justify-content-between align-items-center">
+          <h1>Parc machines <% if params[:tag] %>- <%= params[:tag] %><% end %></h1>
+          <a class="mod-engines-index__add-engine d-flex align-items-center justify-content-center txt-no-decoration" href="<%= new_engine_path %>" title="Ajouter une nouvelle machine"><i class="fas fa-plus"></i></a>
+        </div>      
       </div>
     </div>
     <%# Row Features %>

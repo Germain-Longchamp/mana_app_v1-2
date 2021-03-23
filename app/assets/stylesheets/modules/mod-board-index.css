@@ -58,12 +58,11 @@
 
 .card-listing__list::-webkit-scrollbar-track {
     border-radius: 10px;
-    border-radius: 10px;
     background-color: var(--light-grey-color);
 }
 
 .card-listing__list::-webkit-scrollbar {
-    width: 10px;
+    width: 3px;
     border-radius: 10px;
     background-color: var(--light-grey-color);
 }

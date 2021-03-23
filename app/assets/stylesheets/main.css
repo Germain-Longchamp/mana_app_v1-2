@@ -57,3 +57,7 @@ a:hover {
 .txt-error-color {
     color: var(--error-color);
 }
+
+.txt-no-decoration, .txt-no-decoration:hover {
+    text-decoration: none !important;
+}
