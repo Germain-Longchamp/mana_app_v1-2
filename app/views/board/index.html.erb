@@ -26,7 +26,17 @@
 					<div class="card-listing__heading">Machines récemment mises à jour :</div>
 					<div class="card-listing__list">
 						<% @engines_updated.each do |engine| %>
-						<div class="card-listing__name"><%= engine.name %></div>
+						<div class="card-listing__item d-flex justify-content-between">
+							<div class="card-listing__item-name">
+								<% if engine.name != "" %>
+								<%= engine.name %>
+								<% else %>
+								<%= engine.internal_name %>
+								<% end %>
+							</div>
+							<div>le <%= engine.updated_at.strftime('%d/%m/%y') %></div>
+							<span class="card-listing__item-link"><%= link_to raw('<i class="far fa-eye"></i><span>Voir</span>'), engine %></span>		
+						</div>
 						<% end %>
 					</div>					
 				</div>

@@ -8,6 +8,14 @@
 				<%= link_to raw('<i class="fas fa-cog"></i>'), user_path(current_user) %>
 			</div>
 		</div>
+		<%# Organisation actions %>
+		<div class="nav-app__part-actions">
+			<a href="#" class="nav-app__card-action">
+				<i class="fas fa-users"></i>
+				<div class="nav-app__card-action-title">Organisation</div>
+				<div class="nav-app__card-action-desc">Accéder à la vue d'ensemble de votre organisation sur la plateforme</div>
+			</a>
+		</div>
 		<%# Bord actions %>
 		<div class="nav-app__part-actions">
 			<a href="<%= board_path %>" class="nav-app__card-action">
