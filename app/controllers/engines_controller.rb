@@ -4,8 +4,6 @@ class EnginesController < ApplicationController
 
   # GET /engines or /engines.json
   def index
-    # GET all engines and permit filter by tag
-    # .joins(:room)
     # GET all tags on engines index
     @tags = Tag.all
     # GET all rooms on engines index
