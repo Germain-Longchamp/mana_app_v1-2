@@ -22,25 +22,43 @@
         <div class="mod-engines-index__features">
           <%# Filters feature %>
           <div class="mod-engines-index__filters d-flex align-items-center">
+
             <!--Number engines-->
             <div class="mod-engines-index__length">
               <span>Total :</span>
-              <span class="mod-engines-index__length-numb"><%= @engines.length() %></span>             
+              <span class="mod-engines-index__length-numb"><%= @engines.length() %></span>
             </div>
+
             <!--Tag filter-->
             <div class="mod-engines-index__filter tag">
-              <span>Filtrer par :</span>
+              <span>Famille :</span>
               <span class="filter-item-select">
-                <span class="filter-item-select__btn"><% if params[:tag] %><%= params[:tag] %><% else %>Choisir<% end %> <i class="fas fa-chevron-down"></i></span>
-                <ul class="filter-item-select__dropdown">
+                <span class="filter-item-select__btn" data-select="tag"><% if params[:tag] %><%= params[:tag] %><% else %>Choisir<% end %> <i class="fas fa-chevron-down"></i></span>
+
+                <ul class="filter-item-select__dropdown" data-select="tag">
                   <li><a class="d-block" href="/engines">Tous</a></li>
                   <% @tags.map(&:name).map.each do |t| %>
                   <li><a class="d-block" href="<%= tag_path(t) %>"><%= t %></a></li>
                   <% end %>
                 </ul>
               </span>
-            </div>           
+            </div>  
+
+            <!--Room filter-->
+            <div class="mod-engines-index__filter room">
+              <span>Salle :</span>
+              <span class="filter-item-select">
+                <span class="filter-item-select__btn" data-select="room"><% if params[:room] %><%= params[:room] %><% else %>Choisir<% end %> <i class="fas fa-chevron-down"></i></span>
+                <ul class="filter-item-select__dropdown" data-select="room">
+                  <li><a class="d-block" href="/engines">Tous</a></li>
+                  <% @rooms.map(&:name).map.each do |t| %>
+                  <li><a class="d-block" href="<%= room_path(t) %>"><%= t %></a></li>
+                  <% end %>
+                </ul>
+              </span>
+            </div>          
           </div>
+
         </div>
       </div>
     </div>

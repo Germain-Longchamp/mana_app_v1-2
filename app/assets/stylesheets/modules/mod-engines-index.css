@@ -11,6 +11,10 @@
     font-size: 14px;
 }
 
+.mod-engines-index__filter {
+    margin-right: 20px;
+}
+
 .mod-engines-index__length {
     margin-right: 20px;
 }
