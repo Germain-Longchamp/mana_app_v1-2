@@ -104,12 +104,9 @@
               <i class="fas fa-map-marker"></i>
               <%# Code affichage room a ameliorer, le gerer dans le controller %>
               <span>
-                <% @rooms.map.each do |r| %>
-                  <% if r.id == engine.room_id %>
-                  <%= r.name %>
-                  <% end %>
-                <% end %>
-                <% if engine.room_id.nil? %>
+                <% if engine.room %>
+                <%= engine.room.name %>
+                <% else %>
                 <span class="txt-error-color">NA</span>
                 <% end %>
               </span>
