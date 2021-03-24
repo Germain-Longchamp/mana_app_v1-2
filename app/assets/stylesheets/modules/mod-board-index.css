@@ -3,9 +3,11 @@
 }
 
 .card-number-txt {
+    position: relative;
     background: var(--white-color);
     padding: 40px 30px;
     border-radius: 10px;
+    height: 100%;
     box-shadow: 0px 0px 11px 0px rgba(184, 184, 184, 1);
 }
 
@@ -22,7 +24,10 @@
 }
 
 .card-number-txt__link {
-    font-size: 10px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 12px;
     text-align: right;
 }
 
