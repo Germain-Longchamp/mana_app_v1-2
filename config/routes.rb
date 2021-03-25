@@ -20,7 +20,11 @@ Rails.application.routes.draw do
    delete 'tags/:id', to: 'tags#destroy'
 
    # Routes for Rooms
-   resources :rooms
+   #resources :rooms
+   get 'rooms', to: 'rooms#index'
+   post 'rooms', to: 'romms#create'
+   get 'room/new', to: 'rooms#new'
+   delete 'rooms/:id', to: 'rooms#destroy'
 
    # About pages
    get 'about', to: 'about#index'
