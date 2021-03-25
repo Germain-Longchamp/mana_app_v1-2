@@ -8,13 +8,20 @@ class EnginesController < ApplicationController
     @tags = Tag.all
     # GET all rooms on engines index
     @rooms = Room.all
+    # GET Engines count
+    @all_engines = Engine.all
 
     if params[:tag].present?
-      @engines = Engine.tagged_with(params[:tag])
+      @engines = Engine.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 20)
+
     elsif params[:room].present?
-      @engines = Engine.roomed_with(params[:room])
+      @engines = Engine.roomed_with(params[:room]).paginate(page: params[:page], per_page: 20)
+
+    elsif params[:page]
+      @engines = Engine.paginate(page: params[:page], per_page: 20)
+
     else
-      @engines = Engine.all
+      @engines = Engine.all.paginate(page: params[:page], per_page: 20)
     end
     
   end
