@@ -23,15 +23,13 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @room = Room.new(room_params)
-
-    respond_to do |format|
-      if @room.save
-        format.html { redirect_to rooms_url, notice: "La salle a été créée" }
+      respond_to do |format|
+      if @room.update(room_params)
+        format.html { redirect_to rooms_url, notice: 'My Notice.' }
         format.json { render :show, status: :created, location: @room }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @room.errors, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @tag.errors, status: :unprocessable_entity }
       end
     end
   end
