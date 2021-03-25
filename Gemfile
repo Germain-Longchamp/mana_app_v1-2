@@ -46,6 +46,8 @@ end
 gem "simple_form"
 gem "simple-form-datepicker"
 
+gem 'will_paginate', '~> 3.1.0'
+
 
 # Group gems environment
 group :development, :test do
