@@ -1,0 +1,39 @@
+.pagination {
+	justify-content: center;
+	align-items: center;
+}
+
+.previous_page, .next_page {
+	margin: 0 10px;
+}
+
+.previous_page i, .next_page i {
+	color: var(--main-color);
+	font-size: 18px;
+}
+
+.previous_page.disabled, .next_page.disabled {
+	display: none;
+}
+
+.pagination a:not(.previous_page, .next_page), .pagination em {
+	display: block;
+	font-style: initial;
+	font-size: 17px;
+	padding: 4px;
+	border: 1px solid var(--main-color);
+	margin: 0 5px;
+	height: 30px;
+	width: 30px;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .2s ease-out;
+}
+
+.pagination em.current, .pagination a:not(.previous_page, .next_page):hover {
+	text-decoration: none;
+	background: var(--main-color);
+	color: var(--white-color);
+}

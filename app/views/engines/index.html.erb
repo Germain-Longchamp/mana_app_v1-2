@@ -133,8 +133,11 @@
         </div>
       </div>
       <% end %>
+    </div>
+    <%# Row Pagination %>
+    <div class="row mod-engines-index__pagination">
       <div class="col-md-12">
-          <%= will_paginate @engines %>
+        <%= will_paginate @engines, :previous_label => '<i class="fas fa-arrow-alt-circle-left"></i>', :next_label => '<i class="fas fa-arrow-alt-circle-right"></i>' %>
       </div>
     </div>
   </div>

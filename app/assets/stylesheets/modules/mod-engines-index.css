@@ -1,3 +1,7 @@
+.mod-engines-index {
+    padding-bottom: 50px;
+}
+
 /*---Features row---*/
 .mod-engines-index__features {
     margin-bottom: 20px;
@@ -82,4 +86,9 @@
 
 .filter-item-select__dropdown li a {
     text-decoration: none;
+}
+
+/*---Pagination---*/
+.mod-engines-index__pagination {
+    margin-top: 50px;
 }
