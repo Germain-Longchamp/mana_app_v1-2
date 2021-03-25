@@ -1,0 +1,55 @@
+/*-------Module Settings Index-------*/
+
+/*--Settings Row--*/
+.settings-row {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.settings-row__list-cards {
+    margin-top: 20px;
+    display: flex;
+}
+
+.settings-row__card {
+    position: relative;
+    flex: 0 0 30%;
+    margin-right: 20px;
+    padding: 40px;
+    border-radius: 10px;
+    background: var(--light-grey-color);
+    transition: all .2s ease-out;
+}
+
+.settings-row__card:hover {
+    text-decoration: none;
+    background: var(--light-grey-color);
+}
+
+.settings-row__card-icon {
+    margin-bottom: 20px;
+}
+
+.settings-row__card-icon i {
+    font-size: 40px;
+    transition: all .2s ease-out;
+}
+
+.settings-row__card:hover .settings-row__card-icon i {
+    color: var(--main-color);
+}
+
+.settings-row__card-txt {
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+.settings-row__card-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+
+.settings-row__card-arrow i {
+    color: var(--main-color);
+}

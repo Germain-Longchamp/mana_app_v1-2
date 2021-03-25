@@ -11,8 +11,34 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="mod-settings-index__heading">
-                    <h2>Parc d'exploitation</h2>
+                <div class="settings-row">
+                    <div class="settings-row__heading">
+                        <h2>Parc d'exploitation</h2>
+                    </div>
+                    <div class="settings-row__list-cards">
+                        <a href="<%= tags_path %>" class="settings-row__card">
+                            <div class="settings-row__card-icon">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                            <div class="settings-row__card-txt">
+                                Modifier les familles affectées aux machines
+                            </div>
+                            <div class="settings-row__card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                        <a href="<%= rooms_path %>" class="settings-row__card">
+                            <div class="settings-row__card-icon">
+                                <i class="fas fa-map-marker"></i>
+                            </div>
+                            <div class="settings-row__card-txt">
+                                Modifier les salles affectées aux machines
+                            </div>
+                            <div class="settings-row__card-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
