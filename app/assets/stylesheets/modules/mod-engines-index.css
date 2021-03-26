@@ -29,7 +29,11 @@
 }
 
 /*---Filter feature---*/
-.mod-engines-index__length, .mod-engines-index__filters span {
+.mod-engines-index__length {
+    font-size: 16px;
+}
+
+.mod-engines-index__filter span {
     font-size: 14px;
 }
 

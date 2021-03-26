@@ -30,7 +30,6 @@
 
             <!--Number engines-->
             <div class="mod-engines-index__length">
-              <span>Nombre :</span>
               <span class="mod-engines-index__length-numb"><%= @engines.length() %></span>
               <span>/<%= @all_engines.length() %></span>
             </div>
@@ -48,7 +47,7 @@
 
             <!--Tag filter-->
             <div class="mod-engines-index__filter tag">
-              <span>Famille :</span>
+              <span>Type :</span>
               <span class="filter-item-select">
                 <span class="filter-item-select__btn" data-select="tag"><% if params[:tag] %><%= params[:tag] %><% else %>Choisir<% end %> <i class="fas fa-chevron-down"></i></span>
 
@@ -91,7 +90,7 @@
             </div>
             <%# Engine categories %>
             <div class="engine-card__categories">
-              <a>Famille</a>
+              <a>Type</a>
             </div>
             <%# Engine Room %>
             <div class="engine-card__room">
