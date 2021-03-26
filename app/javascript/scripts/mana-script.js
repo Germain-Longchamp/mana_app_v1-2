@@ -6,6 +6,17 @@ $(document).on('ready turbolinks:load', function() {
         width: '100%'
     });
 
+    $('#select_name_engine').chosen({
+        max_selected_options: 1,
+    });
+    $('#select_name_engine').on('change', function() {
+        var url = $(this).val();
+        if (url) {
+            window.location = url;
+        }
+        return false;
+    });
+
     // ------------ Manage Device Notice Visibility
     var deviseMsg = $('#notice');
     var deviseBox = $('.devise-msg');

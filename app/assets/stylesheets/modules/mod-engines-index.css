@@ -37,6 +37,17 @@
     margin-right: 20px;
 }
 
+.mod-engines-index__filter.name .chosen-container {
+    display: inline-block;
+    max-width: 180px;
+}
+
+.mod-engines-index__filter.name .chosen-container .chosen-single {
+    box-shadow: none;
+    border: 0px;
+    background: var(--light-grey-color);
+}
+
 .mod-engines-index__length {
     margin-right: 20px;
 }

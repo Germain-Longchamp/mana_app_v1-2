@@ -10,6 +10,7 @@
 <%###### Start Module Index Engines #####%>
 <div class="mod mod-engines-index">
   <div class="container-fluid">
+
     <%# Row heading %>
     <div class="row heading">
       <div class="col-md-12 p0">
@@ -19,7 +20,8 @@
         </div>      
       </div>
     </div>
-    <%# Row Features %>
+
+    <%# Row Filter Features %>
     <div class="row">
       <div class="col-md-12 p0">
         <div class="mod-engines-index__features">
@@ -31,6 +33,17 @@
               <span>Nombre :</span>
               <span class="mod-engines-index__length-numb"><%= @engines.length() %></span>
               <span>/<%= @all_engines.length() %></span>
+            </div>
+
+            <!--Name search-->
+            <div class="mod-engines-index__filter name">
+              <span>Nom :</span>
+              <select id="select_name_engine">
+                <option value="<%= engines_path %>">Sélectionner</option>
+                <% @engines.each do |engine| %>
+                <option value="<%= engine_path(engine.id) %>"><% if engine.name != "" %><%= engine.name %><% else %><%= engine.internal_name %><% end %></option>
+                <% end %>
+              </select>
             </div>
 
             <!--Tag filter-->
@@ -60,12 +73,13 @@
                   <% end %>
                 </ul>
               </span>
-            </div>          
-          </div>
+            </div>
 
+          </div>
         </div>
       </div>
     </div>
+
     <%# Row Engines List %>
     <div class="row">
       <%# Heading list %>
@@ -83,7 +97,6 @@
             <div class="engine-card__room">
               <span>Salle</span>
             </div>      
-
         </div>
       </div>
       <% @engines.each do |engine| %>
