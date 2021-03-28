@@ -47,6 +47,7 @@ gem "simple_form"
 gem "simple-form-datepicker"
 
 gem 'will_paginate', '~> 3.1.0'
+gem "simple_calendar", "~> 2.4"
 
 
 # Group gems environment
