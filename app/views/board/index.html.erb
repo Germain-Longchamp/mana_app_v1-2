@@ -41,6 +41,17 @@
 					</div>					
 				</div>
 			</div>
+			<div class="col-md-12">
+				<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
+				  <%= date %>
+
+				  <% engines.each do |engine| %>
+				    <div>
+				      <%= engine.name %>
+				    </div>
+				  <% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

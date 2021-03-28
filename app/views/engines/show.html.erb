@@ -10,7 +10,19 @@
       <div class = "col-md-12">
         <h1><%=@engine.name %></h1>
         <p><%=@engine.description %></p>
-        <p><small>Tags: <%= raw @engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small</p>
+        <p><small>Tags: <%= raw @engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
+        <div>
+          
+          <!--
+          <%= calendar(start_date_param: :initial_date) do |date| %>
+            <%= date.day %>
+          <% end %>
+
+          <%= week_calendar(start_date_param: :initial_date, number_of_weeks: 4) do |date| %>
+            <%= date %>
+          <% end %>
+        -->
+        </div>
       </div>
     </div>
   </div>
