@@ -35,22 +35,28 @@
 								<% end %>
 							</div>
 							<div>le <%= engine.updated_at.strftime('%d/%m/%y') %></div>
-							<span class="card-listing__item-link"><%= link_to raw('<i class="far fa-eye"></i><span>Voir</span>'), engine %></span>		
+							<span class="card-listing__item-link"><%= link_to raw('<i class="far fa-eye"></i><span>Voir</span>'), engine %></span>
 						</div>
 						<% end %>
 					</div>					
 				</div>
 			</div>
-			<div class="col-md-12">
-				<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
-				  <%= date %>
+		</div>
+		<!--Row calendar-->
+		<div class="row mod-board_cards">
+			<div class="col-md-8">
+				<div class="card-calendar">
+					<div class="card-calendar__heading">Planning</div>
+					<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
+					<%= date %>
 
-				  <% engines.each do |engine| %>
-				    <div>
-				      <%= engine.name %>
-				    </div>
-				  <% end %>
-				<% end %>
+					<% engines.each do |engine| %>
+					<div>
+						<%= engine.name %>
+					</div>
+					<% end %>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>

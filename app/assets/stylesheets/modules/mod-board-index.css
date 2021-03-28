@@ -53,6 +53,8 @@
 
 .card-listing__heading {
     margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .card-listing__list {
@@ -75,11 +77,6 @@
 .card-listing__list::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: var(--main-color);
-}
-
-.card-listing__heading {
-    font-weight: 600;
-    font-size: 18px;
 }
 
 .card-listing__item {
@@ -111,4 +108,19 @@
 .card-listing__item:hover a i {
     opacity: 1;
     transition: all .2s ease-out;
+}
+
+.card-calendar {
+    position: relative;
+    background: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0px 0px 11px 0px rgba(184, 184, 184, 1);
+}
+
+.card-calendar__heading {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
 }
