@@ -48,7 +48,7 @@
 				<div class="card-calendar">
 					<div class="card-calendar__heading">Planning</div>
 					<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
-					<%= date %>
+					<%= date.strftime('%d.%m.%y') %>
 
 					<% engines.each do |engine| %>
 					<div>
