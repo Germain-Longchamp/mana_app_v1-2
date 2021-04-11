@@ -13,7 +13,7 @@
         <p><small>Tags: <%= raw @engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
         <div>
           <%= month_calendar do |date| %>
-            <%= date.strftime('%d.%m.%y') %>
+            <%= date.strftime('%d') %>
 
             <% if date == @engine.initial_date %>
             <div>Date de mise en circulation</div>
