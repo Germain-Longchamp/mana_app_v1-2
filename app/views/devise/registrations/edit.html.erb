@@ -17,6 +17,8 @@
 
   <%= f.input :lastname, :label => "Nom"  %>
 
+  <%= f.association :company, as: :select, collection: Company.order(:id), :label => "Entreprise" %>
+
   <%= f.input :position, :label => "Poste"  %>
 
   <%= f.input :email, autofocus: true, autocomplete: "email", :label => "Email" %>
