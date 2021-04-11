@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+   resources :companies
+   
    # Routes for users
    devise_for :users
    resources :users, only: [:show, :edit, :update]
