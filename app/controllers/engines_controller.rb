@@ -9,19 +9,19 @@ class EnginesController < ApplicationController
     # GET all rooms on engines index
     @rooms = Room.all
     # GET Engines count
-    @all_engines = Engine.all
+    @all_engines = Engine.where(:company_id => current_user.company_id).all
 
     if params[:tag].present?
-      @engines = Engine.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 20)
+      @engines = Engine.where(:company_id => current_user.company_id).tagged_with(params[:tag]).paginate(page: params[:page], per_page: 20)
 
     elsif params[:room].present?
-      @engines = Engine.roomed_with(params[:room]).paginate(page: params[:page], per_page: 20)
+      @engines = Engine.where(:company_id => current_user.company_id).roomed_with(params[:room]).paginate(page: params[:page], per_page: 20)
 
     elsif params[:page]
-      @engines = Engine.paginate(page: params[:page], per_page: 20)
+      @engines = Engine.where(:company_id => current_user.company_id).paginate(page: params[:page], per_page: 20)
 
     else
-      @engines = Engine.all.paginate(page: params[:page], per_page: 20)
+      @engines = Engine.where(:company_id => current_user.company_id).all.paginate(page: params[:page], per_page: 20)
     end
     
   end
