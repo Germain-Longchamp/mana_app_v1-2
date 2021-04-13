@@ -1,6 +1,7 @@
 <div class="nav-app">
 	<div class="nav-app__inner">
 		<%# User actions %>
+		<% if current_user %>
 		<div class="nav-app__user-actions">
 			<div class="nav-app__current-user">
 				<i class="fas fa-user"></i>
@@ -8,6 +9,7 @@
 				<%= link_to raw('<i class="fas fa-cog"></i>'), user_path(current_user) %>
 			</div>
 		</div>
+		<% end %>
 		<%# Bord actions %>
 		<div class="nav-app__part-actions">
 			<a href="<%= board_path %>" class="nav-app__card-action">
