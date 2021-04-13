@@ -7,6 +7,10 @@
   <p id="notice"><%= notice %></p>
 </div>
 
+<% if @error_msg %>
+  <p><%= @error_msg %></p>
+  <% end %>
+
 <%###### Start Module Index Engines #####%>
 <div class="mod mod-engines-index">
   <div class="container-fluid">

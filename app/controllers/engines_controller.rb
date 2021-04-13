@@ -28,6 +28,9 @@ class EnginesController < ApplicationController
 
   # GET /engines/1 or /engines/1.json
   def show
+    if @engine.company_id != current_user.company_id
+      redirect_to engines_path
+    end
   end
 
   # GET /engines/new
@@ -37,6 +40,9 @@ class EnginesController < ApplicationController
 
   # GET /engines/1/edit
   def edit
+    if @engine.company_id != current_user.company_id
+      redirect_to engines_path
+    end
   end
 
   # POST /engines or /engines.json
