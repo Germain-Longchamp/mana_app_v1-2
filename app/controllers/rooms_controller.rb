@@ -3,10 +3,13 @@ class RoomsController < ApplicationController
   before_action :set_room, only: %i[ edit update destroy ]
 
   def index
-    @rooms = Room.all.order('name')
+    @rooms = Room.all.where(:company_id => current_user.company_id).order('name')
   end
 
   def show
+    if @room.company_id != current_user.company_id
+      redirect_to rooms_path
+    end
   end
 
   def new
@@ -14,6 +17,9 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    if @room.company_id != current_user.company_id
+      redirect_to rooms_path
+    end
   end
 
   def create
@@ -50,6 +56,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:name)
+      params.require(:room).permit(:name, :company_id)
     end
 end

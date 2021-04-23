@@ -23,8 +23,10 @@ Rails.application.routes.draw do
 
    # Routes for Rooms
    get 'rooms', to: 'rooms#index'
-   post 'rooms', to: 'romms#create'
+   post 'rooms', to: 'rooms#create'
    get 'room/new', to: 'rooms#new'
+   get 'room/:id/edit', to: 'rooms#edit', as: :edit_room
+   patch 'rooms/:id', to: 'rooms#update'
    delete 'rooms/:id', to: 'rooms#destroy'
 
    # About pages
