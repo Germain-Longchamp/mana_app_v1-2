@@ -51,8 +51,8 @@
 					<%= date.strftime('%d') %>
 
 					<% engines.each do |engine| %>
-					<div>
-						<%= engine.name %>
+					<div>					
+						<a href="<%= edit_engine_path(engine) %>"><%= engine.name %></a>
 					</div>
 					<% end %>
 					<% end %>
