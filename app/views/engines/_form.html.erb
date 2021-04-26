@@ -19,7 +19,7 @@
   
   <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: {multiple: true}, :label => "Famille" %>
 
-  <%= f.association :room, as: :select, collection: Room.order(:id), :label => "Salle affectée" %>
+  <%= f.association :room, as: :select, collection: Room.where(:company_id => current_user.company_id).order(:id), :label => "Salle affectée" %>
 
   <%= f.input :initial_date, as: :date, html5: true %>
 
