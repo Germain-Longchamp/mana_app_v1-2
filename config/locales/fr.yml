@@ -1,4 +1,4 @@
 fr:   
   simple_calendar:
-    previous: "Précédent"
-    next: "Suivant"
+    previous: "◀︎"
+    next: "▶︎"

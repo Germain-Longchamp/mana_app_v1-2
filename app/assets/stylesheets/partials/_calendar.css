@@ -1,5 +1,27 @@
 .simple-calendar .calendar-heading {
+    position: relative;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.simple-calendar .calendar-heading .calendar-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.simple-calendar .calendar-heading a {
+    position: absolute;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.simple-calendar .calendar-heading a:first-child {
+    left: 0px;
+}
+
+.simple-calendar .calendar-heading a:last-child {
+    right: 0px;
 }
 
 .day {}
