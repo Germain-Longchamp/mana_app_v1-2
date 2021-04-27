@@ -23,7 +23,7 @@
 			</div>
 			<div class="col-md-8">
 				<div class="card-listing">
-					<div class="card-listing__heading">Dernières machines mises à jour :</div>
+					<div class="card-listing__heading">Dernières mises à jour :</div>
 					<div class="card-listing__list">
 						<% @engines_updated.each do |engine| %>
 						<div class="card-listing__item d-flex justify-content-between">
@@ -46,7 +46,7 @@
 		<div class="row mod-board_cards">
 			<div class="col-md-8">
 				<div class="card-calendar">
-					<div class="card-calendar__heading">Planning</div>
+					<div class="card-calendar__heading">Calendrier</div>
 					<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
 					<div class="card-calendar__day-date">
 						<%= date.strftime('%d') %>
