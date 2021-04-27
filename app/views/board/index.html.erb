@@ -48,13 +48,17 @@
 				<div class="card-calendar">
 					<div class="card-calendar__heading">Planning</div>
 					<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
-					<%= date.strftime('%d') %>
-
-					<% engines.each do |engine| %>
-					<div>					
-						<a href="<%= edit_engine_path(engine) %>"><%= engine.name %></a>
+					<div class="card-calendar__day-date">
+						<%= date.strftime('%d') %>
 					</div>
+					
+					<div class="card-calendar__list-event">
+					<% engines.each do |engine| %>
+										
+						<a href="<%= edit_engine_path(engine) %>"><%= engine.name %></a>
+					
 					<% end %>
+					</div>
 					<% end %>
 				</div>
 			</div>

@@ -31,6 +31,7 @@ h2 {
 }
 
 a, a:visited {
+    display: inline-block;
     text-decoration: none;
     color: var(--black-color);
 }

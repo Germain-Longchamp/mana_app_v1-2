@@ -1,37 +1,65 @@
 .simple-calendar .calendar-heading {
     position: relative;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .simple-calendar .calendar-heading .calendar-title {
     text-transform: uppercase;
     font-weight: 600;
     color: var(--main-color);
+    font-size: 18px;
 }
 
 .simple-calendar .calendar-heading a {
     position: absolute;
+    top: calc(50% - 13px);
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-color);
+    color: #fff;
     font-size: 12px;
     text-decoration: none;
 }
 
 .simple-calendar .calendar-heading a:first-child {
-    left: 0px;
+    right: 31px;
 }
 
 .simple-calendar .calendar-heading a:last-child {
     right: 0px;
 }
 
+.simple-calendar table {
+    overflow: hidden;
+    border-radius: 5px;
+    border-collapse: separate;
+    border: 1px solid var(--dark-color);
+}
+
 .simple-calendar table thead {
     background: var(--dark-color);
+}
+
+.simple-calendar table tbody {
+    border-collapse: collapse;
+    border: 1px solid var(--dark-color);
+}
+
+.simple-calendar table tbody tr:nth-of-type(odd) {
+    background: var(--white-color);
 }
 
 .simple-calendar table thead tr th {
     color: var(--white-color);
     font-weight: 500;
+    border: 1px solid var(--dark-color);
 }
+
+.simple-calendar table tbody tr td {}
 
 /*--Dafault classes---*/
 

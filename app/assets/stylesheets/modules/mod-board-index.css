@@ -14,7 +14,7 @@
 }
 
 .card-number-txt__exerg {
-    color: var(--success-color);
+    color: var(--dark-color);
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1;
