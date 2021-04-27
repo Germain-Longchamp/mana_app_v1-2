@@ -24,6 +24,17 @@
     right: 0px;
 }
 
+.simple-calendar table thead {
+    background: var(--dark-color);
+}
+
+.simple-calendar table thead tr th {
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+/*--Dafault classes---*/
+
 .day {}
 
 .wday-0 {}

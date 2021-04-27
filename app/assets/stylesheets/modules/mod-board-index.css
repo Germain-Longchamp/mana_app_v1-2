@@ -1,5 +1,5 @@
 .mod-board_cards {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .card-number-txt {
@@ -8,7 +8,9 @@
     padding: 40px 30px;
     border-radius: 5px;
     height: 100%;
-    box-shadow: 0px 0px 11px 0px rgba(184, 184, 184, 1);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
 }
 
 .card-number-txt__exerg {
@@ -46,7 +48,9 @@
 
 .card-listing {
     background: var(--white-color);
-    box-shadow: 0px 0px 11px 0px rgba(184, 184, 184, 1);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
     padding: 30px;
     border-radius: 5px;
 }
@@ -116,7 +120,9 @@
     padding: 20px;
     border-radius: 5px;
     height: 100%;
-    box-shadow: 0px 0px 11px 0px rgba(184, 184, 184, 1);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
 }
 
 .card-calendar__heading {
