@@ -9,6 +9,21 @@ $(document).on('ready turbolinks:load', function() {
     $('#select_name_engine').chosen({
         max_selected_options: 1,
     });
+
+    //------------- Manipulate simple calendar urls
+    // Previous Link
+    var firstLinkElem = $('.calendar-heading a:first-child');
+    var hrefFirstLink = firstLinkElem.attr('href');
+    var newFirstLink = hrefFirstLink + "#calendarTarget";
+    firstLinkElem.attr('href', newFirstLink);
+
+    // Next Link
+    var secondLinkElem = $('.calendar-heading a:last-child');
+    var hrefSecondLink = secondLinkElem.attr('href');
+    var newSecondLink = hrefSecondLink + "#calendarTarget";
+    secondLinkElem.attr('href', newSecondLink);
+
+    //------------- Search by name engines index
     $('#select_name_engine').on('change', function() {
         var url = $(this).val();
         if (url) {
@@ -39,9 +54,7 @@ $(document).on('ready turbolinks:load', function() {
         $(this).click(function(e) {
             var dataSelectBtn = $(this).attr('data-select');
             var dropdownSelect = $(".filter-item-select__dropdown[data-select=" + dataSelectBtn + "]");
-
             dropdownSelect.toggleClass('visible');
-
             dropdownSelect.closest('.mod-engines-index__filter').siblings().find('.filter-item-select__dropdown').removeClass('visible');;
             e.stopPropagation();
         });
