@@ -44,6 +44,12 @@
     background: var(--dark-color);
 }
 
+.simple-calendar table thead tr th {
+    color: var(--white-color);
+    font-weight: 500;
+    border: 1px solid var(--dark-color);
+}
+
 .simple-calendar table tbody {
     border-collapse: collapse;
     border: 1px solid var(--dark-color);
@@ -53,13 +59,38 @@
     background: var(--white-color);
 }
 
-.simple-calendar table thead tr th {
-    color: var(--white-color);
-    font-weight: 500;
-    border: 1px solid var(--dark-color);
+.simple-calendar table .day {
+    position: relative;
+    border: 0px;
+    transition: all .2s ease-out;
 }
 
-.simple-calendar table tbody tr td {}
+.simple-calendar table .day:not(.today, .prev-month, .next-month):hover {
+    background: var(--light-grey-color);
+}
+
+.simple-calendar table .day .card-calendar__day-date {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--main-color);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.simple-calendar table .today {
+    background: var(--main-color);
+}
+
+.simple-calendar table .today .card-calendar__day-date {
+    color: #fff;
+}
 
 /*--Dafault classes---*/
 
