@@ -64,20 +64,6 @@
 				</div>
 			</div>
 		</div>
-<!--
-		<div class="row" id="rowCalendar">
-			<div class="col-md-12">
-				<div class="calendar-test">
-					<div id="engines_calendar">
-						<%= render partial: "calendar", locals: {engines: @engines} %>
-					</div>
-				</div>
-			</div>
-		</div>
-	-->
+	
 	</div>
 </div>
-
-<script>
-	$("#engines_calendar").html("<%= escape_javascript render(partial: "calendar", locals: {engines: @engines}) %>");
-</script>
