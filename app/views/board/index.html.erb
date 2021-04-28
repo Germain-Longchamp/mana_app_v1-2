@@ -43,6 +43,7 @@
 			</div>
 		</div>
 		<!--Row calendar-->
+		<!--
 		<div class="row mod-board_cards">
 			<div class="col-md-8">
 				<div class="card-calendar">
@@ -53,15 +54,29 @@
 					</div>
 					
 					<div class="card-calendar__list-event">
-					<% engines.each do |engine| %>
-										
+						<% engines.each do |engine| %>
+
 						<a href="<%= edit_engine_path(engine) %>"><%= engine.name %></a>
-					
-					<% end %>
+
+						<% end %>
 					</div>
 					<% end %>
 				</div>
 			</div>
 		</div>
+	-->
+		<div class="row" id="rowCalendar" style="margin-top:100px;">
+			<div class="col-md-12">
+				<div class="calendar-test">
+					<div id="engines_calendar">
+						<%= render partial: "calendar", locals: {engines: @engines} %>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
+
+<script>
+	$("#engines_calendar").html("<%= escape_javascript render(partial: "calendar", locals: {engines: @engines}) %>");
+</script>
