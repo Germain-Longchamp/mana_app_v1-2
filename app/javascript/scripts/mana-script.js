@@ -10,7 +10,7 @@ $(document).on('ready turbolinks:load', function() {
         max_selected_options: 1,
     });
 
-    //------------- Manipulate simple calendar urls
+    //------------- Manipulate simple calendar next and previous month
     // Previous Link
     var firstLinkElem = $('.calendar-heading a:first-child');
     var hrefFirstLink = firstLinkElem.attr('href');
