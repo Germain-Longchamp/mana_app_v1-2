@@ -28,13 +28,13 @@
           <%# Filters feature %>
           <div class="mod-engines-index__filters d-flex align-items-center">
 
-            <!--Number engines-->
+            <%# Number engines %>
             <div class="mod-engines-index__length">
               <span class="mod-engines-index__length-numb"><%= @engines.length() %></span>
               <span>/<%= @all_engines.length() %></span>
             </div>
 
-            <!--Name search-->
+            <%# Name search %>
             <div class="mod-engines-index__filter name">
               <span>Nom :</span>
               <select id="select_name_engine">
@@ -45,7 +45,7 @@
               </select>
             </div>
 
-            <!--Tag filter-->
+            <%# Tag filter %>
             <div class="mod-engines-index__filter tag">
               <span>Type :</span>
               <span class="filter-item-select">
@@ -60,7 +60,7 @@
               </span>
             </div>  
 
-            <!--Room filter-->
+            <%# Room filter %>
             <div class="mod-engines-index__filter room">
               <span>Salle :</span>
               <span class="filter-item-select">
@@ -118,7 +118,6 @@
             <%# Engine Room %>
             <div class="engine-card__room">
               <i class="fas fa-map-marker"></i>
-              <%# Code affichage room a ameliorer, le gerer dans le controller %>
               <span>
                 <% if engine.room %>
                 <%= engine.room.name %>
