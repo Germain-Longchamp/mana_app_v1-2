@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-
+   
+   # Routes for Companies
    resources :companies
    
-   # Routes for users
+   # Routes for Users
    devise_for :users
    resources :users, only: [:show, :edit, :update]
 
-   # Routes for engines
+   # Routes for Engines
    resources :engines
 
    # link tags to engines with the respective tag
