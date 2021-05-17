@@ -16,6 +16,15 @@
         <%= @company.address %>
       </div>
     </div>
+    <%# Row users belongs to current company %>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Utilisateurs</h2>
+        <% @company.users.each do |user| %>
+        <%= user.firstname %> <%= user.lastname %>
+        <% end %>
+      </div>    
+    </div>
     <%# Row features %>
     <div class="row">
       <div class="col-md-12">
