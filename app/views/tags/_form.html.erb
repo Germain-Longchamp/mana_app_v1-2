@@ -2,6 +2,8 @@
   <%= f.input :name, :label => "Nom de la famille"  %>
 
   <%= f.input :tag_color, :label => "Couleur des étiquettes" , input_html: { type: 'color' } %> 
+
+  <%= f.input :company_id, as: :select, collection: Company.order(:id), :label => "Rattachée à l'entreprise" %>
   
   <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
 <% end %>
