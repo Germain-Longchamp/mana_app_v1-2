@@ -1,6 +1,22 @@
-<h1>Editing Company</h1>
+<%#-------Call Nav------- %>
+<%= render partial: '/layouts/navigation-app' %>
 
-<%= render 'form', company: @company %>
-
-<%= link_to 'Show', @company %> |
-<%= link_to 'Back', companies_path %>
+<%#-------Module Edit Company------- %>
+<div class="mod mod-edit-company">
+  <div class="container-fluid">
+    <%# Row heading %>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Modifier <%= @company.name %></h1>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= render 'form', company: @company %>
+        </div>
+    </div>
+    <div class="row">
+        <%= link_to 'Show', @company %>
+    </div>
+  </div>
+</div>

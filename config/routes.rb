@@ -2,6 +2,7 @@ Rails.application.routes.draw do
    
    # Routes for Companies
    resources :companies
+   get 'companies/:id/add_user', to: 'companies#add_user', as: :add_user
    
    # Routes for Users
    devise_for :users
