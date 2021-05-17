@@ -7,7 +7,7 @@ class EnginesController < ApplicationController
     # GET all tags on engines index
     @tags = Tag.all
     # GET all rooms on engines index
-    @rooms = Room.all
+    @rooms = Room.where(:company_id => current_user.company_id)
     # GET Engines count
     @all_engines = Engine.where(:company_id => current_user.company_id).all
 
