@@ -57,7 +57,7 @@ class CompaniesController < ApplicationController
   end
 
   # ADD more user for the company
-  def add_user 
+  def add_user
   end
 
   private
