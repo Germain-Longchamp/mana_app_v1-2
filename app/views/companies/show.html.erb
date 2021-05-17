@@ -19,7 +19,7 @@
     <%# Row users belongs to current company %>
     <div class="row">
       <div class="col-md-12">
-        <h2>Utilisateurs</h2>
+        <h2>Utilisateurs (<%= @company.users.length()%>)</h2>
         <% @company.users.each do |user| %>
         <%= user.firstname %> <%= user.lastname %>
         <% end %>
