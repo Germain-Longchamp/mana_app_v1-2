@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
   before_action :set_room, only: %i[ edit update destroy ]
 
   def index
-    @rooms = Room.all.where(:company_id => current_user.company_id).order('name')
+    @rooms = Room.where(:company_id => current_user.company_id).order('name')
   end
 
   def show

@@ -3,7 +3,7 @@ class TagsController < ApplicationController
   before_action :set_tag, only: %i[ edit update destroy ]
 
   def index
-    @tags = Tag.all
+    @tags = Tag.where(:company_id => current_user.company_id).order('name')
   end
 
   # GET /engines/new
@@ -13,6 +13,9 @@ class TagsController < ApplicationController
 
   # GET /engines/1/edit
   def edit
+    if @tag.company_id != current_user.company_id
+      redirect_to tags_path
+    end
   end
 
   # POST /engines or /engines.json

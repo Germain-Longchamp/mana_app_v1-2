@@ -5,7 +5,7 @@ class EnginesController < ApplicationController
   # GET /engines or /engines.json
   def index
     # GET all tags on engines index
-    @tags = Tag.all
+    @tags = Tag.where(:company_id => current_user.company_id)
     # GET all rooms on engines index
     @rooms = Room.where(:company_id => current_user.company_id)
     # GET Engines count
