@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: %i[ edit update destroy ]
 
   def index
     @users = User.all
+  end
+
+  # GET /users/new
+  def new
+    @user = User.new
   end
 
   def show
@@ -11,6 +16,14 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  # POST /engines or /engines.json
+  def create
+    @user = User.new(user_params)
+
+    @user.save
+    redirect_to company_path(current_user.company_id)
   end
 
   def destroy

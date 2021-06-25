@@ -16,6 +16,13 @@
         <%= @company.address %>
       </div>
     </div>
+    <%# Row features %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= link_to 'Modifier', edit_company_path(@company) %>
+        <p id="notice"><%= notice %></p>
+      </div>
+    </div>
     <%# Row users belongs to current company %>
     <div class="row">
       <div class="col-md-12">
@@ -23,14 +30,10 @@
         <% @company.users.each do |user| %>
         <%= user.firstname %> <%= user.lastname %>
         <% end %>
-      </div>    
-    </div>
-    <%# Row features %>
-    <div class="row">
-      <div class="col-md-12">
-        <%= link_to 'Modifier', edit_company_path(@company) %> |
-        <p id="notice"><%= notice %></p>
       </div>
+      <div class="col-md-12">
+        <%= link_to 'Ajouter un utilisateur', new_user_path %>
+      </div>    
     </div>
   </div>
 </div>
