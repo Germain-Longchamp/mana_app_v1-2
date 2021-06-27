@@ -1,5 +1,9 @@
+.user-card {
+    padding: 8px 0px;
+}
+
 .user-card:not(:last-child) {
-    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .user-card__avatar {
@@ -12,4 +16,25 @@
 
 .user-card__name {
     font-weight: 600;
+}
+
+.user-card__name span {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.user-card__position,
+.user-card__email {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.user-card__actions {
+    font-size: 14px;
+    opacity: 0;
+    transition: all .3s ease-out;
+}
+
+.user-card:hover .user-card__actions {
+    opacity: 1;
 }

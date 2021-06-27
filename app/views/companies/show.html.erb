@@ -24,10 +24,10 @@
       </div>
     </div>
     <%# Row users belongs to current company %>
-    <div class="row">
+    <div class="row mod-show-company__users-encart">
       <div class="col-md-12">
-        <h2>Utilisateurs (<%= @company.users.length()%>)</h2>
-        <div class="users-list shadowed radius5">
+        <h2>Utilisateurs <span>(<%= @company.users.length()%>)</span></h2>
+        <div class="mod-show-company__users-list shadowed radius5">
           <% @company.users.each do |user| %>
           <div class="user-card d-flex align-items-center justify-content-between">
             <div class="user-card__infos d-flex align-items-center">
@@ -40,18 +40,27 @@
                 <img class="object-fit" src="<%= asset_path 'user_default_svg.png' %>">
               </div>
               <% end %> 
-              <span class="user-card__name"><%= user.firstname %> <%= user.lastname %></span>
+              <span class="user-card__name"><%= user.firstname %> <%= user.lastname %> <% if user.email == current_user.email %><span>(Vous)</span><% end %></span>
+              <span class="v-separator"></span>
+              <span class="user-card__position"><%= user.position %></span>
+              <span class="v-separator"></span>
+              <span class="user-card__email"><%= user.email %></span>
             </div>
             <div class="user-card__actions">
-              <%= link_to 'Modifier', edit_user_path(user.id) %>
+              <%= link_to 'Mettre à jour', edit_user_path(user.id), class: "action-btn__small" %>
             </div>
           </div>
           <% end %>
         </div>
-      </div>
+      </div> 
+    </div>
+    <%# Row add new users %>
+    <div class="row mod-show-company__user-actions">
       <div class="col-md-12">
-        <%= link_to 'Ajouter un utilisateur', new_user_path %>
-      </div>    
+        <div class="align-right">
+          <%= link_to 'Ajouter un utilisateur', new_user_path %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

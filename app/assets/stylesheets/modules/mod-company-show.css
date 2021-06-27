@@ -1,3 +1,20 @@
-.users-list {
+.mod-show-company__users-encart {
+    margin-top: 50px;
+}
+
+.mod-show-company__users-encart h2 {
+    margin-bottom: 20px;
+}
+
+.mod-show-company__users-encart h2 span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.mod-show-company__users-list {
     padding: 15px 20px;
+}
+
+.mod-show-company__user-actions {
+    margin-top: 30px;
 }
