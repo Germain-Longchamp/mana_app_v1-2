@@ -2,7 +2,7 @@
 <%= render partial: '/layouts/navigation-app' %>
 
 <%#-------Module Show Company------- %>
-<div class="mod mod-index-rooms">
+<div class="mod mod-show-company">
   <div class="container-fluid">
     <%# Row heading %>
     <div class="row">
@@ -31,7 +31,11 @@
           <% @company.users.each do |user| %>
           <div class="user-card d-flex align-items-center">
             <div class="user-card__avatar">
+              <% if user.avatar %>
               <img class="object-fit" src="<%= user.avatar %>">
+              <% else %>
+              <img class="object-fit" src="<%= asset_path 'user_default_svg.png' %>">
+              <% end %>
             </div>
             <%= user.firstname %> <%= user.lastname %>
           </div>
@@ -44,4 +48,3 @@
     </div>
   </div>
 </div>
-
