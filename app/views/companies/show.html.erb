@@ -1,7 +1,7 @@
 <%#-------Call Nav------- %>
 <%= render partial: '/layouts/navigation-app' %>
 
-<%#-------Module Index Rooms------- %>
+<%#-------Module Show Company------- %>
 <div class="mod mod-index-rooms">
   <div class="container-fluid">
     <%# Row heading %>
@@ -27,9 +27,16 @@
     <div class="row">
       <div class="col-md-12">
         <h2>Utilisateurs (<%= @company.users.length()%>)</h2>
-        <% @company.users.each do |user| %>
-        <%= user.firstname %> <%= user.lastname %>
-        <% end %>
+        <div class="users-list">
+          <% @company.users.each do |user| %>
+          <div class="user-card d-flex align-items-center">
+            <div class="user-card__avatar">
+              <img class="object-fit" src="<%= user.avatar %>">
+            </div>
+            <%= user.firstname %> <%= user.lastname %>
+          </div>
+          <% end %>
+        </div>
       </div>
       <div class="col-md-12">
         <%= link_to 'Ajouter un utilisateur', new_user_path %>

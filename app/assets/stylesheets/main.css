@@ -40,13 +40,30 @@ a:hover {
     background: none;
 }
 
-/*--General Classes--*/
+/*----------------------------------------
+********   Atomic Classes
+----------------------------------------*/
+/*--Layout--*/
 .wrapper {
     max-width: 90%;
     margin: 0 auto;
 }
 
-/*--Padding and Margin Classes--*/
+.object-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+/*--Padding and Margin--*/
 .p0 {
     padding: 0px;
 }
@@ -55,7 +72,7 @@ a:hover {
     margin: 0px;
 }
 
-/*--Text classes--*/
+/*--Text--*/
 .txt-error-color {
     color: var(--error-color);
 }
