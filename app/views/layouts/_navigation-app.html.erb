@@ -12,7 +12,7 @@
 		<% end %>
 		<%# Bord actions %>
 		<div class="nav-app__part-actions">
-			<a href="<%= board_path %>" class="nav-app__card-action">
+			<a href="<%= board_path %>" class="nav-app__card-action <% if request.path == '/board' %>active<% end %>">
 				<i class="fab fa-trello"></i>
 				<div class="nav-app__card-action-title">Tableau de bord</div>
 				<div class="nav-app__card-action-desc">Accéder aux donnnées compilées et actions principales</div>
@@ -20,7 +20,7 @@
 		</div>
 		<%# Engines actions %>
 		<div class="nav-app__part-actions">
-			<a href="<%= engines_path %>" class="nav-app__card-action">
+			<a href="<%= engines_path %>" class="nav-app__card-action <% if request.path == '/engines' %>active<% end %>">
 				<i class="fas fa-cubes"></i>
 				<div class="nav-app__card-action-title">Parc d'exploitation</div>
 				<div class="nav-app__card-action-desc">Accéder à l'ensemble des machines en exploitation sur la plateforme.</div>
@@ -28,7 +28,7 @@
 		</div>
 		<%# Organisation actions %>
 		<div class="nav-app__part-actions">
-			<a href="<%= company_path(current_user.company_id) %>" class="nav-app__card-action">
+			<a href="<%= company_path(current_user.company_id) %>" class="nav-app__card-action <% if request.path.include? '/companies' %>active<% end %>">
 				<i class="fas fa-users"></i>
 				<div class="nav-app__card-action-title">Organisation</div>
 				<div class="nav-app__card-action-desc">Accéder à la vue d'ensemble de votre organisation sur la plateforme</div>
@@ -36,7 +36,7 @@
 		</div>
 		<%# Settings actions %>
 		<div class="nav-app__part-actions last">
-			<a href="<%= settings_path %>" class="nav-app__card-action">
+			<a href="<%= settings_path %>" class="nav-app__card-action <% if request.path == '/settings' %>active<% end %>">
 				<i class="fas fa-cogs"></i>
 				<div class="nav-app__card-action-title">Paramètres</div>
 				<div class="nav-app__card-action-desc">Modifier les paramètres de la plateforme, du parc matériel, des utilisateurs.</div>
@@ -51,14 +51,3 @@
 		</div>
 	</div>
 </div>
-
-
-<!--
-
-<% if user_signed_in? %>
-		  <br>
-		  <%= link_to "Modifier mon compte", edit_user_registration_path(current_user) %>
-		  <br>
-		  <%= link_to "Mon compte", user_path(current_user) %>
-		  <% end%>
--->

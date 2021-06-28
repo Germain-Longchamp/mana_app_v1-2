@@ -1,125 +1,127 @@
 /*---Navigation App style---*/
 .nav-app {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	height: 100vh;
-	width: 220px;
-	background: var(--main-color);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 220px;
+    background: var(--main-color);
 }
 
 .nav-app__inner {
-	position: relative;
-	height: 100%;
-	padding: 20px 15px 20px 15px;
+    position: relative;
+    height: 100%;
+    padding: 20px 15px 20px 15px;
 }
 
 .nav-app__user-actions {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .nav-app__current-user {
-	position: relative;
-	display: flex;
-	align-items: center;
-	color: var(--white-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
 }
 
 .nav-app__current-user i {
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 .nav-app__current-user span {
-	font-size: 12px;
+    font-size: 12px;
 }
 
 .nav-app__current-user a {
-	position: absolute;
-	right: 0px;
+    position: absolute;
+    right: 0px;
 }
 
 .nav-app__current-user a i {
-	font-size: 12px;
-	color: var(--white-color) !important;
+    font-size: 12px;
+    color: var(--white-color) !important;
 }
 
 .nav-app__part-actions:not(.last) {
-	padding-bottom: 10px;
-	margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .nav-app__part-title {
-	font-size: 20px;
-	color: var(--white-color);
-	text-transform: uppercase;
-	font-weight: 600;
-	margin-bottom: 10px;
+    font-size: 20px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .nav-app__card-action {
-	display: block;
-	text-decoration: none;
-	color: var(--white-color) !important;
-	background: #FFFFFF33;
-	padding: 8px;
-	border: 2px solid transparent;
-	border-radius: 5px;
-	transition: all .2s ease-out;
+    display: block;
+    text-decoration: none;
+    color: var(--white-color) !important;
+    background: #FFFFFF33;
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all .2s ease-out;
 }
 
 .nav-app__card-action-title {
-	font-size: 16px;
-	font-weight: 600;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .nav-app__card-action-desc {
-	font-size: 10px;
+    font-size: 10px;
 }
 
+.nav-app__card-action.active,
 .nav-app__card-action:hover {
-	text-decoration: none;
-	border-color: #fff;
+    text-decoration: none;
+    border-color: #fff;
+    background: none;
 }
 
 ul.nav-app__list-actions {
-	list-style: none;
+    list-style: none;
 }
 
 ul.nav-app__list-actions li a {
-	color: var(--light-grey-color);
-	font-size: 14px;
-	transition: all .2s ease-out;
+    color: var(--light-grey-color);
+    font-size: 14px;
+    transition: all .2s ease-out;
 }
 
 ul.nav-app__list-actions li a:hover {
-	color: var(--white-color) !important;
-	text-decoration: none;
+    color: var(--white-color) !important;
+    text-decoration: none;
 }
 
 .nav-app__bt-actions {
-	position: absolute;
-	bottom: 0px;
-	left: 15px;
-	right: 15px;
-	bottom: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    right: 15px;
+    bottom: 10px;
 }
 
 .nav-app__log-out a {
-	color: var(--white-color) !important;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+    color: var(--white-color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .nav-app__log-out a span {
-	font-size: 14px;
-	margin-right: 5px;
+    font-size: 14px;
+    margin-right: 5px;
 }
 
 .nav-app__log-out a i {
-	font-size: 25px;
+    font-size: 25px;
 }
 
 .nav-app__log-out a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
