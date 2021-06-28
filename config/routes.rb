@@ -4,7 +4,7 @@ Rails.application.routes.draw do
    resources :companies
    
    # Routes for Users
-   devise_for :users, :path => 'user-settings'
+   devise_for :users, :path => 'account'
    resources :users
 
    # Routes for Engines
