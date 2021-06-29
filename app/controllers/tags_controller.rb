@@ -21,7 +21,7 @@ class TagsController < ApplicationController
   # POST /engines or /engines.json
   def create
     @tag = Tag.new(tag_params)
-
+    @tag.company_id = current_user.company_id
     @tag.save
     redirect_to tags_path
   end

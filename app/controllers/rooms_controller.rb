@@ -24,6 +24,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @room.company_id = current_user.company_id
     @room.save
     redirect_to rooms_path
   end

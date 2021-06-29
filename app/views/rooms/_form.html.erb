@@ -1,6 +1,5 @@
 <%= simple_form_for @room do |f| %>
   <%= f.input :name, :label => "Nom de la salle"  %>
-  <%= f.input :company_id, as: :select, collection: Company.order(:id), :label => "Rattachée à l'entreprise" %>
 
   <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
 <% end %>
