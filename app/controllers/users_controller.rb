@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    requirect_to root_path
+    redirect_to company_path(current_user.company_id)
   end
 
   def profile

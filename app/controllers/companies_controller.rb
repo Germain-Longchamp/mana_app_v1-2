@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1 or /companies/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /companies/new

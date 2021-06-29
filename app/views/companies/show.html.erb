@@ -27,7 +27,7 @@
     <div class="row mod-show-company__users-encart">
       <div class="col-md-12">
         <h2>Utilisateurs <span>(<%= @company.users.length()%>)</span></h2>
-        <div class="mod-show-company__users-list shadowed radius5">
+        <div class="mod-show-company__users-list shadowed radius5" id="usersList">
           <% @company.users.each do |user| %>
           <div class="user-card d-flex align-items-center justify-content-between">
             <div class="user-card__infos d-flex align-items-center">
@@ -48,6 +48,9 @@
             </div>
             <div class="user-card__actions">
               <%= link_to 'Mettre à jour', edit_user_path(user.id), class: "action-btn__small" %>
+              <% if user != current_user %>
+              <%= link_to 'Supprimer', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-btn__small" %>
+              <% end %>
             </div>
           </div>
           <% end %>
