@@ -16,7 +16,9 @@
       <div class="col-md-12 p0">
         <div class="d-flex justify-content-between align-items-center">
           <h1>Parc machines <% if params[:tag] %>- <%= params[:tag] %><% end %></h1>
-          <a class="mod-engines-index__add-engine d-flex align-items-center justify-content-center txt-no-decoration" href="<%= new_engine_path %>" title="Ajouter une nouvelle machine"><i class="fas fa-plus"></i></a>
+          <%= link_to new_engine_path, class: "action-btn__add" do %>
+            <i class="fas fa-plus"></i>Ajouter une machine      
+          <% end %>
         </div>      
       </div>
     </div>
