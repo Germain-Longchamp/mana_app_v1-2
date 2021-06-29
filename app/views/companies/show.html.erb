@@ -32,19 +32,21 @@
           <div class="user-card d-flex align-items-center justify-content-between">
             <div class="user-card__infos d-flex align-items-center">
               <% if user.avatar_file_name != nil %>
-              <div class="user-card__avatar shadowed">
+              <div class="user-card__avatar">
                 <img class="object-fit" src="<%= user.avatar %>">
               </div>
               <% else %>
-              <div class="user-card__avatar shadowed p8">
+              <div class="user-card__avatar p8">
                 <img class="object-fit" src="<%= asset_path 'user_default_svg.png' %>">
               </div>
               <% end %> 
-              <span class="user-card__name"><%= user.firstname %> <%= user.lastname %> <% if user.email == current_user.email %><span>(Vous)</span><% end %></span>
-              <span class="v-separator"></span>
+              <span class="user-card__id">
+                <div class="user-card__name">
+                  <%= user.firstname %> <%= user.lastname %> <% if user.email == current_user.email %><span>(Vous)</span><% end %>
+                </div>    
+                <div class="user-card__email"><%= user.email %></div>
+              </span>
               <span class="user-card__position"><%= user.position %></span>
-              <span class="v-separator"></span>
-              <span class="user-card__email"><%= user.email %></span>
             </div>
             <div class="user-card__actions">
               <%= link_to 'Mettre à jour', edit_user_path(user.id), class: "action-btn__small" %>

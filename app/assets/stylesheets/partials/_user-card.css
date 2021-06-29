@@ -7,15 +7,21 @@
 }
 
 .user-card__avatar {
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 15px;
+    margin-right: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.user-card__id {
+    width: 300px;
 }
 
 .user-card__name {
     font-weight: 600;
+    font-size: 14px;
 }
 
 .user-card__name span {
@@ -23,9 +29,13 @@
     font-size: 12px;
 }
 
-.user-card__position,
 .user-card__email {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.user-card__position {
+    font-size: 12px;
     font-weight: 300;
 }
 
