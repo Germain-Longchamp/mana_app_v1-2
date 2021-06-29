@@ -22,13 +22,22 @@
 @import "chosen";
 
 /**************************************
-4 - Import All
-**************************************/
-//@import "main";
-
-/**************************************
 5 - Global styles
 **************************************/
+
+/*--Root datas--*/
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --border-color: #b0b0b0;
+    --light-grey-color: #ebebeb;
+    --main-color: #3789c5;
+    --dark-color:#133045;
+    --error-color: #C44D4B;
+    --success-color: #509534;
+    --success-dark-color:#3b7025;
+}
+
 * {
     margin: 0;
     padding: 0;
