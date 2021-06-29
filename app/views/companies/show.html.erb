@@ -63,7 +63,9 @@
     <div class="row mod-show-company__user-actions">
       <div class="col-md-12">
         <div class="align-right">
-          <%= link_to 'Ajouter un utilisateur', new_user_path %>
+          <%= link_to new_user_path, class: "action-btn__add" do %>
+            <i class="fas fa-plus"></i>Ajouter un utilisateur       
+          <% end %>
         </div>
       </div>
     </div>

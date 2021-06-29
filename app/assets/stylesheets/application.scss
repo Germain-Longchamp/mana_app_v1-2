@@ -24,4 +24,36 @@
 /**************************************
 4 - Import All
 **************************************/
-@import "main";
+//@import "main";
+
+/**************************************
+5 - Global styles
+**************************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+a, a:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+a:hover {
+    background: none;
+}
