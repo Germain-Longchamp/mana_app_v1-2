@@ -47,6 +47,7 @@ class EnginesController < ApplicationController
 
   # POST /engines or /engines.json
   def create
+    @engine.company_id = current_user.company_id
     @engine = Engine.new(engine_params)
 
     respond_to do |format|

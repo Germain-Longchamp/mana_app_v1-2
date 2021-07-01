@@ -8,7 +8,11 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1 or /companies/1.json
   def show
-    @user = User.find(params[:id])
+    if @company.id != current_user.company_id
+      redirect_to company_path(current_user.company_id)  
+    else
+      @user = User.find(params[:id])
+    end    
   end
 
   # GET /companies/new

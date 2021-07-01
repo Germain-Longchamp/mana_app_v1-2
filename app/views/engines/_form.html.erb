@@ -15,8 +15,6 @@
   <%= f.input :name, :label => "Nom/Marque" %>
   <%= f.input :internal_name, :label => "Nom interne" %>
 
-  <%= f.association :company, as: :select, collection: Company.order(:id), :label => "Rattachée à l'entreprise" %>
-  
   <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: {multiple: true}, :label => "Famille" %>
 
   <%= f.association :room, as: :select, collection: Room.where(:company_id => current_user.company_id).order(:id), :label => "Salle affectée" %>
