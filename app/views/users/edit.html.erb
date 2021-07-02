@@ -1,2 +1,25 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%#-------Call Nav------- %>
+<%= render partial: '/layouts/navigation-app' %>
+
+<%#-------Module New user------- %>
+<div class="mod mod-edit-user">
+  <div class="container-fluid">
+    <%# Row heading %>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Modifier</h1>
+        </div>
+    </div>
+    <%# Row Form %>
+    <div class="row">
+        <div class="col-md-12">
+            <%= simple_form_for @user do |f| %>
+            <%= f.input :firstname, :label => "Prénom" %>
+            <%= f.input :lastname, :label => "Nom"  %>
+            <%= f.input :position, :label => "Poste"  %>
+            <%= f.input :email, :label => "Email"  %>
+            <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
+            <% end %>
+        </div>
+    </div>
+</div> 
