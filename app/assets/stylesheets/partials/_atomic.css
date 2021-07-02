@@ -47,6 +47,18 @@
 }
 
 /*--Text--*/
+.txt-right {
+    text-align: right;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-left {
+    text-align: left;
+}
+
 .txt-error-color {
     color: var(--error-color);
 }

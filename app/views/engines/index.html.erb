@@ -153,5 +153,14 @@
         <%= will_paginate @engines, :previous_label => '<i class="fas fa-arrow-alt-circle-left"></i>', :next_label => '<i class="fas fa-arrow-alt-circle-right"></i>' %>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="txt-right">
+          <%= link_to new_engine_path, class: "action-btn__add" do %>
+            <i class="fas fa-plus"></i>Ajouter une machine      
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
