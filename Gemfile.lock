@@ -92,6 +92,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
+    country-select (1.2.1)
     crass (1.0.6)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -276,6 +277,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chosen-rails
+  country-select
   devise
   jbuilder (~> 2.7)
   jquery-rails

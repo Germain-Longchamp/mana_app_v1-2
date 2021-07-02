@@ -50,6 +50,8 @@ gem 'will_paginate', '~> 3.1.0'
 gem "simple_calendar", "~> 2.4"
 gem 'rails-i18n'
 
+gem 'country-select'
+
 
 # Group gems environment
 group :development, :test do
