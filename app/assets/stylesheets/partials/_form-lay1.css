@@ -1,0 +1,11 @@
+.form-lay1 {
+    margin: 30px 0px;
+}
+
+.form-lay1__input-half {
+    flex: 0 0 50%;
+}
+
+.form-lay1__input-full {
+    flex: 0 0 100%;
+}
