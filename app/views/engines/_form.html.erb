@@ -21,6 +21,8 @@
 
   <%= f.input :initial_date, as: :date, html5: true, :label => "Date de mise en circulation" %>
 
+  <%= f.input :validity_start_date, as: :date, html5: true, :label => "Date de début de validité" %>
+
   <%= f.rich_text_area :description, :label => "Informations supplémentaires" %>
 
   <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
