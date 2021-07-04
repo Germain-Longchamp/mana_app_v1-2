@@ -26,6 +26,19 @@ class UsersController < ApplicationController
     redirect_to company_path(current_user.company_id)
   end
 
+  # PATCH/PUT /engines/1 or /engines/1.json
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to company_path(current_user.company_id), notice: 'Utilisateur Mis à jour.' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def destroy
     @user.destroy
     redirect_to company_path(current_user.company_id)
