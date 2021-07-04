@@ -27,22 +27,12 @@
                 </table>
             </div>
         </div>
-        <%# Row Listing JS %>
-        <div class="row">
-            <div class="col-md-12">
-                <table>
-                    <tbody id="listRooms">
-                    
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <%# Row Form %>
         <div class="row" style="margin-top:40px;">
             <div class="col-md-12">
-                <%= simple_form_for @room, remote: true do |f| %>
+                <%= simple_form_for @room do |f| %>
                 <%= f.input :name, :label => "Nom de la salle"  %>
-                <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
+                <%= f.submit "Ajouter", class: 'btn btn-lg btn-primary float-right' %>
                 <% end %>
             </div>
         </div>

@@ -15,7 +15,6 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
-    @rooms = Room.where(:company_id => current_user.company_id).order('name')
   end
 
   def edit
@@ -32,14 +31,14 @@ class RoomsController < ApplicationController
     redirect_to rooms_path
   end
 
-    def update
-      respond_to do |format|
-        if @room.update(room_params)
-          format.html { redirect_to rooms_url, notice: 'My Notice.' }
+  def update
+    respond_to do |format|
+      if @room.update(room_params)
+          format.html { redirect_to rooms_path, notice: 'My Notice.' }
           format.json { render :show, status: :created, location: @room }
         else
           format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @tag.errors, status: :unprocessable_entity }
+          format.json { render json: @room.errors, status: :unprocessable_entity }
         end
       end
     end
