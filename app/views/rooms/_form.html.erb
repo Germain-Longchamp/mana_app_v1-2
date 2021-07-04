@@ -1,4 +1,4 @@
-<%= simple_form_for @room do |f| %>
+<%= simple_form_for @room, remote: true do |f| %>
   <%= f.input :name, :label => "Nom de la salle"  %>
   <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
 <% end %>

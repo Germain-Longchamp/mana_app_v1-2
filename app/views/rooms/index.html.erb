@@ -16,21 +16,34 @@
                 <table>
                   <tbody>
                     <% @rooms.each do |room| %>
-                      <tr>
+                    <tr>
                         <td><%= room.name %></td>
                         <td>(machines associées : <%= room.engines.length() %>)</td>
                         <td><%= link_to 'Mettre à jour', edit_room_path(room) %></td>
                         <td><%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                      </tr>
+                    </tr>
                     <% end %>
-                  </tbody>
+                </tbody>
                 </table>
             </div>
         </div>
-        <%# Row features %>
+        <%# Row Listing JS %>
         <div class="row">
             <div class="col-md-12">
-                <%= link_to 'Ajouter', room_new_path %>
+                <table>
+                    <tbody id="listRooms">
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <%# Row Form %>
+        <div class="row" style="margin-top:40px;">
+            <div class="col-md-12">
+                <%= simple_form_for @room, remote: true do |f| %>
+                <%= f.input :name, :label => "Nom de la salle"  %>
+                <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
+                <% end %>
             </div>
         </div>
     </div>
