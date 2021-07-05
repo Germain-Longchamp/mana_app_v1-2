@@ -1,11 +1,57 @@
+/*------Layout classes-------*/
 .form-lay1 {
     margin: 30px 0px;
 }
 
-.form-lay1__input-half {
-    flex: 0 0 50%;
+.form-lay1__fields {
+    margin-bottom: 20px;
 }
 
-.form-lay1__input-full {
+.form-lay1__input.half {
+    flex: 0 0 48%;
+}
+
+.form-lay1__input.full {
     flex: 0 0 100%;
 }
+
+/*------Input styles-------*/
+.form-lay1 form .form-group label {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.form-lay1 form input[type="text"],
+.form-lay1 form input[type="date"] {
+    font-weight: bold;
+    height: 40px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #F6F7F9;
+    color: #748194;
+    font-size: 16px;
+    margin: 0px !important;
+}
+
+/*---Override for design engines*/
+.form-lay1 form .form-lay1__input.start_date input[type="date"] {
+    color: var(--success-color);
+    background: rgba(var(--success-color-rgb), 0.1);
+    font-size: 20px;
+    height: 50px;
+}
+
+.form-lay1 form .form-lay1__input.end_date input[type="date"] {
+    color: var(--error-color);
+    background: rgba(var(--error-color-rgb), 0.1);
+    font-size: 20px;
+    height: 50px;
+}
+
+/*------Chosen styles-------*/
+.form-lay1 form ul.chosen-choices {}
+
+/*------Rich text styles-------*/
+.form-lay1 form .trix-editor {}

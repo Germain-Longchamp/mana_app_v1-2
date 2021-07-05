@@ -13,41 +13,41 @@
   </div>
   <% end %>
 
-  <div class="form-lay1__fields d-flex">
-    <div class="form-lay1__input-half border-box">
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input half border-box">
       <%= f.input :name, :label => "Nom/Marque" %>
     </div>
-    <div class="form-lay1__input-half border-box">
+    <div class="form-lay1__input half border-box">
       <%= f.input :internal_name, :label => "Nom interne" %>
     </div>
   </div>
 
-  <div class="form-lay1__fields d-flex">
-    <div class="form-lay1__input-half border-box">
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input half border-box">
       <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: {multiple: true}, :label => "Famille" %>
     </div>
-    <div class="form-lay1__input-half border-box">
+    <div class="form-lay1__input half border-box">
       <%= f.association :room, as: :select, collection: Room.where(:company_id => current_user.company_id).order(:id), :label => "Salle affectée" %>
     </div>
   </div>
 
-  <div class="form-lay1__fields d-flex">
-    <div class="form-lay1__input-full border-box">
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input full border-box">
       <%= f.input :initial_date, as: :date, html5: true, :label => "Date de mise en circulation" %>
     </div>
   </div>
 
-  <div class="form-lay1__fields d-flex">
-    <div class="form-lay1__input-half border-box">
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input start_date half border-box">
       <%= f.input :validity_start_date, as: :date, html5: true, :label => "Date de début de validité" %>
     </div>
-    <div class="form-lay1__input-half border-box">
+    <div class="form-lay1__input end_date half border-box">
       <%= f.input :validity_end_date, as: :date, html5: true, :label => "Date de fin de validité" %>
     </div>
   </div>
 
-  <div class="form-lay1__fields d-flex">
-    <div class="form-lay1__input-full border-box">
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input full border-box">
       <%= f.rich_text_area :description, :label => "Informations supplémentaires" %>
     </div>
   </div>
