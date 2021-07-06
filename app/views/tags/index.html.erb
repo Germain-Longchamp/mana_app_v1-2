@@ -7,19 +7,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Types de machines</h1>
-				<table>
+				<table id="tagIndex">
 				  <tbody>
-				    <% @tags.each do |tag| %>
-				      <tr>
-				        <td><%= tag.name %></td>
-				        <td><%= tag.tag_color %></td>
-				        <% if tag.company_id %>
-				        <td><%= tag.company.name %></td>
-				        <% end %>
-				        <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "delete" %></td>
-				        <td><%= link_to 'Mettre à jour', edit_tag_path(tag) %></td>
-				      </tr>
-				    <% end %>
+				    <%= render @tags %>
 				  </tbody>
 				</table>
 				<div id="newTag">

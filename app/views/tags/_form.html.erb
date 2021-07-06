@@ -1,4 +1,4 @@
-<%= simple_form_for @tag do |f| %>
+<%= simple_form_for @tag, remote: true do |f| %>
   <%= f.input :name, :label => "Nom de la famille"  %>
   <%= f.input :tag_color, :label => "Couleur des étiquettes" , input_html: { type: 'color' } %>  
   <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>

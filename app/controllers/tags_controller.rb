@@ -20,10 +20,21 @@ class TagsController < ApplicationController
 
   # POST /engines or /engines.json
   def create
+
     @tag = Tag.new(tag_params)
     @tag.company_id = current_user.company_id
-    @tag.save
-    redirect_to tags_path
+    
+
+    respond_to do |format|
+      if @tag.save
+        format.js
+        format.html { render :index, status: :unprocessable_entity }
+        format.json { render :show, status: :created, location: @tag }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @engine.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /engines/1 or /engines/1.json
