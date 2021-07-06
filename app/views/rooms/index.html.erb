@@ -20,7 +20,7 @@
                         <td><%= room.name %></td>
                         <td>(machines associées : <%= room.engines.length() %>)</td>
                         <td><%= link_to 'Mettre à jour', edit_room_path(room) %></td>
-                        <td><%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        <td><%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "delete" %></td>
                     </tr>
                     <% end %>
                 </tbody>

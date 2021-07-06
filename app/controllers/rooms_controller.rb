@@ -46,6 +46,7 @@ class RoomsController < ApplicationController
     def destroy
       @room.destroy
       respond_to do |format|
+        format.js
         format.html { redirect_to rooms_url, notice: "La salle a bien été supprimée" }
         format.json { head :no_content }
       end

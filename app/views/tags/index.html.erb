@@ -16,14 +16,12 @@
 				        <% if tag.company_id %>
 				        <td><%= tag.company.name %></td>
 				        <% end %>
-				        <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				        <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "delete" %></td>
 				        <td><%= link_to 'Mettre à jour', edit_tag_path(tag) %></td>
 				      </tr>
 				    <% end %>
 				  </tbody>
 				</table>
-			
-
 				<%= link_to 'Ajouter une famille', tag_new_path %>
 			</div>
 		</div>
