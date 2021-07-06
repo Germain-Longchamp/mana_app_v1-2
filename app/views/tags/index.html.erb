@@ -22,7 +22,9 @@
 				    <% end %>
 				  </tbody>
 				</table>
-				<%= link_to 'Ajouter une famille', tag_new_path %>
+				<div id="newTag">
+					<%= link_to 'Ajouter une famille', tag_new_path, remote: true %>
+				</div>				
 			</div>
 		</div>
 	</div>

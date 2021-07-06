@@ -30,10 +30,9 @@
         <%# Row Form %>
         <div class="row" style="margin-top:40px;">
             <div class="col-md-12">
-                <%= simple_form_for @room do |f| %>
-                <%= f.input :name, :label => "Nom de la salle"  %>
-                <%= f.submit "Ajouter", class: 'btn btn-lg btn-primary float-right' %>
-                <% end %>
+                <div id="newRoom">
+                    <%= link_to 'Ajouter une Salle', room_new_path, remote: true %>
+                </div>      
             </div>
         </div>
     </div>
