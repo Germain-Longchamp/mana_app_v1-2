@@ -16,7 +16,7 @@ Rails.application.routes.draw do
    
    # Tags /index /create /new /destroy
    get 'tags', to: 'tags#index'
-   post 'tags', to: 'tags#create'
+   post 'tags', to: 'tags#create', defaults: { format: 'js' }
    get 'tag/new', to: 'tags#new'
    get 'tag/:id/edit', to: 'tags#edit', as: :edit_tag
    patch 'tags/:id', to: 'tags#update'

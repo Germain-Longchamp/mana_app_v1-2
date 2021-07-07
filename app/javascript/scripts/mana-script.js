@@ -1,6 +1,26 @@
 $(document).on('ready turbolinks:load', function() {
 
 
+    $('.form-add-tag form').submit(function(e) {
+        e.preventDefault();
+        datas = $(this).serializeArray();
+
+        $.ajax({
+            type: 'POST',
+            url: '/tags',
+            data: datas,
+            success: function(response) {
+                console.log('tag créé');
+                console.log(response);
+            },
+            error: function(response) {
+                console.log('erreur baby');
+            }
+        });
+
+    });
+
+
     //------------- Chosen Library
     $('#engine_tag_ids, #engine_room_id').chosen({
         max_selected_options: 1,

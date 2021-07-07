@@ -28,8 +28,8 @@ class TagsController < ApplicationController
     respond_to do |format|
       if @tag.save
         format.js
-        format.html { render :index, status: :unprocessable_entity }
-        format.json { render :show, status: :created, location: @tag }
+        format.html { redirect_to tags_url, status: :unprocessable_entity }
+        format.json { render json: @tag}
         flash[:notice] = 'Tag créé'
       else
         format.html { render :new, status: :unprocessable_entity }
