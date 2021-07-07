@@ -1,4 +1,6 @@
 $(document).on('ready turbolinks:load', function() {
+
+
     //------------- Chosen Library
     $('#engine_tag_ids, #engine_room_id').chosen({
         max_selected_options: 1,
