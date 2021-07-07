@@ -11,9 +11,7 @@ $(document).on('ready turbolinks:load', function() {
             url: '/tags',
             data: datas,
             success: function(data) {},
-            error: function(response) {
-                console.log('erreur baby');
-            }
+            error: function(response) {}
         });
 
     });
