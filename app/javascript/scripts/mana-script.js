@@ -10,10 +10,7 @@ $(document).on('ready turbolinks:load', function() {
             type: 'POST',
             url: '/tags',
             data: datas,
-            success: function(response) {
-                console.log('tag créé');
-                console.log(response);
-            },
+            success: function(data) {},
             error: function(response) {
                 console.log('erreur baby');
             }

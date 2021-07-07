@@ -28,8 +28,7 @@ class TagsController < ApplicationController
     respond_to do |format|
       if @tag.save
         format.js
-        format.html { redirect_to tags_url, status: :unprocessable_entity }
-        format.json { render json: @tag}
+        format.json { render json: @tag.id }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @engine.errors, status: :unprocessable_entity }

@@ -11,14 +11,23 @@
 				  <tbody>
 				    <%= render @tags %>
 				  </tbody>
-				</table>
-				<div id="newTag">
-					<%= link_to 'Ajouter une famille', tag_new_path, remote: true %>
-				</div>				
+				</table>	
 			</div>
 		</div>
 
-		<div class="row" style="margin-top:100px;">
+		<div class="row" id="messageTag" style="display:none; margin-top:100px;">
+			<div class="col-md-12">
+				Famille <span id="nameTag"></span> ajouté avec succès
+			</div>
+		</div>
+
+		<div class="row" id="addTag" style="margin-top:100px;">
+			<div class="col-md-12">
+				<%= link_to 'Ajouter une famille', tag_new_path, remote: true %>
+			</div>
+		</div>
+
+		<div class="row" id="formTag" style="display:none; margin-top:100px;">
 			<div class="col-md-12">
 				<div class="form-add-tag">
 					<form>
