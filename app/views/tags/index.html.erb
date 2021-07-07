@@ -15,18 +15,21 @@
 			</div>
 		</div>
 
+		<%# Message to display when created %>
 		<div class="row" id="messageTag" style="display:none; margin-top:100px;">
 			<div class="col-md-12">
 				Famille <span id="nameTag"></span> ajouté avec succès
 			</div>
 		</div>
 
+		<%# Link for display form %>
 		<div class="row" id="addTag" style="margin-top:100px;">
 			<div class="col-md-12">
 				<%= link_to 'Ajouter une famille', tag_new_path, remote: true %>
 			</div>
 		</div>
 
+		<%# Form add tag %>
 		<div class="row" id="formTag" style="display:none; margin-top:100px;">
 			<div class="col-md-12">
 				<div class="form-add-tag">
