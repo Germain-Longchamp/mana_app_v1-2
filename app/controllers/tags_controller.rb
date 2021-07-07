@@ -30,11 +30,9 @@ class TagsController < ApplicationController
         format.js
         format.html { redirect_to tags_url, status: :unprocessable_entity }
         format.json { render json: @tag}
-        flash[:notice] = 'Tag créé'
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @engine.errors, status: :unprocessable_entity }
-        flash[:alert] = 'Un problème est survenu'
       end
     end
   end
