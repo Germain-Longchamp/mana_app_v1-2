@@ -17,6 +17,21 @@ $(document).on('ready turbolinks:load', function() {
     });
 
 
+    //------------- Create Company with ajax // Method 2
+    $('#createCompany').submit(function(e) {
+        e.preventDefault();
+        datas = $(this).serializeArray();
+
+        $.ajax({
+            type: 'POST',
+            url: '/companies',
+            data: datas,
+            success: function(data) {},
+            error: function(response) {}
+        });
+
+    });
+
     //------------- Chosen Library
     $('#engine_tag_ids, #engine_room_id').chosen({
         max_selected_options: 1,

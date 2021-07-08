@@ -61,7 +61,7 @@
 
         <%= f.input :firstname, :label => "Prénom" %>
         <%= f.input :lastname, :label => "Nom"  %>
-        <%= f.association :company, as: :select, collection: Company.order(:id), :label => "Entreprise" %>
+
         <%= f.input :email, autofocus: true, autocomplete: "email", :label => "Email" %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -75,6 +75,7 @@
 
         <%= f.input :password_confirmation, autocomplete: "new-password", :label => "Confirmer le mot de passe" %>
 
+        <%= f.input :company_id, class: "company-id" %>
         <br>
         <br>
         <%= f.submit "Créer votre compte", class: 'btn btn-lg btn-primary' %>
@@ -88,5 +89,7 @@
     </div>
   </div>
 </div>
+
+<span id="testId"></span>
 
 

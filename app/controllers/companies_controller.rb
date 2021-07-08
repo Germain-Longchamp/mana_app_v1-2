@@ -30,8 +30,8 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
-        format.html { redirect_to @company, notice: "Company was successfully created." }
-        format.json { render :show, status: :created, location: @company }
+        format.js
+        format.json { render json: @tag.id }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @company.errors, status: :unprocessable_entity }
