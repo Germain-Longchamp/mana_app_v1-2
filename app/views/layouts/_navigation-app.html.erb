@@ -4,9 +4,12 @@
 		<% if current_user %>
 		<div class="nav-app__user-actions">
 			<div class="nav-app__current-user">
-				<i class="fas fa-user"></i>
+				<%= fa_icon "user" %>
 				<span><%= current_user.firstname %> <%= current_user.lastname %></span>
-				<%= link_to raw('<i class="fas fa-cog"></i>'), user_path(current_user) %>
+
+				<%= link_to user_path(current_user) do %>
+				<%= fa_icon "cog" %>
+				<% end %>
 			</div>
 		</div>
 		<% end %>

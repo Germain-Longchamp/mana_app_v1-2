@@ -52,6 +52,8 @@ gem 'rails-i18n'
 
 gem 'country-select'
 
+gem 'font-awesome-rails'
+
 
 # Group gems environment
 group :development, :test do
