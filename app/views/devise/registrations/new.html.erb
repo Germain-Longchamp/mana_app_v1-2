@@ -13,7 +13,26 @@
         <div class="mod-create-company__form">
           <!--Form AJAX Create Company-->
           <form id="createCompany">
-            
+            <div class="group">
+              <label>Raison sociale</label>
+              <input type="text" id="company_name" name="company[name]">
+            </div>  
+            <div class="group">
+              <label>Adresse</label>
+              <input type="text" id="company_address" name="company[address]">
+            </div>  
+            <div class="group">
+              <label>Département</label>
+              <input type="text" id="company_department" name="company[department]">
+            </div>
+            <div class="group">
+              <label>Code postal</label>
+              <input type="text" id="company_zip" name="company[zip]">
+            </div>
+
+            <div class="action">
+              <input type="submit" value="Créer l'entreprise" name="commit">
+            </div>
           </form>
         </div>
       </div>
