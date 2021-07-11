@@ -1,5 +1,5 @@
 <%#-------------Module Create Company AJAX-------------%>
-<div class="mod-create-company">
+<div class="mod-create-company" id="screenCompany">
   <div class="container">
     <!--Row heading-->
     <div class="row justify-content-center heading">
@@ -40,11 +40,20 @@
   </div>
 </div>
 
-
+<%#-------------Waiting Screen-------------%>
+<div class="mod-wait-screen" id="screenWaiting" style="display:none;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        Création du compte entreprise, patientez quelques instants
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <%#-------Module Create User depending on company-------%>
-<div class="mod-create-user">
+<div class="mod-create-user" id="screenUser" style="display:none;">
   <div class="container">
     <!--Row heading-->
     <div class="row justify-content-center heading">
@@ -56,25 +65,18 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
         <%= render "devise/shared/error_messages", resource: resource %>
-
         <%= f.input :firstname, :label => "Prénom" %>
         <%= f.input :lastname, :label => "Nom"  %>
-
         <%= f.input :email, autofocus: true, autocomplete: "email", :label => "Email" %>
-
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>En attente de confirmation pour : <%= resource.unconfirmed_email %></div>
         <% end %>
-
         <%= f.input :password, autocomplete: "new-password", :label => "Nouveau mot de passe" %>
         <% if @minimum_password_length %>
         <em><%= @minimum_password_length %> charactères au minimum</em>
         <% end %>
-
         <%= f.input :password_confirmation, autocomplete: "new-password", :label => "Confirmer le mot de passe" %>
-
         <%= f.input :company_id, class: "company-id" %>
         <br>
         <br>
@@ -89,7 +91,5 @@
     </div>
   </div>
 </div>
-
-<span id="testId"></span>
 
 
