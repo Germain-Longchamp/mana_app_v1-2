@@ -1,0 +1,2 @@
+module MegaAdminHelper
+end
