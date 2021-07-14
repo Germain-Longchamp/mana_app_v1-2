@@ -1,6 +1,10 @@
 /*----------------------------------------
 ********   Atomic Classes
 ----------------------------------------*/
+.main-color {
+    color: var(--main-color);
+}
+
 /*--Layout--*/
 .wrapper {
     max-width: 90%;

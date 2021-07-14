@@ -1,0 +1,89 @@
+/*-------Layout--------*/
+.form-lay2__fields:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.form-lay2__input.full {
+    flex: 0 0 100%;
+}
+
+.form-lay2__action {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.form-lay2__links a {
+    font-size: 12px;
+    color: var(--main-color);
+}
+
+/*-------Fields--------*/
+.form-lay2__input label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.form-lay2__input input[type="text"],
+.form-lay2__input input[type="email"],
+.form-lay2__input input[type="password"] {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 35px;
+    padding: 0 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all .2s ease-out;
+}
+
+.form-lay2__input input[type="checkbox"] {
+    -webkit-appearance: none;
+    cursor: pointer;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--white-color);
+    transition: all .2s ease-out;
+}
+
+.form-lay2__input input[type="checkbox"]:checked {
+    background: var(--main-color);
+}
+
+.form-lay2__input input[type="checkbox"]:checked:after {
+    content: '\2714';
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    color: var(--white-color);
+}
+
+.form-lay2__input input:focus {
+    outline: none;
+    border: 1px solid var(--main-color);
+}
+
+.form-lay2__input.checkbox label {
+    margin-left: 8px;
+    margin-bottom: 0px;
+}
+
+.form-lay2__action input[type="submit"] {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    width: 70%;
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+    background: var(--main-color);
+    color: var(--white-color);
+    padding: 6px 20px;
+    transition: all .2s ease-out;
+}
+
+.form-lay2__action input[type="submit"]:hover {
+    color: var(--main-color);
+    background: var(--white-color);
+}

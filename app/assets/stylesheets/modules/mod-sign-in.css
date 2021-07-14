@@ -17,10 +17,16 @@
 }
 
 .mod-sign-in__inner {
+    width: 100%;
     background: var(--white-color);
     padding: 40px;
     border-radius: 15px;
     -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.41);
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.41);
+}
+
+.mod-sign-in__inner h2 {
+    margin-bottom: 30px;
+    text-align: center;
 }
