@@ -1,7 +1,71 @@
 .mod-mega-admin {
+    position: relative;
+    z-index: 3;
     padding: 90px 0px;
+}
+
+.mod-mega-admin__background {
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    opacity: .2;
 }
 
 .mod-mega-admin__heading {
     margin-bottom: 100px;
+}
+
+.mod-mega-admin__heading h1 {
+    color: var(--main-color);
+}
+
+.mod-mega-admin__listing h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.mod-mega-admin__listing ul {
+    list-style: none;
+    border: 1px solid var(--border-color);
+    padding: 0 10px;
+}
+
+.mod-mega-admin__listing ul li {
+    padding: 10px;
+    background: var(--white-color);
+    transition: all .2s ease-out;
+}
+
+.mod-mega-admin__listing ul li:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mod-mega-admin__listing ul li:hover {
+    background: var(--light-grey-color);
+}
+
+.company-listing-card {
+    position: relative;
+}
+
+.company-listing-card__name {
+    font-size: 17px;
+    font-weight: 600;
+    width: 300px;
+}
+
+.company-listing-card__users {
+    width: 200px;
+}
+
+.company-listing-card__users,
+.company-listing-card__engines {
+    font-size: 14px;
+}
+
+.company-listing-card__actions {
+    position: absolute;
+    right: 10px;
 }
