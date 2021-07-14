@@ -54,6 +54,7 @@ gem 'country-select'
 
 gem 'font-awesome-rails'
 
+gem 'cancancan'
 
 # Group gems environment
 group :development, :test do
