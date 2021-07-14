@@ -35,7 +35,7 @@ Rails.application.routes.draw do
    get 'about/founders', to: 'about#founders'
 
    #MegaAdmin page
-   get 'megaadmin', to: 'mega_admin#index'
+   get 'megaadmin051293', to: 'mega_admin#index'
 
    # Settings pages
    get 'settings', to: 'settings#index'
