@@ -2,58 +2,59 @@
 <%= render partial: '/layouts/navigation' %>
 
 <%#-------------Module Create Company AJAX-------------%>
-<section class="mod-sign-in d-flex align-items-center" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>);" id="screenCompany">
-  <div class="container">
-    <!--Row heading-->
-    <div class="row justify-content-center">
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="mod-sign-in__inner">
-          <div class="mod-sign-in__heading txt-center">
-            <%= fa_icon "building" %>
-            <h2 class="main-color">Informations de l'entreprise</h2>
-          </div>
-          
-          <!--Form AJAX Create Company-->
-          <div class="form-lay2">
-            <form id="createCompany">
+<section class="mod-sign-in" id="screenCompany" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>);">
+  <div class="h-100 w-100 d-flex align-items-center">
+    <div class="container">
+      <!--Row heading-->
+      <div class="row justify-content-center">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="mod-sign-in__inner">
+            <div class="mod-sign-in__heading txt-center">
+              <%= fa_icon "building" %>
+              <h2 class="main-color">Informations de l'entreprise</h2>
+            </div>
+            <!--Form AJAX Create Company-->
+            <div class="form-lay2">
+              <form id="createCompany">
 
-              <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
-                <div class="form-lay2__input full border-box">
-                  <label>Raison sociale</label>
-                  <input type="text" id="company_name" name="company[name]" required>
-                </div>  
-              </div>
-
-              <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
-                <div class="form-lay2__input half border-box">
-                  <label>Adresse</label>
-                  <input type="text" id="company_address" name="company[address]" required>
-                </div> 
-                <div class="form-lay2__input half border-box">
-                  <label>Ville</label>
-                  <input type="text" id="company_city" name="company[city]" required>
-                </div> 
-              </div>
-
-              <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
-                <div class="form-lay2__input half border-box">
-                  <label>Département</label>
-                  <input type="text" id="company_department" name="company[department]" required>
+                <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
+                  <div class="form-lay2__input full border-box">
+                    <label>Raison sociale</label>
+                    <input type="text" id="company_name" name="company[name]" required>
+                  </div>  
                 </div>
-                <div class="form-lay2__input half border-box">
-                  <label>Code postal</label>
-                  <input type="text" id="company_zip" name="company[zip]" required>
+
+                <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
+                  <div class="form-lay2__input half border-box">
+                    <label>Adresse</label>
+                    <input type="text" id="company_address" name="company[address]" required>
+                  </div> 
+                  <div class="form-lay2__input half border-box">
+                    <label>Ville</label>
+                    <input type="text" id="company_city" name="company[city]" required>
+                  </div> 
                 </div>
-              </div>
 
-              <div class="form-lay2__action txt-center">
-                <input type="submit" value="Créer le compte entreprise" name="commit">
-              </div>
-            </form>
+                <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
+                  <div class="form-lay2__input half border-box">
+                    <label>Département</label>
+                    <input type="text" id="company_department" name="company[department]" required>
+                  </div>
+                  <div class="form-lay2__input half border-box">
+                    <label>Code postal</label>
+                    <input type="text" id="company_zip" name="company[zip]" required>
+                  </div>
+                </div>
 
-            <div class="form-lay2__links">
-              <div class="form-lay2__link-item">
-                <a href="<%= new_user_session_path %>">Vous avez déjà un compte ?</a>
+                <div class="form-lay2__action txt-center">
+                  <input type="submit" value="Créer le compte entreprise" name="commit">
+                </div>
+              </form>
+
+              <div class="form-lay2__links">
+                <div class="form-lay2__link-item">
+                  <a href="<%= new_user_session_path %>">Vous avez déjà un compte ?</a>
+                </div>
               </div>
             </div>
           </div>
@@ -63,19 +64,23 @@
   </div>
 </section>
 
-
-
-
 <%#-------------Waiting Screen-------------%>
-<div class="mod-wait-screen" id="screenWaiting" style="display:none;">
+<section class="mod-wait-screen" id="screenWaiting" style="display:none;">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        Création du compte entreprise, patientez quelques instants
+      <div class="col-md-12">      
+        <div class="mod-wait-screen__load d-flex align-items-center justify-content-center">
+          <div>
+            <div class="load">
+              <hr/><hr/><hr/><hr/>
+            </div>
+            <div class="mod-wait-screen__txt txt-center">Création du compte entreprise,<br> patientez quelques instants...</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 
 <%#-------Module Create User depending on company-------%>

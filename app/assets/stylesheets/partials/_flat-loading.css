@@ -1,0 +1,53 @@
+.load {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.load hr {
+    border: 0;
+    margin: 0;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    border-radius: 50%;
+    animation: spin 2s ease infinite;
+}
+
+.load :first-child {
+    background: var(--main-color);
+    animation-delay: -1.5s;
+}
+
+.load :nth-child(2) {
+    background: var(--dark-color);
+    animation-delay: -1s;
+}
+
+.load :nth-child(3) {
+    background: var(--main-color);
+    animation-delay: -0.5s;
+}
+
+.load :last-child {
+    background: var(--dark-color);
+}
+
+@keyframes spin {
+    0%,100% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(160%);
+    }
+
+    50% {
+        transform: translate(160%, 160%);
+    }
+
+    75% {
+        transform: translate(0, 160%);
+    }
+}
