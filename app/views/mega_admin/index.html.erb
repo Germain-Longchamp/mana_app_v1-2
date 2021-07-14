@@ -1,1 +1,29 @@
-coucou
+<!--------Module Mega Admin-------->
+<div class="mod-mega-admin">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mod-mega-admin__heading">
+                    <h1>Application board</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mod-mega-admin__listing">
+                    <h2>Liste comptes entreprise</h2>
+                    <ul>
+                        <% @companies.each do |item| %>
+                        <li>
+                            <span><%= item.name %></span>                         
+                            <span><%= item.users.length %> utilisateurs</span>
+                            <span><%= item.engines .length %> machines</span>
+                            <span><%= link_to 'Supprimer', item, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-btn__small" %></span>
+                        </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
