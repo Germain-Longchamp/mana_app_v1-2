@@ -7,6 +7,10 @@
     flex: 0 0 100%;
 }
 
+.form-lay2__input.half {
+    flex: 0 0 100%;
+}
+
 .form-lay2__action {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -15,6 +19,12 @@
 .form-lay2__links a {
     font-size: 12px;
     color: var(--main-color);
+}
+
+@media (min-width: 992px) {
+    .form-lay2__input.half {
+        flex: 0 0 48%;
+    }
 }
 
 /*-------Fields--------*/

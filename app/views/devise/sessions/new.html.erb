@@ -1,12 +1,15 @@
 <%#-------Call Nav-------%>
 <%= render partial: '/layouts/navigation' %>
 
-<section class="mod-sign-in d-flex align-items-center test" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>);">
+<section class="mod-sign-in d-flex align-items-center" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>);">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-5 d-flex justify-content-center">
         <div class="mod-sign-in__inner">
-          <h2 class="main-color">Connexion</h2>
+          <div class="mod-sign-in__heading txt-center">
+            <%= fa_icon "sign-in-alt" %>
+            <h2 class="main-color">Connexion</h2>
+          </div>
           <div class="form-lay2">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 

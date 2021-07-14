@@ -26,7 +26,12 @@
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.41);
 }
 
-.mod-sign-in__inner h2 {
+.mod-sign-in__heading h2 {
     margin-bottom: 30px;
-    text-align: center;
+    margin-top: 10px;
+}
+
+.mod-sign-in__heading i {
+    color: var(--main-color);
+    font-size: 45px;
 }

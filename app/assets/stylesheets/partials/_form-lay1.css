@@ -8,11 +8,17 @@
 }
 
 .form-lay1__input.half {
-    flex: 0 0 48%;
+    flex: 0 0 100%;
 }
 
 .form-lay1__input.full {
     flex: 0 0 100%;
+}
+
+@media (min-width: 992px) {
+    .form-lay1__input.half {
+        flex: 0 0 48%;
+    }
 }
 
 /*------Input styles-------*/
