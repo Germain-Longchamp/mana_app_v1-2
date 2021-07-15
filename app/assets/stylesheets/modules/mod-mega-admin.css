@@ -56,10 +56,12 @@
     width: 300px;
 }
 
+.company-listing-card__id,
 .company-listing-card__users {
     width: 200px;
 }
 
+.company-listing-card__id,
 .company-listing-card__users,
 .company-listing-card__engines {
     font-size: 14px;

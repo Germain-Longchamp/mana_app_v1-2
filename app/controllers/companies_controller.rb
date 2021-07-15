@@ -10,8 +10,6 @@ class CompaniesController < ApplicationController
   def show
     if @company.id != current_user.company_id
       redirect_to company_path(current_user.company_id)  
-    else
-      @user = User.find(params[:id])
     end    
   end
 

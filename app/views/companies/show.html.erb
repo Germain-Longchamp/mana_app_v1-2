@@ -26,7 +26,8 @@
     <%# Row users belongs to current company %>
     <div class="row mod-show-company__users-encart">
       <div class="col-md-12">
-        <h2>Utilisateurs <span>(<%= @company.users.length()%>)</span></h2>
+        <h2>Utilisateurs <span>(<%= @company.users.length() %>)</span></h2>
+        <% if @company.users.length() > 0 %>
         <div class="mod-show-company__users-list shadowed radius5" id="usersList">
           <% @company.users.each do |user| %>
           <div class="user-card d-flex align-items-center justify-content-between">
@@ -57,6 +58,7 @@
           </div>
           <% end %>
         </div>
+        <% end %>
       </div> 
     </div>
     <%# Row add new users %>
