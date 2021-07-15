@@ -8,7 +8,7 @@
                 <nav>
                     <ul class="p0 m0">
                         <% if user_signed_in? %>
-                        <li><%= link_to 'Parc machines', engines_path %></li>
+                        <li><%= link_to 'Tableau de bord', board_path %></li>
                         <li class="nav__log"><%= link_to raw('<i class="fas fa-sign-out-alt"></i><span>Déconnexion</span>'), destroy_user_session_path, method: :delete %></li>
                         <% else %>
                         <li class="nav__log"><%= link_to raw('<i class="fas fa-sign-in-alt"></i><span>Connexion</span>'), new_user_session_path %></li>
