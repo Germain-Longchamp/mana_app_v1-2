@@ -17,7 +17,7 @@
                         <li class="company-listing-card d-flex">
                             <div class="company-listing-card__name"><%= item.name %></div> 
                             <div class="company-listing-card__id">ID <%= item.id %></div>                        
-                            <div class="company-listing-card__users"><%= item.users.length %> utilisateurs</div>
+                            <div class="company-listing-card__users"><%= item.users.length %> utilisateur<% if item.users.length > 1 %>s<% end %></div>
                             <div class="company-listing-card__engines"><%= item.engines .length %> machines</div>
                             <div class="company-listing-card__actions"><%= link_to 'Supprimer', item, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-btn__small" %></div>
                         </li>
