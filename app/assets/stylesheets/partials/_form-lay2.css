@@ -11,6 +11,12 @@
     flex: 0 0 100%;
 }
 
+.form-lay2__hidden-fields {
+    visibility: hidden;
+    height: 0px;
+    overflow: hidden;
+}
+
 .form-lay2__action {
     margin-top: 30px;
     margin-bottom: 20px;
