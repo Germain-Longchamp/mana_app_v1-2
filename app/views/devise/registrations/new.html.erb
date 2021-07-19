@@ -27,7 +27,7 @@
                 <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
                   <div class="form-lay2__input half border-box">
                     <label>Adresse</label>
-                    <input type="text" id="company_address" name="company[address]" required>
+                    <input type="text" id="company_address" name="company[address]" class="form-control" required>
                   </div> 
                   <div class="form-lay2__input half border-box">
                     <label>Ville</label>
@@ -143,4 +143,14 @@
   </div>
 </section>
 
+<!--Google Map API Call-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMoYa-Me7Ke0So2hlq5l7sdXNGtyfN20M&libraries=places&callback=initialize&sensor=false" type="text/javascript"></script>
+
+
+<script>
+  function initialize() {
+    var input = document.getElementById('company_address');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+  }
+</script>
 
