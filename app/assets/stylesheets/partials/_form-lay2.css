@@ -1,6 +1,6 @@
 /*-------Layout--------*/
 .form-lay2__fields:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-lay2__input.full {

@@ -5,6 +5,27 @@
     color: var(--main-color);
 }
 
+.success-color {
+    color: var(--success-color);
+}
+
+.error-color {
+    color: var(--error-color);
+}
+
+/*--Text--*/
+.size-up-12 {
+    font-size: 12px;
+}
+
+.size-up-14 {
+    font-size: 14px;
+}
+
+.size-up-16 {
+    font-size: 16px;
+}
+
 /*--Layout--*/
 .wrapper {
     max-width: 90%;
