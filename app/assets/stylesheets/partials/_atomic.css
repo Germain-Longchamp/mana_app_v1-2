@@ -1,6 +1,8 @@
 /*----------------------------------------
 ********   Atomic Classes
 ----------------------------------------*/
+
+/*---------------- 1 Color ----------------*/
 .main-color {
     color: var(--main-color);
 }
@@ -13,7 +15,8 @@
     color: var(--error-color);
 }
 
-/*--Text--*/
+/*---------------- 2 Text ----------------*/
+/* Font sizes */
 .size-up-12 {
     font-size: 12px;
 }
@@ -26,7 +29,42 @@
     font-size: 16px;
 }
 
-/*--Layout--*/
+/* Font weights */
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-500 {
+    font-weight: 300;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-900 {
+    font-weight: 300;
+}
+
+/* Alignment */
+.txt-right {
+    text-align: right;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-left {
+    text-align: left;
+}
+
+/* Decoration */
+.no-decoration, .no-decoration:hover {
+    text-decoration: none !important;
+}
+
+/*---------------- 3 Layout ----------------*/
 .wrapper {
     max-width: 90%;
     margin: 0 auto;
@@ -62,7 +100,7 @@
     box-sizing: border-box;
 }
 
-/*--Padding and Margin--*/
+/*---------------- 4 Padding Margin ----------------*/
 .p0 {
     padding: 0px;
 }
@@ -75,28 +113,7 @@
     margin: 0px;
 }
 
-/*--Text--*/
-.txt-right {
-    text-align: right;
-}
-
-.txt-center {
-    text-align: center;
-}
-
-.txt-left {
-    text-align: left;
-}
-
-.txt-error-color {
-    color: var(--error-color);
-}
-
-.no-decoration, .no-decoration:hover {
-    text-decoration: none !important;
-}
-
-/*--Appearance--*/
+/*---------------- 5 Appearance ----------------*/
 .shadowed {
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
