@@ -1,13 +1,54 @@
 <%#-------Call Nav-------%>
 <%= render partial: '/layouts/navigation' %>
 
+<%#-------------Module STARTING-------------%>
+<section class="mod-onboarding starting" id="screenStart" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>); display:block;">
+  <div class="mod-onboarding__inner d-flex align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="mod-sign-in__inner">
+            <div class="mod-sign-in__heading txt-center">
+              <%= fa_icon "info" %>
+              <h2 class="main-color">Avant de commencer</h2>
+            </div>
+            <div class="mod-onboarding__txt">
+              La création de cotre compte sur Mana se déroulera en <strong>2 étapes</strong>.
+              <br>
+              <br>
+              <div class="underlined size-up-14">Étape 1</div>
+              Nous vous demanderons dans un premier temps les informations principales de votre entreprise : 
+              <ul>
+                <li>Raison Sociale</li>
+                <li>Numéro de SIRET</li>
+                <li>Adresse postale</li>
+              </ul>
+              <br>
+              <div class="underlined size-up-14">Étape 2</div>
+              Nous vous demanderons ensuite les informations relatives à la création de votre profil utilisateur que vous pourrez enrichir une fois le compte créé: 
+              <ul>
+                <li>Nom, Prénom</li>
+                <li>Email</li>
+                <li>Mot de passe</li>
+              </ul>
+            </div>
+            <div class="mod-onboarding__action txt-center">
+              <span  id="startSignUp">Commencer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <%#-------------Module Create Company AJAX-------------%>
-<section class="mod-onboarding sign-in" id="screenCompany" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>); display:block;">
+<section class="mod-onboarding sign-in" id="screenCompany" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>); display:none;">
   <div class="mod-onboarding__inner d-flex align-items-center">
     <div class="container">
       <!--Row heading-->
       <div class="row justify-content-center">
-        <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-md-6">
           <div class="mod-sign-in__inner">
             <div class="mod-sign-in__heading txt-center">
               <%= fa_icon "building" %>
@@ -57,12 +98,6 @@
                   <input type="submit" value="Étape suivante" name="commit">
                 </div>
               </form>
-
-              <div class="form-lay2__links">
-                <div class="form-lay2__link-item">
-                  <a href="<%= new_user_session_path %>">Vous avez déjà un compte ?</a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -96,7 +131,7 @@
     <div class="container">
       <!--Row heading-->
       <div class="row justify-content-center">
-        <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-md-6">
           <div class="mod-sign-in__inner">
             <div class="mod-sign-in__heading txt-center">
               <%= fa_icon "user" %>

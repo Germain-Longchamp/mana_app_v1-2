@@ -20,6 +20,27 @@
     min-height: calc(100vh - 180px);
 }
 
+.mod-onboarding__action {
+    margin-top: 40px;
+}
+
+.mod-onboarding__action span {
+    display: inline-block;
+    cursor: pointer;
+    width: 70%;
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+    background: var(--main-color);
+    color: var(--white-color);
+    padding: 6px 20px;
+    transition: all .2s ease-out;
+}
+
+.mod-onboarding__action span:hover {
+    color: var(--main-color);
+    background: var(--white-color);
+}
+
 .mod-sign-in__inner {
     width: 100%;
     background: var(--white-color);

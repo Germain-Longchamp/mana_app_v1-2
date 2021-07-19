@@ -45,7 +45,7 @@
 .form-lay2__input input[type="text"],
 .form-lay2__input input[type="email"],
 .form-lay2__input input[type="password"] {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Nunito", sans-serif;
     width: 100%;
     font-size: 14px;
     font-weight: 300;
@@ -92,7 +92,7 @@
 }
 
 .form-lay2__action input[type="submit"] {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Nunito", sans-serif;
     cursor: pointer;
     width: 70%;
     border: 1px solid var(--main-color);

@@ -64,6 +64,10 @@
     text-decoration: none !important;
 }
 
+.underlined {
+    text-decoration: underline;
+}
+
 /*---------------- 3 Layout ----------------*/
 .wrapper {
     max-width: 90%;

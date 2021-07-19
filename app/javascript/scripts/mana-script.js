@@ -1,5 +1,9 @@
 $(document).on('ready turbolinks:load', function() {
 
+    $('#startSignUp').click(function() {
+        $('#screenStart').hide();
+        $('#screenCompany').show();
+    });
 
     //------------- Create Tag with ajax // Method 2
     $('.form-add-tag form').submit(function(e) {
@@ -15,7 +19,6 @@ $(document).on('ready turbolinks:load', function() {
         });
 
     });
-
 
     //------------- Create Company with ajax // Method 2
     $('#createCompany').submit(function(e) {
