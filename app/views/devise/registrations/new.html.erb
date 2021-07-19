@@ -3,7 +3,7 @@
 
 <%#-------------Module Create Company AJAX-------------%>
 <section class="mod-onboarding sign-in" id="screenCompany" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>); display:block;">
-  <div class="h-100 w-100 d-flex align-items-center">
+  <div class="mod-onboarding__inner d-flex align-items-center">
     <div class="container">
       <!--Row heading-->
       <div class="row justify-content-center">
@@ -85,59 +85,62 @@
 
 <%#-------Module Create User depending on company-------%>
 <section class="mod-onboarding create-user" id="screenUser" style="display:none; background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>);">
-  <div class="container">
-    <!--Row heading-->
-    <div class="row justify-content-center">
-      <div class="col-md-6 d-flex justify-content-center">
-        <div class="mod-sign-in__inner">
-          <div class="mod-sign-in__heading txt-center">
-            <%= fa_icon "user" %>
-            <h2 class="main-color">Compte utilisateur</h2>
-          </div>
-          <div class="form-lay2">
-            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="mod-onboarding__inner d-flex align-items-center">
+    <div class="container">
+      <!--Row heading-->
+      <div class="row justify-content-center">
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="mod-sign-in__inner">
+            <div class="mod-sign-in__heading txt-center">
+              <%= fa_icon "user" %>
+              <h2 class="main-color">Compte utilisateur</h2>
+            </div>
+            <div class="form-lay2">
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
 
-            <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
-              <div class="form-lay2__input half border-box">
-                <%= f.input :firstname, :label => "Prénom" %>
+              <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
+                <div class="form-lay2__input half border-box">
+                  <%= f.input :firstname, :label => "Prénom" %>
+                </div>
+                <div class="form-lay2__input half border-box">
+                  <%= f.input :lastname, :label => "Nom"  %>
+                </div>
               </div>
-              <div class="form-lay2__input half border-box">
-                <%= f.input :lastname, :label => "Nom"  %>
+              <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
+                <div class="form-lay2__input full border-box">
+                  <%= f.input :email, autofocus: true, autocomplete: "email", :label => "Email" %>
+                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>En attente de confirmation pour : <%= resource.unconfirmed_email %></div>
+                  <% end %>
+                </div>
               </div>
-            </div>
-            <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
-              <div class="form-lay2__input full border-box">
-                <%= f.input :email, autofocus: true, autocomplete: "email", :label => "Email" %>
-                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <div>En attente de confirmation pour : <%= resource.unconfirmed_email %></div>
+              <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
+                <div class="form-lay2__input full border-box">
+                  <%= f.input :password, autocomplete: "new-password", :label => "Nouveau mot de passe" %>
+                  <% if @minimum_password_length %>
+                  <em><%= @minimum_password_length %> charactères au minimum</em>
+                  <% end %>
+                </div>
+              </div>
+              <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
+                <div class="form-lay2__input full border-box">
+                  <%= f.input :password_confirmation, autocomplete: "new-password", :label => "Confirmer le mot de passe" %>
+                </div>
+              </div>
+              <div class="form-lay2__hidden-fields">
+                <%= f.input :company_id, class: "company-id" %>
+              </div>
+              <div class="form-lay2__action txt-center">
+                <%= f.submit "Créer votre compte" %>
                 <% end %>
               </div>
-            </div>
-            <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
-              <div class="form-lay2__input full border-box">
-                <%= f.input :password, autocomplete: "new-password", :label => "Nouveau mot de passe" %>
-                <% if @minimum_password_length %>
-                <em><%= @minimum_password_length %> charactères au minimum</em>
-                <% end %>
-              </div>
-            </div>
-            <div class="form-lay2__fields d-flex flex-wrap justify-content-between">
-              <div class="form-lay2__input full border-box">
-                <%= f.input :password_confirmation, autocomplete: "new-password", :label => "Confirmer le mot de passe" %>
-              </div>
-            </div>
-            <div class="form-lay2__hidden-fields">
-              <%= f.input :company_id, class: "company-id" %>
-            </div>
-            <div class="form-lay2__action txt-center">
-              <%= f.submit "Créer votre compte" %>
-              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 

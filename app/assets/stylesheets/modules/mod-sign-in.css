@@ -1,5 +1,4 @@
 .mod-onboarding {
-    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,6 +14,10 @@
     content: "";
     background: #fff;
     opacity: .5;
+}
+
+.mod-onboarding__inner {
+    min-height: calc(100vh - 180px);
 }
 
 .mod-sign-in__inner {
