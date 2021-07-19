@@ -148,9 +148,27 @@
 
 
 <script>
+  let autocomplete;
+
   function initialize() {
     var input = document.getElementById('company_address');
-    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    const options = {
+      componentRestrictions: { country: "fr" },
+      fields: ["address_components", "geometry"],
+      types: ["address"],
+    };
+
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+
+    autocomplete.addListener("place_changed", fillInAddress);
+  }
+
+  function fillInAddress() {
+    // Get the place details from the autocomplete object.
+    const place = autocomplete.getPlace();
+
+    console.log(place);
   }
 </script>
 
