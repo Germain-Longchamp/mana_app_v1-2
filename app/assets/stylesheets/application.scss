@@ -29,6 +29,7 @@
 
 /*--Root datas--*/
 :root {
+    --root-color: #000;
     --white-color: #fff;
     --black-color: #000;
     --border-color: #b0b0b0;
@@ -76,17 +77,17 @@ a:hover {
 }
 
 /*--------- UL List Style---------*/
-ul:not(.no-styles) {
+ul:not(.no-styles, .chosen-results) {
     list-style: none;
     margin: 16px 0;
 }
 
-ul:not(.no-styles) li {
+ul:not(.no-styles, .chosen-results) li {
     position: relative;
     padding-left: 40px;
 }
 
-ul:not(.no-styles) li:before {
+ul:not(.no-styles, .chosen-results) li:before {
     position: absolute;
     content: "";
     width: 25px;
@@ -96,11 +97,30 @@ ul:not(.no-styles) li:before {
     top: 10px;
 }
 
-ul:not(.no-styles) li:not(:last-child) {
+ul:not(.no-styles, .chosen-results) li:not(:last-child) {
     margin-bottom: 8px;
 }
 
 /*--------- Form Style---------*/
 .form-group {
     margin-bottom: 0px;
+}
+
+/*--------- Chosen Style---------*/
+ul.chosen-results::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+}
+
+ul.chosen-results::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    width: 4px;
+    background-color: var(--main-color);
+}
+
+ul.chosen-results li.active-result:hover {
+    background: var(--light-grey-color);
+    color: var(--root-color);
 }

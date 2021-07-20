@@ -46,7 +46,7 @@
               <span class="filter-item-select">
                 <span class="filter-item-select__btn" data-select="tag"><% if params[:tag] %><%= params[:tag] %><% else %>Choisir<% end %> <%= fa_icon "chevron-down" %></span>
 
-                <ul class="filter-item-select__dropdown no-styles" data-select="tag">
+                <ul class="filter-item-select__dropdown no-styles scroll-overflow" data-select="tag">
                   <li><a class="d-block" href="/engines">Tous</a></li>
                   <% @tags.map(&:name).map.each do |t| %>
                   <li><a class="d-block" href="<%= tag_path(t) %>"><%= t %></a></li>
@@ -60,13 +60,18 @@
               <span>Salle :</span>
               <span class="filter-item-select">
                 <span class="filter-item-select__btn" data-select="room"><% if params[:room] %><%= params[:room] %><% else %>Choisir<% end %> <%= fa_icon "chevron-down" %></span>
-                <ul class="filter-item-select__dropdown no-styles" data-select="room">
+                <ul class="filter-item-select__dropdown no-styles scroll-overflow" data-select="room">
                   <li><a class="d-block" href="/engines">Tous</a></li>
                   <% @rooms.map(&:name).map.each do |t| %>
                   <li><a class="d-block" href="<%= room_path(t) %>"><%= t %></a></li>
                   <% end %>
                 </ul>
               </span>
+            </div>
+
+            <%# Reinitialize %>
+            <div class="mod-engines-index__filter reinitialize">
+              <%= link_to 'Supprimer les filtres', engines_path, class: "size-up-14"%>
             </div>
 
           </div>

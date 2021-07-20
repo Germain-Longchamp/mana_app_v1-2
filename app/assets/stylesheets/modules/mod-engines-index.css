@@ -75,14 +75,18 @@
     position: absolute;
     z-index: -10;
     left: 0px;
-    width: auto;
+    width: 180px;
+    height: 280px;
     list-style: none;
+    padding: 4px;
     background: #fff;
-    border: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     opacity: 0;
+    overflow: auto;
+    border-radius: 0 0 4px 4px;
     transition: all .2s ease-out;
-    overflow: scroll;
-    max-height: 500px;
 }
 
 .filter-item-select__dropdown.visible {
@@ -101,6 +105,8 @@
 
 .filter-item-select__dropdown li a {
     text-decoration: none;
+    font-size: 13px;
+    color: var(--root-color);
 }
 
 /*---Pagination---*/

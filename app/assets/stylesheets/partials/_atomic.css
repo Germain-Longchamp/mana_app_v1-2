@@ -154,3 +154,16 @@
     background: var(--border-color);
     margin: 0 10px;
 }
+
+.scroll-overflow::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+}
+
+.scroll-overflow::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    width: 4px;
+    background-color: var(--main-color);
+}
