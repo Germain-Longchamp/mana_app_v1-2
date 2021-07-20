@@ -94,11 +94,11 @@
             </div>
             <%# Engine Start Date %>
             <div class="engine-card__start-date heading-item">
-              <span class="size-up-12 fw-500 white-color">Début validité</span>
+              <span class="size-up-12 fw-500 white-color">Dernière vérification</span>
             </div>
             <%# Engine End Date %>
             <div class="engine-card__end-date heading-item">
-              <span class="size-up-12 fw-500 white-color">Fin validité</span>
+              <span class="size-up-12 fw-500 white-color">Prochaine vérification</span>
             </div>      
         </div>
       </div>
@@ -131,20 +131,31 @@
                 <% end %>
               </span>
             </div>
+            <%# Engine Start Date %>
+            <div class="engine-card__start-date">
+              <% if engine.validity_start_date %>
+              <span class="size-up-14"><%= engine.validity_start_date.strftime('%d.%m.%y') %></span>
+              <% else %>
+              <span class="size-up-14">n/a</span>
+              <% end %>
+            </div>
+            <%# Engine End Date %>
+            <div class="engine-card__end-date">
+              <% if engine.validity_end_date %>
+              <span class="size-up-14"><%= engine.validity_end_date.strftime('%d.%m.%y') %></span>
+              <% else %>
+              <span class="size-up-14">n/a</span>
+              <% end %>
+            </div>
             <%# Update Engine date %>
             <div class="engine-card__update">
-              <span>MAJ : </span><%= engine.updated_at.strftime('%d/%m/%y') %>
+              <span>MAJ : </span><%= engine.updated_at.strftime('%d.%m.%y') %>
             </div>         
             <%# Engine actions %>
             <div class="engine-card__actions">
-              <span class="engine-card__action-btn">
-                <i class="fas fa-cog"></i>
-                <div class="engine-card__action-items">
-                  <%= link_to 'Voir', engine %>
-                  <%= link_to 'Mettre à jour', edit_engine_path(engine) %>
-                  <%= link_to 'Supprimer', engine, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </div>
-              </span>
+              <%= link_to 'Voir', engine, class: "action-btn__small white" %>
+              <%= link_to 'Mettre à jour', edit_engine_path(engine), class: "action-btn__small white" %>
+              <%= link_to 'Supprimer', engine, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-btn__small white" %>
             </div>
         </div>
       </div>

@@ -11,16 +11,22 @@
         <h1><%=@engine.name %></h1>
         <p><%=@engine.description %></p>
         <p><small>Tags: <%= raw @engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
+
         <div>
           <%= month_calendar do |date| %>
             <%= date.strftime('%d') %>
-
             <% if date == @engine.initial_date %>
             <div>Date de mise en circulation</div>
             <% end %>
-
+            <% if date == @engine.validity_start_date %>
+            <div>Date début de validité</div>
+            <% end %>
+            <% if date == @engine.validity_end_date %>
+            <div>Date fin de validité</div>
+            <% end %>
           <% end %>
         </div>
+
       </div>
     </div>
   </div>

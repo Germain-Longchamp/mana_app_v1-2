@@ -75,7 +75,7 @@
     padding-right: 15px;
     font-size: 14px;
     font-weight: 500;
-    width: 80px;
+    width: 100px;
 }
 
 .engine-card__room i {
@@ -84,63 +84,32 @@
 
 .engine-card__start-date,
 .engine-card__end-date {
-    width: 110px;
+    width: 130px;
     padding-right: 15px;
     margin-right: 15px;
 }
 
 .engine-card__update {
     position: absolute;
-    right: 60px;
+    right: 15px;
     font-size: 12px;
     font-style: italic;
 }
 
 .engine-card__actions {
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     right: 15px;
+    transition: all .2s ease-out;
 }
 
-.engine-card__action-btn {
-    position: relative;
-    padding: 5px;
-}
-
-.engine-card__action-items {
-    position: absolute;
-    right: 0px;
-    background: var(--white-color);
-    transition: all .4s ease-out;
-    opacity: 0;
-    z-index: 0;
-}
-
-.engine-card__action-btn:hover {
-    cursor: pointer;
-}
-
-.engine-card__action-btn i {
-    transition: all .5s ease-out;
-}
-
-.engine-card__action-items {
-    padding: 10px;
-    width: 120px;
-}
-
-.engine-card__action-items a {
-    font-size: 12px;
-    display: block;
-}
-
-.engine-card__action-btn:hover i {
-    color: var(--main-color);
-}
-
-.engine-card__action-btn:hover .engine-card__action-items {
+.engine-card:hover .engine-card__actions {
     opacity: 1;
-    z-index: 10;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    visibility: visible;
+}
+
+.engine-card:hover .engine-card__update {
+    opacity: 0;
+    visibility: hidden;
 }

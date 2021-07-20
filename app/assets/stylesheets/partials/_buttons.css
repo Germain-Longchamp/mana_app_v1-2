@@ -24,6 +24,11 @@
     transition: all .3s ease-out;
 }
 
+.action-btn__small.white {
+    background: var(--white-color);
+    border: 1px solid var(--main-color);
+}
+
 /*
 ------------ @Media queries
 */
@@ -39,5 +44,9 @@
         -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    }
+
+    .action-btn__small.white:hover {
+        background: var(--white-color);
     }
 }

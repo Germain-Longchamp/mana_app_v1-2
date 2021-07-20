@@ -1,15 +1,15 @@
 /*---General Styles Modules---*/
 .mod {
-	padding-left: 270px;
-	padding-top: 50px;
-	padding-right: 50px;
-	padding-bottom: 50px;
+    padding-left: 240px;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
 }
 
 .mod h1 {
-	color: var(--main-color);
+    color: var(--main-color);
 }
 
 .mod .row.heading {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
