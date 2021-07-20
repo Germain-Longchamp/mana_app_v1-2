@@ -13,13 +13,7 @@
     border-bottom: 0px;
 }
 
-.engine-card.heading .engine-card__room, .engine-card.heading .engine-card__name {
-    color: var(--white-color);
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.engine-card.heading .engine-card__room, .engine-card.heading .engine-card__name, .engine-card.heading .engine-card__categories {
+.engine-card.heading .heading-item:not(:last-child) {
     border-right: 1px solid var(--white-color);
 }
 

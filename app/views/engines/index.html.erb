@@ -18,7 +18,7 @@
 
     <%# Row Filter Features %>
     <div class="row">
-      <div class="col-md-12 p0">
+      <div class="col-md-12">
         <div class="mod-engines-index__features">
           <%# Filters feature %>
           <div class="mod-engines-index__filters d-flex align-items-center">
@@ -46,7 +46,7 @@
               <span class="filter-item-select">
                 <span class="filter-item-select__btn" data-select="tag"><% if params[:tag] %><%= params[:tag] %><% else %>Choisir<% end %> <%= fa_icon "chevron-down" %></span>
 
-                <ul class="filter-item-select__dropdown" data-select="tag">
+                <ul class="filter-item-select__dropdown no-styles" data-select="tag">
                   <li><a class="d-block" href="/engines">Tous</a></li>
                   <% @tags.map(&:name).map.each do |t| %>
                   <li><a class="d-block" href="<%= tag_path(t) %>"><%= t %></a></li>
@@ -60,7 +60,7 @@
               <span>Salle :</span>
               <span class="filter-item-select">
                 <span class="filter-item-select__btn" data-select="room"><% if params[:room] %><%= params[:room] %><% else %>Choisir<% end %> <%= fa_icon "chevron-down" %></span>
-                <ul class="filter-item-select__dropdown" data-select="room">
+                <ul class="filter-item-select__dropdown no-styles" data-select="room">
                   <li><a class="d-block" href="/engines">Tous</a></li>
                   <% @rooms.map(&:name).map.each do |t| %>
                   <li><a class="d-block" href="<%= room_path(t) %>"><%= t %></a></li>
@@ -76,43 +76,53 @@
 
     <%# Row Engines List %>
     <div class="row">
+
       <%# Heading list %>
       <div class="col-md-12 engine-card heading">
         <div class="engine-card__inner d-flex align-items-center">
             <%# Engine name %>
-            <div class="engine-card__name">
-              Nom
+            <div class="engine-card__name heading-item">
+              <span class="size-up-12 fw-500 white-color">Nom</span>
             </div>
             <%# Engine categories %>
-            <div class="engine-card__categories">
-              <a>Type</a>
+            <div class="engine-card__categories heading-item">
+              <span class="size-up-12 fw-500 white-color">Type</span>
             </div>
             <%# Engine Room %>
-            <div class="engine-card__room">
-              <span>Salle</span>
+            <div class="engine-card__room heading-item">
+              <span class="size-up-12 fw-500 white-color">Salle</span>
+            </div>
+            <%# Engine Start Date %>
+            <div class="engine-card__start-date heading-item">
+              <span class="size-up-12 fw-500 white-color">Début validité</span>
+            </div>
+            <%# Engine End Date %>
+            <div class="engine-card__end-date heading-item">
+              <span class="size-up-12 fw-500 white-color">Fin validité</span>
             </div>      
         </div>
       </div>
+
       <% @engines.each do |engine| %>
       <div class="col-md-12 engine-card">
         <div class="engine-card__inner d-flex align-items-center">
             <%# Engine name %>
             <div class="engine-card__name">
               <% if engine.name != "" %>
-              <%= link_to engine.name, engine, :title => engine.name %>
+              <%= link_to engine.name, engine, :title => engine.name, :class => "no-decoration" %>
               <% else %>
-              <%= link_to engine.internal_name, engine, :title => engine.internal_name %>
+              <%= link_to engine.internal_name, engine, :title => engine.internal_name, :class => "no-decoration" %>
               <% end %>
             </div>
             <%# Engine categories %>
             <div class="engine-card__categories">
               <% engine.tags.map.each do |t| %>
-              <a href="<%= tag_path(t.name) %>" style="background:<%= t.tag_color %>;"><i class="fas fa-tag"></i><%= t.name %></a>
+              <a href="<%= tag_path(t.name) %>" style="background:<%= t.tag_color %>;"><%= fa_icon "tag" %><%= t.name %></a>
               <% end %>
             </div>
             <%# Engine Room %>
             <div class="engine-card__room">
-              <i class="fas fa-map-marker"></i>
+              <%= fa_icon "map-marker" %>
               <span>
                 <% if engine.room %>
                 <%= engine.room.name %>

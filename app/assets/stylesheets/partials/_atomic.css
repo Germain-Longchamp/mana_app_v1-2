@@ -7,6 +7,10 @@
     color: var(--main-color);
 }
 
+.white-color {
+    color: var(--white-color);
+}
+
 .success-color {
     color: var(--success-color);
 }
@@ -107,6 +111,22 @@
 /*---------------- 4 Padding Margin ----------------*/
 .p0 {
     padding: 0px;
+}
+
+.pl0 {
+    padding-left: 0px;
+}
+
+.pr0 {
+    padding-right: 0px;
+}
+
+.pb0 {
+    padding-bottom: 0px;
+}
+
+.pt0 {
+    padding-top: 0px;
 }
 
 .p8 {
