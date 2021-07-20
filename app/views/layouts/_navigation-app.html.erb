@@ -6,7 +6,6 @@
 			<div class="nav-app__current-user">
 				<%= fa_icon "user" %>
 				<span><%= current_user.firstname %> <%= current_user.lastname %></span>
-
 				<%= link_to user_path(current_user) do %>
 				<%= fa_icon "cog" %>
 				<% end %>
@@ -16,7 +15,7 @@
 		<%# Bord actions %>
 		<div class="nav-app__part-actions">
 			<a href="<%= board_path %>" class="nav-app__card-action <% if request.path == '/board' %>active<% end %>">
-				<i class="fab fa-trello"></i>
+				<%= fa_icon "trello" %>
 				<div class="nav-app__card-action-title">Tableau de bord</div>
 				<div class="nav-app__card-action-desc">Accéder aux donnnées compilées et actions principales</div>
 			</a>
@@ -24,7 +23,7 @@
 		<%# Engines actions %>
 		<div class="nav-app__part-actions">
 			<a href="<%= engines_path %>" class="nav-app__card-action <% if request.path == '/engines' %>active<% end %>">
-				<i class="fas fa-cubes"></i>
+				<%= fa_icon "cubes" %>
 				<div class="nav-app__card-action-title">Parc d'exploitation</div>
 				<div class="nav-app__card-action-desc">Accéder à l'ensemble des machines en exploitation sur la plateforme.</div>
 			</a>
@@ -32,7 +31,7 @@
 		<%# Organisation actions %>
 		<div class="nav-app__part-actions">
 			<a href="<%= company_path(current_user.company_id) %>" class="nav-app__card-action <% if request.path.include? '/companies' %>active<% end %>">
-				<i class="fas fa-users"></i>
+				<%= fa_icon "users" %>
 				<div class="nav-app__card-action-title">Organisation</div>
 				<div class="nav-app__card-action-desc">Accéder à la vue d'ensemble de votre organisation sur la plateforme</div>
 			</a>
@@ -40,7 +39,7 @@
 		<%# Settings actions %>
 		<div class="nav-app__part-actions last">
 			<a href="<%= settings_path %>" class="nav-app__card-action <% if request.path == '/settings' %>active<% end %>">
-				<i class="fas fa-cogs"></i>
+				<%= fa_icon "cogs" %>
 				<div class="nav-app__card-action-title">Paramètres</div>
 				<div class="nav-app__card-action-desc">Modifier les paramètres de la plateforme, du parc matériel, des utilisateurs.</div>
 			</a>

@@ -17,7 +17,7 @@
 					<span class="card-number-txt__exerg"><%= @engines.length() %></span>
 					<div class="card-number-txt__txt">machines identifiées dans le parc d'exploitation</div>
 					<div class="card-number-txt__link">
-						<a href="<%= engines_path %>">Accéder au parc d'exploitation<i class="fas fa-chevron-right"></i></a>
+						<a href="<%= engines_path %>">Accéder au parc d'exploitation<%= fa_icon "chevron-right" %></a>
 					</div>
 				</div>
 			</div>
@@ -35,7 +35,11 @@
 								<% end %>
 							</div>
 							<div>le <%= engine.updated_at.strftime('%d/%m/%y') %></div>
-							<span class="card-listing__item-link"><%= link_to raw('<i class="far fa-eye"></i><span>Voir</span>'), engine %></span>
+							<span class="card-listing__item-link">
+								<%= link_to engine do %>
+								<%= fa_icon "eye" %>Voir
+								<% end %>								
+							</span>
 						</div>
 						<% end %>
 					</div>					
@@ -51,12 +55,9 @@
 					<div class="card-calendar__day-date">
 						<%= date.strftime('%d') %>
 					</div>
-					
 					<div class="card-calendar__list-event">
 						<% engines.each do |engine| %>
-
 						<a href="<%= edit_engine_path(engine) %>"><%= engine.name %></a>
-
 						<% end %>
 					</div>
 					<% end %>
