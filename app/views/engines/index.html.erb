@@ -10,7 +10,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h1>Parc machines <% if params[:tag] %>- <%= params[:tag] %><% end %></h1>
           <%= link_to new_engine_path, class: "action-btn__add" do %>
-            <i class="fas fa-plus"></i>Ajouter une machine      
+            <%= fa_icon "plus" %>Ajouter une machine      
           <% end %>
         </div>      
       </div>
@@ -44,7 +44,7 @@
             <div class="mod-engines-index__filter tag">
               <span>Type :</span>
               <span class="filter-item-select">
-                <span class="filter-item-select__btn" data-select="tag"><% if params[:tag] %><%= params[:tag] %><% else %>Choisir<% end %> <i class="fas fa-chevron-down"></i></span>
+                <span class="filter-item-select__btn" data-select="tag"><% if params[:tag] %><%= params[:tag] %><% else %>Choisir<% end %> <%= fa_icon "chevron-down" %></span>
 
                 <ul class="filter-item-select__dropdown" data-select="tag">
                   <li><a class="d-block" href="/engines">Tous</a></li>
@@ -59,7 +59,7 @@
             <div class="mod-engines-index__filter room">
               <span>Salle :</span>
               <span class="filter-item-select">
-                <span class="filter-item-select__btn" data-select="room"><% if params[:room] %><%= params[:room] %><% else %>Choisir<% end %> <i class="fas fa-chevron-down"></i></span>
+                <span class="filter-item-select__btn" data-select="room"><% if params[:room] %><%= params[:room] %><% else %>Choisir<% end %> <%= fa_icon "chevron-down" %></span>
                 <ul class="filter-item-select__dropdown" data-select="room">
                   <li><a class="d-block" href="/engines">Tous</a></li>
                   <% @rooms.map(&:name).map.each do |t| %>
