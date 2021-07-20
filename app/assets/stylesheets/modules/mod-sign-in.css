@@ -77,13 +77,14 @@
 }
 
 .mod-onboarding__start::-webkit-scrollbar {
-    width: 5px;
-    height: 8px;
+    width: 4px;
+    border-radius: 20px;
     background-color: transparent;
+    border: 1px solid var(--border-color);
 }
 
 .mod-onboarding__start::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    width: 5px;
+    width: 4px;
     background-color: var(--main-color);
 }
