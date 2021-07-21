@@ -29,11 +29,7 @@
 						<% if engine.validity_end_date %>
 						<div class="card-listing__item d-flex justify-content-between">
 							<div class="card-listing__item-name">
-								<% if engine.name != "" %>
-								<%= engine.name %>
-								<% else %>
-								<%= engine.internal_name %>
-								<% end %>
+								<%= engine.has_name? %>
 							</div>
 							<div>échéance : <%= engine.validity_end_date.strftime('%d/%m/%y') %></div>
 							<span class="card-listing__item-link">
@@ -53,15 +49,18 @@
 			<div class="col-md-8">
 				<div class="card-calendar" id="calendarTarget">
 					<div class="card-calendar__heading">Calendrier</div>
-					<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
-					<div class="card-calendar__day-date">
+					<%= month_calendar(events: @engines, attribute: :validity_end_date)  do |date, engines| %>
+
+					<div class="simple-calendar__day-date">
 						<%= date.strftime('%d') %>
 					</div>
-					<div class="card-calendar__list-event">
+
+					<div class="simple-calendar__list-event">
 						<% engines.each do |engine| %>
-						<a href="<%= edit_engine_path(engine) %>"><%= engine.name %></a>
+						<a href="<%= edit_engine_path(engine) %>"><%= engine.has_name? %></a>
 						<% end %>
 					</div>
+
 					<% end %>
 				</div>
 			</div>
@@ -72,11 +71,7 @@
 						<% @engines_updated.each do |engine| %>
 						<div class="card-listing__item d-flex justify-content-between">
 							<div class="card-listing__item-name restrained">
-								<% if engine.name != "" %>
-								<%= engine.name %>
-								<% else %>
-								<%= engine.internal_name %>
-								<% end %>
+								<%= engine.has_name? %>
 							</div>
 							<div>le <%= engine.updated_at.strftime('%d/%m/%y') %></div>
 							<span class="card-listing__item-link">

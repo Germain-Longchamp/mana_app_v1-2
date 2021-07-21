@@ -62,6 +62,7 @@
 .simple-calendar table .day {
     position: relative;
     border: 0px;
+    padding: 4px;
     transition: all .2s ease-out;
 }
 
@@ -69,7 +70,7 @@
     background: var(--light-grey-color);
 }
 
-.simple-calendar table .day .card-calendar__day-date {
+.simple-calendar table .day .simple-calendar__day-date {
     position: absolute;
     top: 3px;
     left: 3px;
@@ -88,8 +89,32 @@
     background: var(--main-color);
 }
 
-.simple-calendar table .today .card-calendar__day-date {
+.simple-calendar table .today .simple-calendar__day-date {
     color: #fff;
+}
+
+.simple-calendar__list-event {
+    padding: 18px 0 0 0;
+}
+
+.simple-calendar__list-event a {
+    font-size: 12px;
+    display: block;
+    overflow: hidden;
+    width: 65px;
+    white-space: nowrap;
+    margin-bottom: 5px;
+    background: var(--alert-color);
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.simple-calendar__list-event a:hover {
+    background: var(--alert-color);
+    color: var(--white-color);
+    text-decoration: none;
 }
 
 /*--Dafault classes---*/

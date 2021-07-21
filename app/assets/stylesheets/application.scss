@@ -41,6 +41,8 @@
     --success-color: #509534;
     --success-color-rgb:80, 149, 52;
     --success-dark-color:#3b7025;
+    --alert-color: #FFA500;
+    --alert-color-rgb: 255,165,0;
 }
 
 * {
@@ -123,4 +125,21 @@ ul.chosen-results::-webkit-scrollbar-thumb {
 ul.chosen-results li.active-result:hover {
     background: var(--light-grey-color);
     color: var(--root-color);
+}
+
+/*--------- Scroll bar style ---------*/
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: var(--light-grey-color);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 10px;
+    background-color: var(--light-grey-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--main-color);
 }
