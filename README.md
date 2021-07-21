@@ -2,9 +2,8 @@
 
 Crédits : 
 
-* Créer Germain Longchamp et Calvin Ponsot
+* By Germain Longchamp et Calvin Ponsot and really advices and help by Remi Calizzano aka airKlizz
 * Début du développement : 08/03/2021
-* Essai changement
 
 ## Installation
 
