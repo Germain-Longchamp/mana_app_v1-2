@@ -22,11 +22,30 @@
 				</div>
 			</div>
 			<div class="col-md-8">
-				<!-- Add next engine to update end date -->
-				<% @engines_next_update.each do |engine| %>
-				<%= engine.name %>
-				<%= engine.validity_end_date %>
-				<% end %>
+				<div class="card-listing h-100">
+					<div class="card-listing__heading">Prochaines vérifications :</div>
+					<div class="card-listing__list small">
+						<% @engines_next_update.each do |engine| %>
+						<% if engine.validity_end_date %>
+						<div class="card-listing__item d-flex justify-content-between">
+							<div class="card-listing__item-name">
+								<% if engine.name != "" %>
+								<%= engine.name %>
+								<% else %>
+								<%= engine.internal_name %>
+								<% end %>
+							</div>
+							<div>le <%= engine.validity_end_date.strftime('%d/%m/%y') %></div>
+							<span class="card-listing__item-link">
+								<%= link_to engine do %>
+								<%= fa_icon "eye" %>Voir
+								<% end %>								
+							</span>
+						</div>
+						<% end %>
+						<% end %>
+					</div>					
+				</div>
 			</div>
 		</div>
 		<!--Row 2-->
@@ -49,10 +68,10 @@
 			<div class="col-md-4">
 				<div class="card-listing h-100">
 					<div class="card-listing__heading">Dernières mises à jour :</div>
-					<div class="card-listing__list">
+					<div class="card-listing__list big">
 						<% @engines_updated.each do |engine| %>
 						<div class="card-listing__item d-flex justify-content-between">
-							<div class="card-listing__item-name">
+							<div class="card-listing__item-name restrained">
 								<% if engine.name != "" %>
 								<%= engine.name %>
 								<% else %>
