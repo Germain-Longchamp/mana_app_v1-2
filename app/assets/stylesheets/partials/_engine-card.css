@@ -32,7 +32,8 @@
 }
 
 .engine-card__name {
-    width: 250px;
+    min-width: 250px;
+    flex: 0 0 28%;
     font-weight: 600;
     padding-right: 15px;
     margin-right: 15px;
