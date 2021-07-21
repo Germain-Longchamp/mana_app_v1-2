@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
+  skip_authorize_resource :except => :read
 
   # GET /companies or /companies.json
   def index
@@ -8,9 +10,15 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1 or /companies/1.json
   def show
-    if @company.id != current_user.company_id
-      redirect_to company_path(current_user.company_id)  
-    end    
+    # if @company.id != current_user.company_id
+    #   redirect_to company_path(current_user.company_id)  
+    # else
+    #   @company = Company.find(params[:id])
+    # end    
+    @company = Company.find(params[:id])
+    if cannot? :read, @company
+      redirect_to company_path(current_user.company_id)
+    end
   end
 
   # GET /companies/new

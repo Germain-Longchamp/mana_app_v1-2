@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ edit update destroy ]
+  load_and_authorize_resource
 
   def index
     @users = User.all
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
 
  private
 
-   def set_user
+  def set_user
     @user = User.find(params[:id])
   end
 
