@@ -1,0 +1,16 @@
+.card-calendar {
+    position: relative;
+    background: var(--white-color);
+    padding: 20px;
+    border-radius: 5px;
+    height: 100%;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+}
+
+.card-calendar__heading {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
+}

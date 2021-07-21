@@ -1,0 +1,80 @@
+.card-listing {
+    background: var(--white-color);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.card-listing__heading {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-listing__list {
+    max-height: 500px;
+    overflow-y: scroll;
+    padding-right: 20px;
+}
+
+.card-listing__list.big {
+    max-height: 500px;
+}
+
+.card-listing__list.small {
+    max-height: 150px;
+}
+
+.card-listing__list::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: var(--light-grey-color);
+}
+
+.card-listing__list::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 10px;
+    background-color: var(--light-grey-color);
+}
+
+.card-listing__list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
+
+.card-listing__item {
+    font-size: 12px;
+    padding: 5px 3px;
+    transition: all .2s ease-out;
+}
+
+.card-listing__item:not(:last-child) {
+    border-bottom: 1px solid var(--light-grey-color);
+}
+
+.card-listing__item:hover {
+    background: var(--light-grey-color);
+}
+
+.card-listing__item-name {
+    max-width: 250px;
+    flex: 0 0 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-listing__item-name.restrained {
+    max-width: 120px;
+}
+
+.card-listing__item-link a i {
+    margin-right: 3px;
+    opacity: .5;
+}
+
+.card-listing__item:hover a i {
+    opacity: 1;
+    transition: all .2s ease-out;
+}
