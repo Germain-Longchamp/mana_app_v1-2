@@ -37,4 +37,17 @@ class Engine < ApplicationRecord
           Room.where(name: n.strip).first_or_create!
         end
     end
+
+    def is_valid?
+        start_date = self.validity_start_date
+        end_date = self.validity_end_date
+
+        if start_date && end_date
+            if start_date < Date.today && end_date > Date.today
+              return true 
+            else
+              return false
+            end
+        end
+    end
 end
