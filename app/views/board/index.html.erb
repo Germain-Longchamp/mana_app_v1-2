@@ -10,7 +10,7 @@
 				<h1>Tableau de bord</h1>
 			</div>
 		</div>
-		<!--Row info-->
+		<!--Row 1-->
 		<div class="row mod-board_cards">
 			<div class="col-md-4">
 				<div class="card-number-txt">
@@ -22,7 +22,32 @@
 				</div>
 			</div>
 			<div class="col-md-8">
-				<div class="card-listing">
+				<!-- Add next engine to update end date -->
+				<% @engines_next_update.each do |engine| %>
+				<%= engine.name %>
+				<%= engine.validity_end_date %>
+				<% end %>
+			</div>
+		</div>
+		<!--Row 2-->
+		<div class="row mod-board_cards">
+			<div class="col-md-8">
+				<div class="card-calendar" id="calendarTarget">
+					<div class="card-calendar__heading">Calendrier</div>
+					<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
+					<div class="card-calendar__day-date">
+						<%= date.strftime('%d') %>
+					</div>
+					<div class="card-calendar__list-event">
+						<% engines.each do |engine| %>
+						<a href="<%= edit_engine_path(engine) %>"><%= engine.name %></a>
+						<% end %>
+					</div>
+					<% end %>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card-listing h-100">
 					<div class="card-listing__heading">Dernières mises à jour :</div>
 					<div class="card-listing__list">
 						<% @engines_updated.each do |engine| %>
@@ -43,24 +68,6 @@
 						</div>
 						<% end %>
 					</div>					
-				</div>
-			</div>
-		</div>
-		<!--Row calendar-->
-		<div class="row mod-board_cards">
-			<div class="col-md-8">
-				<div class="card-calendar" id="calendarTarget">
-					<div class="card-calendar__heading">Calendrier</div>
-					<%= month_calendar(events: @engines, attribute: :initial_date)  do |date, engines| %>
-					<div class="card-calendar__day-date">
-						<%= date.strftime('%d') %>
-					</div>
-					<div class="card-calendar__list-event">
-						<% engines.each do |engine| %>
-						<a href="<%= edit_engine_path(engine) %>"><%= engine.name %></a>
-						<% end %>
-					</div>
-					<% end %>
 				</div>
 			</div>
 		</div>	

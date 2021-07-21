@@ -5,19 +5,25 @@ class EnginesController < ApplicationController
 
   # GET /engines or /engines.json
   def index
+
     # GET all tags on engines index
     @tags = Tag.where(:company_id => current_user.company_id)
+
     # GET all rooms on engines index
     @rooms = Room.where(:company_id => current_user.company_id)
+    
     # GET Engines count
     @all_engines = Engine.where(:company_id => current_user.company_id).all
 
+    # Tag Filter
     if params[:tag].present?
       @engines = Engine.where(:company_id => current_user.company_id).tagged_with(params[:tag]).paginate(page: params[:page], per_page: 20)
 
+    # Room Filter
     elsif params[:room].present?
       @engines = Engine.where(:company_id => current_user.company_id).roomed_with(params[:room]).paginate(page: params[:page], per_page: 20)
 
+    # Pagination
     elsif params[:page]
       @engines = Engine.where(:company_id => current_user.company_id).paginate(page: params[:page], per_page: 20)
 
@@ -39,7 +45,6 @@ class EnginesController < ApplicationController
 
   # GET /engines/1/edit
   def edit
-    @engine = Engine.new
   end
 
   # POST /engines or /engines.json

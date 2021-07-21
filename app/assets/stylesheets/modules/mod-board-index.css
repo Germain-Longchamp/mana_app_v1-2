@@ -62,7 +62,7 @@
 }
 
 .card-listing__list {
-    max-height: 100px;
+    max-height: 500px;
     overflow-y: scroll;
     padding-right: 20px;
 }
