@@ -15,7 +15,7 @@ Rails.application.routes.draw do
    get 'rooms/:room', to: 'engines#index', as: :room
    
    # Tags /index /create /new /destroy
-   get 'tags', to: 'tags#index'
+   get 'settings/tags', to: 'tags#index'
    post 'tags', to: 'tags#create', defaults: { format: 'js' }
    get 'tag/new', to: 'tags#new'
    get 'tag/:id/edit', to: 'tags#edit', as: :edit_tag

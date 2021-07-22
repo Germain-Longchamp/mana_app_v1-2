@@ -1,4 +1,7 @@
 /*-------Module Settings Index-------*/
+.mod-settings-index__row {
+    margin-bottom: 50px;
+}
 
 /*--Settings Row--*/
 .settings-row {

@@ -28,12 +28,20 @@
 				<div class="nav-app__card-action-desc">Accéder à l'ensemble des machines en exploitation sur la plateforme.</div>
 			</a>
 		</div>
-		<%# Organisation actions %>
+		<%# Incidents actions %>
 		<div class="nav-app__part-actions">
-			<a href="<%= company_path(current_user.company_id) %>" class="nav-app__card-action <% if request.path.include? '/companies' %>active<% end %>">
-				<%= fa_icon "users" %>
-				<div class="nav-app__card-action-title">Organisation</div>
-				<div class="nav-app__card-action-desc">Accéder à la vue d'ensemble de votre organisation sur la plateforme</div>
+			<a href="#" class="nav-app__card-action">
+				<%= fa_icon "exclamation-circle" %>
+				<div class="nav-app__card-action-title">Incidents</div>
+				<div class="nav-app__card-action-desc">Accéder à la vue d'ensemble des incidents du parc d'exploitation</div>
+			</a>
+		</div>
+		<%# Interventions actions %>
+		<div class="nav-app__part-actions">
+			<a href="#" class="nav-app__card-action">
+				<%= fa_icon "wrench" %>
+				<div class="nav-app__card-action-title">Interventions</div>
+				<div class="nav-app__card-action-desc">Accéder à la vue d'ensemble des interventions du parc d'exploitation</div>
 			</a>
 		</div>
 		<%# Settings actions %>

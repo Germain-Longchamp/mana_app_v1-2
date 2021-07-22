@@ -9,33 +9,66 @@
                 <h1>Paramètres</h1>
             </div> 
         </div>
-        <div class="row">
+        <div class="row mod-settings-index__row">
             <div class="col-md-12">
                 <div class="settings-row">
                     <div class="settings-row__heading">
                         <h2>Parc d'exploitation</h2>
                     </div>
                     <div class="settings-row__list-cards">
-                        <a href="<%= tags_path %>" class="settings-row__card">
+                        <a href="<%= settings_tags_path %>" class="settings-row__card no-decoration">
                             <div class="settings-row__card-icon">
-                                <i class="fas fa-tags"></i>
+                                <%= fa_icon 'tags' %>
                             </div>
                             <div class="settings-row__card-txt">
                                 Modifier les familles affectées aux machines
                             </div>
                             <div class="settings-row__card-arrow">
-                                <i class="fas fa-arrow-right"></i>
+                                <%= fa_icon 'arrow-right' %>
                             </div>
                         </a>
-                        <a href="<%= rooms_path %>" class="settings-row__card">
+                        <a href="<%= rooms_path %>" class="settings-row__card no-decoration">
                             <div class="settings-row__card-icon">
-                                <i class="fas fa-map-marker"></i>
+                                <%= fa_icon 'map-marker' %>
                             </div>
                             <div class="settings-row__card-txt">
                                 Modifier les salles affectées aux machines
                             </div>
                             <div class="settings-row__card-arrow">
-                                <i class="fas fa-arrow-right"></i>
+                                <%= fa_icon 'arrow-right' %>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mod-settings-index__row">
+            <div class="col-md-12">
+                <div class="settings-row">
+                    <div class="settings-row__heading">
+                        <h2>Organisation</h2>
+                    </div>
+                    <div class="settings-row__list-cards">
+                        <a href="<%= company_path(current_user.company_id) %>" class="settings-row__card no-decoration">
+                            <div class="settings-row__card-icon">
+                                <%= fa_icon 'building' %>
+                            </div>
+                            <div class="settings-row__card-txt">
+                                Vue d'ensemble de l'organisation
+                            </div>
+                            <div class="settings-row__card-arrow">
+                                <%= fa_icon 'arrow-right' %>
+                            </div>
+                        </a>
+                        <a href="<%= user_path(current_user) %>" class="settings-row__card no-decoration">
+                            <div class="settings-row__card-icon">
+                                <%= fa_icon 'user' %>
+                            </div>
+                            <div class="settings-row__card-txt">
+                                Mon compte
+                            </div>
+                            <div class="settings-row__card-arrow">
+                                <%= fa_icon 'arrow-right' %>
                             </div>
                         </a>
                     </div>
