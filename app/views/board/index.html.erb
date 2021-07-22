@@ -55,21 +55,22 @@
 						<%= date.strftime('%d') %>
 					</div>
 
-					<% @engines.each do |engine| %>
-
-					<% if date == engine.validity_end_date %>
-					<div class="simple-calendar__list-event">
-						<a href="<%= edit_engine_path(engine) %>"><%= engine.has_name? %></a>
-					</div>
-					<% end %>
+					<% @engines.each do |engine| %>					
 
 					<% if date == engine.validity_start_date %>
-					<div class="simple-calendar__list-event">
+					<div class="simple-calendar__list-event validity-start-date">
 						<a href="<%= edit_engine_path(engine) %>"><%= engine.has_name? %></a>
 					</div>
 					<% end %>
 
-					<% end %>			
+					<% if date == engine.validity_end_date %>
+					<div class="simple-calendar__list-event validity-end-date">
+						<a href="<%= edit_engine_path(engine) %>"><%= engine.has_name? %></a>
+					</div>
+					<% end %>
+
+					<% end %>
+								
 
 					<% end %>
 				</div>

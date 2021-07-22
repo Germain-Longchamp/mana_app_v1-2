@@ -62,7 +62,7 @@
 .simple-calendar table .day {
     position: relative;
     border: 0px;
-    padding: 4px;
+    padding: 25px 4px 4px 8px;
     transition: all .2s ease-out;
 }
 
@@ -93,10 +93,6 @@
     color: #fff;
 }
 
-.simple-calendar__list-event {
-    padding: 18px 0 0 0;
-}
-
 .simple-calendar__list-event a {
     font-size: 12px;
     display: block;
@@ -104,7 +100,6 @@
     width: 65px;
     white-space: nowrap;
     margin-bottom: 5px;
-    background: var(--alert-color);
     color: var(--white-color);
     text-decoration: none;
     padding: 2px;
@@ -115,6 +110,14 @@
     background: var(--alert-color);
     color: var(--white-color);
     text-decoration: none;
+}
+
+.simple-calendar__list-event.validity-start-date a {
+    background-color: var(--success-dark-color);
+}
+
+.simple-calendar__list-event.validity-end-date a {
+    background: var(--alert-color);
 }
 
 /*--Dafault classes---*/
