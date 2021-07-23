@@ -62,6 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 50px;
     font-weight: 600;
+    margin-bottom: 0px;
 }
 
 h2 {
@@ -143,4 +144,9 @@ ul.chosen-results li.active-result:hover {
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: var(--main-color);
+}
+
+/*--------- Go back row ---------*/
+.row.go-back {
+    margin-bottom: 50px;
 }

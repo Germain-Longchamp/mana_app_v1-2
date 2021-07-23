@@ -1,6 +1,8 @@
 /*----------------------------------------
 ********   Buttons Classes
 ----------------------------------------*/
+
+/*--Button action Add--*/
 .action-btn__add {
     text-decoration: none;
     border-radius: 5px;
@@ -15,6 +17,7 @@
     font-size: 14px;
 }
 
+/*--Button action Small--*/
 .action-btn__small {
     text-decoration: none;
     font-size: 12px;
@@ -27,6 +30,20 @@
 .action-btn__small.white {
     background: var(--white-color);
     border: 1px solid var(--main-color);
+}
+
+/*--Button Grey action--*/
+.action-btn__grey {
+    background-color: var(--light-grey-color);
+    color: var(--root-color);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.action-btn__grey i {
+    font-size: 12px;
 }
 
 /*
@@ -48,5 +65,11 @@
 
     .action-btn__small.white:hover {
         background: var(--white-color);
+    }
+
+    .action-btn__grey:hover {
+        background-color: var(--light-grey-color);
+        color: var(--root-color);
+        text-decoration: unerline;
     }
 }

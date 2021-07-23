@@ -22,7 +22,7 @@
 		</div>
 		<%# Engines actions %>
 		<div class="nav-app__part-actions">
-			<a href="<%= engines_path %>" class="nav-app__card-action <% if request.path == '/engines' %>active<% end %>">
+			<a href="<%= engines_path %>" class="nav-app__card-action <% if request.path.include? '/engines' %>active<% end %>">
 				<%= fa_icon "cubes" %>
 				<div class="nav-app__card-action-title">Parc d'exploitation</div>
 				<div class="nav-app__card-action-desc">Accéder à l'ensemble des machines en exploitation sur la plateforme.</div>

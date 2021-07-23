@@ -1,0 +1,18 @@
+ul.breadcrumbs {
+    list-style: none;
+}
+
+ul.breadcrumbs li {
+    display: inline-block;
+}
+
+ul.breadcrumbs li a,
+ul.breadcrumbs li span {
+    text-decoration: none;
+    color: var(--border-color);
+    font-size: 14px;
+}
+
+ul.breadcrumbs li span i {
+    font-size: 10px;
+}
