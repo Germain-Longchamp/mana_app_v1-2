@@ -14,3 +14,22 @@
     font-weight: 600;
     font-size: 18px;
 }
+
+.legend-item {
+    margin-right: 20px;
+}
+
+.legend-item .legend-item__color {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.legend-item .legend-item__color.start {
+    background-color: var(--success-dark-color);
+}
+
+.legend-item .legend-item__color.end {
+    background-color: var(--alert-color);
+}
