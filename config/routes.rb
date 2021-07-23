@@ -23,7 +23,7 @@ Rails.application.routes.draw do
    delete 'tags/:id', to: 'tags#destroy'
 
    # Routes for Rooms
-   get 'rooms', to: 'rooms#index'
+   get 'settings/rooms', to: 'rooms#index'
    post 'rooms', to: 'rooms#create'
    get 'room/new', to: 'rooms#new'
    get 'room/:id/edit', to: 'rooms#edit', as: :edit_room

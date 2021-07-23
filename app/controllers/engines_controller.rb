@@ -16,7 +16,7 @@ class EnginesController < ApplicationController
     @all_engines = Engine.where(:company_id => current_user.company_id).all
 
     # Tag Filter
-    if params[:tag].present?
+    if params[:tag].present? 
       @engines = Engine.where(:company_id => current_user.company_id).tagged_with(params[:tag]).paginate(page: params[:page], per_page: 20)
 
     # Room Filter

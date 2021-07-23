@@ -2,6 +2,10 @@
     padding-bottom: 50px;
 }
 
+.mod-engines-index__tagged {
+    font-size: 30px;
+}
+
 /*---Features row---*/
 .mod-engines-index__features {
     margin-bottom: 20px;
