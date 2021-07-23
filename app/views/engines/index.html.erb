@@ -11,7 +11,7 @@
           <h1>
             Parc machines
             <% if params[:tag] %>
-            <span class="mod-engines-index__tagged" style="background:;"> <%= params[:tag] %></span>
+            <span class="mod-engines-index__tagged"><%= fa_icon "tag" %> <%= params[:tag] %></span>
             <% end %>
           </h1>
           <%= link_to new_engine_path, class: "action-btn__add" do %>

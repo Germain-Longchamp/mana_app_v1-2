@@ -1,4 +1,6 @@
 class BoardController < ApplicationController
+	before_action :authenticate_user!
+	
 	def index
 		# GET ALL ENGINES
 		@engines = Engine.where(:company_id => current_user.company_id).all

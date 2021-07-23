@@ -4,6 +4,10 @@
 
 .mod-engines-index__tagged {
     font-size: 30px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-left: 30px;
 }
 
 /*---Features row---*/
