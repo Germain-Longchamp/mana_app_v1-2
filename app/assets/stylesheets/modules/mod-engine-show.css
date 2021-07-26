@@ -60,6 +60,12 @@
     border-radius: 8px;
 }
 
+.mod-show-engine__date-exerg i {
+    font-size: 38px;
+    opacity: .4;
+    margin-right: 8px;
+}
+
 .mod-show-engine__date.start .mod-show-engine__date-exerg {
     background: var(--success-color);
     color: var(--white-color);
