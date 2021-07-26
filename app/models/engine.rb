@@ -66,6 +66,8 @@ class Engine < ApplicationRecord
 
         if date_now < end_date
             return "#{time_left.to_i}j restants"
+        elsif date_now == end_date
+            return "Aujourd'hui"
         else
             return "#{time_left.to_i.abs}j de retard"
         end
