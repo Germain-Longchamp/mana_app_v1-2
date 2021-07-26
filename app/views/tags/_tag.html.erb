@@ -6,7 +6,7 @@
         <div style="background:<%= tag.tag_color %>;"></div>
     </div>
     <div class="sp-list-actions__item-info length">
-        <%= tag.engines.length() %> machines <% if tag.engines.length() > 0 %>(<span class="open-engines">Voir</span>)<% end %>
+        <% if tag.engines.length() > 0 %><%= tag.engines.length() %> machines (<span class="open-engines">Voir</span>)<% else %>n/a<% end %>
         <% if tag.engines.length() > 0 %>
         <%# Engines Association%>
         <div class="sp-list-actions__item-info__pop scroll-overflow">
