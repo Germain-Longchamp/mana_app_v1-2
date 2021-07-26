@@ -1,0 +1,41 @@
+.settings-card {
+    position: relative;
+    flex: 0 0 30%;
+    margin-right: 20px;
+    padding: 20px 20px 50px 20px;
+    border-radius: 8px;
+    background: var(--white-color);
+    border: 1px solid var(--dark-color);
+    transition: all .2s ease-out;
+}
+
+.settings-card:hover {
+    text-decoration: none;
+    background: var(--light-grey-color);
+}
+
+.settings-card__icon {
+    margin-bottom: 20px;
+}
+
+.settings-card__icon i {
+    color: var(--dark-color);
+    font-size: 30px;
+    transition: all .2s ease-out;
+}
+
+.settings-card__txt {
+    color: var(--dark-color);
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+.settings-card__arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+
+.settings-card__arrow i {
+    color: var(--dark-color);
+}

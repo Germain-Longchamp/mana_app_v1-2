@@ -1,8 +1,13 @@
+.mod-show-engine hr {
+    margin: 40px 0px;
+}
+
 /*---Heading section---*/
 .mod-show-engine__heading {
     border: 1px solid var(--border-color);
     padding: 20px 15px;
     border-radius: 8px;
+    margin-bottom: 30px;
 }
 
 .mod-show-engine__heading-title {
@@ -42,7 +47,6 @@
 /*---Engine section---*/
 .mod-show-engine-section {
     padding: 20px 15px;
-    margin-top: 30px;
 }
 
 .mod-show-engine-section > span {
@@ -104,4 +108,5 @@
 
 .mod-show-engine__date.end .mod-show-engine__date-exerg {
     background: var(--alert-color);
+    color: var(--white-color);
 }

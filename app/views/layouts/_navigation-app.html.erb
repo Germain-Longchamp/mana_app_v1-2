@@ -46,7 +46,7 @@
 		</div>
 		<%# Settings actions %>
 		<div class="nav-app__part-actions last">
-			<a href="<%= settings_path %>" class="nav-app__card-action <% if request.path == '/settings' %>active<% end %>">
+			<a href="<%= settings_path %>" class="nav-app__card-action <% if request.path.include? '/settings' %>active<% end %>">
 				<%= fa_icon "cogs" %>
 				<div class="nav-app__card-action-title">Paramètres</div>
 				<div class="nav-app__card-action-desc">Modifier les paramètres de la plateforme, du parc matériel, des utilisateurs.</div>

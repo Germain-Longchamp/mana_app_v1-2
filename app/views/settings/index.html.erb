@@ -9,6 +9,7 @@
                 <h1>Paramètres</h1>
             </div> 
         </div>
+        <hr>
         <div class="row mod-settings-index__row">
             <div class="col-md-12">
                 <div class="settings-row">
@@ -16,25 +17,25 @@
                         <h2>Parc d'exploitation</h2>
                     </div>
                     <div class="settings-row__list-cards">
-                        <a href="<%= settings_tags_path %>" class="settings-row__card no-decoration">
-                            <div class="settings-row__card-icon">
+                        <a href="<%= settings_tags_path %>" class="settings-card no-decoration">
+                            <div class="settings-card__icon">
                                 <%= fa_icon 'tags' %>
                             </div>
-                            <div class="settings-row__card-txt">
+                            <div class="settings-card__txt">
                                 Modifier les familles affectées aux machines
                             </div>
-                            <div class="settings-row__card-arrow">
+                            <div class="settings-card__arrow">
                                 <%= fa_icon 'arrow-right' %>
                             </div>
                         </a>
-                        <a href="<%= settings_rooms_path %>" class="settings-row__card no-decoration">
-                            <div class="settings-row__card-icon">
+                        <a href="<%= settings_rooms_path %>" class="settings-card no-decoration">
+                            <div class="settings-card__icon">
                                 <%= fa_icon 'map-marker' %>
                             </div>
-                            <div class="settings-row__card-txt">
+                            <div class="settings-card__txt">
                                 Modifier les salles affectées aux machines
                             </div>
-                            <div class="settings-row__card-arrow">
+                            <div class="settings-card__arrow">
                                 <%= fa_icon 'arrow-right' %>
                             </div>
                         </a>
@@ -42,6 +43,7 @@
                 </div>
             </div>
         </div>
+        <hr>
         <div class="row mod-settings-index__row">
             <div class="col-md-12">
                 <div class="settings-row">
@@ -49,25 +51,25 @@
                         <h2>Organisation</h2>
                     </div>
                     <div class="settings-row__list-cards">
-                        <a href="<%= company_path(current_user.company_id) %>" class="settings-row__card no-decoration">
-                            <div class="settings-row__card-icon">
+                        <a href="<%= company_path(current_user.company_id) %>" class="settings-card no-decoration">
+                            <div class="settings-card__icon">
                                 <%= fa_icon 'building' %>
                             </div>
-                            <div class="settings-row__card-txt">
+                            <div class="settings-card__txt">
                                 Vue d'ensemble de l'organisation
                             </div>
-                            <div class="settings-row__card-arrow">
+                            <div class="settings-card__arrow">
                                 <%= fa_icon 'arrow-right' %>
                             </div>
                         </a>
-                        <a href="<%= user_path(current_user) %>" class="settings-row__card no-decoration">
-                            <div class="settings-row__card-icon">
+                        <a href="<%= user_path(current_user) %>" class="settings-card no-decoration">
+                            <div class="settings-card__icon">
                                 <%= fa_icon 'user' %>
                             </div>
-                            <div class="settings-row__card-txt">
+                            <div class="settings-card__txt">
                                 Mon compte
                             </div>
-                            <div class="settings-row__card-arrow">
+                            <div class="settings-card__arrow">
                                 <%= fa_icon 'arrow-right' %>
                             </div>
                         </a>
