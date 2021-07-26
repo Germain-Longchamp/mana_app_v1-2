@@ -79,3 +79,21 @@
 .mod-show-engine__date.end .mod-show-engine__date-exerg {
     background: var(--alert-color);
 }
+
+.mod-show-engine__more {
+    padding: 20px 15px;
+    margin-top: 40px;
+}
+
+.mod-show-engine__more span {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.mod-show-engine__more-txt {
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--light-grey-color);
+}

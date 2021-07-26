@@ -9,7 +9,7 @@
 <div class="mod mod-show-engine">
   <div class="container-fluid">
 
-    <!-- Row go back -->
+    <%# Row Go Back %>
     <div class="row go-back">
       <div class="col-md-12">
         <%= link_to engines_path, class: 'action-btn__grey' do %>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <!-- Row Engine heading -->
+    <%# Row Engine heading %>
     <div class="row">
       <div class="col-md-12">
 
@@ -44,7 +44,7 @@
               <div class="mod-show-engine__heading-info-item"><span>Nom interne :</span> <%= @engine.internal_name %></div>
               <div class="mod-show-engine__heading-info-item"><span>Salle :</span> <%= @engine.room.name %></div>
               <% if @engine.initial_date %>
-              <div class="mod-show-engine__heading-info-item"><span>Mise en fonctionnement :</span> <%= @engine.initial_date.strftime('%d.%m.%y') %></div>
+              <div class="mod-show-engine__heading-info-item"><span>Qualification initiale :</span> <%= @engine.initial_date.strftime('%d.%m.%y') %></div>
               <% end %>
             </div>
           </div>
@@ -74,13 +74,22 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
+    <%# Row Engine More Infos %>
+    <% if @engine.description %>
     <div class="row">
-       
+       <div class="col-md-12">
+         <div class="mod-show-engine__more">
+          <span>Commentaires maintenance</span>
+          <div class="mod-show-engine__more-txt">
+            <%= @engine.description %>
+          </div>      
+         </div>
+       </div>
     </div>
+    <% end %>
 
   </div>
 </div>
