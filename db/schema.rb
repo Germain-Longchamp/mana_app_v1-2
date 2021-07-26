@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_26_104419) do
+ActiveRecord::Schema.define(version: 2021_07_26_104749) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_07_26_104419) do
     t.date "validity_start_date"
     t.date "validity_end_date"
     t.string "provider"
+    t.text "provider_info"
   end
 
   create_table "rooms", force: :cascade do |t|
