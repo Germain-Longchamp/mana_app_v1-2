@@ -59,13 +59,13 @@
 
 					<% if date == engine.validity_start_date %>
 					<div class="simple-calendar__list-event validity-start-date">
-						<a href="<%= edit_engine_path(engine) %>"><%= engine.has_name? %></a>
+						<%= link_to engine.has_name?, engine %>
 					</div>
 					<% end %>
 
 					<% if date == engine.validity_end_date %>
 					<div class="simple-calendar__list-event validity-end-date">
-						<a href="<%= edit_engine_path(engine) %>"><%= engine.has_name? %></a>
+						<%= link_to engine.has_name?, engine %>
 					</div>
 					<% end %>
 

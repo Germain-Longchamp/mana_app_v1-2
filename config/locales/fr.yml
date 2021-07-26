@@ -1,4 +1,13 @@
-fr:   
+fr:
   simple_calendar:
-    previous: "◀︎"
-    next: "▶︎"
+    previous: ◀︎
+    next: ▶︎
+  date:
+    formats:
+      default: '%d %B %Y'
+      long: '%e %m %Y'
+      short: '%e %b'
+    order:
+      - ':day'
+      - ':month'
+      - ':year'

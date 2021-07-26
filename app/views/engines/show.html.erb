@@ -28,7 +28,7 @@
           <li><span><%= fa_icon 'chevron-right' %></span></li>
           <li><span><%=@engine.has_name? %></span></li>
         </ul>
-        
+
         <%# Heading engine show %>
         <div class="mod-show-engine__heading d-flex align-items-start justify-content-between">
           <div class="mod-show-engine__heading-left-col">
@@ -43,7 +43,9 @@
             <div class="mod-show-engine__heading-infos">
               <div class="mod-show-engine__heading-info-item"><span>Nom interne :</span> <%= @engine.internal_name %></div>
               <div class="mod-show-engine__heading-info-item"><span>Salle :</span> <%= @engine.room.name %></div>
+              <% if @engine.initial_date %>
               <div class="mod-show-engine__heading-info-item"><span>Mise en fonctionnement :</span> <%= @engine.initial_date.strftime('%d.%m.%y') %></div>
+              <% end %>
             </div>
           </div>
           <div class="mod-show-engine__heading-action">
@@ -53,29 +55,24 @@
           </div>  
         </div>  
 
-
-      </div>
-    </div>
-
-    <!-- Next row -->
-    <div class="row">
-      <div class="col-md-12">
-        <p><%=@engine.description %></p>
-
-        <div>
-          <%= month_calendar do |date| %>
-          <%= date.strftime('%d') %>
-          <% if date == @engine.initial_date %>
-          <div>Date de mise en circulation</div>
-          <% end %>
-          <% if date == @engine.validity_start_date %>
-          <div>Date début de validité</div>
-          <% end %>
-          <% if date == @engine.validity_end_date %>
-          <div>Date fin de validité</div>
-          <% end %>
-          <% end %>
+        <%# Engine Show Dates %>
+        <div class="mod-show-engine__dates d-flex justify-content-between">
+          <%# Start date %>
+          <div class="mod-show-engine__date start border-box">
+            <span>Dernière vérification</span>
+            <div class="mod-show-engine__date-exerg">
+              <%= l @engine.validity_start_date, :format=>:default %>
+            </div>
+          </div>
+          <%# End date %>
+          <div class="mod-show-engine__date end border-box">
+            <span>Prochaine vérification</span>
+            <div class="mod-show-engine__date-exerg">
+              <%= l @engine.validity_end_date, :format=>:default %>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 
