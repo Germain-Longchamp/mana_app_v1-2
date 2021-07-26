@@ -155,6 +155,10 @@
     margin: 0 10px;
 }
 
+.scroll-overflow {
+    overflow: auto;
+}
+
 .scroll-overflow::-webkit-scrollbar {
     width: 4px;
     border-radius: 20px;

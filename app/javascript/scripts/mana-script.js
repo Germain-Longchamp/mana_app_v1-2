@@ -1,5 +1,27 @@
 $(document).on('ready turbolinks:load', function() {
 
+    //------------- Open List engines on click tags
+    $('.sp-list-actions__item').each(function() {
+        var triggerBtn = $(this).find('.open-engines');
+        var popInfo = $(this).find('.sp-list-actions__item-info__pop');
+        var othersPop = $(this).siblings().find('.sp-list-actions__item-info__pop');
+
+        triggerBtn.click(function() {
+            if (popInfo.hasClass('opened')) {
+                triggerBtn.html('Voir');
+                popInfo.removeClass('opened');
+            } else {
+                triggerBtn.html('Fermer');
+                popInfo.addClass('opened');
+                othersPop.removeClass('opened');
+            }
+
+        });
+    });
+
+
+
+
     //------------- Chosen Library
     $('#engine_tag_ids, #engine_room_id').chosen({
         max_selected_options: 1,

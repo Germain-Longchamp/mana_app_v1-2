@@ -1,9 +1,25 @@
-<tr>
-    <td><%= tag.name %></td>
-    <td><%= tag.tag_color %></td>
-    <% if tag.company_id %>
-    <td><%= tag.company.name %></td>
-    <% end %>
-    <td><%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "delete" %></td>
-    <td><%= link_to 'Mettre à jour', edit_tag_path(tag) %></td>
-</tr>
+<div class="sp-list-actions__item d-flex align-items-center">
+    <div class="sp-list-actions__item-info name">
+        <%= tag.name %>
+    </div>
+    <div class="sp-list-actions__item-info color">
+        <div style="background:<%= tag.tag_color %>;"></div>
+    </div>
+    <div class="sp-list-actions__item-info length">
+        <%= tag.engines.length() %> machines <% if tag.engines.length() > 0 %>(<span class="open-engines">Voir</span>)<% end %>
+        <% if tag.engines.length() > 0 %>
+        <%# Engines Association%>
+        <div class="sp-list-actions__item-info__pop scroll-overflow">
+            <ul class="no-styles">
+                <% tag.engines.each do |engine| %>
+                <li><%= link_to engine.has_name?, engine %></li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
+    </div>
+    <div class="sp-list-actions__item-actions">
+        <%= link_to 'Mettre à jour', edit_tag_path(tag), class: "action-btn__small white" %>
+        <%= link_to 'Supprimer', tag, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "action-btn__small white" %>     
+    </div>
+</div>

@@ -1,0 +1,102 @@
+.sp-list-actions__heading {
+    background-color: var(--light-grey-color);
+    padding: 8px 16px;
+}
+
+.sp-list-actions__heading-item {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.sp-list-actions__heading-item.name,
+.sp-list-actions__item-info.name {
+    flex: 0 0 40%;
+}
+
+.sp-list-actions__heading-item.info,
+.sp-list-actions__item-info {
+    flex: 0 0 150px;
+}
+
+.sp-list-actions__item {
+    position: relative;
+    padding: 5px 16px;
+    border-bottom: 1px solid var(--light-grey-color);
+    transition: all .2s ease-out;
+}
+
+.sp-list-actions__item:hover {
+    background: var(--light-grey-color);
+}
+
+.sp-list-actions__item-info {
+    position: relative;
+    font-size: 14px;
+}
+
+.sp-list-actions__item-info.color div {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.sp-list-actions__item-info.length span.open-engines {
+    text-decoration: underline;
+    font-size: 12px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.sp-list-actions__item-info__pop {
+    position: absolute;
+    z-index: 10;
+    top: 30px;
+    background-color: var(--light-grey-color);
+    width: 200px;
+    height: 0px;
+    border-radius: 4px;
+    transition: all .2s ease-out;
+}
+
+.sp-list-actions__item-info__pop.opened {
+    height: 120px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+}
+
+.sp-list-actions__item-info__pop ul {
+    list-style: none;
+    padding: 8px;
+    margin-bottom: 0px;
+}
+
+.sp-list-actions__item-info__pop ul li {
+    padding: 2px 0px;
+}
+
+.sp-list-actions__item-info__pop ul li:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sp-list-actions__item-info__pop ul li a {
+    color: var(--dar-color);
+    text-decoration: none;
+}
+
+.sp-list-actions__item-info__pop ul li a:hover {
+    text-decoration: underline;
+}
+
+.sp-list-actions__item-actions {
+    position: absolute;
+    right: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease-out;
+}
+
+.sp-list-actions__item:hover .sp-list-actions__item-actions {
+    opacity: 1;
+    visibility: visible;
+}

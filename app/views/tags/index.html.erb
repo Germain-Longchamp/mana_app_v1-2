@@ -2,16 +2,51 @@
 <%= render partial: '/layouts/navigation-app' %>
 
 <%#-------module Index Tag-------%>
-<section class="mod mod-tags-list">
+<section class="mod mod-tags-index">
 	<div class="container-fluid">
-		<div class="row">
+
+		<%# Row Go Back %>
+		<div class="row go-back">
 			<div class="col-md-12">
-				<h1>Types de machines</h1>
-				<table id="tagIndex">
-				  <tbody>
-				    <%= render @tags %>
-				  </tbody>
-				</table>	
+				<%= link_to settings_path, class: 'action-btn__grey' do %>
+				<%= fa_icon 'chevron-left' %> Retour
+				<% end %>
+			</div>
+		</div>
+
+		<%# Row heading %>
+		<div class="row heading">
+			<div class="col-md-12">
+
+				<%# Breadcrumbs %>
+				<ul class="breadcrumbs no-styles">
+					<li><a href="<%= settings_path %>">Paramètres</a></li>
+					<li><span><%= fa_icon 'chevron-right' %></span></li>
+					<li><span>Catégories machines</span></li>
+				</ul>
+
+				<h1>Catégories machines</h1>	
+			</div>
+		</div>
+
+		<%# Row render Tags %>
+		<div class="row">
+			<div class="col-md-10">
+				<%# Simple list for tags %>
+				<div class="mod-tags-index__list sp-list-actions">
+					<%# Simple list heading %>
+					<div class="sp-list-actions__heading d-flex">
+						<div class="sp-list-actions__heading-item name">
+							Nom
+						</div>
+						<div class="sp-list-actions__heading-item info"><%# No need to specify color %></div>
+						<div class="sp-list-actions__heading-item info">
+							Associations
+						</div>
+					</div>
+
+					<%= render @tags %>
+				</div>
 			</div>
 		</div>
 
