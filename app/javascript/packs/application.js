@@ -11,5 +11,6 @@ require("channels")
 
 import "chosen-js"
 import "../scripts/mana-script.js"
+import "../scripts/onboarding.js"
 require("trix")
 require("@rails/actiontext")
