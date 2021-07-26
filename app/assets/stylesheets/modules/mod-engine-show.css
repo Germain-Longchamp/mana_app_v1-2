@@ -1,3 +1,4 @@
+/*---Heading section---*/
 .mod-show-engine__heading {
     border: 1px solid var(--border-color);
     padding: 20px 15px;
@@ -38,20 +39,46 @@
     font-weight: 500;
 }
 
+/*---Engine section---*/
 .mod-show-engine-section {
     padding: 20px 15px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
-.mod-show-engine-section span {
+.mod-show-engine-section > span {
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 16px;
     display: block;
 }
 
+.mod-show-engine__more-txt {
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--light-grey-color);
+}
+
+.mod-show-engine__more-txt span {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.mod-show-engine__more-txt {
+    font-size: 14px;
+}
+
+/*---Engine Dates---*/
 .mod-show-engine__date {
     flex: 0 0 48%;
+}
+
+.mod-show-engine__date span {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: block;
 }
 
 .mod-show-engine__date span em {
@@ -60,13 +87,12 @@
 }
 
 .mod-show-engine__date-exerg {
-    font-size: 38px;
+    font-size: 32px;
     padding: 8px 20px;
     border-radius: 8px;
 }
 
 .mod-show-engine__date-exerg i {
-    font-size: 38px;
     opacity: .4;
     margin-right: 8px;
 }
@@ -78,17 +104,4 @@
 
 .mod-show-engine__date.end .mod-show-engine__date-exerg {
     background: var(--alert-color);
-}
-
-.mod-show-engine__more span {
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 16px;
-    display: block;
-}
-
-.mod-show-engine__more-txt {
-    padding: 16px;
-    border-radius: 8px;
-    background: var(--light-grey-color);
 }
