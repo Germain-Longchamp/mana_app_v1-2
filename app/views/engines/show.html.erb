@@ -67,7 +67,7 @@
           </div>
           <%# End date %>
           <div class="mod-show-engine__date end border-box">
-            <span>Prochaine vérification</span>
+            <span>Prochaine vérification <em>(<%= @engine.calc_time_left %>)</em></span>
             <div class="mod-show-engine__date-exerg d-flex align-items-center">
               <%= fa_icon 'calendar' %>
               <%= l @engine.validity_end_date, :format=>:default %>
@@ -76,6 +76,10 @@
         </div>
 
       </div>
+    </div>
+
+    <div class="row">
+       
     </div>
 
   </div>

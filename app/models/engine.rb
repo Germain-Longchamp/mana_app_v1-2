@@ -58,4 +58,17 @@ class Engine < ApplicationRecord
             end
         end
     end
+
+    def calc_time_left
+        end_date = self.validity_end_date
+        date_now = Date.today
+        time_left = end_date - date_now
+
+        if date_now < end_date
+            return "#{time_left.to_i}j restants"
+        else
+            return "#{time_left.to_i.abs}j de retard"
+        end
+        
+    end
 end

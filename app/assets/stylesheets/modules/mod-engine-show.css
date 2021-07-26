@@ -54,6 +54,11 @@
     display: block;
 }
 
+.mod-show-engine__date span em {
+    font-weight: 500;
+    font-size: 16px;
+}
+
 .mod-show-engine__date-exerg {
     font-size: 38px;
     padding: 8px 20px;
