@@ -13,7 +13,7 @@
     <div class="row go-back">
       <div class="col-md-12">
         <%= link_to engines_path, class: 'action-btn__grey' do %>
-          <%= fa_icon 'chevron-left' %> Retour
+        <%= fa_icon 'chevron-left' %> Retour
         <% end %>
       </div>
     </div>
@@ -22,27 +22,37 @@
     <div class="row">
       <div class="col-md-12">
 
+        <%# Breadcrumbs %>
         <ul class="breadcrumbs no-styles">
           <li><a href="<%= engines_path %>">Parc machines</a></li>
           <li><span><%= fa_icon 'chevron-right' %></span></li>
           <li><span><%=@engine.has_name? %></span></li>
         </ul>
-
-        <div class="mod-show-engine__heading d-flex align-items-center justify-content-between">
-          <div class="d-flex align-items-center">
-            <div class="mod-show-engine__heading-title">
-              <h1><%=@engine.has_name? %></h1>
+        
+        <%# Heading engine show %>
+        <div class="mod-show-engine__heading d-flex align-items-start justify-content-between">
+          <div class="mod-show-engine__heading-left-col">
+            <div class="d-flex align-items-center">
+              <div class="mod-show-engine__heading-title">
+                <h1><%=@engine.has_name? %></h1>
+              </div>
+              <div class="mod-show-engine__heading-tag" style="background-color: <%= tag_color %>;">
+                <%= fa_icon 'tag' %><%= tag_name %>
+              </div> 
             </div>
-            <div class="mod-show-engine__heading-tag" style="background-color: <%= tag_color %>;">
-              <%= fa_icon 'tag' %><%= tag_name %>
-            </div> 
+            <div class="mod-show-engine__heading-infos">
+              <div class="mod-show-engine__heading-info-item"><span>Nom interne :</span> <%= @engine.internal_name %></div>
+              <div class="mod-show-engine__heading-info-item"><span>Salle :</span> <%= @engine.room.name %></div>
+              <div class="mod-show-engine__heading-info-item"><span>Mise en fonctionnement :</span> <%= @engine.initial_date.strftime('%d.%m.%y') %></div>
+            </div>
           </div>
           <div class="mod-show-engine__heading-action">
             <%= link_to edit_engine_path(@engine), class: "action-btn__add" do %>
-              <%= fa_icon "edit" %>Modifier les informations     
+            <%= fa_icon "edit" %>Modifier les informations     
             <% end %>
-          </div>          
-        </div>       
+          </div>  
+        </div>  
+
 
       </div>
     </div>
@@ -54,16 +64,16 @@
 
         <div>
           <%= month_calendar do |date| %>
-            <%= date.strftime('%d') %>
-            <% if date == @engine.initial_date %>
-            <div>Date de mise en circulation</div>
-            <% end %>
-            <% if date == @engine.validity_start_date %>
-            <div>Date début de validité</div>
-            <% end %>
-            <% if date == @engine.validity_end_date %>
-            <div>Date fin de validité</div>
-            <% end %>
+          <%= date.strftime('%d') %>
+          <% if date == @engine.initial_date %>
+          <div>Date de mise en circulation</div>
+          <% end %>
+          <% if date == @engine.validity_start_date %>
+          <div>Date début de validité</div>
+          <% end %>
+          <% if date == @engine.validity_end_date %>
+          <div>Date fin de validité</div>
+          <% end %>
           <% end %>
         </div>
       </div>

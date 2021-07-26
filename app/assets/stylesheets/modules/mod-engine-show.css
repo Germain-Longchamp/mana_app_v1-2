@@ -25,3 +25,15 @@
     color: var(--white-color);
     font-size: 25px;
 }
+
+.mod-show-engine__heading-infos {
+    margin-top: 20px;
+}
+
+.mod-show-engine__heading-info-item {
+    font-weight: 300;
+}
+
+.mod-show-engine__heading-info-item span {
+    font-weight: 500;
+}
