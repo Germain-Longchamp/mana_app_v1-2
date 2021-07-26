@@ -54,9 +54,12 @@
             <% end %>
           </div>  
         </div>  
+      </div>
+    </div>
 
-        <%# Engine Show Dates %>
-        <div class="mod-show-engine__dates d-flex justify-content-between">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mod-show-engine__dates mod-show-engine-section d-flex justify-content-between">
           <%# Start date %>
           <div class="mod-show-engine__date start border-box">
             <span>Dernière vérification</span>
@@ -80,18 +83,29 @@
     <%# Row Engine More Infos %>
     <% if @engine.description %>
     <div class="row">
-       <div class="col-md-12">
-         <div class="mod-show-engine__more">
-          <span>Commentaires maintenance</span>
-          <div class="mod-show-engine__more-txt">
-            <%= @engine.description %>
-          </div>      
-         </div>
-       </div>
+     <div class="col-md-12">
+      <div class="mod-show-engine__more mod-show-engine-section">
+        <span>Commentaires maintenance</span>
+        <div class="mod-show-engine__more-txt">
+          <%= @engine.description %>
+        </div>      
+      </div>
     </div>
-    <% end %>
-
   </div>
+  <% end %>
+
+  <%# Row Engine Provider %>
+  <% if @engine.provider %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="mod-show-engine__provider mod-show-engine-section">
+        <span>Prestataire maintenance</span>
+      </div>
+    </div>
+  </div>
+  <% end%>
+
+</div>
 </div>
 
 

@@ -48,7 +48,22 @@
 
   <div class="form-lay1__fields d-flex justify-content-between">
     <div class="form-lay1__input full border-box">
-      <%= f.rich_text_area :description, :label => "Informations supplémentaires" %>
+      <label>Commentaires maintenance</label>
+      <%= f.rich_text_area :description %>
+    </div>
+  </div>
+
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input full border-box">
+      <label>Prestataire Maintenance</label>
+      <%= f.input :provider, :label => "Prestataire Maintenance" %>
+    </div>
+  </div>
+
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input full border-box">
+      <label>Informations Prestataire Maintenance</label>
+      <%= f.rich_text_area :provider_info %>
     </div>
   </div>
 

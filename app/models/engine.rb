@@ -4,6 +4,7 @@ class Engine < ApplicationRecord
     belongs_to :room, optional: true
     belongs_to :company
     has_rich_text :description
+    has_rich_text :provider_info
 
     def self.tagged_with(name)
         Tag.find_by!(name: name).engines
