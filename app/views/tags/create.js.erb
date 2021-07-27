@@ -1,8 +1,7 @@
-$('#formTag').removeClass('slided');
-
-$('.mod-tags-index__list').append('<%= j render @tag %>');
-
+$('#renderTags').append('<%= j render @tag %>');
 $('#messageTag').show();
+
+$('#formTag').removeClass('slided');
 
 var tagId = '<%= @tag.id %>';
 var tagName = '<%= @tag.name %>';
