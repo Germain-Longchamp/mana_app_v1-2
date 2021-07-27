@@ -51,33 +51,7 @@
                         </div>
                     </div>
                     <div id="renderRooms">
-                        <% @rooms.each do |room| %>
-                        <div class="sp-list-actions__item">
-                            <div class="d-flex align-items-center">
-                                <div class="sp-list-actions__item-info name">
-                                    <%= room.name %>
-                                </div>
-                                <div class="sp-list-actions__item-info length">
-                                    <% if room.engines.length() > 0 %><%= room.engines.length() %> machines (<span class="open-engines">Voir</span>)<% else %>n/a<% end %>
-                                    <% if room.engines.length() > 0 %>
-                                    <%# Engines Association%>
-                                    <div class="sp-list-actions__item-info__pop scroll-overflow">
-                                        <ul class="no-styles">
-                                            <% room.engines.each do |engine| %>
-                                            <li><%= link_to engine.has_name?, engine %></li>
-                                            <% end %>
-                                        </ul>
-                                    </div>
-                                    <% end %>
-                                </div>
-                                <div class="sp-list-actions__item-actions">
-                                    <%= link_to 'Mettre à jour', edit_room_path(room), class: "action-btn__small white" %>
-                                    <%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "action-btn__small white room-delete" %>     
-                                </div>
-                            </div>
-
-                        </div>
-                        <% end %>
+                        <%= render @rooms %>
                     </div>                 
                 </div>
             </div>
