@@ -5,6 +5,15 @@
 <section class="mod mod-tags-index">
 	<div class="container-fluid">
 
+		<%# Message to display when created %>
+		<div class="row" id="messageTag" style="display:none;">
+			<div class="col-md-9">
+				<div class="success-add-tag">
+					Catégorie <span id="nameTag"></span> ajouté avec succès
+				</div>		
+			</div>
+		</div>
+
 		<%# Row Go Back %>
 		<div class="row go-back">
 			<div class="col-md-12">
@@ -56,13 +65,6 @@
 					</div>
 					
 				</div>
-			</div>
-		</div>
-
-		<%# Message to display when created %>
-		<div class="row" id="messageTag" style="display:none; margin-top:100px;">
-			<div class="col-md-12">
-				Catégorie <span id="nameTag"></span> ajouté avec succès
 			</div>
 		</div>
 

@@ -63,3 +63,12 @@
     justify-content: center;
     cursor: pointer;
 }
+
+.success-add-tag {
+    padding: 12px 8px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    background: var(--success-color);
+    color: var(--white-color);
+}
