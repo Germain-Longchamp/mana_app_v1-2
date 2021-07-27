@@ -1,17 +1,39 @@
+.mod-tags-index {
+    position: relative;
+}
+
+.mod-tags-index .actions {
+    margin-top: 50px;
+}
+
 .sidebar-add-tag {
     position: fixed;
+    z-index: 5;
     top: 0;
     right: 0px;
     bottom: 0px;
-    width: 300px;
+    width: 350px;
     background: var(--white-color);
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
     overflow: hidden;
     visibility: hidden;
-    transform: translateX(300px);
+    transform: translateX(350px);
     transition: all .2s ease-out;
+}
+
+.overlay-sidebar {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 200px;
+    right: 0;
+    background: var(--light-grey-color);
+    opacity: .5;
+    display: none;
 }
 
 .sidebar-add-tag__inner {

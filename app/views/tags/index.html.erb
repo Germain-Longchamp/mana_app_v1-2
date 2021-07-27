@@ -16,7 +16,7 @@
 
 		<%# Row heading %>
 		<div class="row heading">
-			<div class="col-md-12">
+			<div class="col-md-9">
 
 				<%# Breadcrumbs %>
 				<ul class="breadcrumbs no-styles">
@@ -25,7 +25,14 @@
 					<li><span>Catégories machines</span></li>
 				</ul>
 
-				<h1>Catégories machines</h1>	
+				<div class="d-flex align-items-center justify-content-between">
+					<h1>Catégories machines</h1>
+
+					<%= link_to tag_new_path, class: "action-btn__add", remote: true do %>
+					<%= fa_icon "plus" %>Ajouter une catégorie      
+					<% end %>
+				</div>
+					
 			</div>
 		</div>
 
@@ -60,7 +67,7 @@
 		</div>
 
 		<%# Link for display form %>
-		<div class="row" id="addTag">
+		<div class="row actions" id="addTag">
 			<div class="col-md-9">
 				<div class="align-right">
 					<%= link_to tag_new_path, class: "action-btn__add", remote: true do %>
@@ -72,6 +79,7 @@
 	</div>
 
 	<%# Side bar for adding tag %>
+	<div class="overlay-sidebar"></div>
 	<div class="sidebar-add-tag" id="formTag" style="display:block;">
 		<div class="sidebar-add-tag__inner">
 			<div class="sidebar-add-tag__title">Ajouter une catégorie</div>

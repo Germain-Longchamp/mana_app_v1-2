@@ -3,6 +3,7 @@ $(document).on('ready turbolinks:load', function() {
     // ------------Close panel add tag
     $('.sidebar-add-tag__close').click(function() {
         $('#formTag').removeClass('slided');
+        $('.overlay-sidebar').hide();
     });
 
     //------------- Open List engines on click tags

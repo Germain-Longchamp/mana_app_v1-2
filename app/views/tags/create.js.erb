@@ -2,6 +2,7 @@ $('#renderTags').append('<%= j render @tag %>');
 $('#messageTag').show();
 
 $('#formTag').removeClass('slided');
+$('.overlay-sidebar').hide();
 
 var tagId = '<%= @tag.id %>';
 var tagName = '<%= @tag.name %>';

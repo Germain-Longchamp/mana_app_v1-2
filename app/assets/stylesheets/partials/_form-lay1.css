@@ -22,9 +22,10 @@
 }
 
 /*------Input styles-------*/
-.form-lay1 form .form-group label {
+.form-lay1 form .form-lay1__input label {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
+    display: block;
 }
 
 .form-lay1 form input[type="text"],
