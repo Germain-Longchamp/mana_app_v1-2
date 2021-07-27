@@ -2,37 +2,94 @@
 <%= render partial: '/layouts/navigation-app' %>
 
 <%#-------Module Index Rooms------- %>
-<div class="mod mod-index-rooms">
+<div class="mod mod-rooms-index">
     <div class="container-fluid">
+
+        <%# Row Go Back %>
+        <div class="row go-back">
+            <div class="col-md-12">
+                <%= link_to settings_path, class: 'action-btn__grey' do %>
+                <%= fa_icon 'chevron-left' %> Retour
+                <% end %>
+            </div>
+        </div>
+
         <%# Row heading %>
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Salles disponibles</h1>
-            </div>
-        </div>
-        <%# Row Listing %>
-        <div class="row">
-            <div class="col-md-12">
-                <table>
-                  <tbody>
-                    <% @rooms.each do |room| %>
-                    <tr>
-                        <td><%= room.name %></td>
-                        <td>(machines associées : <%= room.engines.length() %>)</td>
-                        <td><%= link_to 'Mettre à jour', edit_room_path(room) %></td>
-                        <td><%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "delete" %></td>
-                    </tr>
+        <div class="row heading">
+            <div class="col-md-9">
+
+                <%# Breadcrumbs %>
+                <ul class="breadcrumbs no-styles">
+                    <li><a href="<%= settings_path %>">Paramètres</a></li>
+                    <li><span><%= fa_icon 'chevron-right' %></span></li>
+                    <li><span>Salles</span></li>
+                </ul>
+
+                <div class="d-flex align-items-center justify-content-between">
+                    <h1>Salles disponibles</h1>
+
+                    <%= link_to room_new_path, class: "action-btn__add", remote: true do %>
+                    <%= fa_icon "plus" %>Ajouter une salle      
                     <% end %>
-                </tbody>
-                </table>
+                </div>
+
             </div>
         </div>
-        <%# Row Form %>
-        <div class="row" style="margin-top:40px;">
-            <div class="col-md-12">
-                <div id="newRoom">
-                    <%= link_to 'Ajouter une Salle', room_new_path, remote: true %>
-                </div>      
+
+        <%# Row render Tags %>
+        <div class="row">
+            <div class="col-md-9">
+                <%# Simple list for tags %>
+                <div class="mod-tags-index__list sp-list-actions">
+                    <%# Simple list heading %>
+                    <div class="sp-list-actions__heading d-flex">
+                        <div class="sp-list-actions__heading-item name">
+                            Nom
+                        </div>
+                        <div class="sp-list-actions__heading-item info">
+                            Associations
+                        </div>
+                    </div>
+                    <div id="renderRooms">
+                        <% @rooms.each do |room| %>
+                        <div class="sp-list-actions__item">
+                            <div class="d-flex align-items-center">
+                                <div class="sp-list-actions__item-info name">
+                                    <%= room.name %>
+                                </div>
+                                <div class="sp-list-actions__item-info length">
+                                    <% if room.engines.length() > 0 %><%= room.engines.length() %> machines (<span class="open-engines">Voir</span>)<% else %>n/a<% end %>
+                                    <% if room.engines.length() > 0 %>
+                                    <%# Engines Association%>
+                                    <div class="sp-list-actions__item-info__pop scroll-overflow">
+                                        <ul class="no-styles">
+                                            <% room.engines.each do |engine| %>
+                                            <li><%= link_to engine.has_name?, engine %></li>
+                                            <% end %>
+                                        </ul>
+                                    </div>
+                                    <% end %>
+                                </div>
+                                <div class="sp-list-actions__item-actions">
+                                    <%= link_to 'Mettre à jour', edit_room_path(room), class: "action-btn__small white" %>
+                                    <%= link_to 'Supprimer', room, method: :delete, data: { confirm: 'Are you sure?' }, remote: :true, class: "action-btn__small white room-delete" %>     
+                                </div>
+                            </div>
+
+                        </div>
+                        <% end %>
+                    </div>                 
+                </div>
+            </div>
+        </div>
+        <%# Link for display form %>
+        <div class="row actions" id="addRoom">
+            <div class="col-md-9">
+                <div class="align-right">
+                    <%= link_to room_new_path, class: "action-btn__add", remote: true do %>
+                    <%= fa_icon "plus" %>Ajouter une salle      
+                    <% end %>
+                </div>
             </div>
         </div>
     </div>
