@@ -1,4 +1,7 @@
-$('table#tagIndex tbody').append('<%= j render @tag %>');
+$('#formTag').removeClass('slided');
+
+$('.mod-tags-index__list').append('<%= j render @tag %>');
+
 $('#messageTag').show();
 
 var tagId = '<%= @tag.id %>';
@@ -7,10 +10,7 @@ var tagName = '<%= @tag.name %>';
 $('#tagNew').html(tagId);
 $('#nameTag').html(tagName);
 
-$('#addTag').show();
-$('#formTag').hide();
 $('input#tag_name').val('');
-
 
 setTimeout(
   function() 

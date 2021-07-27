@@ -1,5 +1,10 @@
 $(document).on('ready turbolinks:load', function() {
 
+    // ------------Close panel add tag
+    $('.sidebar-add-tag__close').click(function() {
+        $('#formTag').removeClass('slided');
+    });
+
     //------------- Open List engines on click tags
     $('.sp-list-actions__item').each(function() {
         var triggerBtn = $(this).find('.open-engines');
@@ -18,9 +23,6 @@ $(document).on('ready turbolinks:load', function() {
 
         });
     });
-
-
-
 
     //------------- Chosen Library
     $('#engine_tag_ids, #engine_room_id').chosen({

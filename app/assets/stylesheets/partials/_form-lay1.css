@@ -39,6 +39,18 @@
     color: #748194;
     font-size: 16px;
     margin: 0px !important;
+    font-family: "Nunito", sans-serif;
+}
+
+.form-lay1 form input[type="color"] {
+    border: 0;
+    background: none;
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    height: auto;
 }
 
 /*---Override for design engines*/
@@ -56,8 +68,41 @@
     height: 50px;
 }
 
+.form-lay1__input.color-input {
+    display: flex;
+    align-items: center;
+}
+
+.form-lay1__input.color-input label {
+    margin-right: 16px;
+}
+
+.form-lay1__input.color-input .color-wrapper {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
 /*------Chosen styles-------*/
 .form-lay1 form ul.chosen-choices {}
 
 /*------Rich text styles-------*/
 .form-lay1 form .trix-editor {}
+
+/*------Action-------*/
+.form-lay1__action {
+    text-align: right;
+}
+
+.form-lay1__action input[type="submit"] {
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    background: var(--main-color);
+    color: var(--white-color);
+    border: none;
+    text-transform: uppercase;
+    padding: 8px 24px;
+    border-radius: 8px;
+}

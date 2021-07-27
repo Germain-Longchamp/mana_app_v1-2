@@ -53,36 +53,50 @@
 		<%# Message to display when created %>
 		<div class="row" id="messageTag" style="display:none; margin-top:100px;">
 			<div class="col-md-12">
-				Famille <span id="nameTag"></span> ajouté avec succès
+				Catégorie <span id="nameTag"></span> ajouté avec succès
 			</div>
 		</div>
 
 		<%# Link for display form %>
-		<div class="row" id="addTag" style="margin-top:100px;">
-			<div class="col-md-12">
-				<%= link_to 'Ajouter une famille', tag_new_path, remote: true %>
-			</div>
-		</div>
-
-		<%# Form add tag %>
-		<div class="row" id="formTag" style="display:none; margin-top:100px;">
-			<div class="col-md-12">
-				<div class="form-add-tag">
-					<form>
-						<div class="group">
-							<label>Nom de la famille</label>
-							<input type="text" id="tag_name" name="tag[name]">
-						</div>	
-						<div class="group">
-							<label>Choix de la couleur</label>
-							<input type="color" id="tag_tag_color" name="tag[tag_color]">
-						</div>	
-						<div class="action">
-							<input type="submit" value="Ajouter" name="commit">
-						</div>	
-					</form>
+		<div class="row" id="addTag">
+			<div class="col-md-9">
+				<div class="align-right">
+					<%= link_to tag_new_path, class: "action-btn__add", remote: true do %>
+					<%= fa_icon "plus" %>Ajouter une catégorie      
+					<% end %>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<%# Side bar for adding tag %>
+	<div class="sidebar-add-tag" id="formTag" style="display:block;">
+		<div class="sidebar-add-tag__inner">
+			<div class="sidebar-add-tag__title">Ajouter une catégorie</div>
+			<hr>
+			<div class="form-lay1">
+				<form>
+					<div class="form-lay1__fields d-flex justify-content-between">
+						<div class="form-lay1__input full border-box">
+							<label>Nom</label>
+							<input type="text" id="tag_name" name="tag[name]">
+						</div>
+					</div>
+					<div class="form-lay1__fields d-flex justify-content-between">
+						<div class="form-lay1__input full border-box color-input">
+							<label>Couleur</label>
+							<div class="color-wrapper">
+								<input type="color" id="tag_tag_color" name="tag[tag_color]">
+							</div>
+							
+						</div>
+					</div>
+					<div class="form-lay1__action">
+						<input type="submit" value="Ajouter" name="commit">
+					</div>
+				</form>
+			</div>
+			<div class="sidebar-add-tag__close"><%= fa_icon 'close' %></div>
 		</div>
 	</div>
 </section>

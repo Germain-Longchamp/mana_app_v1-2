@@ -6,7 +6,7 @@ $(document).on('ready turbolinks:load', function() {
     });
 
     //------------- Create Tag with ajax // Method 2
-    $('.form-add-tag form').submit(function(e) {
+    $('.sidebar-add-tag form').submit(function(e) {
         e.preventDefault();
         datas = $(this).serializeArray();
 
