@@ -1,9 +1,9 @@
 # MANA.app
 
-Crédits : 
+Credits : 
 
 * By Germain Longchamp et Calvin Ponsot and really good advices and help by Remi Calizzano aka airKlizz
-* Début du développement : 08/03/2021
+* Developement Starting : 08/03/2021
 
 ## Installation
 
