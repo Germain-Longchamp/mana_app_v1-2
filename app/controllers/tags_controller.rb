@@ -14,7 +14,7 @@ class TagsController < ApplicationController
   # GET /engines/1/edit
   def edit
     if @tag.company_id != current_user.company_id
-      redirect_to tags_path
+      redirect_to settings_tags_path
     end
   end
 
@@ -31,7 +31,7 @@ class TagsController < ApplicationController
         format.json { render json: @tag.id }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @engine.errors, status: :unprocessable_entity }
+        format.json { render json: @tag.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -40,7 +40,7 @@ class TagsController < ApplicationController
   def update
     respond_to do |format|
       if @tag.update(tag_params)
-        format.html { redirect_to tags_url, notice: 'My Notice.' }
+        format.html { redirect_to settings_tags_url, notice: 'My Notice.' }
         format.json { render :show, status: :created, location: @tag }
         flash[:notice] = 'Tag mis à jour'
       else
