@@ -1,8 +1,9 @@
 $(document).on('ready turbolinks:load', function() {
 
     // ------------Close panel add tag
-    $('.sidebar-add-tag__close').click(function() {
+    $('.sidebar-adding__close').click(function() {
         $('#formTag').removeClass('slided');
+        $('#formRoom').removeClass('slided');
         $('.overlay-sidebar').hide();
     });
 

@@ -1,0 +1,17 @@
+$('#renderRooms').append('<%= j render @room %>');
+$('#messageRoom').show();
+
+$('#formRoom').removeClass('slided');
+$('.overlay-sidebar').hide();
+
+var roomName = '<%= @room.name %>';
+
+$('#nameRoom').html(roomName);
+
+$('input#room_name').val('');
+
+setTimeout(
+  function() 
+  {
+    $('#messageRoom').fadeOut();
+}, 2000);

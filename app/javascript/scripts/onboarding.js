@@ -1,23 +1,9 @@
+// -----Script for creating account
 $(document).on('ready turbolinks:load', function() {
 
     $('#startSignUp').click(function() {
         $('#screenStart').hide();
         $('#screenCompany').show();
-    });
-
-    //------------- Create Tag with ajax // Method 2
-    $('.sidebar-add-tag form').submit(function(e) {
-        e.preventDefault();
-        datas = $(this).serializeArray();
-
-        $.ajax({
-            type: 'POST',
-            url: '/tags',
-            data: datas,
-            success: function(data) {},
-            error: function(response) {}
-        });
-
     });
 
     //------------- Create Company with ajax // Method 2

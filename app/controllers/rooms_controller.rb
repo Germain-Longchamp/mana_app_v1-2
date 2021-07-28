@@ -27,8 +27,15 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     @room.company_id = current_user.company_id
 
-    @room.save
-    redirect_to rooms_path
+    respond_to do |format|
+      if @room.save
+        format.js
+        format.json { render json: @room.id }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @room.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update

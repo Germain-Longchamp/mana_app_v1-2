@@ -2,8 +2,17 @@
 <%= render partial: '/layouts/navigation-app' %>
 
 <%#-------Module Index Rooms------- %>
-<div class="mod mod-rooms-index">
+<section class="mod mod-rooms-index">
     <div class="container-fluid">
+
+        <%# Message to display when created %>
+        <div class="row" id="messageRoom" style="display:none;">
+            <div class="col-md-9">
+                <div class="success-adding">
+                    Salle <span id="nameRoom"></span> ajouté avec succès
+                </div>      
+            </div>
+        </div>
 
         <%# Row Go Back %>
         <div class="row go-back">
@@ -67,4 +76,27 @@
             </div>
         </div>
     </div>
-</div>
+
+    <%# Side bar for adding room %>
+    <div class="overlay-sidebar"></div>
+    <div class="sidebar-adding" id="formRoom" style="display:block;">
+        <div class="sidebar-adding__inner">
+            <div class="sidebar-adding__title">Ajouter une salle</div>
+            <hr>
+            <div class="form-lay1">
+                <form>
+                    <div class="form-lay1__fields d-flex justify-content-between">
+                        <div class="form-lay1__input full border-box">
+                            <label>Nom</label>
+                            <input type="text" id="room_name" name="room[name]">
+                        </div>
+                    </div>
+                    <div class="form-lay1__action">
+                        <input type="submit" value="Ajouter" name="commit">
+                    </div>
+                </form>
+            </div>
+            <div class="sidebar-adding__close"><%= fa_icon 'close' %></div>
+        </div>
+    </div>
+</section>
