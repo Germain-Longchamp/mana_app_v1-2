@@ -1,5 +1,6 @@
 /*---General Styles Modules---*/
 .mod {
+    position: relative;
     padding-left: 240px;
     padding-top: 50px;
     padding-right: 30px;
