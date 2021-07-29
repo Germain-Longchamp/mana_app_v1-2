@@ -10,12 +10,14 @@
         <h1><%= @company.name %></h1>
       </div>
     </div>
-    <%# Row Listing %>
+
+    <%# Row Company %>
     <div class="row">
       <div class="col-md-12">
         <%= @company.address %>
       </div>
     </div>
+
     <%# Row features %>
     <div class="row">
       <div class="col-md-12">
@@ -23,6 +25,7 @@
         <p id="notice"><%= notice %></p>
       </div>
     </div>
+
     <%# Row users belongs to current company %>
     <div class="row mod-show-company__users-encart">
       <div class="col-md-12">
@@ -61,15 +64,17 @@
         <% end %>
       </div> 
     </div>
+
     <%# Row add new users %>
     <div class="row mod-show-company__user-actions">
       <div class="col-md-12">
         <div class="align-right">
           <%= link_to new_user_path, class: "action-btn__add" do %>
-            <i class="fas fa-plus"></i>Ajouter un utilisateur       
+            <%= fa_icon 'plus' %>Ajouter un utilisateur       
           <% end %>
         </div>
       </div>
     </div>
+
   </div>
 </div>
