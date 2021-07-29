@@ -2,18 +2,39 @@
 <%= render partial: '/layouts/navigation-app' %>
 
 <%#-------Module New Room------- %>
-<div class="mod mod-new-room">
-    <div class="container">
-        <%# Row heading %>
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Modifier la salle</h1>
+<div class="mod mod-room-edit">
+    <div class="container-fluid">
+        <%# Row Go Back %>
+        <div class="row go-back">
+            <div class="col-md-9">
+                <%= link_to settings_rooms_path, class: 'action-btn__grey' do %>
+                <%= fa_icon 'chevron-left' %> Retour
+                <% end %>
             </div>
         </div>
-        <%# Row form %>
+        <%# Row heading %>
+        <div class="row heading">
+            <div class="col-md-9">
+                <%# Breadcrumbs %>
+                <ul class="breadcrumbs no-styles">
+                    <li><a href="<%= settings_path %>">Paramètres</a></li>
+                    <li><span><%= fa_icon 'chevron-right' %></span></li>
+                    <li><a href="<%= settings_rooms_path %>">Salle disponibles</a></li>
+                    <li><span><%= fa_icon 'chevron-right' %></span></li>
+                    <li><span>Modifier <%= @room.name %></span></li>
+                </ul>
+
+                <div class="d-flex align-items-center justify-content-between">
+                    <h1>Modifier la salle <%= @room.name %></h1>
+                </div>
+                    
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-12">
-                <%= render 'form', room: @room %>
+            <div class="col-md-9">
+                <div class="form-lay1">
+                    <%= render 'form', room: @room %>
+                </div>
             </div>
         </div>
     </div>
