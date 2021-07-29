@@ -1,5 +1,18 @@
 <%= simple_form_for @tag, remote: true do |f| %>
-  <%= f.input :name, :label => "Nom de la famille"  %>
-  <%= f.input :tag_color, :label => "Couleur des étiquettes" , input_html: { type: 'color' } %>  
+<div class="form-lay1__fields d-flex justify-content-between">
+  <div class="form-lay1__input full border-box">
+    <%= f.input :name, :label => "Nom"  %>
+  </div>
+</div>
+<div class="form-lay1__fields d-flex justify-content-between">
+  <div class="form-lay1__input full border-box color-input">
+    <label>Couleur</label>
+    <div class="color-wrapper">
+      <%= f.input :tag_color, :label => "Couleur des étiquettes" , input_html: { type: 'color' } %>  
+    </div>
+  </div>
+</div>
+<div class="form-lay1__action">
   <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
+</div>
 <% end %>
