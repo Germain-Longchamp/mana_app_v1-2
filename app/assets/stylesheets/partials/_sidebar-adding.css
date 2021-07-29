@@ -17,7 +17,7 @@
 
 .overlay-sidebar {
     content: "";
-    position: absolute;
+    position: fixed;
     z-index: 3;
     top: 0;
     bottom: 0;
