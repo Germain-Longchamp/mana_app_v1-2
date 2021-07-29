@@ -7,24 +7,19 @@
     <%# Row heading %>
     <div class="row">
       <div class="col-md-12">
-        <h1><%= @company.name %></h1>
+        <h1>Organisation test</h1>
       </div>
     </div>
 
     <%# Row Company %>
     <div class="row">
       <div class="col-md-12">
+        <h2><%= @company.name %></h2>
         <%= @company.address %>
       </div>
     </div>
 
-    <%# Row features %>
-    <div class="row">
-      <div class="col-md-12">
         <%= link_to 'Modifier', edit_company_path(@company) %>
-        <p id="notice"><%= notice %></p>
-      </div>
-    </div>
 
     <%# Row users belongs to current company %>
     <div class="row mod-show-company__users-encart">
