@@ -14,12 +14,14 @@
     <%# Row Company %>
     <div class="row">
       <div class="col-md-12">
-        <h2><%= @company.name %></h2>
-        <%= @company.address %>
+        <div class="mod-show-company__company-row">
+          <h2><%= @company.name %></h2>
+          <%= @company.address %>
+        </div> 
       </div>
     </div>
 
-        <%= link_to 'Modifier', edit_company_path(@company) %>
+    <%= link_to 'Modifier', edit_company_path(@company) %>
 
     <%# Row users belongs to current company %>
     <div class="row mod-show-company__users-encart">
@@ -65,7 +67,7 @@
       <div class="col-md-12">
         <div class="align-right">
           <%= link_to new_user_path, class: "action-btn__add" do %>
-            <%= fa_icon 'plus' %>Ajouter un utilisateur       
+          <%= fa_icon 'plus' %>Ajouter un utilisateur       
           <% end %>
         </div>
       </div>
