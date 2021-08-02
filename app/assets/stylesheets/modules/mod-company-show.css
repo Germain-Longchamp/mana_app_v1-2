@@ -1,3 +1,24 @@
+/*---Company show row---*/
+.mod-show-company__row-company {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.mod-show-company__row-company ul {
+    list-style: none;
+}
+
+.mod-show-company__row-company ul li {
+    font-size: 14px;
+}
+
+.mod-show-company__row-company #map {
+    width: 500px;
+    height: 300px;
+}
+
+/*---User list row---*/
 .mod-show-company__users-encart {
     margin-top: 50px;
 }

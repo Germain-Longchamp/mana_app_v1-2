@@ -4,28 +4,66 @@
 <%#-------Module Show Company------- %>
 <div class="mod mod-show-company">
   <div class="container-fluid">
+
+    <%# Row Go Back %>
+    <div class="row go-back">
+      <div class="col-md-9">
+        <%= link_to settings_path, class: 'action-btn__grey' do %>
+        <%= fa_icon 'chevron-left' %> Retour
+        <% end %>
+      </div>
+    </div>
+
     <%# Row heading %>
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Organisation</h1>
+    <div class="row heading">
+      <div class="col-md-9">
+        <%# Breadcrumbs %>
+        <ul class="breadcrumbs no-styles">
+          <li><a href="<%= settings_path %>">Paramètres</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><span>Organisation</span></li>
+        </ul>
+        <%# Title %>
+        <div class="d-flex align-items-center justify-content-between">
+          <h1>Organisation</h1>
+        </div>
       </div>
     </div>
 
-    <%# Row Company %>
+    <%# Row Company show %>
     <div class="row">
-      <div class="col-md-12">
-        <div class="mod-show-company__company-row">
-          <h2><%= @company.name %></h2>
-          <%= @company.address %>
-        </div> 
+      <div class="col-md-9">
+        <div class="mod-show-company__row-company">
+          <%# Col infos %>
+          <div>
+            <h2><%= @company.name %></h2>
+            <div class="mod-show-company__company-infos">
+              <ul class="no-styles">
+                <li><span>Adresse :</span> <%= @company.address %></li>
+                <li><span>Ville : </span> <%= @company.city %></li>
+                <li><span>Code postal : </span> <%= @company.zip %></li>
+                <li>Département : </span> <%= @company.department %></li>
+              </ul>
+            </div>
+            <div>
+              <%= link_to edit_company_path(@company), class: "action-btn__add" do %>
+              <%= fa_icon 'edit' %>Modifier les informations       
+              <% end %>
+            </div> 
+          </div>
+
+          <%# Col Map %>
+          <div id="map"></div>
+
+        </div>
       </div>
     </div>
+    
 
-    <%= link_to 'Modifier', edit_company_path(@company) %>
 
     <%# Row users belongs to current company %>
     <div class="row mod-show-company__users-encart">
-      <div class="col-md-12">
+      <div class="col-md-9">
         <h2>Utilisateurs <span>(<%= @company.users.length() %>)</span></h2>
         <% if @company.users.length() > 0 %>
         <div class="mod-show-company__users-list shadowed radius5" id="usersList">
@@ -64,7 +102,7 @@
 
     <%# Row add new users %>
     <div class="row mod-show-company__user-actions">
-      <div class="col-md-12">
+      <div class="col-md-9">
         <div class="align-right">
           <%= link_to new_user_path, class: "action-btn__add" do %>
           <%= fa_icon 'plus' %>Ajouter un utilisateur       
@@ -75,3 +113,26 @@
 
   </div>
 </div>
+
+
+
+
+
+<script>
+
+  function initMap() {
+    // pick center coordinates for your map
+    var myMapCenter = {lat: -34.397, lng: 150.644};
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: myMapCenter,
+      zoom: 8
+    });
+  }
+</script>
+
+
+<!--Google Map API Call-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMoYa-Me7Ke0So2hlq5l7sdXNGtyfN20M&callback=initMap">
+  google.maps.event.addDomListener(window,'load', initMap);
+</script>

@@ -17,7 +17,6 @@
         <%# Row heading %>
         <div class="row heading">
             <div class="col-md-9">
-
                 <%# Breadcrumbs %>
                 <ul class="breadcrumbs no-styles">
                     <li><a href="<%= settings_path %>">Paramètres</a></li>
@@ -26,14 +25,12 @@
                     <li><span><%= fa_icon 'chevron-right' %></span></li>
                     <li><span>Modifier <%= @tag.name %></span></li>
                 </ul>
-
+                <%# Title %>
                 <div class="d-flex align-items-center justify-content-between">
                     <h1>Modifier <%= @tag.name %></h1>
-                </div>
-                    
+                </div>                 
             </div>
         </div>
-
 
         <div class="row">
             <div class="col-md-9">
@@ -42,9 +39,6 @@
                 </div>
             </div>
         </div>
-
-
-
 
     </div>
 </div>
