@@ -216,7 +216,6 @@
     const place = autocomplete.getPlace();
 
     // Store places variables
-    //console.log(place.address_components);
     var streetNumber = place.address_components[0].long_name;
     var streetName = place.address_components[1].long_name;
     var companyAddress = `${streetNumber} ${streetName}`;
@@ -224,6 +223,8 @@
     var departmentName = place.address_components[3].long_name;
     var zipCode = place.address_components[6].long_name;
     var countryName = place.address_components[5].long_name;
+    var companyLat = place.geometry.location.lat();
+    var companyLng = place.geometry.location.lng();
 
     //Inject values to inputs
     $('input#company_address').val(companyAddress);
