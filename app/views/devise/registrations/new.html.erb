@@ -98,6 +98,11 @@
                   </div>  
                 </div>
 
+                <div class="form-lay2__hidden-fields">
+                  <input type="text" id="company_lat" name="company[lat]">
+                  <input type="text" id="company_lng" name="company[lng]">
+                </div>
+
                 <div class="form-lay2__action txt-center">
                   <input type="submit" value="Étape suivante" name="commit">
                 </div>
@@ -232,6 +237,8 @@
     $('input#company_department').val(departmentName);
     $('input#company_zip').val(zipCode);
     $('input#company_country').val(countryName);
+    $('input#company_lat').val(companyLat);
+    $('input#company_lng').val(companyLng);
 
   }
 </script>
