@@ -33,10 +33,12 @@
     <%# Row Company show %>
     <div class="row">
       <div class="col-md-9">
-        <div class="mod-show-company__row-company">
+        <div class="mod-show-company__row-company d-flex">
+
           <%# Col infos %>
-          <div>
+          <div class="mod-show-company__row-company__col-infos border-box">
             <h2><%= @company.name %></h2>
+            <hr>
             <div class="mod-show-company__company-infos" data-lat="<%= @company.lat %>" data-lng="<%= @company.lng %>">
               <ul class="no-styles">
                 <li><span>Adresse :</span> <%= @company.address %></li>
@@ -53,8 +55,10 @@
           </div>
 
           <%# Col Map %>
-          <div id="map"></div>
-
+          <div class="mod-show-company__row-company__col-map border-box">
+            <div id="map"></div>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -119,12 +123,9 @@
 </script>
 
 <script>
-
   function initMap() {
     var companyLat = parseFloat($('.mod-show-company__company-infos').attr('data-lat'));
     var companyLng = parseFloat($('.mod-show-company__company-infos').attr('data-lng'));
-
-    // pick center coordinates for your map
     var myMapCenter = {lat:companyLat, lng:companyLng};
 
     var map = new google.maps.Map(document.getElementById('map'), {
