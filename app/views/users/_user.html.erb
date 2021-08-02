@@ -1,0 +1,31 @@
+<div class="user-card d-flex align-items-center justify-content-between">
+  <div class="user-card__infos d-flex align-items-center">
+    <% if user.avatar_file_name != nil %>
+    <div class="user-card__avatar">
+      <img class="object-fit" src="<%= user.avatar %>">
+    </div>
+    <% else %>
+    <div class="user-card__avatar p8">
+      <img class="object-fit" src="<%= asset_path 'user_default_svg.png' %>">
+    </div>
+    <% end %> 
+    <span class="user-card__id">
+      <div class="user-card__name">
+        <%= user.firstname %> <%= user.lastname %> <% if user.email == current_user.email %><span>(Vous)</span><% end %>
+      </div>    
+      <div class="user-card__email"><%= user.email %></div>
+    </span>
+    <span class="user-card__position"><%= user.position %></span>
+  </div>
+  <div class="user-card__actions">
+    <% if user == current_user %>
+    <%= link_to 'Mon comte', edit_user_registration_path(current_user) , class: "action-btn__small" %>
+    <% else %>
+    <%= link_to 'Modifier', edit_user_path(user.id), class: "action-btn__small" %>
+    <% end %>
+
+    <% if user != current_user %>
+    <%= link_to 'Supprimer', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-btn__small" %>
+    <% end %>
+  </div>
+</div>

@@ -15,6 +15,12 @@
     flex: 0 0 100%;
 }
 
+.form-lay1__hidden-fields {
+    visibility: hidden;
+    height: 0px;
+    overflow: hidden;
+}
+
 @media (min-width: 992px) {
     .form-lay1__input.half {
         flex: 0 0 48%;
@@ -29,11 +35,13 @@
 }
 
 .form-lay1 form input[type="text"],
-.form-lay1 form input[type="date"] {
+.form-lay1 form input[type="date"],
+.form-lay1 form input[type="password"] {
     font-weight: bold;
     height: 40px;
     padding: 6px 15px;
     border-radius: 5px;
+    width: 100%;
     outline: none;
     border: none;
     background: #F6F7F9;

@@ -1,0 +1,16 @@
+$('#usersList').append('<%= j render @user %>');
+$('#messageUser').show();
+
+$('#formUser').removeClass('slided');
+$('.overlay-sidebar').hide();
+
+$('input#user_firstname').val('');
+$('input#user_lastname').val('');
+$('input#user_email').val('');
+$('input#user_password').val('');
+
+setTimeout(
+  function() 
+  {
+    $('#messageUser').fadeOut();
+}, 2000);

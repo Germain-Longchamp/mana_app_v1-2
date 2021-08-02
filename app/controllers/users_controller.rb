@@ -23,8 +23,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.company_id = current_user.company_id
-    @user.save
-    redirect_to company_path(current_user.company_id)
+    
+    respond_to do |format|
+      if @user.save
+        format.js
+        format.json { render json: @user.id }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /engines/1 or /engines/1.json

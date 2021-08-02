@@ -13,6 +13,7 @@ class CompaniesController < ApplicationController
   # GET /companies/1 or /companies/1.json
   def show    
     @company = Company.find(params[:id])
+    @users = User.where(:company_id => current_user.company_id)
     if cannot? :read, @company
       redirect_to company_path(current_user.company_id)
     end
