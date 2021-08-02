@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[ show edit update ]
 
   load_and_authorize_resource
   skip_authorize_resource :except => :read
@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       if @company.save
         format.js
-        format.json { render json: @tag.id }
+        format.json { render json: @company.id }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @company.errors, status: :unprocessable_entity }
@@ -72,6 +72,6 @@ class CompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def company_params
-      params.require(:company).permit(:name, :address, :zip, :country, :department, :city)
+      params.require(:company).permit(:name, :address, :zip, :country, :department, :city, :lat, :lng)
     end
 end
