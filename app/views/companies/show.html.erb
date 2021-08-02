@@ -70,7 +70,7 @@
       <div class="col-md-9">
         <h2>Utilisateurs <span>(<%= @company.users.length() %>)</span></h2>
         <% if @company.users.length() > 0 %>
-        <div class="mod-show-company__users-list shadowed radius5" id="usersList">
+        <div class="mod-show-company__users-list" id="usersList">
           <% @company.users.each do |user| %>
           <div class="user-card d-flex align-items-center justify-content-between">
             <div class="user-card__infos d-flex align-items-center">
@@ -92,7 +92,12 @@
               <span class="user-card__position"><%= user.position %></span>
             </div>
             <div class="user-card__actions">
-              <%= link_to 'Mettre à jour', edit_user_path(user.id), class: "action-btn__small" %>
+              <% if user == current_user %>
+              <%= link_to 'Mon comte', edit_user_registration_path(current_user) , class: "action-btn__small" %>
+              <% else %>
+              <%= link_to 'Modifier', edit_user_path(user.id), class: "action-btn__small" %>
+              <% end %>
+
               <% if user != current_user %>
               <%= link_to 'Supprimer', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-btn__small" %>
               <% end %>
