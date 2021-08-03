@@ -1,19 +1,42 @@
-<%= simple_form_for(@company) do |f| %>
+<div class="form-lay1">
+  <%= simple_form_for(@company) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :city %>
-    <%= f.input :department %>
-    <%= f.input :zip %>
-    <%= f.input :country %>
+
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input full border-box">
+      <%= f.input :name, :label => "Raison sociale" %>
+    </div>
+  </div>
+
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input half border-box">
+      <%= f.input :address %>
+    </div>
+    <div class="form-lay1__input half border-box">
+      <%= f.input :city %>
+    </div>
+  </div>
+
+  <div class="form-lay1__fields d-flex justify-content-between">
+      <div class="form-lay1__input half border-box">
+        <%= f.input :department %>
+      </div>
+      <div class="form-lay1__input half border-box">
+       <%= f.input :zip %>
+     </div>
+   </div>
+
+  <div class="form-lay1__hidden-fields">
     <%= f.input :lat %>
     <%= f.input :lng %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-lay1__action">
+   <%= f.button :submit, 'Mettre à jour'  %>
   </div>
+
+
 <% end %>
+</div>

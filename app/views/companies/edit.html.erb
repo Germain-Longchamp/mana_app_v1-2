@@ -2,21 +2,87 @@
 <%= render partial: '/layouts/navigation-app' %>
 
 <%#-------Module Edit Company------- %>
-<div class="mod mod-edit-company">
+<div class="mod mod-company-edit">
   <div class="container-fluid">
-    <%# Row heading %>
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Modifier <%= @company.name %></h1>
+
+    <%# Row Go Back %>
+    <div class="row go-back">
+      <div class="col-md-9">
+        <%= link_to company_path(current_user.company_id), class: 'action-btn__grey' do %>
+        <%= fa_icon 'chevron-left' %> Retour
+        <% end %>
       </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <%= render 'form', company: @company %>
-        </div>
+
+    <%# Row heading %>
+    <div class="row heading">
+      <div class="col-md-9">
+        <%# Breadcrumbs %>
+        <ul class="breadcrumbs no-styles">
+          <li><a href="<%= settings_path %>">Paramètres</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><a href="<%= company_path(current_user.company_id) %>">Organisation</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><span>Informations entreprise</span></li>
+        </ul>
+        <%# Title %>
+        <div class="d-flex align-items-center justify-content-between">
+          <h1>Modifier les informations</h1>
+        </div>                 
+      </div>
     </div>
+
     <div class="row">
-        <%= link_to 'Show', @company %>
+      <div class="col-md-9">
+        <%= render 'form', company: @company %>
+      </div>
     </div>
+
   </div>
 </div>
+
+<!--Google Map API Call-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMoYa-Me7Ke0So2hlq5l7sdXNGtyfN20M&libraries=places&callback=initialize&sensor=false" type="text/javascript"></script>
+
+
+<script>
+  let autocomplete;
+
+  function initialize() {
+    var input = document.getElementById('company_address');
+    const options = {
+      componentRestrictions: { country: "fr" },
+      fields: ["address_components", "geometry"],
+      types: ["address"],
+    };
+
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+    autocomplete.addListener("place_changed", fillInAddress);
+  }
+
+  function fillInAddress() {
+    // Get the place details from the autocomplete object.
+    const place = autocomplete.getPlace();
+
+    // Store places variables
+    var streetNumber = place.address_components[0].long_name;
+    var streetName = place.address_components[1].long_name;
+    var companyAddress = `${streetNumber} ${streetName}`;
+    var cityName = place.address_components[2].long_name;
+    var departmentName = place.address_components[3].long_name;
+    var zipCode = place.address_components[6].long_name;
+    var countryName = place.address_components[5].long_name;
+    var companyLat = place.geometry.location.lat();
+    var companyLng = place.geometry.location.lng();
+
+    //Inject values to inputs
+    $('input#company_address').val(companyAddress);
+    $('input#company_city').val(cityName);
+    $('input#company_department').val(departmentName);
+    $('input#company_zip').val(zipCode);
+    $('input#company_country').val(countryName);
+    $('input#company_lat').val(companyLat);
+    $('input#company_lng').val(companyLng);
+
+  }
+</script>
