@@ -150,3 +150,7 @@ ul.chosen-results li.active-result:hover {
 .row.go-back {
     margin-bottom: 50px;
 }
+
+.pac-container:after {
+    display: none;
+}
