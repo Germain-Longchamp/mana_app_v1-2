@@ -3,6 +3,47 @@
 
 
 <%#-------Module Edit User-------%>
+
+<div class="mod mod-edit-user">
+  <div class="container-fluid">
+
+    <%# Row Go Back %>
+    <div class="row go-back">
+      <div class="col-md-9">
+        <%= link_to company_path(current_user.company_id), class: 'action-btn__grey' do %>
+        <%= fa_icon 'chevron-left' %> Retour
+        <% end %>
+      </div>
+    </div>
+
+    <%# Row heading %>
+    <div class="row heading">
+      <div class="col-md-9">
+        <%# Breadcrumbs %>
+        <ul class="breadcrumbs no-styles">
+          <li><a href="<%= settings_path %>">Paramètres</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><a href="<%= company_path(current_user.company_id) %>">Organisation</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><span>Mon compte</span></li>
+        </ul>
+        <%# Title %>
+        <div class="d-flex align-items-center justify-content-between">
+          <h1>Mon compte</h1>
+        </div>                 
+      </div>
+    </div>
+
+    <%# Row Form %>
+    <div class="row">
+      <div class="col-md-9">
+        
+      </div>
+    </div>
+  </div> 
+</div>
+
+
 <div class="mod mod-edit-user">
   <h1>Modifier votre compte</h1>
 
@@ -41,72 +82,3 @@
 <br>
 <%= link_to "Back", :back %>
 </div>
-
-
-
-
-<!-- OLD FORM
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="field">
-      <img src="<%= @user.avatar %>" class="avatar-user">
-      <%= f.label :avatar %><br />
-      <%= f.file_field :avatar  %>
-
-    </div>
-
-    <div class="field">
-      <%= f.label :firstname %><br />
-      <%= f.text_field :firstname  %>
-    </div>
-
-    <div class="field">
-      <%= f.label :lastname %><br />
-      <%= f.text_field :lastname  %>
-    </div>
-
-    <div class="field">
-      <%= f.label :position %> <br />
-      <%= f.text_field :position %>
-    </div>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-      <% if @minimum_password_length %>
-        <em><%= @minimum_password_length %> characters minimum</em>
-      <% end %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Update" %>
-    </div>
-  <% end %>
-
-  <h3>Cancel my account</h3>
-
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-  <%= link_to "Back", :back %>
--->
