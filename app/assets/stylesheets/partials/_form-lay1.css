@@ -36,6 +36,7 @@
 
 .form-lay1 form input[type="text"],
 .form-lay1 form input[type="date"],
+.form-lay1 form input[type="email"],
 .form-lay1 form input[type="password"] {
     font-weight: bold;
     height: 40px;

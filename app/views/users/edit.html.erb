@@ -4,22 +4,38 @@
 <%#-------Module New user------- %>
 <div class="mod mod-edit-user">
   <div class="container-fluid">
-    <%# Row heading %>
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Modifier</h1>
-        </div>
+
+    <%# Row Go Back %>
+    <div class="row go-back">
+      <div class="col-md-9">
+        <%= link_to company_path(current_user.company_id), class: 'action-btn__grey' do %>
+        <%= fa_icon 'chevron-left' %> Retour
+        <% end %>
+      </div>
     </div>
+
+    <%# Row heading %>
+    <div class="row heading">
+      <div class="col-md-9">
+        <%# Breadcrumbs %>
+        <ul class="breadcrumbs no-styles">
+          <li><a href="<%= settings_path %>">Paramètres</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><a href="<%= company_path(current_user.company_id) %>">Organisation</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><span>Informations utilisateur</span></li>
+        </ul>
+        <%# Title %>
+        <div class="d-flex align-items-center justify-content-between">
+          <h1>Modifier les informations</h1>
+        </div>                 
+      </div>
+    </div>
+
     <%# Row Form %>
     <div class="row">
-        <div class="col-md-12">
-            <%= simple_form_for @user do |f| %>
-            <%= f.input :firstname, :label => "Prénom" %>
-            <%= f.input :lastname, :label => "Nom"  %>
-            <%= f.input :position, :label => "Poste"  %>
-            <%= f.input :email, :label => "Email"  %>
-            <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
-            <% end %>
+        <div class="col-md-9">
+            <%= render 'form', user: @user %>
         </div>
     </div>
 </div> 
