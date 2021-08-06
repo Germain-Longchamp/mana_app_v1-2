@@ -37,48 +37,63 @@
     <%# Row Form %>
     <div class="row">
       <div class="col-md-9">
-        
-      </div>
-    </div>
-  </div> 
-</div>
+        <div class="form-lay1">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+          <div class="form-lay1__fields d-flex justify-content-between">
+            <div class="form-lay1__input full border-box avatar">
+             <img src="<%= @user.avatar %>" class="avatar-user">
+             <%= f.file_field :avatar %>
+           </div>
+         </div>
+
+         <div class="form-lay1__fields d-flex justify-content-between">
+          <div class="form-lay1__input half border-box">
+            <%= f.input :firstname, :label => "Prénom" %>
+          </div>
+          <div class="form-lay1__input half border-box">
+            <%= f.input :lastname, :label => "Nom"  %>
+          </div>
+        </div>
+
+        <div class="form-lay1__fields d-flex justify-content-between">
+          <div class="form-lay1__input half border-box">
+            <%= f.input :email, autofocus: true, autocomplete: "email", :label => "Email" %>
+          </div>
+          <div class="form-lay1__input half border-box">
+            <%= f.input :position, :label => "Poste"  %>
+          </div>
+        </div>
+
+        <div class="form-lay1__fields d-flex justify-content-between">
+          <div class="form-lay1__input full border-box">
+            <%= f.input :password, autocomplete: "new-password", :label => "Nouveau mot de passe" %>
+            <div class="form-lay1__info">
+              <% if @minimum_password_length %>
+              <em><%= @minimum_password_length %> characters minimum</em>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-lay1__fields d-flex justify-content-between">
+          <div class="form-lay1__input full border-box">
+            <%= f.input :current_password, autocomplete: "current-password", :label => "Mot de passe" %>
+          </div>
+        </div>
+
+        <div class="form-lay1__action">
+          <%= f.submit "Mettre à jour"%>
+       </div>
 
 
-<div class="mod mod-edit-user">
-  <h1>Modifier votre compte</h1>
+       <div class="form-lay1__error-msg">
+         <%= render "devise/shared/error_messages", resource: resource %>
+       </div>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <img src="<%= @user.avatar %>" class="avatar-user">
-  <%= f.file_field :avatar %>
-
-  <%= f.input :firstname, :label => "Prénom" %>
-
-  <%= f.input :lastname, :label => "Nom"  %>
-
-  <%= f.association :company, as: :select, collection: Company.order(:id), :label => "Entreprise" %>
-
-  <%= f.input :position, :label => "Poste"  %>
-  
-  <%= f.input :email, autofocus: true, autocomplete: "email", :label => "Email" %>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>En attente de confirmation pour : <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <%= f.input :password, autocomplete: "new-password", :label => "Nouveau mot de passe" %>
-  <% if @minimum_password_length %>
-    <em><%= @minimum_password_length %> characters minimum</em>
-  <% end %>
-
-  <%= f.input :current_password, autocomplete: "current-password", :label => "Mot de passe actuel" %>
-
-  <br>
-  <br>
-  <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary' %>
-<% end %>
-<br>
-<%= link_to "Back", :back %>
+       <% end %>
+     </div>
+   </div>
+ </div>
+</div> 
 </div>
