@@ -1,2 +1,21 @@
-<h1>Issues#index</h1>
-<p>Find me in app/views/issues/index.html.erb</p>
+<%= render partial: '/layouts/navigation-app' %>
+
+<%###### Start Module Index Engines #####%>
+<section class="mod mod-engines-index">
+  <div class="container-fluid">
+
+    <%# Row heading %>
+    <div class="row heading">
+      <div class="col-md-12 p0">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1>
+            Incidents
+          </h1>
+          <%= link_to new_issue_path, class: "action-btn__add" do %>
+            <%= fa_icon "plus" %>Enregistrer un incident    
+          <% end %>
+        </div>      
+      </div>
+    </div>
+
+</section>
