@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
    
+  get 'issues/index'
+  get 'issues/show'
+  get 'issues/new'
+  get 'issues/edit'
+  get 'issues/create'
+  get 'issues/update'
+  get 'issues/destroy'
    # Routes for Companies
    resources :companies
    
