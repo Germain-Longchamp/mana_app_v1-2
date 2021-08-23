@@ -13,7 +13,13 @@
 </head>
 
 <body>
-  <%= yield %>
+  <% if current_page?(root_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+  <%= render partial: '/layouts/navigation' %>
+  <% else %>
+  <%= render partial: '/layouts/navigation-app' %>
+  <% end %>
+
+  <%= yield %>  
 </body>
 
 </html>
