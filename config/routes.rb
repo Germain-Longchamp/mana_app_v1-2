@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
    
-  get 'issues/index'
-  get 'issues/show'
-  get 'issues/new'
-  get 'issues/edit'
-  get 'issues/create'
-  get 'issues/update'
-  get 'issues/destroy'
    # Routes for Companies
    resources :companies
    
@@ -36,6 +29,9 @@ Rails.application.routes.draw do
    get 'room/:id/edit', to: 'rooms#edit', as: :edit_room
    patch 'rooms/:id', to: 'rooms#update'
    delete 'rooms/:id', to: 'rooms#destroy'
+
+   # Routes for Issues
+   resources :issues
 
    # About pages
    get 'about', to: 'about#index'
