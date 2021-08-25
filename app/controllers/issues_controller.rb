@@ -15,8 +15,8 @@ class IssuesController < ApplicationController
     @issue = Issue.new
   end
 
-  #def edit
-  #end
+  def edit
+  end
 
   def create
     @issue = Issue.new(issue_params)

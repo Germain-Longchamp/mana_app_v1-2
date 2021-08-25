@@ -3,4 +3,5 @@
     <% if issue.engine %>
     <%= issue.engine.name %>
     <% end %>
+    <%= link_to 'Mettre à jour', edit_issue_path(issue), class: "action-btn__small white" %>
 </div>
