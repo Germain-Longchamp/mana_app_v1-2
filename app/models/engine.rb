@@ -1,8 +1,11 @@
 class Engine < ApplicationRecord
     has_many :taggings, dependent: :delete_all
     has_many :tags, through: :taggings
+    has_many :issues, dependent: :delete_all
+
     belongs_to :room, optional: true
     belongs_to :company
+
     has_rich_text :description
     has_rich_text :provider_info
 
