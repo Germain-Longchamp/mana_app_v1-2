@@ -1,0 +1,17 @@
+$('#renderIssues').append('<%= j render @issue %>');
+$('#formIssue').removeClass('slided');
+$('.overlay-sidebar').hide();
+
+var issueId = '<%= @issue.id %>';
+var issueName = '<%= @issue.name %>';
+
+$('#issueNew').html(issueId);
+$('#nameIssue').html(issueName);
+
+$('input#issue_name').val('');
+
+setTimeout(
+  function() 
+  {
+    $('#messageIssue').fadeOut();
+}, 2000);

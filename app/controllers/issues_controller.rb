@@ -22,7 +22,7 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
-        format.html { redirect_to @issue, notice: "Issue was successfully created." }
+        format.js
         format.json { render json: @issue.id }
       else
         format.html { render :new, status: :unprocessable_entity }

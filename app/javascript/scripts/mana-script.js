@@ -5,6 +5,7 @@ $(document).on('ready turbolinks:load', function() {
         $('#formTag').removeClass('slided');
         $('#formRoom').removeClass('slided');
         $('#formUser').removeClass('slided');
+        $('#formIssue').removeClass('slided');
         $('.overlay-sidebar').hide();
     });
 
