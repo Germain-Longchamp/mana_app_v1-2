@@ -9,8 +9,8 @@
           <h1>
             Incidents
           </h1>
-          <%= link_to new_issue_path, class: "action-btn__add" do %>
-            <%= fa_icon "plus" %>Enregistrer un incident    
+          <%= link_to new_issue_path, class: "action-btn__add", remote: true do %>
+          <%= fa_icon "plus" %>Enregistrer un incident    
           <% end %>
         </div>      
       </div>
@@ -19,10 +19,32 @@
     <%# Row list issues %>
     <div class="row">
       <div class="col-md-12">
-        <% @issues.each do |issue| %>
-        <%= issue.name %>
-        <% end %>
+        <div id="renderIssues">
+          <%= render @issues %>
+        </div>
       </div>
     </div>
 
-</section>
+    <%# Side bar for adding issue %>
+    <div class="overlay-sidebar"></div>
+    <div class="sidebar-adding" id="formIssue" style="display:block;">
+      <div class="sidebar-adding__inner">
+        <div class="sidebar-adding__title">Enregistrer un incident</div>
+        <hr>
+        <div class="form-lay1">
+          <form>
+            <div class="form-lay1__fields d-flex justify-content-between">
+              <div class="form-lay1__input full border-box">
+                <label>Nom</label>
+                <input type="text" id="tag_name" name="tag[name]">
+              </div>
+            </div>
+            <div class="form-lay1__action">
+              <input type="submit" value="Ajouter" name="commit">
+            </div>
+          </form>
+        </div>
+        <div class="sidebar-adding__close"><%= fa_icon 'close' %></div>
+      </div>
+    </div>
+  </section>
