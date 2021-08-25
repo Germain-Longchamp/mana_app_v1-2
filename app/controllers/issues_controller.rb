@@ -31,8 +31,17 @@ class IssuesController < ApplicationController
     end
   end
 
-  #def update
-  #end
+  def update
+    respond_to do |format|
+     if @issue.update(issue_params)
+       format.html { redirect_to issues_path, notice: 'My Notice.' }
+       format.json { render :show, status: :created, location: @issue }
+     else
+       format.html { render :edit, status: :unprocessable_entity }
+       format.json { render json: @issue.errors, status: :unprocessable_entity }
+     end
+   end
+  end
 
   def destroy
     @issue.destroy
