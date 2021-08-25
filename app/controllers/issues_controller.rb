@@ -3,7 +3,7 @@ class IssuesController < ApplicationController
   before_action :set_issue, only: %i[ edit update destroy ]
 
   def index
-    @issues = Room.where(:company_id => current_user.company_id).order('name')
+    @issues = Issue.where(:company_id => current_user.company_id).order('name')
   end
 
   #def show
@@ -22,7 +22,6 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
-        format.js
         format.json { render json: @issue.id }
       else
         format.html { render :new, status: :unprocessable_entity }

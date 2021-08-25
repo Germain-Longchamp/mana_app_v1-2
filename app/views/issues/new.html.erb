@@ -1,2 +1,13 @@
-<h1>Issues#new</h1>
-<p>Find me in app/views/issues/new.html.erb</p>
+<%#-------Module New Issue-------%>
+<div class="mod mod-tag-new">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Enregistrer un incident</h2>
+                <div>
+                    <%= render 'form', issue: @issue %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,4 +16,13 @@
       </div>
     </div>
 
+    <%# Row list issues %>
+    <div class="row">
+      <div class="col-md-12">
+        <% @issues.each do |issue| %>
+        <%= issue.name %>
+        <% end %>
+      </div>
+    </div>
+
 </section>
