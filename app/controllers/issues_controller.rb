@@ -4,6 +4,8 @@ class IssuesController < ApplicationController
 
   def index
     @issues = Issue.where(:company_id => current_user.company_id).order('name')
+    #GET ALL ENGINES
+    @engines = Engine.where(:company_id => current_user.company_id)
   end
 
   #def show
@@ -61,6 +63,6 @@ class IssuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def issue_params
-      params.require(:issue).permit(:name, :company_id)
+      params.require(:issue).permit(:name, :company_id, :engine_id)
     end
 end

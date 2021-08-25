@@ -1,1 +1,6 @@
-<%= issue.name %>
+<div style="margin-bottom:20px;">
+    <%= issue.name %> |
+    <% if issue.engine %>
+    <%= issue.engine.name %>
+    <% end %>
+</div>

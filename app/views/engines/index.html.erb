@@ -40,7 +40,7 @@
               <select id="select_name_engine">
                 <option value="<%= engines_path %>">Sélectionner</option>
                 <% @engines.each do |engine| %>
-                <option value="<%= engine_path(engine.id) %>"><% if engine.name != "" %><%= engine.name %><% else %><%= engine.internal_name %><% end %></option>
+                <option value="<%= engine_path(engine.id) %>"><%= engine.has_name? %></option>
                 <% end %>
               </select>
             </div>
