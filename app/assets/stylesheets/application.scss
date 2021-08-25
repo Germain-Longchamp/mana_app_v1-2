@@ -81,17 +81,17 @@ a:hover {
 }
 
 /*--------- UL List Style---------*/
-ul:not(.no-styles, .chosen-results) {
+ul:not(.no-styles, .chosen-results, .chosen-choices) {
     list-style: none;
     margin: 16px 0;
 }
 
-ul:not(.no-styles, .chosen-results) li {
+ul:not(.no-styles, .chosen-results, .chosen-choices) li {
     position: relative;
     padding-left: 40px;
 }
 
-ul:not(.no-styles, .chosen-results) li:before {
+ul:not(.no-styles, .chosen-results, .chosen-choices) li:before {
     position: absolute;
     content: "";
     width: 25px;
@@ -101,7 +101,7 @@ ul:not(.no-styles, .chosen-results) li:before {
     top: 10px;
 }
 
-ul:not(.no-styles, .chosen-results) li:not(:last-child) {
+ul:not(.no-styles, .chosen-results, .chosen-choices) li:not(:last-child) {
     margin-bottom: 8px;
 }
 

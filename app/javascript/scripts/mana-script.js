@@ -37,6 +37,13 @@ $(document).on('ready turbolinks:load', function() {
 
     $('#select_name_engine').chosen({
         max_selected_options: 1,
+        allow_single_deselect: true,
+    });
+
+    $('#issue_engine_id').chosen({
+        max_selected_options: 1,
+        allow_single_deselect: true,
+        width: '100%'
     });
 
     //------------- Manipulate simple calendar next and previous month

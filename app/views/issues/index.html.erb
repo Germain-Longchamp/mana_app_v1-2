@@ -51,7 +51,7 @@
             <div class="form-lay1__fields d-flex justify-content-between">
               <div class="form-lay1__input full border-box">
                 <label>Machine concerné</label>
-                <select name="issue[engine_id]" id="issue_engine_id">
+                <select name="issue[engine_id]" id="issue_engine_id" multiple="multiple">
                   <option value="">Sélectionner</option>
                   <% @engines.each do |engine| %>
                   <option value="<%= engine.id %>"><%= engine.has_name? %></option>
