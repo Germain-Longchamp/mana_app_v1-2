@@ -1,6 +1,7 @@
 class IssuesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_issue, only: %i[ edit update destroy ]
+  load_and_authorize_resource
 
   def index
     @issues = Issue.where(:company_id => current_user.company_id).order('name')
