@@ -20,6 +20,5 @@ module ManaAppV12
     config.i18n.available_locales = [:fr]
     config.i18n.default_locale = :fr
 
-    config.serve_static_assets = true
   end
 end
