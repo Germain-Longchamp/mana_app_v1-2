@@ -4,7 +4,7 @@ class IssuesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @issues = Issue.where(:company_id => current_user.company_id).order('name')
+    @issues = Issue.where(:company_id => current_user.company_id)
     #GET ALL ENGINES
     @engines = Engine.where(:company_id => current_user.company_id)
   end
