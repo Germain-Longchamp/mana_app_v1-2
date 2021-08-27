@@ -80,11 +80,73 @@
       </div>
     </div>
 
+    <hr>
+
     <%# Row issues engines %>
     <div class="row">
       <div class="col-md-12">
         <div class="mod-show-engine__issues mod-show-engine-section">
           <span>Incidents</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <%# Col Issues Progress %>
+      <div class="col-md-6">
+        <div class="mod-show-engine-section">
+          <div class="list-issues">
+            <div class="list-issues__heading unsolved"><%= fa_icon "exclamation-circle" %>En cours (<%= @progress_issues.length() %>)</div>
+            <div class="list-issues__table" id="renderIssues">
+              <% @progress_issues.each do |issue| %>
+              <div class="card-issue">
+                <div class="card-issue__metas d-flex justify-content-between align-items-start">
+                  <div class="card-issue__name"><%= issue.name %><hr></div>
+                  <div class="card-issue__engine"><%= issue.engine.name %></div>
+                </div>
+                <div class="card-issue__datetime">
+                  <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
+                </div>
+                <div class="card-issue__desc">
+                  <span>Description :</span>
+                  <div><%= issue.info %></div>
+                </div>
+                <div class="card-issue__btn">
+                  <%= link_to 'Mettre à jour', edit_issue_path(issue), class: "action-btn__small white"  %>
+                </div>    
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <%# Col Issues Resolved %>
+      <div class="col-md-6">
+        <div class="mod-show-engine-section">
+          <div class="list-issues">
+            <div class="list-issues__heading solved"><%= fa_icon "check-square" %>Résolus (<%= @resolved_issues.length() %>)</div>
+            <div class="list-issues__table">
+              <% @resolved_issues.each do |issue| %>
+              <div class="card-issue">
+                <div class="card-issue__metas d-flex justify-content-between align-items-start">
+                  <div class="card-issue__name"><%= issue.name %><hr></div>
+                  <div class="card-issue__engine"><%= issue.engine.name %></div>
+                </div>
+                <div class="card-issue__datetime">
+                  <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
+                </div>
+                <div class="card-issue__desc">
+                  <span>Description :</span>
+                  <div><%= issue.info %></div>
+                </div>
+                <div class="card-issue__btn">
+                  <%= link_to 'Mettre à jour', edit_issue_path(issue), class: "action-btn__small white"  %>
+                </div>    
+              </div>
+              <% end %>
+            </div>
+          </div>  
         </div>
       </div>
     </div>
@@ -94,37 +156,37 @@
     <%# Row Engine More Infos %>
     <% if @engine.description %>
     <div class="row">
-       <div class="col-md-12">
-        <div class="mod-show-engine__more mod-show-engine-section">
-          <span>Commentaires maintenance</span>
-          <div class="mod-show-engine__more-txt">
-            <%= @engine.description %>
-          </div>      
-        </div>
+     <div class="col-md-12">
+      <div class="mod-show-engine__more mod-show-engine-section">
+        <span>Commentaires maintenance</span>
+        <div class="mod-show-engine__more-txt">
+          <%= @engine.description %>
+        </div>      
       </div>
     </div>
-    <% end %>
-
-    <hr>
-
-    <%# Row Engine Provider %>
-    <% if @engine.provider %>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mod-show-engine__provider mod-show-engine-section">
-          <span>Prestataire maintenance</span>
-          <div class="mod-show-engine__more-txt">
-            <span><%= @engine.provider %></span>
-            <% if @engine.provider_info %>
-            <%= @engine.provider_info %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end%>
-
   </div>
+  <% end %>
+
+  <hr>
+
+  <%# Row Engine Provider %>
+  <% if @engine.provider %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="mod-show-engine__provider mod-show-engine-section">
+        <span>Prestataire maintenance</span>
+        <div class="mod-show-engine__more-txt">
+          <span><%= @engine.provider %></span>
+          <% if @engine.provider_info %>
+          <%= @engine.provider_info %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end%>
+
+</div>
 </div>
 
 

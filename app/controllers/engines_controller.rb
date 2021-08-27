@@ -36,6 +36,12 @@ class EnginesController < ApplicationController
   # GET /engines/1 or /engines/1.json
   def show
     @engine = Engine.find(params[:id])
+
+    #GET ENCOURS ISSUES
+    @progress_issues = @engine.issues.where(:status => 'encours').order("created_at DESC")
+
+    #GET RESOLVED ISSUES
+    @resolved_issues = @engine.issues.where(:status => 'resolu').order("updated_at DESC")
   end
 
   # GET /engines/new
