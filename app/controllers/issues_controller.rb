@@ -22,6 +22,7 @@ class IssuesController < ApplicationController
   def create
     @issue = Issue.new(issue_params)
     @issue.company_id = current_user.company_id
+    @issue.status = 'encours'
 
     respond_to do |format|
       if @issue.save
