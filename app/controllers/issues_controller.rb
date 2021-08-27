@@ -12,7 +12,7 @@ class IssuesController < ApplicationController
     @progress_issues = Issue.where(:status => 'encours').order("created_at DESC")
 
     #GET RESOLVED ISSUES
-    @resolved_issues = Issue.where(:status => 'resolu').order("created_at DESC")
+    @resolved_issues = Issue.where(:status => 'resolu').order("updated_at DESC")
   end
 
   #def show
