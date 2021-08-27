@@ -27,13 +27,24 @@
 
     <%# Row list progress and resolved issues %>
     <div class="row">
+      <%# Col Issues Progress %>
       <div class="col-md-6">
-        <div>En cours</div>
-        <%= render @progress_issues %>
+        <div class="list-issues">
+          <div class="list-issues__heading unsolved"><%= fa_icon "exclamation-circle" %>En cours</div>
+          <div class="list-issues__table">
+            <%= render @progress_issues %>
+          </div>
+        </div>
       </div>
+
+      <%# Col Issues Resolved %>
       <div class="col-md-6">
-        <div>Résolus</div>
-        <%= render @resolved_issues %>
+        <div class="list-issues">
+          <div class="list-issues__heading solved"><%= fa_icon "check-square" %>Résolus</div>
+          <div class="list-issues__table">
+            <%= render @resolved_issues %>
+          </div>
+        </div>        
       </div>
     </div>
 

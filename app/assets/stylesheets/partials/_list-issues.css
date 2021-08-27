@@ -1,0 +1,34 @@
+.list-issues {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.list-issues__heading {
+    padding: 8px 16px;
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.list-issues__heading i {
+    margin-right: 12px;
+}
+
+.list-issues__heading.unsolved {
+    background: #d3810d;
+}
+
+.list-issues__heading.solved {
+    background: #509534;
+}
+
+.list-issues__table {
+    padding: 16px;
+    height: 600px;
+    overflow: auto;
+}
+
+.list-issues__table::-webkit-scrollbar {
+    width: 2px;
+}
