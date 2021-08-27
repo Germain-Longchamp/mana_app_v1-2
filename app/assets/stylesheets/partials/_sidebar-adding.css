@@ -70,3 +70,13 @@
     background: var(--success-color);
     color: var(--white-color);
 }
+
+/*----Custom FOrm Adding Issue---*/
+.sidebar-adding#formIssue #trix-toolbar-1 {
+    width: 286px;
+}
+
+.sidebar-adding#formIssue ::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
+}

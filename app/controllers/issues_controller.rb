@@ -4,7 +4,7 @@ class IssuesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @issues = Issue.where(:company_id => current_user.company_id)
+    @issues = Issue.where(:company_id => current_user.company_id).order("created_at DESC")
     #GET ALL ENGINES
     @engines = Engine.where(:company_id => current_user.company_id)
   end
@@ -64,6 +64,6 @@ class IssuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def issue_params
-      params.require(:issue).permit(:name, :company_id, :engine_id)
+      params.require(:issue).permit(:name, :company_id, :engine_id, :info)
     end
 end
