@@ -30,7 +30,7 @@
       <%# Col Issues Progress %>
       <div class="col-md-6">
         <div class="list-issues">
-          <div class="list-issues__heading unsolved"><%= fa_icon "exclamation-circle" %>En cours</div>
+          <div class="list-issues__heading unsolved"><%= fa_icon "exclamation-circle" %>En cours (<%= @progress_issues.length() %>)</div>
           <div class="list-issues__table">
             <%= render @progress_issues %>
           </div>
@@ -40,7 +40,7 @@
       <%# Col Issues Resolved %>
       <div class="col-md-6">
         <div class="list-issues">
-          <div class="list-issues__heading solved"><%= fa_icon "check-square" %>Résolus</div>
+          <div class="list-issues__heading solved"><%= fa_icon "check-square" %>Résolus (<%= @resolved_issues.length() %>)</div>
           <div class="list-issues__table">
             <%= render @resolved_issues %>
           </div>

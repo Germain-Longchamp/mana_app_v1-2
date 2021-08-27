@@ -12,19 +12,6 @@
 
 <div class="form-lay1__fields d-flex justify-content-between">
   <div class="form-lay1__input full border-box">
-    <label>Description incident</label>
-    <%= f.rich_text_area :info %>
-  </div>
-</div>
-
-<div class="form-lay1__fields d-flex justify-content-between">
-  <div class="form-lay1__input full border-box">
-    <%= f.input :start_date, as: :datetime, html5: true, :label => "Date et heure de l'incident" %>
-  </div>
-</div>
-
-<div class="form-lay1__fields d-flex justify-content-between">
-  <div class="form-lay1__input full border-box">
     <%= f.input :status, as: :select, :collection => [['En cours', 'encours'], ['Résolu', 'resolu']], :label => "Statut" %>
   </div>
 </div>
