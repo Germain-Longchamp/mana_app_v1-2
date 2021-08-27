@@ -1,7 +1,9 @@
 <div style="margin-bottom:20px;">
     <%= issue.name %> |
     <% if issue.engine %>
-    <%= issue.engine.name %>
+    <%= issue.engine.name %> |
     <% end %>
+    <%= issue.start_date %> | 
+    <%= issue.info %>
     <%= link_to 'Mettre à jour', edit_issue_path(issue), class: "action-btn__small white" %>
 </div>
