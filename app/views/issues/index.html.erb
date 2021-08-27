@@ -25,12 +25,15 @@
       </div>
     </div>
 
-    <%# Row list issues %>
+    <%# Row list progress and resolved issues %>
     <div class="row">
-      <div class="col-md-12">
-        <div id="renderIssues">
-          <%= render @issues %>
-        </div>
+      <div class="col-md-6">
+        <div>En cours</div>
+        <%= render @progress_issues %>
+      </div>
+      <div class="col-md-6">
+        <div>Résolus</div>
+        <%= render @resolved_issues %>
       </div>
     </div>
 

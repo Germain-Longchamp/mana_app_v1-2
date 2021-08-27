@@ -7,6 +7,12 @@ class IssuesController < ApplicationController
     @issues = Issue.where(:company_id => current_user.company_id).order("created_at DESC")
     #GET ALL ENGINES
     @engines = Engine.where(:company_id => current_user.company_id)
+
+    #GET ENCOURS ISSUES
+    @progress_issues = Issue.where(:status => 'encours').order("created_at DESC")
+
+    #GET RESOLVED ISSUES
+    @resolved_issues = Issue.where(:status => 'resolu').order("created_at DESC")
   end
 
   #def show
