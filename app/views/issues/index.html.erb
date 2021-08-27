@@ -31,7 +31,7 @@
       <div class="col-md-6">
         <div class="list-issues">
           <div class="list-issues__heading unsolved"><%= fa_icon "exclamation-circle" %>En cours (<%= @progress_issues.length() %>)</div>
-          <div class="list-issues__table">
+          <div class="list-issues__table" id="renderIssues">
             <%= render @progress_issues %>
           </div>
         </div>

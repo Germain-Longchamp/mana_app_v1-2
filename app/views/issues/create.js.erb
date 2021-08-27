@@ -2,6 +2,8 @@ $('#renderIssues').append('<%= j render @issue %>');
 $('#formIssue').removeClass('slided');
 $('.overlay-sidebar').hide();
 
+$('#messageIssue').show();
+
 var issueId = '<%= @issue.id %>';
 var issueName = '<%= @issue.name %>';
 
