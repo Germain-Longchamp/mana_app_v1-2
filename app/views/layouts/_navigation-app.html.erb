@@ -30,7 +30,7 @@
 		</div>
 		<%# Incidents actions %>
 		<div class="nav-app__part-actions">
-			<a href="<%= issues_path %>" class="nav-app__card-action">
+			<a href="<%= issues_path %>" class="nav-app__card-action <% if request.path.include? '/issues' %>active<% end %>">
 				<%= fa_icon "exclamation-circle" %>
 				<div class="nav-app__card-action-title">Incidents</div>
 				<div class="nav-app__card-action-desc">Accéder à la vue d'ensemble des incidents du parc d'exploitation</div>
