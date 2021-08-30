@@ -37,19 +37,22 @@
 .form-lay1 form input[type="text"],
 .form-lay1 form input[type="date"],
 .form-lay1 form input[type="email"],
-.form-lay1 form input[type="password"] {
+.form-lay1 form input[type="password"],
+.form-lay1 form input[type="date"],
+.form-lay1 form input[type="datetime-local"] {
     font-weight: bold;
     height: 40px;
     padding: 6px 15px;
     border-radius: 5px;
     width: 100%;
     outline: none;
-    border: none;
-    background: #F6F7F9;
+    border: 1px solid var(--blue-grey-color);
+    background: var(--blue-grey-color);
     color: #748194;
     font-size: 16px;
     margin: 0px !important;
     font-family: "Nunito", sans-serif;
+    transition: all .2s ease-out;
 }
 
 .form-lay1 form input[type="color"] {
@@ -61,6 +64,15 @@
     left: -10px;
     right: -10px;
     height: auto;
+}
+
+.form-lay1 form input[type="text"]:focus,
+.form-lay1 form input[type="date"]:focus,
+.form-lay1 form input[type="email"]:focus,
+.form-lay1 form input[type="password"]:focus,
+.form-lay1 form input[type="date"]:focus,
+.form-lay1 form input[type="datetime-local"]:focus {
+    border: 1px solid var(--main-color);
 }
 
 /*---Override for design engines*/
@@ -96,10 +108,28 @@
 }
 
 /*------Chosen styles-------*/
-.form-lay1 form ul.chosen-choices {}
+.form-lay1 form ul.chosen-choices {
+    background: var(--blue-grey-color);
+    padding: 6px 15px;
+    border: 1px solid var(--blue-grey-color);
+    transition: all .2s ease-out;
+}
+
+.form-lay1 form .chosen-container-active ul.chosen-choices {
+    box-shadow: none;
+    border: 1px solid var(--main-color);
+}
+
+.form-lay1 form ul.chosen-choices li.search-choice {
+    background: var(--white-color);
+    border: 1px solid var(--main-color);
+}
 
 /*------Rich text styles-------*/
-.form-lay1 form .trix-editor {}
+.form-lay1 form trix-editor {
+    background: var(--blue-grey-color);
+    margin-top: 8px;
+}
 
 /*------Action-------*/
 .form-lay1__action {
