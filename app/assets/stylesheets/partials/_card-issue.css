@@ -1,8 +1,8 @@
 .card-issue {
     background: #fff;
-    padding: 16px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
     border-radius: 4px;
+    overflow: hidden;
     transition: all .2s ease-out;
 }
 
@@ -11,19 +11,23 @@
 }
 
 .card-issue__name {
-    flex: 0 0 50%;
     font-size: 17px;
     font-weight: 600;
 }
 
 .card-issue__name hr {
     margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .card-issue__engine {
-    padding: 2px 6px;
+    padding: 4px 16px;
     color: var(--white-color);
     background: var(--main-color);
+}
+
+.card-issue__content {
+    padding: 16px;
 }
 
 .card-issue__datetime {
@@ -35,6 +39,7 @@
     padding: 8px;
     font-size: 14px;
     background: var(--light-grey-color);
+    border: 1px solid var(--border-color);
 }
 
 .card-issue__desc span {

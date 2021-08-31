@@ -1,19 +1,24 @@
 <div class="card-issue">
-    <div class="card-issue__metas d-flex justify-content-between align-items-start">
-        <div class="card-issue__name"><%= issue.name %><hr></div>
-        <div class="card-issue__engine"><%= issue.engine.name %></div>
+    <div class="card-issue__engine">
+        <%= issue.engine.name %>
     </div>
-    
-    <div class="card-issue__datetime">
-        <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
+    <div class="card-issue__content">
+        <div class="card-issue__metas">
+            <div class="card-issue__name"><%= issue.name %><hr></div>       
+        </div>
+
+        <div class="card-issue__datetime">
+            <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
+        </div>
+
+        <div class="card-issue__desc">
+            <span>Message :</span>
+            <div><%= issue.info %></div>
+        </div>
+
+        <div class="card-issue__btn">
+            <%= link_to 'Mettre à jour', edit_issue_path(issue), class: "action-btn__small white"  %>
+        </div> 
     </div>
 
-    <div class="card-issue__desc">
-        <span>Description :</span>
-        <div><%= issue.info %></div>
-    </div>
-
-    <div class="card-issue__btn">
-        <%= link_to 'Mettre à jour', edit_issue_path(issue), class: "action-btn__small white"  %>
-    </div>    
 </div>
