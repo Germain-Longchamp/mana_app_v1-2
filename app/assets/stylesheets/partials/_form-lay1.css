@@ -39,7 +39,8 @@
 .form-lay1 form input[type="email"],
 .form-lay1 form input[type="password"],
 .form-lay1 form input[type="date"],
-.form-lay1 form input[type="datetime-local"] {
+.form-lay1 form input[type="datetime-local"],
+.form-lay1 form select {
     height: 40px;
     padding: 6px 15px;
     border-radius: 5px;
@@ -72,21 +73,6 @@
 .form-lay1 form input[type="date"]:focus,
 .form-lay1 form input[type="datetime-local"]:focus {
     border: 1px solid var(--main-color);
-}
-
-/*---Override for design engines*/
-.form-lay1 form .form-lay1__input.start_date input[type="date"] {
-    color: var(--success-color);
-    background: rgba(var(--success-color-rgb), 0.1);
-    font-size: 20px;
-    height: 50px;
-}
-
-.form-lay1 form .form-lay1__input.end_date input[type="date"] {
-    color: var(--error-color);
-    background: rgba(var(--error-color-rgb), 0.1);
-    font-size: 20px;
-    height: 50px;
 }
 
 .form-lay1__input.color-input {

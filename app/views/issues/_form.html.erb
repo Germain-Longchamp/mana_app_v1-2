@@ -1,12 +1,12 @@
 <%= simple_form_for @issue do |f| %>
 <div class="form-lay1__fields d-flex justify-content-between">
   <div class="form-lay1__input full border-box">
-    <%= f.input :name, :label => "Nom"  %>
+    <%= f.input :name, :label => "Nom", input_html: {disabled: :true}  %>
   </div>
 </div>
 <div class="form-lay1__fields d-flex justify-content-between">
   <div class="form-lay1__input full border-box">
-    <%= f.input :engine_id, as: :select, collection: Engine.order(:name), :label => "Machine concernée" %>
+    <%= f.input :engine_id, as: :select, collection: Engine.order(:name), :label => "Machine concernée", input_html: {disabled: :true} %>
   </div>
 </div>
 
