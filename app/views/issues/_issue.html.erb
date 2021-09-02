@@ -17,15 +17,15 @@
         </div>
 
         <div class="card-issue__btn d-flex justify-content-between">
-            <% if issue.status == "encours" %>
-            <%= link_to 'Voir le détail', issue_path(issue), class: "action-btn__small"  %>
-            <span class="up-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "check" %> Incident résolu</span>
 
-            <% else %>
-            <%= link_to 'Voir le détail', issue_path(issue), class: "action-btn__small"  %>
+            <%= link_to issue_path(issue), class: "action-btn__small" do %>
+            <%= fa_icon "list" %>  Voir le détail
+            <% end %>
+
+            <% if issue.status == "encours" %>
+                <span class="up-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "check" %> Marquer comme résolu</span>
             <% end %>
             
         </div> 
     </div>
-
 </div>

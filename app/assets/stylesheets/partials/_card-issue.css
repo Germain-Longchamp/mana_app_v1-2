@@ -7,7 +7,7 @@
 }
 
 .card-issue:hover {
-    background: var(--light-grey-color);
+    background: #f5f5f5;
 }
 
 .card-issue__name {
@@ -48,4 +48,15 @@
 
 .card-issue__btn {
     margin-top: 16px;
+}
+
+.card-issue__btn .up-issue {
+    background: var(--success-color);
+    border: 1px solid var(--success-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.card-issue__btn .up-issue:hover {
+    color: var(--success-color);
 }

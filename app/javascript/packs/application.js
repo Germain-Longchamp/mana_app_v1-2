@@ -16,5 +16,6 @@ import "../scripts/ajax-create-tag.js"
 import "../scripts/ajax-create-room.js"
 import "../scripts/ajax-create-user.js"
 import "../scripts/ajax-create-issue.js"
+import "../scripts/ajax-update-issue-status.js"
 require("trix")
 require("@rails/actiontext")
