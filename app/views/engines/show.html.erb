@@ -113,8 +113,14 @@
                     <span>Message :</span>
                     <div><%= issue.info %></div>
                   </div>
-                  <div class="card-issue__btn">
-                    <%= link_to 'Mettre à jour', edit_issue_path(issue), class: "action-btn__small white"  %>
+                  <div class="card-issue__btn d-flex justify-content-between">
+                    <%= link_to issue_path(issue), class: "action-btn__small" do %>
+                    <%= fa_icon "list" %>  Voir le détail
+                    <% end %>
+
+                    <% if issue.status == "encours" %>
+                    <span class="up-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "check" %> Marquer comme résolu</span>
+                    <% end %>
                   </div> 
                 </div>
               </div>
@@ -148,7 +154,9 @@
                     <div><%= issue.info %></div>
                   </div>
                   <div class="card-issue__btn">
-                    <%= link_to 'Mettre à jour', edit_issue_path(issue), class: "action-btn__small white"  %>
+                    <%= link_to issue_path(issue), class: "action-btn__small" do %>
+                    <%= fa_icon "list" %>  Voir le détail
+                    <% end %>
                   </div> 
                 </div>
               </div>

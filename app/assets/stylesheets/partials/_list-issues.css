@@ -34,5 +34,5 @@
 }
 
 .list-issues__table .card-issue:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
