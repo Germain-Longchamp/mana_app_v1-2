@@ -24,7 +24,11 @@
             <% end %>
 
             <% if issue.status == "encours" %>
-                <span class="up-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "check" %> Marquer comme résolu</span>
+            <span class="up-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "check" %> Marquer comme résolu</span>
+            <% end %>
+
+            <% if issue.status == "resolu" %>
+            <span class="ar-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "archive" %> Archiver</span>
             <% end %>
             
         </div> 

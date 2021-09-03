@@ -13,6 +13,9 @@ class IssuesController < ApplicationController
 
     #GET RESOLVED ISSUES
     @resolved_issues = Issue.where(:status => 'resolu').order("updated_at DESC")
+
+    #GET ARCHIVED ISSUES
+    @archived_issues = Issue.where(:status => 'archived').order("updated_at DESC")
   end
 
   #def show
