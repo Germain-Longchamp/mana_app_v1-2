@@ -106,9 +106,11 @@
                   <div class="card-issue__metas">
                     <div class="card-issue__name"><%= issue.name %><hr></div>       
                   </div>
+                  <% if issue.start_date %>
                   <div class="card-issue__datetime">
                     <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
                   </div>
+                  <% end %>
                   <div class="card-issue__desc">
                     <span>Message :</span>
                     <div><%= issue.info %></div>
@@ -136,7 +138,7 @@
         <div class="mod-show-engine-section">
           <div class="list-issues">
             <div class="list-issues__heading solved"><%= fa_icon "check-square" %>Résolus (<%= @resolved_issues.length() %>)</div>
-            <div class="list-issues__table">
+            <div class="list-issues__table" id="renderResolvedIssues">
               <% @resolved_issues.each do |issue| %>
               <div class="card-issue">
                 <div class="card-issue__engine">
@@ -146,9 +148,11 @@
                   <div class="card-issue__metas">
                     <div class="card-issue__name"><%= issue.name %><hr></div>       
                   </div>
+                  <% if issue.start_date %>
                   <div class="card-issue__datetime">
                     <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
                   </div>
+                  <% end %>
                   <div class="card-issue__desc">
                     <span>Message :</span>
                     <div><%= issue.info %></div>

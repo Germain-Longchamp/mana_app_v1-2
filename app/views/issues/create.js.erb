@@ -4,13 +4,10 @@ $('.overlay-sidebar').hide();
 
 $('#messageIssue').show();
 
-var issueId = '<%= @issue.id %>';
-var issueName = '<%= @issue.name %>';
-
-$('#issueNew').html(issueId);
-$('#nameIssue').html(issueName);
-
-$('input#issue_name').val('');
+$('#issue_name').val('');
+$('#issue_engine_id').val('');
+$('#issue_start_date').val('');
+$('#issue_info_trix_input_issue_2').val('');
 
 setTimeout(
   function() 

@@ -6,10 +6,11 @@
         <div class="card-issue__metas">
             <div class="card-issue__name"><%= issue.name %><hr></div>       
         </div>
-
+        <% if issue.start_date %>
         <div class="card-issue__datetime">
             <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
         </div>
+        <% end %>
 
         <div class="card-issue__desc">
             <span>Message :</span>

@@ -44,7 +44,7 @@ class IssuesController < ApplicationController
   def update
     respond_to do |format|
      if @issue.update(issue_params)
-       format.html { redirect_to issues_path, notice: 'My Notice.' }
+       format.js
        format.json { render :show, status: :created, location: @issue }
      else
        format.html { render :edit, status: :unprocessable_entity }
