@@ -18,9 +18,16 @@
           <h1>
             Incidents
           </h1>
-          <%= link_to new_issue_path, class: "action-btn__add", remote: true do %>
-          <%= fa_icon "plus" %>Enregistrer un incident    
-          <% end %>
+          <div>
+            <%= link_to issues_archives_path, class: "action-btn__add trans" do %>
+            <%= fa_icon "archive" %>Incidents archivés    
+            <% end %>
+
+            <%= link_to new_issue_path, class: "action-btn__add", remote: true do %>
+            <%= fa_icon "plus" %>Enregistrer un incident    
+            <% end %>
+          </div>
+          
         </div>      
       </div>
     </div>

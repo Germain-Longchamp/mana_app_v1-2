@@ -23,6 +23,10 @@
     background: #509534;
 }
 
+.list-issues__heading.archived {
+    background: var(--dark-color);
+}
+
 .list-issues__table {
     padding: 16px;
     height: 600px;

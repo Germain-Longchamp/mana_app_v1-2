@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
    # Routes for Issues
    resources :issues
+   get 'issues-archives', to: 'issues#archive'
 
    # About pages
    get 'about', to: 'about#index'

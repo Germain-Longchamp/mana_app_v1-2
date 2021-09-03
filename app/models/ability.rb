@@ -10,7 +10,8 @@ class Ability
       can :crud, User, company_id: user.company_id
       can :crud, Company, id: user.company_id
       can :crud, Engine, company_id: user.company_id
-      can :crud, Issue, company_id: user.company_id
+      can :crud, Issue, company_id: user.company_id 
+      can :archive, Issue, company_id: user.company_id 
     else
       can :create, User
     end 

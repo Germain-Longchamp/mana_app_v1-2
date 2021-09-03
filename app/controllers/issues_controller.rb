@@ -9,17 +9,19 @@ class IssuesController < ApplicationController
     @engines = Engine.where(:company_id => current_user.company_id)
 
     #GET ENCOURS ISSUES
-    @progress_issues = Issue.where(:status => 'encours').order("created_at DESC")
+    @progress_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'encours').order("created_at DESC")
 
     #GET RESOLVED ISSUES
-    @resolved_issues = Issue.where(:status => 'resolu').order("updated_at DESC")
-
-    #GET ARCHIVED ISSUES
-    @archived_issues = Issue.where(:status => 'archived').order("updated_at DESC")
+    @resolved_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'resolu').order("updated_at DESC")
   end
 
-  #def show
-  #end
+  def archive
+    #GET ARCHIVED ISSUES
+    @archived_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'archived').order("updated_at DESC")
+  end
+
+  def show
+  end
 
   def new
     @issue = Issue.new

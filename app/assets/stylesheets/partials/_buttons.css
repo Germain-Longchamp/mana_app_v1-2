@@ -9,12 +9,18 @@
     padding: 6px 18px;
     color: var(--white-color) !important;
     background: var(--success-color);
+    border: 1px solid var(--success-color);
     transition: all .3s ease-out;
 }
 
 .action-btn__add i {
     margin-right: 8px;
     font-size: 14px;
+}
+
+.action-btn__add.trans {
+    color: var(--success-color) !important;
+    background: #fff;
 }
 
 /*--Button action Small--*/
@@ -54,6 +60,10 @@
     .action-btn__add:hover {
         text-decoration: none;
         background: var(--success-dark-color);
+    }
+
+    .action-btn__add.trans:hover {
+        color: #fff !important;
     }
 
     .action-btn__small:hover {

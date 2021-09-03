@@ -1,0 +1,44 @@
+<section class="mod mod-issues-archive">
+  <div class="container-fluid">
+
+    <%# Row Go Back %>
+    <div class="row go-back">
+      <div class="col-md-9">
+        <%= link_to issues_path, class: 'action-btn__grey' do %>
+        <%= fa_icon 'chevron-left' %> Retour
+        <% end %>
+      </div>
+    </div>
+
+    <%# Row heading %>
+    <div class="row heading">
+      <div class="col-md-12 p0">
+        <%# Breadcrumbs %>
+        <ul class="breadcrumbs no-styles">
+          <li><a href="<%= issues_path %>">Incidents</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><span>Archives</span></li>
+        </ul>
+        <div class="d-flex justify-content-between align-items-center">
+          <h1>
+            Archives Incidents
+          </h1>
+        </div>      
+      </div>
+    </div>
+
+    <%# Row list progress and resolved issues %>
+    <div class="row">
+      <%# Col Issues Archoved %>
+      <div class="col-md-8">
+        <div class="list-issues">
+          <div class="list-issues__heading archived"><%= fa_icon "list" %>Archives (<%= @archived_issues.length() %>)</div>
+          <div class="list-issues__table">
+            <%= render @archived_issues %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
