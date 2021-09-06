@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dojywbs2z
+  api_key: '837867747353162'
+  api_secret: Nm7Z3IklN-3NeacNJuRN0nIpuW0
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dojywbs2z
+  api_key: '837867747353162'
+  api_secret: Nm7Z3IklN-3NeacNJuRN0nIpuW0
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dojywbs2z
+  api_key: '837867747353162'
+  api_secret: Nm7Z3IklN-3NeacNJuRN0nIpuW0
+  enhance_image_tag: true
+  static_file_support: false
