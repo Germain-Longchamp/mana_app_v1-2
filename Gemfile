@@ -57,6 +57,8 @@ gem 'font-awesome-rails'
 
 gem 'cancancan'
 
+gem 'cloudinary'
+
 gem 'rails_12factor', group: :production
 
 # Group gems environment
