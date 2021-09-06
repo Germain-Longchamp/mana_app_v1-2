@@ -58,6 +58,8 @@ gem 'font-awesome-rails'
 gem 'cancancan'
 
 gem 'cloudinary'
+gem 'paperclip-cloudinary'
+
 
 gem 'rails_12factor', group: :production
 
