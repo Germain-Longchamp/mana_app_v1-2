@@ -29,6 +29,7 @@
 
 # Ignore User assets
 /public/system
+/public/uploads
 
 /public/assets
 .byebug_history
