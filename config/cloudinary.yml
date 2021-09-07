@@ -1,19 +1,18 @@
----
 development:
-  cloud_name: 'dojywbs2z'
-  api_key: '837867747353162'
-  api_secret: "Nm7Z3IklN-3NeacNJuRN0nIpuW0"
+  cloud_name: 'hwerhj1ii'
+  api_key: '629433635375844'
+  api_secret: 'F2GF2t8FN4rSpS6nA7f_sYRhIiI'
   enhance_image_tag: true
   static_file_support: false
 production:
-  cloud_name: 'dojywbs2z'
-  api_key: '837867747353162'
-  api_secret: "Nm7Z3IklN-3NeacNJuRN0nIpuW0"
+  cloud_name: 'hwerhj1ii'
+  api_key: '629433635375844'
+  api_secret: 'F2GF2t8FN4rSpS6nA7f_sYRhIiI'
   enhance_image_tag: true
   static_file_support: true
 test:
-  cloud_name: 'dojywbs2z'
-  api_key: '837867747353162'
-  api_secret: 'Nm7Z3IklN-3NeacNJuRN0nIpuW0'
+  cloud_name: 'hwerhj1ii'
+  api_key: '629433635375844'
+  api_secret: 'F2GF2t8FN4rSpS6nA7f_sYRhIiI'
   enhance_image_tag: true
   static_file_support: false
