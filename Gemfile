@@ -57,8 +57,9 @@ gem 'font-awesome-rails'
 
 gem 'cancancan'
 
+gem 'figaro'
+gem 'carrierwave'
 gem 'cloudinary'
-gem 'paperclip-cloudinary'
 
 
 gem 'rails_12factor', group: :production
