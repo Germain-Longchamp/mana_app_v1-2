@@ -115,6 +115,7 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.3)
@@ -324,6 +325,7 @@ DEPENDENCIES
   cloudinary
   country-select
   devise
+  dotenv (~> 2.7, >= 2.7.6)
   figaro
   font-awesome-rails
   jbuilder (~> 2.7)

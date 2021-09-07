@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Gems add by me
 gem 'devise'
+gem 'dotenv', '~> 2.7', '>= 2.7.6'
 # Add avatar or images gem
 gem "paperclip", "~> 6.0.0"
 # Jquery rails
