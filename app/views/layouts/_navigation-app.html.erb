@@ -1,17 +1,27 @@
 <div class="nav-app">
-	<div class="nav-app__inner">
+	<%# Top Bar nav %>
+	<div class="nav-app__top-bar">
 		<%# User actions %>
 		<% if current_user %>
-		<div class="nav-app__user-actions">
-			<div class="nav-app__current-user">
+		<div class="nav-app__user-actions  d-flex">
+			<div class="nav-app__current-user">		
+				<%= link_to edit_user_registration_path(current_user) do %>
 				<%= fa_icon "user" %>
 				<span><%= current_user.firstname %> <%= current_user.lastname %></span>
-				<%= link_to edit_user_registration_path(current_user) do %>
-				<%= fa_icon "cog" %>
 				<% end %>
 			</div>
+			<%# Log out button %>
+			<div class="nav-app__log-out">
+				<%= link_to destroy_user_session_path, method: :delete do %>
+				<%= fa_icon "sign-out" %>
+				<span>Déconnexion</span>
+				<% end %>
+			</div>	
 		</div>
 		<% end %>
+	</div>
+	<%# Left Bar nav %>
+	<div class="nav-app__inner">
 		<%# Bord actions %>
 		<div class="nav-app__part-actions">
 			<a href="<%= board_path %>" class="nav-app__card-action <% if request.path == '/board' %>active<% end %>">
@@ -51,13 +61,6 @@
 				<div class="nav-app__card-action-title">Paramètres</div>
 				<div class="nav-app__card-action-desc">Modifier les paramètres de la plateforme, du parc matériel, des utilisateurs.</div>
 			</a>
-		</div>
-		<%# Bottom actions %>
-		<div class="nav-app__bt-actions">
-			<%# Log out button %>
-			<span class="nav-app__log-out">
-				<%= link_to raw('<span>Déconnexion</span><i class="fas fa-sign-out-alt"></i>'), destroy_user_session_path, method: :delete %>
-			</span>		  	
 		</div>
 	</div>
 </div>

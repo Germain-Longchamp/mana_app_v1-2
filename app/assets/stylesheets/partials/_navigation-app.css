@@ -9,14 +9,14 @@
     background: var(--main-color);
 }
 
-.nav-app__inner {
-    position: relative;
-    height: 100%;
-    padding: 20px 15px 20px 15px;
-}
-
-.nav-app__user-actions {
-    margin-bottom: 30px;
+.nav-app__top-bar {
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--dark-color);
+    padding: 3px 8px;
 }
 
 .nav-app__current-user {
@@ -26,22 +26,24 @@
     color: var(--white-color);
 }
 
-.nav-app__current-user i {
-    margin-right: 5px;
+.nav-app__current-user a {
+    text-decoration: none;
 }
 
 .nav-app__current-user span {
     font-size: 12px;
-}
-
-.nav-app__current-user a {
-    position: absolute;
-    right: 0px;
+    color: var(--white-color);
 }
 
 .nav-app__current-user a i {
     font-size: 12px;
     color: var(--white-color) !important;
+}
+
+.nav-app__inner {
+    position: relative;
+    height: 100%;
+    padding: 50px 15px 20px 15px;
 }
 
 .nav-app__part-actions:not(.last) {
@@ -99,28 +101,19 @@ ul.nav-app__list-actions li a:hover {
     text-decoration: none;
 }
 
-.nav-app__bt-actions {
-    position: absolute;
-    bottom: 0px;
-    left: 15px;
-    right: 15px;
-    bottom: 10px;
-}
-
 .nav-app__log-out a {
+    text-decoration: none;
     color: var(--white-color) !important;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
 }
 
 .nav-app__log-out a span {
-    font-size: 14px;
+    font-size: 12px;
     margin-right: 5px;
 }
 
 .nav-app__log-out a i {
-    font-size: 25px;
+    font-size: 10px;
+    color: var(--white-color);
 }
 
 .nav-app__log-out a:hover {

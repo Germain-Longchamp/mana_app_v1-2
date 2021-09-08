@@ -45,7 +45,7 @@
 .sidebar-adding__close {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 50px;
     height: 30px;
     width: 30px;
     background: var(--light-grey-color);
