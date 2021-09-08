@@ -10,6 +10,8 @@ class PictureUploader < CarrierWave::Uploader::Base
       process resize_to_fit: [50,50]
   end
   
-  
+  def public_id
+    return "USERS/" + "#{model.firstname} #{model.lastname}"
+  end 
 
 end
