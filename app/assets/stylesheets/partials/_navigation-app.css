@@ -9,6 +9,7 @@
     background: var(--main-color);
 }
 
+/*---Top Bar---*/
 .nav-app__top-bar {
     position: fixed;
     z-index: 3000;
@@ -16,30 +17,51 @@
     left: 0;
     width: 100%;
     background: var(--dark-color);
-    padding: 3px 8px;
+    padding: 3px 12px;
 }
 
-.nav-app__current-user {
-    position: relative;
+.nav-app__top-bar__separator {
+    margin: 0 12px;
+    color: #fff;
+}
+
+.nav-app__top-bar__left,
+.nav-app__top-bar__right {
+    flex: 0 0 50%;
+}
+
+.nav-app__top-bar__left {
     display: flex;
     align-items: center;
-    color: var(--white-color);
+    justify-content: start;
 }
 
-.nav-app__current-user a {
+.nav-app__top-bar__right {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.nav-app__top-bar__nav-item a {
     text-decoration: none;
-}
-
-.nav-app__current-user span {
-    font-size: 12px;
-    color: var(--white-color);
-}
-
-.nav-app__current-user a i {
-    font-size: 12px;
     color: var(--white-color) !important;
 }
 
+.nav-app__top-bar__nav-item a span {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.nav-app__top-bar__nav-item a i {
+    font-size: 12px;
+    color: var(--white-color);
+}
+
+.nav-app__top-bar__nav-item a:hover {
+    text-decoration: none;
+}
+
+/*---Main navigation---*/
 .nav-app__inner {
     position: relative;
     height: 100%;
@@ -98,24 +120,5 @@ ul.nav-app__list-actions li a {
 
 ul.nav-app__list-actions li a:hover {
     color: var(--white-color) !important;
-    text-decoration: none;
-}
-
-.nav-app__log-out a {
-    text-decoration: none;
-    color: var(--white-color) !important;
-}
-
-.nav-app__log-out a span {
-    font-size: 12px;
-    margin-right: 5px;
-}
-
-.nav-app__log-out a i {
-    font-size: 10px;
-    color: var(--white-color);
-}
-
-.nav-app__log-out a:hover {
     text-decoration: none;
 }

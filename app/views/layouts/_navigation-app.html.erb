@@ -3,20 +3,32 @@
 	<div class="nav-app__top-bar">
 		<%# User actions %>
 		<% if current_user %>
-		<div class="nav-app__user-actions  d-flex">
-			<div class="nav-app__current-user">		
-				<%= link_to edit_user_registration_path(current_user) do %>
-				<%= fa_icon "user" %>
-				<span><%= current_user.firstname %> <%= current_user.lastname %></span>
-				<% end %>
+		<div class="nav-app__top-bar__inner d-flex">
+			<div class="nav-app__top-bar__left">
+				<div class="nav-app__top-bar__nav-item">		
+					<%= link_to company_path(current_user.company_id) do %>
+					<%= fa_icon "building" %>
+					<span><%= current_user.company.name %></span>
+					<% end %>
+				</div>
 			</div>
-			<%# Log out button %>
-			<div class="nav-app__log-out">
-				<%= link_to destroy_user_session_path, method: :delete do %>
-				<%= fa_icon "sign-out" %>
-				<span>Déconnexion-</span>
-				<% end %>
-			</div>	
+			<div class="nav-app__top-bar__right">
+				<%# Current user %>
+				<div class="nav-app__top-bar__nav-item">		
+					<%= link_to edit_user_registration_path(current_user) do %>
+					<%= fa_icon "user" %>
+					<span><%= current_user.firstname %> <%= current_user.lastname %></span>
+					<% end %>
+				</div>
+				<div class="nav-app__top-bar__separator">|</div>
+				<%# Log out button %>
+				<div class="nav-app__top-bar__nav-item">
+					<%= link_to destroy_user_session_path, method: :delete do %>
+					<%= fa_icon "sign-out" %>
+					<span>Déconnexion</span>
+					<% end %>
+				</div>	
+			</div>
 		</div>
 		<% end %>
 	</div>
