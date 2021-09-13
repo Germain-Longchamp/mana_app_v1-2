@@ -34,6 +34,14 @@ Rails.application.routes.draw do
    resources :issues
    get 'issues-archives', to: 'issues#archive'
 
+   # Routes for Issues
+   get 'settings/issue-categories', to: 'issue_categories#index'
+   post 'issue_categories', to: 'issue_categories#create'
+   get 'issue_category/new', to: 'issue_categories#new'
+   get 'issue_category/:id/edit', to: 'issue_categories#edit', as: :edit_issue_category
+   patch 'issue_categories/:id', to: 'issue_categories#update'
+   delete 'issue_categories/:id', to: 'issue_categories#destroy'
+
    # About pages
    get 'about', to: 'about#index'
    get 'about/founders', to: 'about#founders'
