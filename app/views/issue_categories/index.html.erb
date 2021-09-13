@@ -1,2 +1,46 @@
-<h1>IssueCategories#index</h1>
-<p>Find me in app/views/issue_categories/index.html.erb</p>
+<%#-------module Index Tag-------%>
+<section class="mod mod-tags-index">
+    <div class="container-fluid">
+
+        <%# Message to display when created %>
+        <div class="row" id="messageTag" style="display:none;">
+            <div class="col-md-9">
+                <div class="success-adding">
+                    Catégorie ajoutée avec succès
+                </div>      
+            </div>
+        </div>
+
+        <%# Row Go Back %>
+        <div class="row go-back">
+            <div class="col-md-12">
+                <%= link_to settings_path, class: 'action-btn__grey' do %>
+                <%= fa_icon 'chevron-left' %> Retour
+                <% end %>
+            </div>
+        </div>
+
+        <%# Row heading %>
+        <div class="row heading">
+            <div class="col-md-9">
+
+                <%# Breadcrumbs %>
+                <ul class="breadcrumbs no-styles">
+                    <li><a href="<%= settings_path %>">Paramètres</a></li>
+                    <li><span><%= fa_icon 'chevron-right' %></span></li>
+                    <li><span>Catégories incidents</span></li>
+                </ul>
+
+                <div class="d-flex align-items-center justify-content-between">
+                    <h1>Catégories incidents</h1>
+
+                    <%= link_to issue_category_new_path, class: "action-btn__add", remote: true do %>
+                    <%= fa_icon "plus" %>Ajouter une catégorie      
+                    <% end %>
+                </div>
+                    
+            </div>
+        </div>
+
+    </div>
+</section>
