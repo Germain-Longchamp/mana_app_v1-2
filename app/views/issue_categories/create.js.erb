@@ -1,0 +1,13 @@
+$('#renderIssueCategories').append('<%= j render @issue_category %>');
+$('#messageIssueCategory').show();
+
+$('#formIssueCategory').removeClass('slided');
+$('.overlay-sidebar').hide();
+
+$('input#issue_category_name').val('');
+
+setTimeout(
+  function() 
+  {
+    $('#messageIssueCategory').fadeOut();
+}, 2000);

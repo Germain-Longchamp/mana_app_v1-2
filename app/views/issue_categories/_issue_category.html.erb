@@ -1,0 +1,4 @@
+<div class="sp-list-actions__item">
+    <%= issue_category.name %>
+    <%= link_to 'Supprimer', { controller: "issue_categories", action: "destroy", id: issue_category.id }, data: { confirm: 'Êtes-vous sûr ?' }, method: :delete, remote: :true, class: "action-btn__small white issue-category-delete"  %>   
+</div>

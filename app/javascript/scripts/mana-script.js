@@ -7,6 +7,7 @@ $(document).on('ready turbolinks:load', function() {
         $('#formRoom').removeClass('slided');
         $('#formUser').removeClass('slided');
         $('#formIssue').removeClass('slided');
+        $('#formIssueCategory').removeClass('slided');
         $('.overlay-sidebar').hide();
     });
 
