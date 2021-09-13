@@ -89,21 +89,22 @@ ul:not(.no-styles, .chosen-results, .chosen-choices) {
 
 ul:not(.no-styles, .chosen-results, .chosen-choices) li {
     position: relative;
-    padding-left: 40px;
+    padding-left: 15px;
 }
 
 ul:not(.no-styles, .chosen-results, .chosen-choices) li:before {
     position: absolute;
     content: "";
-    width: 25px;
-    height: 2px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
     background: var(--main-color);
-    left: 5px;
-    top: 10px;
+    left: 3px;
+    top: 8px;
 }
 
 ul:not(.no-styles, .chosen-results, .chosen-choices) li:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 /*--------- Form Style---------*/
