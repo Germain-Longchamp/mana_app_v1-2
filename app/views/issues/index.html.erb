@@ -66,8 +66,12 @@
 
             <div class="form-lay1__fields d-flex justify-content-between">
               <div class="form-lay1__input full border-box">
-                <label>Nom</label>
-                <input type="text" id="issue_name" name="issue[name]" required>
+                <label>Catégorie incident</label>
+                <select name="issue[name]" id="issue_name" required>
+                  <% @issue_categories.each do |issue| %>
+                  <option value="<%= issue.name %>"><%= issue.name %></option>
+                  <% end %>
+                </select>
               </div>
             </div>
 

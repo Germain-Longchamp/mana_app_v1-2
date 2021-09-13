@@ -4,7 +4,9 @@ class IssuesController < ApplicationController
   load_and_authorize_resource
 
   def index
+    #GET ALL ISSUES 
     @issues = Issue.where(:company_id => current_user.company_id).order("created_at DESC")
+
     #GET ALL ENGINES
     @engines = Engine.where(:company_id => current_user.company_id)
 
@@ -13,6 +15,9 @@ class IssuesController < ApplicationController
 
     #GET RESOLVED ISSUES
     @resolved_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'resolu').order("updated_at DESC")
+
+    #GET ALL ISSUES CATEGORIES
+    @issue_categories = IssueCategory.where(:company_id => current_user.company_id)
   end
 
   def archive
