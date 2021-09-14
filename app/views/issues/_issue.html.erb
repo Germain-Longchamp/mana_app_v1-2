@@ -49,14 +49,24 @@
                     <div class="pop-up-issue__engine">
                         <%= issue.engine.name %>
                     </div>
-                    <div class="pop-up-issue__date">
-                        <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
-                        <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
+                    <div class="pop-up-issue__metas">
+                        <div class="pop-up-issue__date">
+                            <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
+                            <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
+                        </div>
                     </div>
                     <div class="pop-up-issue__info">
                         <div class="pop-up-issue__info-title">Message :</div>
                         <%= issue.info %>
                     </div>
+                    <% if issue.user_id %>
+                    <div class="pop-up-issue__user">
+                        <div class="pop-up-issue__user-avatar">
+                            <img src="<%= issue.user.picture_url%>">
+                        </div>
+                        <span><%= issue.user.firstname %><br><%= issue.user.lastname %></span>
+                    </div>
+                    <% end %>
                     <div class="pop-up-issue__number">
                         Incident n°<%= issue.id %>
                     </div>
