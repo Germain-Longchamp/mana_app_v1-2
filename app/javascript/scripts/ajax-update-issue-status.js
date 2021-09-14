@@ -13,6 +13,9 @@ $(document).on('ready turbolinks:load', function() {
             "value": "resolu"
         }];
 
+        console.log(datas);
+
+
         $.ajax({
             type: 'PATCH',
             url: patchUrl,
@@ -25,6 +28,7 @@ $(document).on('ready turbolinks:load', function() {
             },
             error: function(response) {}
         });
+
 
     });
 
