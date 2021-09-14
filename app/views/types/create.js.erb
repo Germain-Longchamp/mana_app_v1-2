@@ -1,10 +1,10 @@
-$('#renderIssueCategories').append('<%= j render @issue_category %>');
+$('#renderIssueCategories').append('<%= j render @type %>');
 $('#messageIssueCategory').show();
 
 $('#formIssueCategory').removeClass('slided');
 $('.overlay-sidebar').hide();
 
-$('input#issue_category_name').val('');
+$('input#type_name').val('');
 
 setTimeout(
   function() 

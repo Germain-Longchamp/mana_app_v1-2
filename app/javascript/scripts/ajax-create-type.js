@@ -6,7 +6,7 @@ $(document).on('ready turbolinks:load', function() {
 
         $.ajax({
             type: 'POST',
-            url: '/issue_categories',
+            url: '/types',
             data: datas,
             success: function(data) {},
             error: function(response) {}

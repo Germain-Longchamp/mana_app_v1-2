@@ -35,12 +35,12 @@ Rails.application.routes.draw do
    get 'issues-archives', to: 'issues#archive'
 
    # Routes for Issues
-   get 'settings/issue-categories', to: 'issue_categories#index'
-   post 'issue_categories', to: 'issue_categories#create'
-   get 'issue_category/new', to: 'issue_categories#new'
-   get 'issue_category/:id/edit', to: 'issue_categories#edit', as: :edit_issue_category
-   patch 'issue_categories/:id', to: 'issue_categories#update'
-   delete 'issue_categories/:id', to: 'issue_categories#destroy'
+   get 'settings/types', to: 'types#index'
+   post 'types', to: 'types#create'
+   get 'type/new', to: 'types#new'
+   get 'type/:id/edit', to: 'types#edit', as: :edit_issue_category
+   patch 'types/:id', to: 'types#update'
+   delete 'types/:id', to: 'types#destroy'
 
    # About pages
    get 'about', to: 'about#index'
