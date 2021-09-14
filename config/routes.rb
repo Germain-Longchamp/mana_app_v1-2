@@ -38,7 +38,7 @@ Rails.application.routes.draw do
    get 'settings/types', to: 'types#index'
    post 'types', to: 'types#create'
    get 'type/new', to: 'types#new'
-   get 'type/:id/edit', to: 'types#edit', as: :edit_issue_category
+   get 'type/:id/edit', to: 'types#edit', as: :edit_type
    patch 'types/:id', to: 'types#update'
    delete 'types/:id', to: 'types#destroy'
 

@@ -11,7 +11,6 @@ class TypesController < ApplicationController
   end
 
   def edit
-    @type = Type.find(params[:id])
     if @type.company_id != current_user.company_id
       redirect_to root
     end
@@ -35,7 +34,7 @@ class TypesController < ApplicationController
   def update
     respond_to do |format|
       if @type.update(type_params)
-        format.html { redirect_to root, notice: 'My Notice.' }
+        format.html { redirect_to settings_types, notice: 'My Notice.' }
         format.json { render :show, status: :created, location: @type }
         flash[:notice] = 'Catégorie mis à jour'
       else
