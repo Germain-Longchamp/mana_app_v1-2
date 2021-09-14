@@ -108,7 +108,8 @@
                   </div>
                   <% if issue.start_date %>
                   <div class="card-issue__datetime">
-                    <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
+                    <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
+                    <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
                   </div>
                   <% end %>
                   <div class="card-issue__desc">
@@ -150,7 +151,8 @@
                   </div>
                   <% if issue.start_date %>
                   <div class="card-issue__datetime">
-                    <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
+                    <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
+                    <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
                   </div>
                   <% end %>
                   <div class="card-issue__desc">

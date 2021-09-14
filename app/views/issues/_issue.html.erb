@@ -1,4 +1,4 @@
-<div class="card-issue">
+<div class="card-issue pop-up-element">
     <div class="card-issue__engine">
         <%= issue.engine.name %>
     </div>
@@ -8,20 +8,22 @@
         </div>
         <% if issue.start_date %>
         <div class="card-issue__datetime">
-            <span>Date et heure :</span> <%= issue.start_date.strftime('%d.%m.%y | %Hh%M') %>
+            <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
+            <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
         </div>
         <% end %>
 
         <div class="card-issue__desc">
             <span>Message :</span>
-            <div><%= issue.info %></div>
+            <% if issue.info %>
+            <div><%= strip_tags(issue.info.to_s).truncate(60) %></div>
+            <% else %>
+            <div>N/A</div>
+            <% end %>
         </div>
 
         <div class="card-issue__btn d-flex justify-content-between">
-
-            <%= link_to issue_path(issue), class: "action-btn__small" do %>
-            <%= fa_icon "list" %>  Voir le détail
-            <% end %>
+            <a class="js-pop-open action-btn__small"><%= fa_icon "list" %>  Voir le détail</a>
 
             <% if issue.status == "encours" %>
             <span class="up-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "check" %> Marquer comme résolu</span>
@@ -33,4 +35,35 @@
             
         </div> 
     </div>
+
+
+    <%# Pop Up Detail Issue %>
+    <div class="js-screen-open">
+        <div class="js-screen__inner">
+            <span class="js-screen__close"><%= fa_icon "times-circle" %></span>
+            <div class="js-screen__pop pop-up-issue">
+                <div class="pop-up-issue__inner">
+                    <div class="pop-up-issue__heading">
+                        <%= issue.name %>
+                    </div>
+                    <div class="pop-up-issue__engine">
+                        <%= issue.engine.name %>
+                    </div>
+                    <div class="pop-up-issue__date">
+                        <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
+                        <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
+                    </div>
+                    <div class="pop-up-issue__info">
+                        <div class="pop-up-issue__info-title">Message :</div>
+                        <%= issue.info %>
+                    </div>
+                    <div class="pop-up-issue__number">
+                        Incident n°<%= issue.id %>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
 </div>
+
+

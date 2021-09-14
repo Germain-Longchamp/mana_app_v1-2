@@ -98,7 +98,7 @@
     padding: 6px 15px;
     border-radius: 5px;
     border: 1px solid var(--blue-grey-color);
-    height: 40px;
+    min-height: 40px;
     transition: all .2s ease-out;
 }
 

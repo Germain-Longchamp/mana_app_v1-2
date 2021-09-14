@@ -34,6 +34,14 @@
     font-size: 14px;
 }
 
+.card-issue__datetime span {
+    font-weight: 300;
+}
+
+.card-issue__datetime span:first-child {
+    margin-right: 16px;
+}
+
 .card-issue__desc {
     margin-top: 16px;
     padding: 8px;

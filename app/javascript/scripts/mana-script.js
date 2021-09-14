@@ -30,6 +30,23 @@ $(document).on('ready turbolinks:load', function() {
         });
     });
 
+    // ---------- Open Pop Up
+    $('.pop-up-element').each(function() {
+        var triggerOpen = $(this).find('.js-pop-open');
+        var triggerClose = $(this).find('.js-screen__close');
+        var popToOpen = $(this).find('.js-screen-open');
+
+        // Open Pop Up on click
+        triggerOpen.click(function() {
+            popToOpen.addClass('open');
+        });
+
+        // Close Pop Up on click 
+        triggerClose.click(function() {
+            popToOpen.removeClass('open');
+        });
+    });
+
     //------------- Chosen Library
     $('#engine_tag_ids, #engine_room_id').chosen({
         max_selected_options: 1,
@@ -69,21 +86,6 @@ $(document).on('ready turbolinks:load', function() {
             window.location = url;
         }
         return false;
-    });
-
-    // ------------ Manage Device Notice Visibility
-    var deviseMsg = $('#notice');
-    var deviseBox = $('.devise-msg');
-    var deviseClose = $('.devise-msg__close');
-    // Manage devise box notics
-    if (deviseMsg.is(':empty')) {
-        deviseBox.removeClass('displayed');
-    } else {
-        deviseBox.addClass('displayed');
-    }
-    // Manage close button
-    deviseClose.click(function() {
-        deviseBox.hide();
     });
 
     // ------------- Manage click on filter Engines Index   

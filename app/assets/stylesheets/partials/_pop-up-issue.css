@@ -1,0 +1,43 @@
+.pop-up-issue {
+    width: 40%;
+    max-height: 80%;
+    padding: 40px 30px;
+    border-radius: 16px;
+}
+
+.pop-up-issue__heading {
+    font-size: 30px;
+    color: var(--main-color);
+}
+
+.pop-up-issue__engine {
+    font-size: 22px;
+}
+
+.pop-up-issue__date {
+    margin: 32px 0;
+}
+
+.pop-up-issue__date span {
+    font-weight: 300;
+}
+
+.pop-up-issue__date span:first-child {
+    margin-right: 24px;
+}
+
+.pop-up-issue__info {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.pop-up-issue__info-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.pop-up-issue__number {
+    font-size: 12px;
+    margin-top: 24px;
+}

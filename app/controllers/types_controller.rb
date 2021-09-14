@@ -12,7 +12,7 @@ class TypesController < ApplicationController
 
   def edit
     if @type.company_id != current_user.company_id
-      redirect_to root
+      redirect_to settings_types
     end
   end
 
