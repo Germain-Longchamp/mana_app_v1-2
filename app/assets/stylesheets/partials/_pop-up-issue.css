@@ -1,4 +1,5 @@
 .pop-up-issue {
+    position: relative;
     width: 40%;
     max-height: 80%;
     padding: 40px 30px;
@@ -14,8 +15,33 @@
     font-size: 22px;
 }
 
-.pop-up-issue__date {
-    margin: 32px 0;
+.pop-up-issue__metas {
+    margin: 24px 0;
+}
+
+.pop-up-issue__user {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.pop-up-issue__user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+}
+
+.pop-up-issue__user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pop-up-issue__user span {
+    line-height: 1;
+    font-size: 14px;
 }
 
 .pop-up-issue__date span {
@@ -38,6 +64,9 @@
 }
 
 .pop-up-issue__number {
+    position: absolute;
+    top: 0px;
+    right: 30px;
     font-size: 12px;
     margin-top: 24px;
 }
