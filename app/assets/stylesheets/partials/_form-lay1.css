@@ -7,6 +7,10 @@
     margin-bottom: 20px;
 }
 
+.form-lay1__input {
+    position: relative;
+}
+
 .form-lay1__input.half {
     flex: 0 0 100%;
 }
@@ -92,6 +96,46 @@
     border-radius: 50%;
 }
 
+.form-lay1 form input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.form-lay1 form input[type="file"] + label {
+    font-size: 18px;
+    color: var(--main-color);
+    background-color: var(--main-color);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+    border-radius: 50%;
+    margin-bottom: 0px;
+    cursor: pointer;
+    transition: all .2s ease-out;
+}
+
+.form-lay1 form input[type="file"] + label svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+}
+
+.form-lay1 form input[type="file"] + label span {
+    content: attr(data-before);
+    position: absolute;
+    left: 60px;
+}
+
+.form-lay1 form input[type="file"]:focus + label,
+.form-lay1 form input[type="file"] + label:hover {
+    background-color: var(--dark-color);
+}
+
 /*------Chosen styles-------*/
 .form-lay1 form ul.chosen-choices {
     background: var(--blue-grey-color);
@@ -149,4 +193,10 @@
     text-transform: uppercase;
     padding: 8px 24px;
     border-radius: 8px;
+    transition: all .3s ease-out;
+}
+
+.form-lay1__action input[type="submit"]:disabled {
+    opacity: .6;
+    cursor: not-allowed;
 }

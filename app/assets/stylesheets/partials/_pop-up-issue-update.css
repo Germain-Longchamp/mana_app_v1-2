@@ -1,0 +1,24 @@
+.pop-up-issue-update {
+    position: relative;
+    width: 40%;
+    max-height: 80%;
+    padding: 40px 30px;
+    border-radius: 16px;
+}
+
+.pop-up-issue-update__heading {
+    font-size: 30px;
+}
+
+.pop-up-issue-update__heading i {
+    margin-right: 8px;
+}
+
+/*Override Form Lay 1 Actions*/
+.pop-up-issue-update__form .form-lay1 {
+    margin-bottom: 0px;
+}
+
+.pop-up-issue-update__form form .form-lay1__action {
+    text-align: center;
+}

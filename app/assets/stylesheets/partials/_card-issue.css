@@ -61,7 +61,7 @@
 .card-issue__btn .up-issue {
     background: var(--success-color);
     border: 1px solid var(--success-color);
-    color: #fff;
+    color: #fff !important;
     cursor: pointer;
 }
 

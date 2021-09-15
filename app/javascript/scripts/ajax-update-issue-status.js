@@ -1,16 +1,23 @@
 $(document).on('ready turbolinks:load', function() {
     // ------------AJAX UPDATE ISSUE TO RESOLVED
-    $('.up-issue').click(function() {
+    $('form#updateIssue').submit(function(e) {
+        e.preventDefault();
         var cardIssue = $(this).parents('.card-issue');
 
-        var idIssue = $(this).attr('data-id');
+        var idIssue = cardIssue.attr('data-id');
         var patchUrl = '/issues/' + idIssue;
+
+        var fileIssue = $(this).find('input[type="file"]').val()
+
         var datas = [{
             "name": "issue[id]",
             "value": idIssue,
         }, {
             "name": "issue[status]",
             "value": "resolu"
+        }, {
+            "name": "issue[validation_file]",
+            "value": fileIssue
         }];
 
         console.log(datas);
@@ -21,13 +28,16 @@ $(document).on('ready turbolinks:load', function() {
             url: patchUrl,
             data: datas,
             success: function(data) {
-                // Remove from the list and add to resolved
+                // Close Pop Up
+                $('.js-screen-open.open').removeClass('open');
+                // Remove from the list and add to resolved              
                 cardIssue.remove();
                 cardIssue.find('.up-issue').hide();
                 $('#renderResolvedIssues').prepend(cardIssue);
             },
             error: function(response) {}
         });
+
 
 
     });
