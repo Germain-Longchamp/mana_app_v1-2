@@ -82,6 +82,6 @@ class IssuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def issue_params
-      params.require(:issue).permit(:name, :company_id, :engine_id, :info, :start_date, :status)
+      params.require(:issue).permit(:name, :company_id, :engine_id, :info, :start_date, :status, :validation_file)
     end
 end
