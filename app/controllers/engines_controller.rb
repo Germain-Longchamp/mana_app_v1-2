@@ -98,6 +98,20 @@ class EnginesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def engine_params
-      params.require(:engine).permit(:name, :internal_name, :description, :tag_list, :tag, { tag_ids: [] }, :tag_ids, :room_id, :initial_date, :validity_start_date, :validity_end_date, :provider, :provider_info, :company_id)
+      params.require(:engine).permit(:name, 
+                                    :internal_name, 
+                                    :description, 
+                                    :tag_list, 
+                                    :tag, 
+                                    { tag_ids: [] }, 
+                                    :tag_ids, 
+                                    :room_id, 
+                                    :initial_date, 
+                                    :validity_start_date, 
+                                    :validity_end_date, 
+                                    :provider, 
+                                    :provider_info, 
+                                    :company_id, 
+                                    :file)
     end
 end

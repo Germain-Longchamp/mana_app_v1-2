@@ -66,6 +66,13 @@
     </div>
   </div>
 
+  <div class="form-lay1__fields d-flex justify-content-between">
+    <div class="form-lay1__input full border-box">
+      <label>Fichier machine</label>
+      <%= f.file_field :file %> 
+    </div>
+  </div>
+
   <div class="form-lay1__action">
     <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
   </div>

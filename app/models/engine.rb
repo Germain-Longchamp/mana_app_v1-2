@@ -9,6 +9,8 @@ class Engine < ApplicationRecord
     has_rich_text :description
     has_rich_text :provider_info
 
+    mount_uploader :file, FileUploader
+
     def self.tagged_with(name)
         Tag.find_by!(name: name).engines
     end
