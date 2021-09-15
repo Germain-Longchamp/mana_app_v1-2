@@ -31,13 +31,13 @@ $(document).on('ready turbolinks:load', function() {
     });
 
     // ---------- Open Pop Up
-    $('.pop-up-element').each(function() {
-        var triggerOpen = $(this).find('.js-pop-open');
-        var triggerClose = $(this).find('.js-screen__close');
-        var popToOpen = $(this).find('.js-screen-open');
+    $('.js-pop-open').each(function() {
+        var dataTrigger = $(this).attr('data-name');
+        var popToOpen = $(".js-screen-open[data-open=" + dataTrigger + "]");
+        var triggerClose = popToOpen.find('.js-screen__close');
 
         // Open Pop Up on click
-        triggerOpen.click(function() {
+        $(this).click(function() {
             popToOpen.addClass('open');
         });
 

@@ -23,7 +23,13 @@
         </div>
 
         <div class="card-issue__btn d-flex justify-content-between">
-            <a class="js-pop-open action-btn__small"><%= fa_icon "list" %>  Voir le détail</a>
+            <a class="js-pop-open action-btn__small" data-name="detail-<%= issue.id %>"><%= fa_icon "list" %>  Voir le détail</a>
+
+            <a class="js-pop-open action-btn__small" data-name="update-<%= issue.id %>"><%= fa_icon "check" %>  Résoudre</a>
+
+
+
+
 
             <% if issue.status == "encours" %>
             <span class="up-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "check" %> Marquer comme résolu</span>
@@ -38,7 +44,7 @@
 
 
     <%# Pop Up Detail Issue %>
-    <div class="js-screen-open">
+    <div class="js-screen-open" data-open="detail-<%= issue.id %>">
         <div class="js-screen__inner">
             <span class="js-screen__close"><%= fa_icon "times-circle" %></span>
             <div class="js-screen__pop pop-up-issue">
@@ -71,6 +77,16 @@
                         Incident n°<%= issue.id %>
                     </div>
                 </div>
+            </div>        
+        </div>
+    </div>
+
+    <%# Pop Up Validation Update to resolved%>
+    <div class="js-screen-open" data-open="update-<%= issue.id %>">
+        <div class="js-screen__inner">
+            <span class="js-screen__close"><%= fa_icon "times-circle" %></span>
+            <div class="js-screen__pop">
+                <%= issue.name %>
             </div>        
         </div>
     </div>
