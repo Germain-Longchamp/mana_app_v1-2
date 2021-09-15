@@ -28,7 +28,7 @@
 
 .js-screen__pop {
     position: relative;
-    top: 10px;
+    top: 20px;
     background: var(--white-color);
     transition: all .1s ease-out;
 }
