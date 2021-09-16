@@ -26,8 +26,11 @@
             <a class="js-pop-open action-btn__small" data-name="detail-<%= issue.id %>"><%= fa_icon "list" %>  Voir le détail</a>
 
             <% if issue.status == "encours" %>
-            <a class="js-pop-open action-btn__small up-issue" data-name="update-<%= issue.id %>"><%= fa_icon "check" %>  Résoudre</a>
+                <%= link_to edit_issue_path(issue), class: "action-btn__small up-issue" do %>
+                <%= fa_icon "check" %>  Résoudre   
+                <% end %>
             <% end %>
+            
 
             <% if issue.status == "resolu" %>
             <span class="ar-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "archive" %> Archiver</span>
@@ -49,10 +52,12 @@
                         <%= issue.engine.name %>
                     </div>
                     <div class="pop-up-issue__metas">
+                        <% if issue.start_date %>
                         <div class="pop-up-issue__date">
                             <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
                             <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
                         </div>
+                        <% end %>
                     </div>
                     <div class="pop-up-issue__info">
                         <div class="pop-up-issue__info-title">Message :</div>

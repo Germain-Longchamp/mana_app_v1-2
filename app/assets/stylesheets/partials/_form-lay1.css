@@ -96,7 +96,7 @@
     border-radius: 50%;
 }
 
-.form-lay1 form input[type="file"] {
+.form-lay1 form .form-lay1__input.file input[type="file"] {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -105,7 +105,7 @@
     z-index: -1;
 }
 
-.form-lay1 form input[type="file"] + label {
+.form-lay1 form .form-lay1__input.file input[type="file"] + label {
     font-size: 18px;
     color: var(--main-color);
     background-color: var(--main-color);
@@ -119,20 +119,20 @@
     transition: all .2s ease-out;
 }
 
-.form-lay1 form input[type="file"] + label svg {
+.form-lay1 form .form-lay1__input.file input[type="file"] + label svg {
     width: 100%;
     height: 100%;
     fill: #fff;
 }
 
-.form-lay1 form input[type="file"] + label span {
+.form-lay1 form .form-lay1__input.file input[type="file"] + label span {
     content: attr(data-before);
     position: absolute;
     left: 60px;
 }
 
-.form-lay1 form input[type="file"]:focus + label,
-.form-lay1 form input[type="file"] + label:hover {
+.form-lay1 form .form-lay1__input.file input[type="file"]:focus + label,
+.form-lay1 form .form-lay1__input.file input[type="file"] + label:hover {
     background-color: var(--dark-color);
 }
 

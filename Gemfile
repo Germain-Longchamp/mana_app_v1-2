@@ -37,6 +37,7 @@ gem "paperclip", "~> 6.0.0"
 # Jquery rails
 gem "jquery-rails"
 gem "jquery-ui-rails"
+gem 'jquery-fileupload-rails', '~> 0.4.7'
 gem 'chosen-rails'
 
 gem "popper_js", "~> 1.11.1"
@@ -61,6 +62,7 @@ gem 'cancancan'
 gem 'figaro'
 gem 'carrierwave'
 gem 'cloudinary'
+
 
 
 gem 'rails_12factor', group: :production

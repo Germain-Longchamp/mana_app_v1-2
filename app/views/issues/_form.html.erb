@@ -11,10 +11,11 @@
 </div>
 
 <div class="form-lay1__fields d-flex justify-content-between">
-  <div class="form-lay1__input full border-box">
-    <%= f.input :status, as: :select, :collection => [['En cours', 'encours'], ['Résolu', 'resolu']], :label => "Statut" %>
+    <div class="form-lay1__input full border-box">
+      <label>Fiche d'incident</label>
+      <%= f.file_field :validation_file, input_html: { required: true } %> 
+    </div>
   </div>
-</div>
 
 <div class="form-lay1__action">
   <%= f.submit "Mettre à jour", class: 'btn btn-lg btn-primary float-right' %>
