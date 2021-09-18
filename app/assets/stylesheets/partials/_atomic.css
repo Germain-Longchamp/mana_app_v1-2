@@ -72,6 +72,10 @@
     text-decoration: underline;
 }
 
+.custom-font {
+    font-family: 'Pacifico', cursive;
+}
+
 /*---------------- 3 Layout ----------------*/
 .wrapper {
     max-width: 90%;

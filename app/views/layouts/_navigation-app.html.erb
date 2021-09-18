@@ -5,14 +5,16 @@
 		<% if current_user %>
 		<div class="nav-app__top-bar__inner d-flex">
 			<div class="nav-app__top-bar__left">
+				<div class="nav-app__logo custom-font">MANA</div>
+			</div>
+			<div class="nav-app__top-bar__right">
 				<div class="nav-app__top-bar__nav-item">		
 					<%= link_to company_path(current_user.company_id) do %>
 					<%= fa_icon "building" %>
 					<span><%= current_user.company.name %></span>
 					<% end %>
 				</div>
-			</div>
-			<div class="nav-app__top-bar__right">
+				<div class="nav-app__top-bar__separator">|</div>
 				<%# Current user %>
 				<div class="nav-app__top-bar__nav-item">		
 					<%= link_to edit_user_registration_path(current_user) do %>

@@ -9,6 +9,10 @@
     background: var(--main-color);
 }
 
+.nav-app__logo {
+    color: var(--white-color);
+}
+
 /*---Top Bar---*/
 .nav-app__top-bar {
     position: fixed;
