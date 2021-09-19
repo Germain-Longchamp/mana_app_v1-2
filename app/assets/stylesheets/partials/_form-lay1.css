@@ -184,6 +184,10 @@
     text-align: right;
 }
 
+.form-lay1__action.centered {
+    text-align: center;
+}
+
 .form-lay1__action input[type="submit"] {
     font-family: "Nunito", sans-serif;
     cursor: pointer;
@@ -194,6 +198,10 @@
     padding: 8px 24px;
     border-radius: 8px;
     transition: all .3s ease-out;
+}
+
+.form-lay1__action input[type="submit"]:hover {
+    background: var(--dark-color);
 }
 
 .form-lay1__action input[type="submit"]:disabled {

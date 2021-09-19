@@ -1,0 +1,26 @@
+.card-issue-little {
+    padding: 8px 16px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+}
+
+.card-issue-little__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-issue-little__name {
+    font-weight: 600;
+}
+
+.card-issue-little__datetime span {
+    font-size: 12px;
+    color: var(--clear-grey-color);
+}
+
+.card-issue-little__datetime span:first-child {
+    margin-right: 32px;
+}

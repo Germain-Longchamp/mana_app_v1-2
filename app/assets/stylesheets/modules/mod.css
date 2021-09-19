@@ -14,3 +14,7 @@
 .mod .row.heading {
     margin-bottom: 50px;
 }
+
+.mod .row.heading .baseline {
+    margin-top: 16px;
+}

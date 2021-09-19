@@ -52,6 +52,15 @@ class Engine < ApplicationRecord
         end
     end
 
+    def has_room? 
+        room = self.room
+        if room.nil?
+            return "N/A"        
+        else
+            return self.room.name
+        end
+    end
+
     def is_valid?
         start_date = self.validity_start_date
         end_date = self.validity_end_date

@@ -1,5 +1,5 @@
 <%#-------Module Edit Issue-------%>
-<div class="mod mod-issue-edit">
+<section class="mod mod-edit-issue">
     <div class="container-fluid">
 
         <%# Row Go Back %>
@@ -12,28 +12,60 @@
         </div>
 
         <%# Row heading %>
-        <div class="row heading">
-            <div class="col-md-9">
-                <%# Breadcrumbs %>
-                <ul class="breadcrumbs no-styles">
-                    <li><a href="<%= issues_path %>">Incidents</a></li>
-                    <li><span><%= fa_icon 'chevron-right' %></span></li>
-                    <li><span>Résoudre <%= @issue.name %></span></li>
-                </ul>
+        <div class="row justify-content-center heading">
+            <div class="col-md-6">
                 <%# Title %>
-                <div class="d-flex align-items-center justify-content-between">
+                <div class="txt-center">
                     <h1>Résolution de l'incident</h1>
+                    <div class="baseline">Pour valider la résolution, veuillez téléverser la fiche d'incident correspondante au format PDF.</div>
                 </div>                 
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-9">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="mod-edit-issue__infos">
+                    <%# Info Issue %>
+                    <div class="mod-edit-issue__info-item">
+                        <div class="mod-edit-issue__infos__title">Incident</div>
+                        <div class="card-issue-little">
+                            <div class="card-issue-little__inner">
+                                <div class="card-issue-little__name">
+                                    <%= @issue.name %>
+                                </div>
+                                <div class="card-issue-little__datetime">
+                                    <span><%= fa_icon "calendar" %> <%= @issue.start_date.strftime('%d.%m.%y') %></span>
+                                    <span><%= fa_icon "history" %> <%= @issue.start_date.strftime('%Hh%M') %></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%# Info Issue Engine %>
+                    <div class="mod-edit-issue__info-item">
+                        <div class="mod-edit-issue__infos__title">Machine concernée</div>
+                        <div class="card-engine-little">
+                            <div class="card-engine-little__inner">
+                                <div class="card-engine-little__name">
+                                    <%= @issue.engine.has_name? %>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="engine-card-little__categories">
+                                        <% @issue.engine.tags.map.each do |t| %>
+                                        <span style="background:<%= t.tag_color %>;"><%= fa_icon "tag" %><%= t.name %></span>
+                                        <% end %>
+                                    </div>
+                                    <div class="engine-card-little__room">
+                                        <span><%= fa_icon "map-marker" %><%= @issue.engine.has_room? %></span>
+                                    </div>
+                                </div>
+                            </div>                 
+                        </div>
+                    </div>
+                </div>
                 <div class="form-lay1">
                     <%= render 'form', issue: @issue %>
                 </div>
             </div>
         </div>
-
     </div>
-</div>
+</section>

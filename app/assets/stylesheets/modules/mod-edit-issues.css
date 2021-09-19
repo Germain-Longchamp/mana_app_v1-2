@@ -1,0 +1,13 @@
+.mod.mod-edit-issue .row.heading {
+    margin-bottom: 30px;
+}
+
+.mod-edit-issue__infos__title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.mod-edit-issue__info-item {
+    margin-bottom: 32px;
+}
