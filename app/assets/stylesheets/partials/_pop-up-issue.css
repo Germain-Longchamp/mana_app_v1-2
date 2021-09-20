@@ -2,8 +2,30 @@
     position: relative;
     width: 40%;
     max-height: 80%;
-    padding: 40px 30px;
+    padding: 60px 30px 30px;
     border-radius: 16px;
+}
+
+.card-issue__status {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
+
+.card-issue__status span {
+    display: block;
+    color: var(--white-color);
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 30px;
+}
+
+.card-issue__status span.issue-progress {
+    background: #d3810d;
+}
+
+.card-issue__status span.issue-resolved {
+    background: #509534;
 }
 
 .pop-up-issue__heading {
@@ -65,8 +87,19 @@
 
 .pop-up-issue__number {
     position: absolute;
-    top: 0px;
+    top: 25px;
     right: 30px;
     font-size: 12px;
-    margin-top: 24px;
+}
+
+.pop-issue__validation-file {
+    margin-top: 32px;
+}
+
+.pop-issue__validation-file a {
+    text-decoration: none;
+}
+
+.pop-issue__validation-file i {
+    font-size: 18px;
 }

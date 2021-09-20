@@ -1,0 +1,4 @@
+$('.issue-delete').bind('ajax:success', function() {
+	console.log('on passe ici');
+	$(this).closest('.card-issue').fadeOut();
+});

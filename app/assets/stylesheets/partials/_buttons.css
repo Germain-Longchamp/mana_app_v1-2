@@ -2,6 +2,11 @@
 ********   Buttons Classes
 ----------------------------------------*/
 
+.default-btn,
+.default-btn:hover {
+    text-decoration: none;
+}
+
 /*--Button action Add--*/
 .action-btn__add {
     text-decoration: none;
@@ -54,6 +59,25 @@
 
 .action-btn__grey i {
     font-size: 12px;
+}
+
+/*--Button action Delete--*/
+.action-btn__delete {
+    background: var(--error-color);
+    color: var(--white-color);
+    padding: 2px 6px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.action-btn__delete i {
+    margin-right: 3px;
+}
+
+.action-btn__delete:hover {
+    background: var(--error-color);
+    color: var(--white-color);
 }
 
 /*
