@@ -5,15 +5,18 @@ development:
   api_secret: F2GF2t8FN4rSpS6nA7f_sYRhIiI
   enhance_image_tag: true
   static_file_support: false
+  secure: true
 production:
   cloud_name: hwerhj1ii
   api_key: '629433635375844'
   api_secret: F2GF2t8FN4rSpS6nA7f_sYRhIiI
   enhance_image_tag: true
   static_file_support: true
+  secure: true
 test:
   cloud_name: hwerhj1ii
   api_key: '629433635375844'
   api_secret: F2GF2t8FN4rSpS6nA7f_sYRhIiI
   enhance_image_tag: true
   static_file_support: false
+  secure: true
