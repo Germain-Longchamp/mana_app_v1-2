@@ -47,11 +47,16 @@ $(document).on('ready turbolinks:load', function() {
     });
 
     //------------- Chosen Library
+    // Override placeholder tags chosen
+    $('select#engine_tag_ids').attr('data-placeholder', 'Sélectionner une famille');
+
     $('#engine_tag_ids, #engine_room_id').chosen({
         max_selected_options: 1,
         allow_single_deselect: true,
         width: '100%'
     });
+
+
 
     $('#select_name_engine').chosen({
         max_selected_options: 1,

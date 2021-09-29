@@ -12,24 +12,26 @@
 
 .mod-show-engine__heading-title {
     margin-right: 40px;
+    margin-top: 40px;
 }
 
 .mod-show-engine__heading-tag {
     border-radius: 5px;
     padding: 0 8px;
+    width: fit-content;
 }
 
 .mod-show-engine__heading-tag a,
 .mod-show-engine__heading-tag a:hover {
     color: var(--white-color);
     text-decoration: none;
-    font-size: 25px;
+    font-size: 18px;
     padding: 0 10px;
 }
 
 .mod-show-engine__heading-tag i {
     color: var(--white-color);
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .mod-show-engine__heading-infos {

@@ -1,14 +1,5 @@
-/*---Override form lay1 for engines */
-.form-lay1 form .form-lay1__input.start_date input[type="date"] {
-    color: var(--success-color);
-    background: rgba(var(--success-color-rgb), 0.1);
-    font-size: 20px;
-    height: 50px;
-}
-
-.form-lay1 form .form-lay1__input.end_date input[type="date"] {
-    color: var(--error-color);
-    background: rgba(var(--error-color-rgb), 0.1);
-    font-size: 20px;
-    height: 50px;
+.engine-form__heading {
+    border: 1px solid var(--border-color);
+    padding: 20px 15px;
+    border-radius: 8px;
 }

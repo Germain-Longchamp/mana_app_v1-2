@@ -1,11 +1,20 @@
 <%= render partial: '/layouts/navigation-app' %>
 
-<div class="mod mod-new-engine">
-   <div class="container-fluid">
+<div class="mod mod-engines-edit">
+     <div class="container-fluid">
+
+        <%# Row Go Back %>
+        <div class="row go-back">
+            <div class="col-md-9">
+                <%= link_to engines_path, class: 'action-btn__grey' do %>
+                <%= fa_icon 'chevron-left' %> Retour
+                <% end %>
+            </div>
+        </div>
+
+        
         <div class="row">
             <div class="col-md-12">
-                <%= link_to 'Back', engines_path %>
-                <h1 class = "text-center">Ajouter une nouvelle machine</h1>
                 <%= render 'form', engine: @engine %>
             </div>
         </div>
