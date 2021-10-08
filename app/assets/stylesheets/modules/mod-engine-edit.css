@@ -3,3 +3,121 @@
     padding: 20px 15px;
     border-radius: 8px;
 }
+
+.engine-form__heading label {
+    display: none;
+}
+
+.engine-form__input .engine-form__input-inner {
+    transition: all .2s ease-out;
+}
+
+.engine-form__input.focused .engine-form__input-inner:focus-within {
+    border: 1px solid var(--main-color);
+}
+
+.engine-form__input > span {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+/*-- Tag Choices input --*/
+.engine-form__tag {
+    margin-bottom: 40px;
+}
+
+.engine-form__tag .engine-form__input-inner {
+    border: 1px solid var(--light-grey-color);
+    padding: 5px;
+}
+
+.engine-form__tag .chosen-container-multi .chosen-choices {
+    border: 0px;
+    padding: 0px;
+    background: none;
+}
+
+.engine-form__tag .chosen-container-active .chosen-choices {
+    box-shadow: none;
+}
+
+.engine-form__tag .chosen-container-multi .chosen-choices .search-choice {
+    background: none;
+    border: 1px solid var(--main-color);
+    font-size: 18px;
+    padding: 6px 36px 6px 18px;
+}
+
+.engine-form__tag .chosen-container-multi .chosen-choices .search-field {
+    display: block;
+    float: none;
+}
+
+.engine-form__tag .chosen-container-multi .chosen-choices .search-field input[type="text"] {
+    font-size: 18px;
+}
+
+/*-- Engine name input --*/
+.engine-form__name {}
+
+.engine-form__name .engine-form__input-inner {
+    border: 1px solid var(--light-grey-color);
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.engine-form__name input[type="text"] {
+    color: var(--main-color);
+    border: 0;
+    font-size: 50px;
+}
+
+/*-- Engine internal name input --*/
+.engine-form__internal-name {}
+
+.engine-form__internal-name .engine-form__input-inner {
+    border: 1px solid var(--light-grey-color);
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+.engine-form__internal-name input[type="text"] {
+    border: 0;
+    padding: 0;
+}
+
+/*-- Engine internal room input --*/
+.engine-form__room {}
+
+.engine-form__room .engine-form__input-inner {
+    border: 1px solid var(--light-grey-color);
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+.engine-form__room .chosen-container-single .chosen-single {
+    position: unset;
+    width: fit-content;
+    padding: 0px 15px;
+    height: auto;
+    background: var(--main-color);
+    color: #fff;
+}
+
+.engine-form__room .chosen-container-single .chosen-single-with-deselect span {
+    margin: 0;
+    padding: 0;
+}
+
+/*-- Engine internal Initial date input --*/
+.engine-form__qualification {}
+
+.engine-form__qualification .engine-form__input-inner {
+    border: 1px solid var(--light-grey-color);
+    padding: 5px;
+}
+
+.engine-form__qualification input[type="date"] {
+    border: 0;
+    padding: 0;
+}

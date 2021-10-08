@@ -1,28 +1,50 @@
 <div class="engine-form">
   <%= simple_form_for @engine do |f| %>
 
-
+  <%# Heading form %>
   <div class="engine-form__heading">
     <div class="engine-form__heading__left">
+
       <div class="engine-form__tag">
-        <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: {multiple: true}, :label => "Famille" %>
+        <span>Salle</span>
+        <div class="engine-form__input-inner">
+          <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: {multiple: true}, :label => "Famille" %>
+        </div>     
+      </div>
+
+      <div class="engine-form__name engine-form__input focused">
+        <div class="engine-form__input-inner">
+          <%= f.input :name, :label => "Nom/Marque" %>
+        </div>
+      </div>
+
+      <div class="engine-form__internal-name engine-form__input focused">
+        <span>Nom interne</span>
+        <div class="engine-form__input-inner">
+          <%= f.input :internal_name, :label => "Nom interne" %>
+        </div>       
+      </div>
+
+      <div class="engine-form__room engine-form__input focused">
+        <span>Salle</span>
+        <div class="engine-form__input-inner">
+          <%= f.association :room, as: :select, collection: Room.where(:company_id => current_user.company_id).order(:id), :label => "Salle affectée" %>
+        </div>
+      </div>
+
+      <div class="engine-form__qualification engine-form__input focused">
+        <span>Mise en circulation</span>
+        <div class="engine-form__input-inner">
+          <%= f.input :initial_date, as: :date, html5: true, :label => "Date de mise en circulation" %>
+        </div>
       </div>
     </div>
   </div>
 
 
+
+
   <div style="margin-top:90px;">
-    <%= f.input :name, :label => "Nom/Marque" %>
-
-
-    <%= f.input :internal_name, :label => "Nom interne" %>
-
-    <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: {multiple: true }, :label => "Famille" %>
-
-
-    <%= f.association :room, as: :select, collection: Room.where(:company_id => current_user.company_id).order(:id), :label => "Salle affectée" %>
-
-    <%= f.input :initial_date, as: :date, html5: true, :label => "Date de mise en circulation" %>
 
     <%= f.input :validity_start_date, as: :date, html5: true, :label => "Dernière vérification" %>
 
