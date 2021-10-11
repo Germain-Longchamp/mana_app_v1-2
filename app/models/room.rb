@@ -1,4 +1,4 @@
 class Room < ApplicationRecord
-    has_many :engines, dependent: :delete_all
+    has_many :engines
     belongs_to :company
 end

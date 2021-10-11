@@ -28,6 +28,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
+        format.js
         format.json { render json: @room.id }
       else
         format.html { render :new, status: :unprocessable_entity }
