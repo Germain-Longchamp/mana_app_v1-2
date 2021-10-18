@@ -1,10 +1,15 @@
-.engine-form__heading {
+.engine-form__section {
     border: 1px solid var(--border-color);
     padding: 20px 15px;
     border-radius: 8px;
+    margin-bottom: 30px;
 }
 
-.engine-form__heading label {
+.engine-form__section__half-col {
+    flex: 0 0 48%;
+}
+
+.engine-form__section label {
     display: none;
 }
 
@@ -16,6 +21,8 @@
     border: 1px solid var(--main-color);
 }
 
+span.custom-label,
+.engine-form__tag > span,
 .engine-form__input > span {
     text-transform: uppercase;
     font-size: 12px;
@@ -86,6 +93,11 @@
     padding: 0;
 }
 
+.engine-form__name input[type="text"]::placeholder,
+.engine-form__internal-name input[type="text"]::placeholder {
+    color: #ccc8c8;
+}
+
 /*-- Engine internal room input --*/
 .engine-form__room {}
 
@@ -95,6 +107,7 @@
     margin-bottom: 8px;
 }
 
+.engine-form__room .chosen-container-active.chosen-with-drop .chosen-single,
 .engine-form__room .chosen-container-single .chosen-single {
     position: unset;
     width: fit-content;
@@ -102,6 +115,7 @@
     height: auto;
     background: var(--main-color);
     color: #fff;
+    border: 0;
 }
 
 .engine-form__room .chosen-container-single .chosen-single-with-deselect span {
@@ -120,4 +134,25 @@
 .engine-form__qualification input[type="date"] {
     border: 0;
     padding: 0;
+}
+
+/*-- Engine start and end dates --*/
+.engine-form__input__date input,
+.engine-form__input__date input:focus {
+    color: #fff;
+    font-size: 30px;
+}
+
+.engine-form__input__date input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.engine-form__input__date.end input,
+.engine-form__input__date.end input:focus {
+    background: var(--alert-color);
+}
+
+.engine-form__input__date.start input,
+.engine-form__input__date.start input:focus {
+    background: var(--success-color);
 }

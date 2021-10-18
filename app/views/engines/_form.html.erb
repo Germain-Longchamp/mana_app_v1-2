@@ -2,7 +2,7 @@
   <%= simple_form_for @engine do |f| %>
 
   <%# Heading form %>
-  <div class="engine-form__heading">
+  <div class="engine-form__section">
     <div class="engine-form__heading__left">
 
       <div class="engine-form__tag">
@@ -14,14 +14,14 @@
 
       <div class="engine-form__name engine-form__input focused">
         <div class="engine-form__input-inner">
-          <%= f.input :name, :label => "Nom/Marque" %>
+          <%= f.input :name, :label => "Nom/Marque", :placeholder => "Nom machine" %>
         </div>
       </div>
 
       <div class="engine-form__internal-name engine-form__input focused">
         <span>Nom interne</span>
         <div class="engine-form__input-inner">
-          <%= f.input :internal_name, :label => "Nom interne" %>
+          <%= f.input :internal_name, :label => "Nom interne", :placeholder => "Nom interne" %>
         </div>       
       </div>
 
@@ -41,15 +41,20 @@
     </div>
   </div>
 
-
+  <%# Check dates %>
+  <div class="engine-form__section d-flex justify-content-between">
+    <div class="engine-form__section__half-col engine-form__input__date start">
+      <span class="custom-label">Dernière intervention</span>
+      <%= f.input :validity_start_date, as: :date, html5: true, :label => "Dernière vérification" %>
+    </div>
+    <div class="engine-form__section__half-col engine-form__input__date end">
+      <span class="custom-label">Prochaine intervention</span>
+      <%= f.input :validity_end_date, as: :date, html5: true, :label => "Prochaine vérification" %>
+    </div>
+  </div>
 
 
   <div style="margin-top:90px;">
-
-    <%= f.input :validity_start_date, as: :date, html5: true, :label => "Dernière vérification" %>
-
-
-    <%= f.input :validity_end_date, as: :date, html5: true, :label => "Prochaine vérification" %>
 
     <label>Commentaires maintenance</label>
     <%= f.rich_text_area :description %>
