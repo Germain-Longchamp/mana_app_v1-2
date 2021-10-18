@@ -53,17 +53,30 @@
     </div>
   </div>
 
+  <%# Maintenance infos %>
+  <div class="engine-form__section">
+    <div class="engine-form__section__full-col engine-form__input__fix">
+      <span class="custom-label">Prestataire maintenance</span>
+      <%= f.input :provider, :label => "Prestataire Maintenance" %>
+    </div>
+    <div class="engine-form__input__fix-info">
+      <span class="custom-label">Informations prestataire</span>
+      <%= f.rich_text_area :provider_info %>
+    </div>
+  </div>
+
+  <%# Other infos %>
+  <div class="engine-form__section">
+    <div class="engine-form__section__full-col engine-form__input__infos">
+      <span class="custom-label">Autres informations</span>
+      <%= f.rich_text_area :description %>
+    </div>
+  </div>
+
 
   <div style="margin-top:90px;">
 
-    <label>Commentaires maintenance</label>
-    <%= f.rich_text_area :description %>
-
-    <%= f.input :provider, :label => "Prestataire Maintenance" %>
-
-    <label>Informations Prestataire Maintenance</label>
-    <%= f.rich_text_area :provider_info %>
-
+    
     <label>Fichier machine</label>
     <%= f.file_field :file %> 
 
@@ -73,6 +86,9 @@
 
 
 
+
+    
+  </div>
 
     <% if engine.errors.any? %>
     <div id="error_explanation">
@@ -85,7 +101,6 @@
       </ul>
     </div>
     <% end %>
-  </div>
 
   
   <% end %>

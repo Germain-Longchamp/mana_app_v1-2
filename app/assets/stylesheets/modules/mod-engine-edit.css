@@ -2,7 +2,7 @@
     border: 1px solid var(--border-color);
     padding: 20px 15px;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .engine-form__section__half-col {
@@ -155,4 +155,12 @@ span.custom-label,
 .engine-form__input__date.start input,
 .engine-form__input__date.start input:focus {
     background: var(--success-color);
+}
+
+.engine-form__input__fix {
+    margin-bottom: 16px;
+}
+
+.engine-form__input__fix-info trix-editor {
+    min-height: 150px;
 }
