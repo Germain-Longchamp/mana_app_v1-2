@@ -1,5 +1,23 @@
 $(document).on('ready turbolinks:load', function() {
 
+    // ------------Init tabs on engine show
+    $('.tabs-elem__tab').each(function() {
+        $(this).click(function() {
+            let dataTab = $(this).attr('data-tab');
+            let otherTabs = $(this).siblings();
+            let tabContent = $('.tabs-elem__tab-content[data-target="' + dataTab + '"]');
+            let otherTabContent = $('.tabs-elem__tab-content:not([data-target="' + dataTab + '"])');
+
+            // Manage tabs nav appearance
+            $(this).addClass('active');
+            otherTabs.removeClass('active');
+
+            // Manage tab contents
+            tabContent.show();
+            otherTabContent.hide();
+        });
+    });
+
     // ------------Close panel add tag
     $('.sidebar-adding__close').click(function() {
         $('#formTag').removeClass('slided');

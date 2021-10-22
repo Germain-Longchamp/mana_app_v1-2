@@ -3,9 +3,10 @@
 <% tag_name = raw @engine.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
 
 <%#------Module Show Engine-------%>
-<div class="mod mod-show-engine">
-  <div class="container-fluid">
+<div class="mod">
 
+  <%# Breadcrumbs and go back btn %>
+  <div class="container-fluid">
     <%# Row Go Back %>
     <div class="row go-back">
       <div class="col-md-12">
@@ -14,204 +15,157 @@
         <% end %>
       </div>
     </div>
-
-    <%# Row Engine heading %>
     <div class="row">
       <div class="col-md-12">
-
         <%# Breadcrumbs %>
         <ul class="breadcrumbs no-styles">
           <li><a href="<%= engines_path %>">Parc machines</a></li>
           <li><span><%= fa_icon 'chevron-right' %></span></li>
           <li><span><%=@engine.has_name? %></span></li>
         </ul>
-
-        <%# Heading engine show %>
-        <div class="mod-show-engine__heading d-flex align-items-start justify-content-between">
-          <div class="mod-show-engine__heading-left-col">
-            <div>
-              <div class="mod-show-engine__heading-tag" style="background-color: <%= tag_color %>;">
-                <%= fa_icon 'tag' %><%= tag_name %>
-              </div> 
-              <div class="mod-show-engine__heading-title">
-                <h1><%=@engine.has_name? %></h1>
-              </div>              
-            </div>
-            <div class="mod-show-engine__heading-infos">
-              <div class="mod-show-engine__heading-info-item"><span>Nom interne :</span> <%= @engine.internal_name %></div>
-              <div class="mod-show-engine__heading-info-item"><span>Salle :</span> <%= @engine.room.name %></div>
-              <% if @engine.initial_date %>
-              <div class="mod-show-engine__heading-info-item"><span>Qualification initiale :</span> <%= @engine.initial_date.strftime('%d.%m.%y') %></div>
-              <% end %>
-            </div>
-          </div>
-          <div class="mod-show-engine__heading-action">
-            <%= link_to edit_engine_path(@engine), class: "action-btn__add" do %>
-            <%= fa_icon "edit" %>Modifier les informations     
-            <% end %>
-          </div>  
-        </div>  
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mod-show-engine__dates mod-show-engine-section d-flex justify-content-between">
-          <%# Start date %>
-          <div class="mod-show-engine__date start border-box">
-            <span>Dernière vérification</span>
-            <div class="mod-show-engine__date-exerg d-flex align-items-center">
-              <%= fa_icon 'calendar' %>
-              <%= l @engine.validity_start_date, :format=>:default %>
-            </div>
-          </div>
-          <%# End date %>
-          <div class="mod-show-engine__date end border-box">
-            <span>Prochaine vérification <em>(<%= @engine.calc_time_left %>)</em></span>
-            <div class="mod-show-engine__date-exerg d-flex align-items-center">
-              <%= fa_icon 'calendar' %>
-              <%= l @engine.validity_end_date, :format=>:default %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <hr>
-
-    <%# Row issues engines %>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mod-show-engine__issues mod-show-engine-section">
-          <span>Incidents</span>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <%# Col Issues Progress %>
-      <div class="col-md-6">
-        <div class="mod-show-engine-section">
-          <div class="list-issues">
-            <div class="list-issues__heading unsolved"><%= fa_icon "exclamation-circle" %>En cours (<%= @progress_issues.length() %>)</div>
-            <div class="list-issues__table" id="renderIssues">
-              <% @progress_issues.each do |issue| %>
-              <div class="card-issue">
-                <div class="card-issue__engine">
-                  <%= issue.engine.name %>
+  <%# Tabs container %>
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="engine-tabs tabs-elem">
+            <%# Nav tabs %>
+            <div class="engine-tabs__nav-container">
+              <nav class="tabs-elem__nav">
+                <div class="engine-tabs__tab tabs-elem__tab active" data-tab="info">
+                  <%= fa_icon "info" %> Informations
                 </div>
-                <div class="card-issue__content">
-                  <div class="card-issue__metas">
-                    <div class="card-issue__name"><%= issue.name %><hr></div>       
-                  </div>
-                  <% if issue.start_date %>
-                  <div class="card-issue__datetime">
-                    <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
-                    <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
-                  </div>
-                  <% end %>
-                  <div class="card-issue__desc">
-                    <span>Message :</span>
-                    <div><%= issue.info %></div>
-                  </div>
-                  <div class="card-issue__btn d-flex justify-content-between">
-                    <%= link_to issue_path(issue), class: "action-btn__small" do %>
-                    <%= fa_icon "list" %>  Voir le détail
-                    <% end %>
+                <div class="engine-tabs__tab tabs-elem__tab" data-tab="issues">
+                  <%= fa_icon "exclamation-circle" %> Incidents
+                </div>
+                <div class="engine-tabs__tab tabs-elem__tab" data-tab="interventions">
+                  <%= fa_icon "wrench" %> Interventions
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                    <% if issue.status == "encours" %>
-                    <span class="up-issue action-btn__small white" data-id="<%= issue.id %>"><%= fa_icon "check" %> Marquer comme résolu</span>
-                    <% end %>
+    <%# Tab Engine Info %>
+    <div class="tabs-elem__tab-content engine-infos-tab" data-target="info">
+      <div class="container-fluid">
+
+        <%# Row Engine heading %>
+        <div class="row">
+          <div class="col-md-12">
+
+            <%# Heading engine show %>
+            <div class="mod-show-engine__heading d-flex align-items-start justify-content-between">
+              <div class="mod-show-engine__heading-left-col">
+                <div>
+                  <div class="mod-show-engine__heading-tag" style="background-color: <%= tag_color %>;">
+                    <%= fa_icon 'tag' %><%= tag_name %>
                   </div> 
+                  <div class="mod-show-engine__heading-title">
+                    <h1><%=@engine.has_name? %></h1>
+                  </div>              
+                </div>
+                <div class="mod-show-engine__heading-infos">
+                  <div class="mod-show-engine__heading-info-item"><span>Nom interne :</span> <%= @engine.internal_name %></div>
+                  <div class="mod-show-engine__heading-info-item"><span>Salle :</span> <%= @engine.room.name %></div>
+                  <% if @engine.initial_date %>
+                  <div class="mod-show-engine__heading-info-item"><span>Qualification initiale :</span> <%= @engine.initial_date.strftime('%d.%m.%y') %></div>
+                  <% end %>
                 </div>
               </div>
-              <% end %>
+              <div class="mod-show-engine__heading-action">
+                <%= link_to edit_engine_path(@engine), class: "action-btn__add" do %>
+                <%= fa_icon "edit" %>Modifier les informations     
+                <% end %>
+              </div>  
+            </div>  
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="mod-show-engine__dates mod-show-engine-section d-flex justify-content-between">
+              <%# Start date %>
+              <div class="mod-show-engine__date start border-box">
+                <span>Dernière vérification</span>
+                <div class="mod-show-engine__date-exerg d-flex align-items-center">
+                  <%= fa_icon 'calendar' %>
+                  <%= l @engine.validity_start_date, :format=>:default %>
+                </div>
+              </div>
+              <%# End date %>
+              <div class="mod-show-engine__date end border-box">
+                <span>Prochaine vérification <em>(<%= @engine.calc_time_left %>)</em></span>
+                <div class="mod-show-engine__date-exerg d-flex align-items-center">
+                  <%= fa_icon 'calendar' %>
+                  <%= l @engine.validity_end_date, :format=>:default %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-      </div>
+        <hr>
 
-      <%# Col Issues Resolved %>
-      <div class="col-md-6">
-        <div class="mod-show-engine-section">
-          <div class="list-issues">
-            <div class="list-issues__heading solved"><%= fa_icon "check-square" %>Résolus (<%= @resolved_issues.length() %>)</div>
-            <div class="list-issues__table" id="renderResolvedIssues">
-              <% @resolved_issues.each do |issue| %>
-              <div class="card-issue">
-                <div class="card-issue__engine">
-                  <%= issue.engine.name %>
-                </div>
-                <div class="card-issue__content">
-                  <div class="card-issue__metas">
-                    <div class="card-issue__name"><%= issue.name %><hr></div>       
-                  </div>
-                  <% if issue.start_date %>
-                  <div class="card-issue__datetime">
-                    <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
-                    <span><%= fa_icon "history" %> <%= issue.start_date.strftime('%Hh%M') %></span>
-                  </div>
-                  <% end %>
-                  <div class="card-issue__desc">
-                    <span>Message :</span>
-                    <div><%= issue.info %></div>
-                  </div>
-                  <div class="card-issue__btn">
-                    <%= link_to issue_path(issue), class: "action-btn__small" do %>
-                    <%= fa_icon "list" %>  Voir le détail
-                    <% end %>
-                  </div> 
-                </div>
-              </div>
+        <%# Row Engine More Infos %>
+        <% if @engine.description %>
+        <div class="row">
+         <div class="col-md-12">
+          <div class="mod-show-engine__more mod-show-engine-section">
+            <span>Commentaires maintenance</span>
+            <div class="mod-show-engine__more-txt">
+              <%= @engine.description %>
+            </div>      
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+      <hr>
+
+      <%# Row Engine Provider %>
+      <% if @engine.provider %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mod-show-engine__provider mod-show-engine-section">
+            <span>Prestataire maintenance</span>
+            <div class="mod-show-engine__more-txt">
+              <span><%= @engine.provider %></span>
+              <% if @engine.provider_info %>
+              <%= @engine.provider_info %>
               <% end %>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
-    </div>
+      <% end %>
 
-    <hr>
-
-    <%# Row Engine More Infos %>
-    <% if @engine.description %>
-    <div class="row">
-     <div class="col-md-12">
-      <div class="mod-show-engine__more mod-show-engine-section">
-        <span>Commentaires maintenance</span>
-        <div class="mod-show-engine__more-txt">
-          <%= @engine.description %>
-        </div>      
-      </div>
-    </div>
-  </div>
-  <% end %>
-
-  <hr>
-
-  <%# Row Engine Provider %>
-  <% if @engine.provider %>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="mod-show-engine__provider mod-show-engine-section">
-        <span>Prestataire maintenance</span>
-        <div class="mod-show-engine__more-txt">
-          <span><%= @engine.provider %></span>
-          <% if @engine.provider_info %>
-          <%= @engine.provider_info %>
-          <% end %>
+      <div class="row">
+        <div class="col-md-12">
+          url du fichier : <%= @engine.file_url %> 
+          <embed src="<%= @engine.file_url %>" width="300px" height="800px" />
         </div>
       </div>
     </div>
   </div>
-  <% end %>
 
-  <div class="row">
-    <div class="col-md-12">
-      url du fichier : <%= @engine.file_url %> 
-      <embed src="<%= @engine.file_url %>" width="300px" height="800px" />
-    </div>
+
+  <%# Issues Tab %>
+  <div class="tabs-elem__tab-content ngine-issues-tab" data-target="issues" style="display:none;">
+    issues
   </div>
-</div>
+
+  <%# Interventions Tab %>
+  <div class="tabs-elem__tab-content engine-interventions-tab" data-target="interventions" style="display:none;">
+    interventions
+  </div>
+
 </div>
 
 
