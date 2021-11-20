@@ -1,6 +1,8 @@
 <div class="card-issue pop-up-element"  data-id="<%= issue.id %>">
     <div class="card-issue__engine">
+        <% if issue.engine %>
         <%= issue.engine.name %>
+        <% end %>
     </div>
     <div class="card-issue__content">
         <div class="card-issue__metas">
@@ -61,7 +63,9 @@
                         <%= issue.name %>
                     </div>
                     <div class="pop-up-issue__engine">
+                        <% if issue.engine %>
                         <%= issue.engine.name %>
+                        <% end %>
                     </div>
                     <div class="pop-up-issue__metas">
                         <% if issue.start_date %>

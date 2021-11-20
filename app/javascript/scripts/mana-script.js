@@ -74,8 +74,6 @@ $(document).on('ready turbolinks:load', function() {
         width: '100%'
     });
 
-
-
     $('#select_name_engine').chosen({
         max_selected_options: 1,
         allow_single_deselect: true,

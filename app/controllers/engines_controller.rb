@@ -37,11 +37,17 @@ class EnginesController < ApplicationController
   def show
     @engine = Engine.find(params[:id])
 
+    # GET Engines count
+    @engines = Engine.where(:company_id => current_user.company_id).all
+
     #GET ENCOURS ISSUES
     @progress_issues = @engine.issues.where(:status => 'encours').order("created_at DESC")
 
     #GET RESOLVED ISSUES
     @resolved_issues = @engine.issues.where(:status => 'resolu').order("updated_at DESC")
+
+    #GET ALL ISSUES CATEGORIES
+    @types = Type.where(:company_id => current_user.company_id)
   end
 
   # GET /engines/new
