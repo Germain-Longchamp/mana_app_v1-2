@@ -40,11 +40,11 @@ class EnginesController < ApplicationController
     # GET Engines count
     @engines = Engine.where(:company_id => current_user.company_id).all
 
-    #GET ENCOURS ISSUES
-    @progress_issues = @engine.issues.where(:status => 'encours').order("created_at DESC")
+     #GET ENCOURS ISSUES
+    @progress_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'encours').where(:engine_id => @engine.id).order("created_at DESC")
 
     #GET RESOLVED ISSUES
-    @resolved_issues = @engine.issues.where(:status => 'resolu').order("updated_at DESC")
+    @resolved_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'resolu').where(:engine_id => @engine.id).order("updated_at DESC")
 
     #GET ALL ISSUES CATEGORIES
     @types = Type.where(:company_id => current_user.company_id)

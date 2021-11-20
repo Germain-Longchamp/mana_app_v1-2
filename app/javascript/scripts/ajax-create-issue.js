@@ -2,7 +2,11 @@
 $(document).on('ready turbolinks:load', function() {
     $('.sidebar-adding#formIssue form').submit(function(e) {
         e.preventDefault();
+        $("#issue_engine_id").removeAttr('disabled');
+
         datas = $(this).serializeArray();
+
+        //console.log(datas);
 
         $.ajax({
             type: 'POST',
@@ -11,6 +15,7 @@ $(document).on('ready turbolinks:load', function() {
             success: function(data) {},
             error: function(response) {}
         });
+
 
     });
 });
