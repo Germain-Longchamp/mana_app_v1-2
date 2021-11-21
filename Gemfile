@@ -63,6 +63,8 @@ gem 'figaro'
 gem 'carrierwave'
 gem 'cloudinary'
 
+gem 'csv', '~> 3.2', '>= 3.2.1'
+
 
 
 gem 'rails_12factor', group: :production

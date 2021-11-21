@@ -107,6 +107,7 @@ GEM
     concurrent-ruby (1.1.9)
     country-select (1.2.1)
     crass (1.0.6)
+    csv (3.2.1)
     devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -328,6 +329,7 @@ DEPENDENCIES
   chosen-rails
   cloudinary
   country-select
+  csv (~> 3.2, >= 3.2.1)
   devise
   dotenv (~> 2.7, >= 2.7.6)
   figaro
