@@ -1,8 +1,11 @@
-$('#renderIssues').append('<%= j render @issue %>');
+$('#renderIssues').prepend('<%= j render @issue %>');
 $('#formIssue').removeClass('slided');
 $('.overlay-sidebar').hide();
 
 $('#messageIssue').show();
+
+let numberIssues = $('#renderIssues .card-issue').length;
+$('#numberIssues').html(numberIssues);
 
 $('#issue_name').val('');
 $('#issue_engine_id').val('');

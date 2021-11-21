@@ -1,11 +1,12 @@
 <%#-------Module Edit Issue-------%>
+
 <section class="mod mod-edit-issue">
     <div class="container-fluid">
 
         <%# Row Go Back %>
         <div class="row go-back">
             <div class="col-md-9">
-                <%= link_to issues_path, class: 'action-btn__grey' do %>
+                <%= link_to request.referer, class: 'action-btn__grey' do %>
                 <%= fa_icon 'chevron-left' %> Retour
                 <% end %>
             </div>
