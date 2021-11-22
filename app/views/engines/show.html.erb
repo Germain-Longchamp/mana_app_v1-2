@@ -4,7 +4,6 @@
 
 <%#------Module Show Engine-------%>
 <section class="mod">
-
   <%# Breadcrumbs and go back btn %>
   <div class="container-fluid">
     <%# Row Go Back %>
@@ -36,7 +35,7 @@
           <%# Nav tabs %>
           <div class="engine-tabs__nav-container">
             <nav class="tabs-elem__nav">
-              <div class="engine-tabs__tab tabs-elem__tab active" data-tab="info">
+              <div class="engine-tabs__tab tabs-elem__tab" data-tab="info">
                 <%= fa_icon "info" %> Informations
               </div>
               <div class="engine-tabs__tab tabs-elem__tab" data-tab="issues">
@@ -53,7 +52,7 @@
   </div>
 
   <%#-------------- Tab Engine Info --------------%>
-  <div class="tabs-elem__tab-content engine-infos-tab" data-target="info">
+  <div class="tabs-elem__tab-content engine-infos-tab" data-target="info" style="display:none;">
     <div class="container-fluid">
 
       <%# Row Engine heading %>
@@ -157,7 +156,7 @@
 
 
   <%#---------------- Issues Tab ----------------%>
-  <div class="tabs-elem__tab-content ngine-issues-tab" data-target="issues" style="display:none;">
+  <div class="tabs-elem__tab-content engine-issues-tab" data-target="issues" style="display:none;">
     <div class="container-fluid">
 
       <%# Message to display when created %>

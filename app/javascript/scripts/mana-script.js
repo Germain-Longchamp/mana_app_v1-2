@@ -1,18 +1,54 @@
 $(document).on('ready turbolinks:load', function() {
 
-    // ------------Init tabs on engine show
+    // -------------------------Init tabs on engine show
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+        return false;
+    };
+
+    // On load
+    let activeParam = getUrlParameter('tab');
+    if (activeParam) {
+        let tabActive = $('.tabs-elem__tab[data-tab = "' + activeParam + '"]');
+        let tabActiveContent = $('.tabs-elem__tab-content[data-target="' + activeParam + '"]');
+        tabActive.addClass('active');
+        tabActiveContent.show();
+    } else {
+        let tabActive = $('.tabs-elem__tab[data-tab = "info"]');
+        let tabActiveContent = $('.tabs-elem__tab-content[data-target="info"]');
+        tabActive.addClass('active');
+        tabActiveContent.show();
+    }
+
+    // On click
     $('.tabs-elem__tab').each(function() {
         $(this).click(function() {
             let dataTab = $(this).attr('data-tab');
             let otherTabs = $(this).siblings();
-            let tabContent = $('.tabs-elem__tab-content[data-target="' + dataTab + '"]');
-            let otherTabContent = $('.tabs-elem__tab-content:not([data-target="' + dataTab + '"])');
+
+            window.history.replaceState(null, null, "?tab=" + dataTab);
+            let activeParam = getUrlParameter('tab');
+
+            let tabContent = $('.tabs-elem__tab-content[data-target="' + activeParam + '"]');
+            let otherTabContent = $('.tabs-elem__tab-content:not([data-target="' + activeParam + '"])');
 
             // Manage tabs nav appearance
             $(this).addClass('active');
             otherTabs.removeClass('active');
 
             // Manage tab contents
+
             tabContent.show();
             otherTabContent.hide();
         });
