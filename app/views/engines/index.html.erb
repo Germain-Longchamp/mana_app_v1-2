@@ -14,14 +14,21 @@
             <span class="mod-engines-index__tagged"><%= fa_icon "tag" %> <%= params[:tag] %></span>
             <% end %>
           </h1>
-          <%= link_to new_engine_path, class: "action-btn__add" do %>
-            <%= fa_icon "plus" %>Ajouter une machine      
-          <% end %>
+          <div class="mod-engines-index__actions d-flex">
+            <div class="mod-engines-index__action-btn">
+              <%= link_to engines_path(format: :csv), class: "action-btn__add trans" do %>
+                <%= fa_icon "download" %>Exporter les données 
+              <% end %>
+            </div>
+            <div class="mod-engines-index__action-btn">
+              <%= link_to new_engine_path, class: "action-btn__add" do %>
+                <%= fa_icon "plus" %>Ajouter une machine      
+              <% end %>
+            </div>
+          </div>
         </div>      
       </div>
     </div>
-
-    <%= link_to 'Download CSV list', engines_path(format: :csv) %>
 
     <%# Row Filter Features %>
     <div class="row">
@@ -161,8 +168,8 @@
             </div>         
             <%# Engine actions %>
             <div class="engine-card__actions">
-              <%= link_to 'Voir', engine, class: "action-btn__small white" %>
-              <%= link_to 'Mettre à jour', edit_engine_path(engine), class: "action-btn__small white" %>
+              <%= link_to 'Infos', engine, class: "action-btn__small white" %>
+              <a href="/engines/3?tab=issues" class="action-btn__small white">Incidents</a>
               <%= link_to 'Supprimer', engine, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-btn__small white" %>
             </div>
         </div>
@@ -173,15 +180,6 @@
     <div class="row mod-engines-index__pagination">
       <div class="col-md-12">
         <%= will_paginate @engines, :previous_label => '<i class="fas fa-arrow-alt-circle-left"></i>', :next_label => '<i class="fas fa-arrow-alt-circle-right"></i>' %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="txt-right">
-          <%= link_to new_engine_path, class: "action-btn__add" do %>
-            <%= fa_icon "plus" %>Ajouter une machine      
-          <% end %>
-        </div>
       </div>
     </div>
   </div>
