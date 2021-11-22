@@ -1,0 +1,5 @@
+<%- headers = ['Id', 'Nom', 'Nom interne'] -%>
+<%= CSV.generate_line headers %>
+<%- @engines.each do |engine| -%>
+<%= CSV.generate_line([engine.id, engine.name, engine.internal_name]) -%>
+<%- end -%>

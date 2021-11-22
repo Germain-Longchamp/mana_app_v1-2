@@ -8,7 +8,7 @@
       <div class="engine-form__tag">
         <span>Salle</span>
         <div class="engine-form__input-inner">
-          <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), input_html: {multiple: true}, :label => "Famille" %>
+          <%= f.input :tag_ids, as: :select, collection: Tag.where(:company_id => current_user.company_id).order(:name), input_html: {multiple: true}, :label => "Famille" %>
         </div>     
       </div>
 

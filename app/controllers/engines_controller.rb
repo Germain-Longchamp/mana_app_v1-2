@@ -30,6 +30,14 @@ class EnginesController < ApplicationController
     else
       @engines = Engine.where(:company_id => current_user.company_id).all.paginate(page: params[:page], per_page: 20)
     end
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"parc-machines-#{Date.today}.csv\""
+        headers['Content-Type'] ||= 'csv'
+      end
+    end
     
   end
 
