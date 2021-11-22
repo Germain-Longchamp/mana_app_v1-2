@@ -1,3 +1,9 @@
 .mod-index-issues__top-actions a {
     margin-left: 16px;
 }
+
+.selected-issues {
+    display: none;
+    position: sticky;
+    top: 50px;
+}

@@ -33,7 +33,8 @@
 
 .list-issues__table {
     padding: 16px 24px;
-    height: 600px;
+
+    /*height: 600px;*/
     overflow: auto;
 }
 

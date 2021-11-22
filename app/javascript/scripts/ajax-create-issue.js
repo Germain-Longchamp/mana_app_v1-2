@@ -18,4 +18,24 @@ $(document).on('ready turbolinks:load', function() {
 
 
     });
+
+
+    // Delete multiple selected elements
+    $('#deleteSelectionIssues').click(function() {
+        $('.issue-delete-checkbox.selected').each(function() {
+            let issueCard = $(this).parents('.card-issue');
+            let dataId = issueCard.attr('data-id');
+
+            $.ajax({
+                type: 'DELETE',
+                url: '/issues/' + dataId,
+                success: function(data) {
+                    issueCard.fadeOut();
+                    $('#numberSelectedIssues').html('0');
+                    $('.selected-issues').fadeOut();
+                },
+                error: function(response) {}
+            });
+        });
+    });
 });

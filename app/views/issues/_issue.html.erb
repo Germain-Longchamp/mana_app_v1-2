@@ -38,9 +38,15 @@
             <% end %>
 
             <% if issue.status == "archived" %>
+            
             <%= link_to issue, method: :delete, data: { confirm: 'Confirmer la suppression ?' }, remote: :true, class: "issue-delete default-btn action-btn__delete" do %>
                 <%= fa_icon "trash" %> Supprimer  
             <% end %>    
+
+            <span class="issue-delete-checkbox">
+                <%= fa_icon "check" %> 
+            </span>
+
             <% end %>
             
         </div> 
