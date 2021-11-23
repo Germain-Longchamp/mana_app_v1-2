@@ -73,7 +73,7 @@
 
 /*----Custom FOrm Adding Issue---*/
 .sidebar-adding#formIssue #trix-toolbar-1 {
-    width: 286px;
+    width: 486px;
 }
 
 .sidebar-adding#formIssue ::-webkit-scrollbar {

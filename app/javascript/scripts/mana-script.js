@@ -90,12 +90,12 @@ $(document).on('ready turbolinks:load', function() {
         var triggerClose = popToOpen.find('.js-screen__close');
 
         // Open Pop Up on click
-        $(this).click(function() {
+        $(this).on("click", function() {
             popToOpen.addClass('open');
         });
 
         // Close Pop Up on click 
-        triggerClose.click(function() {
+        triggerClose.on("click", function() {
             popToOpen.removeClass('open');
         });
     });

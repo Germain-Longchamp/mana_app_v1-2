@@ -40,6 +40,11 @@
           <div class="list-issues__heading unsolved"><%= fa_icon "exclamation-circle" %>En cours (<span id="numberIssues"><%= @progress_issues.length() %></span>)</div>
           <div class="list-issues__table" id="renderIssues">
             <%= render @progress_issues %>
+            <% if @progress_issues.length == 0 %>
+            <div class="list-issues-error">
+              Pas d'incident en cours
+            </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -50,6 +55,11 @@
           <div class="list-issues__heading solved"><%= fa_icon "check-square" %>Résolus (<span id="numberResolvedIssues"><%= @resolved_issues.length() %></span>)</div>
           <div class="list-issues__table" id="renderResolvedIssues">
             <%= render @resolved_issues %>
+            <% if @resolved_issues.length == 0 %>
+            <div class="list-issues-error">
+              Pas d'incident résolu
+            </div>
+            <% end %>
           </div>
         </div>        
       </div>
