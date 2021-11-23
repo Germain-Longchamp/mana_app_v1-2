@@ -7,9 +7,6 @@ Module Homepage
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .mod-home:before {
@@ -34,7 +31,6 @@ Module Homepage
 .mod-home__content {
     position: relative;
     z-index: 2;
-    text-align: center;
 }
 
 .mod-home__content h1 {
@@ -47,4 +43,12 @@ Module Homepage
 .mod-home__content h1 span {
     font-size: 50px;
     color: #3789c5;
+}
+
+.mod-home__content p {
+    font-size: 20px;
+}
+
+.mod-home__full-height {
+    min-height: 100vh;
 }

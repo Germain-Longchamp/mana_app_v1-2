@@ -47,3 +47,8 @@
 .nav__log a i {
     color: #3789c5;
 }
+
+.main-header__logo-home {
+    font-size: 25px;
+    color: var(--main-color);
+}
