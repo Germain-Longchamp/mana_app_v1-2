@@ -1,25 +1,5 @@
 $(document).on('ready turbolinks:load', function() {
 
-    // ------------------------ Fake selected archived issue card
-    let numberSelected = 0;
-    $('.issue-delete-checkbox').click(function() {
-        if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected');
-            numberSelected--
-        } else {
-            $(this).addClass('selected');
-            numberSelected++
-        }
-
-        if (numberSelected > 0) {
-            $('.selected-issues').fadeIn();
-            $('#numberSelectedIssues').html(numberSelected);
-        } else {
-            $('.selected-issues').fadeOut();
-        }
-
-    });
-
     // -------------------------Init tabs on engine show
     var getUrlParameter = function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),

@@ -32,7 +32,9 @@
                         <div class="card-issue-little">
                             <div class="card-issue-little__inner">
                                 <div class="card-issue-little__name">
-                                    <%= @issue.name %>
+                                    <% if @issue.name %>
+                                        <%= @issue.name %>
+                                    <% end %>
                                 </div>
                                 <div class="card-issue-little__datetime">
                                     <span><%= fa_icon "calendar" %> <%= @issue.start_date.strftime('%d.%m.%y') %></span>
@@ -47,16 +49,22 @@
                         <div class="card-engine-little">
                             <div class="card-engine-little__inner">
                                 <div class="card-engine-little__name">
-                                    <%= @issue.engine.has_name? %>
+                                    <% if @issue.engine %>
+                                        <%= @issue.engine.has_name? %>
+                                    <% end %>
                                 </div>
                                 <div class="d-flex">
                                     <div class="engine-card-little__categories">
-                                        <% @issue.engine.tags.map.each do |t| %>
-                                        <span style="background:<%= t.tag_color %>;"><%= fa_icon "tag" %><%= t.name %></span>
+                                        <% if @issue.engine %>
+                                            <% @issue.engine.tags.map.each do |t| %>
+                                            <span style="background:<%= t.tag_color %>;"><%= fa_icon "tag" %><%= t.name %></span>
+                                            <% end %>
                                         <% end %>
                                     </div>
                                     <div class="engine-card-little__room">
-                                        <span><%= fa_icon "map-marker" %><%= @issue.engine.has_room? %></span>
+                                        <% if @issue.engine %>
+                                            <span><%= fa_icon "map-marker" %><%= @issue.engine.has_room? %></span>
+                                        <% end %>
                                     </div>
                                 </div>
                             </div>                 

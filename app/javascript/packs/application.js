@@ -19,6 +19,7 @@ import "../scripts/ajax-create-user.js"
 import "../scripts/ajax-create-issue.js"
 import "../scripts/ajax-update-issue-status.js"
 import "../scripts/ajax-create-type.js"
+import "../scripts/ajax-delete-multiple-issues.js"
 import "../scripts/form-lay1.js"
 
 
