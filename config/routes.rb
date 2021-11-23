@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
    
+   # Routes for Interventions
+   resources :interventions
+
    # Routes for Companies
    resources :companies
    
