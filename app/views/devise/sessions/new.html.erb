@@ -1,60 +1,59 @@
 <%#-------Call Nav-------%>
 <%= render partial: '/layouts/navigation' %>
 
-<section class="mod-onboarding" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>);">
-  <div class="mod-onboarding__inner d-flex align-items-center">
+<section class="mod-home" style="background-image:url(<%= asset_path 'Scattered-Forcefields.svg' %>);">
+  <div class="mod-home__bkg"></div>
+  <div class="mod-home__content">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-12 d-flex justify-content-center">
-          <div class="mod-sign-in__inner">
-            <div class="mod-sign-in__heading txt-center">
-              <%= fa_icon "sign-in-alt" %>
-              <h2 class="main-color">Connexion</h2>
+      <div class="mod-home__full-height row align-items-center">
+        <div class="col-md-6">
+          <img src="<%= asset_path '35049-data-analyst.gif' %>" style="max-width:100%;">
+        </div>
+        <div class="col-md-5 offset-md-1">
+          <div class="form-lay2">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <div class="form-lay2__fields d-flex justify-content-between">
+              <div class="form-lay2__input full border-box">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              </div>
             </div>
-            <div class="form-lay2">
-              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-              <div class="form-lay2__fields d-flex justify-content-between">
-                <div class="form-lay2__input full border-box">
-                  <%= f.label :email %>
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-                </div>
+            <div class="form-lay2__fields d-flex justify-content-between">
+              <div class="form-lay2__input full border-box">
+                <%= f.label :password, "Mot de passe" %>
+                <%= f.password_field :password, autocomplete: "current-password" %>
               </div>
+            </div>
 
-              <div class="form-lay2__fields d-flex justify-content-between">
-                <div class="form-lay2__input full border-box">
-                  <%= f.label :password, "Mot de passe" %>
-                  <%= f.password_field :password, autocomplete: "current-password" %>
-                </div>
+            <% if devise_mapping.rememberable? %>
+            <div class="form-lay2__fields d-flex justify-content-between">
+              <div class="form-lay2__input checkbox full border-box d-flex align-items-center">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, 'Se souvenir de moi' %>
               </div>
+            </div>
+            <% end %>
 
-              <% if devise_mapping.rememberable? %>
-              <div class="form-lay2__fields d-flex justify-content-between">
-                <div class="form-lay2__input checkbox full border-box d-flex align-items-center">
-                  <%= f.check_box :remember_me %>
-                  <%= f.label :remember_me, 'Se souvenir de moi' %>
-                </div>
+            <div class="form-lay2__action txt-center">
+              <%= f.submit "Se connecter" %>
+            </div>
+            <% end %>
+
+
+            <div class="form-lay2__links">
+              <div class="form-lay2__link-item">
+                <a href="<%= new_user_registration_path %>">Vous souhaitez créer un compte ?</a>
               </div>
-              <% end %>
-
-              <div class="form-lay2__action txt-center">
-                <%= f.submit "Se connecter" %>
-              </div>
-              <% end %>
-
-
-              <div class="form-lay2__links">
-                <div class="form-lay2__link-item">
-                  <a href="<%= new_user_registration_path %>">Vous souhaitez créer un compte ?</a>
-                </div>
-                <div class="form-lay2__link-item">
-                  <a href="<%= new_user_password_path %>">Mot de passe oublié ?</a>
-                </div>
+              <div class="form-lay2__link-item">
+                <a href="<%= new_user_password_path %>">Mot de passe oublié ?</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
   </div>
 </section>
