@@ -62,7 +62,7 @@
 		</div>
 		<%# Interventions actions %>
 		<div class="nav-app__part-actions">
-			<a href="#" class="nav-app__card-action">
+			<a href="<%= interventions_path %>" class="nav-app__card-action <% if request.path.include? '/interventions' %>active<% end %>">
 				<%= fa_icon "wrench" %>
 				<div class="nav-app__card-action-title">Interventions</div>
 				<div class="nav-app__card-action-desc">Accéder à la vue d'ensemble des interventions du parc d'exploitation</div>
