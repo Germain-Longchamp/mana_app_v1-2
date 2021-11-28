@@ -52,3 +52,8 @@ Module Homepage
 .mod-home__full-height {
     min-height: 100vh;
 }
+
+.mod-home h2 {
+    margin-bottom: 30px;
+    color: var(--main-color);
+}

@@ -1,5 +1,7 @@
 class InterventionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_intervention, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /interventions or /interventions.json
   def index
@@ -22,6 +24,8 @@ class InterventionsController < ApplicationController
   # POST /interventions or /interventions.json
   def create
     @intervention = Intervention.new(intervention_params)
+    @intervention.company_id = current_user.company_id
+    @intervention.user_id = current_user.id
 
     respond_to do |format|
       if @intervention.save
@@ -64,6 +68,6 @@ class InterventionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def intervention_params
-      params.require(:intervention).permit(:name, :detail)
+      params.require(:intervention).permit(:name, :detail, :user_id, :engine_id, :company_id)
     end
 end
