@@ -4,6 +4,7 @@
             <%= type.name %>
         </div>
         <div class="sp-list-actions__item-actions">  
+            <%= link_to 'Mettre à jour', edit_type_path(type), class: "action-btn__small white" %>
             <%= link_to 'Supprimer', { controller: "types", action: "destroy", id: type.id }, data: { confirm: 'Êtes-vous sûr ?' }, method: :delete, remote: :true, class: "action-btn__small white issue-category-delete"  %>       
         </div>
     </div>

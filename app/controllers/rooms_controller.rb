@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
 
   def show
     if @room.company_id != current_user.company_id
-      redirect_to rooms_path
+      redirect_to settings_rooms_path
     end
   end
 
@@ -18,7 +18,7 @@ class RoomsController < ApplicationController
 
   def edit
     if @room.company_id != current_user.company_id
-      redirect_to rooms_path
+      redirect_to settings_rooms_path
     end
   end
 
@@ -40,7 +40,7 @@ class RoomsController < ApplicationController
   def update
    respond_to do |format|
      if @room.update(room_params)
-       format.html { redirect_to rooms_path, notice: 'My Notice.' }
+       format.html { redirect_to settings_rooms_path, notice: 'My Notice.' }
        format.json { render :show, status: :created, location: @room }
      else
        format.html { render :edit, status: :unprocessable_entity }

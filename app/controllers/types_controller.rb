@@ -6,13 +6,19 @@ class TypesController < ApplicationController
     @types = Type.where(:company_id => current_user.company_id)
   end
 
-   def new
+  def show
+    if @type.company_id != current_user.company_id
+      redirect_to settings_types_path
+    end
+  end
+
+  def new
     @type = Type.new
   end
 
   def edit
     if @type.company_id != current_user.company_id
-      redirect_to settings_types
+      redirect_to settings_types_path
     end
   end
 
