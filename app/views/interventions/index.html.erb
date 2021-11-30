@@ -14,6 +14,31 @@
     </div>
 
     <div class="row">
+      <%# Col Interventions Progress %>
+      <div class="col-md-6">
+        <div class="list-issues">
+          <div class="list-issues__heading unsolved"><%= fa_icon "exclamation-circle" %>En cours (0)</div>
+          <div class="list-issues__table" id="renderIssues">
+
+            <div class="intervention-card">
+              coucou
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <%# Col Issues Resolved %>
+      <div class="col-md-6">
+        <div class="list-issues">
+          <div class="list-issues__heading solved"><%= fa_icon "check-square" %>Résolus (0)</div>
+          <div class="list-issues__table" id="renderResolvedIssues">
+            
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-md-12">
         <table>
           <thead>
