@@ -70,7 +70,8 @@
     color: var(--success-color);
 }
 
-.issue-delete-checkbox {
+.issue-delete-checkbox,
+.issue-delete-all-checkbox {
     position: absolute;
     right: 8px;
     top: 6px;
@@ -85,17 +86,24 @@
     cursor: pointer;
 }
 
-.issue-delete-checkbox i {
+.issue-delete-all-checkbox {
+    top: 12px;
+}
+
+.issue-delete-checkbox i,
+.issue-delete-all-checkbox i {
     font-size: 10px;
     color: var(--success-color);
     opacity: 0;
     transition: all .2s ease-out;
 }
 
-.issue-delete-checkbox.selected {
+.issue-delete-checkbox.selected,
+.issue-delete-all-checkbox.selected {
     border-color: var(--success-color);
 }
 
-.issue-delete-checkbox.selected i {
+.issue-delete-checkbox.selected i,
+.issue-delete-all-checkbox.selected i {
     opacity: 1;
 }

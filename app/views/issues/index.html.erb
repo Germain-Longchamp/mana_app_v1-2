@@ -77,9 +77,9 @@
             <div class="form-lay1__fields d-flex justify-content-between">
               <div class="form-lay1__input full border-box">
                 <label>Catégorie incident</label>
-                <select name="issue[name]" id="issue_name" required>
+                <select name="issue[type_id]" id="issue_type_id" required>
                   <% @types.each do |type| %>
-                  <option value="<%= type.name %>"><%= type.name %></option>
+                  <option value="<%= type.id %>"><%= type.name %></option>
                   <% end %>
                 </select>
               </div>

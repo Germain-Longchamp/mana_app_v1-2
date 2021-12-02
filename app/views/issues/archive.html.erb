@@ -32,7 +32,12 @@
       <%# Col Issues Archoved %>
       <div class="col-md-8">
         <div class="list-issues">
-          <div class="list-issues__heading archived"><%= fa_icon "list" %>Archives (<%= @archived_issues.length() %>)</div>
+          <div class="list-issues__heading archived">
+            <%= fa_icon "list" %>Archives (<%= @archived_issues.length() %>)
+            <span class="issue-delete-all-checkbox">
+                <%= fa_icon "check" %> 
+            </span>
+          </div>
           <div class="list-issues__table">
             <%= render @archived_issues %>
           </div>

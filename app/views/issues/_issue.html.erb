@@ -5,9 +5,11 @@
         <% end %>
     </div>
     <div class="card-issue__content">
+        <% if issue.type %>
         <div class="card-issue__metas">
-            <div class="card-issue__name"><%= issue.name %><hr></div>       
+            <div class="card-issue__name"><%= issue.type.name %><hr></div>       
         </div>
+        <% end %>
         <% if issue.start_date %>
         <div class="card-issue__datetime">
             <span><%= fa_icon "calendar" %> <%= issue.start_date.strftime('%d.%m.%y') %></span>
