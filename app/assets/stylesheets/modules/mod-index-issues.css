@@ -9,3 +9,50 @@
     padding: 16px;
     box-shadow: 0px 12px 24px rgb(0 40 107 / 10%);
 }
+
+.stats-issues {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.stats-issues__stat {
+    display: flex;
+    align-items: center;
+}
+
+.stats-issues__stat:not(:last-child) {
+    margin-right: 32px;
+}
+
+.stats-issues__stat div {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-issues__stat.progress-issues div {
+    background: var(--progress-color);
+}
+
+.stats-issues__stat.resolved-issues div {
+    background: var(--success-color);
+}
+
+.stats-issues__stat.archived-issues div {
+    background: var(--dark-color);
+}
+
+.stats-issues__stat span {
+    font-size: 14px;
+}

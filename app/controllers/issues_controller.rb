@@ -16,6 +16,9 @@ class IssuesController < ApplicationController
     #GET RESOLVED ISSUES
     @resolved_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'resolu').order("updated_at DESC")
 
+    # ARCHIVED ISSUES
+    @archived_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'archived')
+
     #GET ALL ISSUES CATEGORIES
     @types = Type.where(:company_id => current_user.company_id)
   end
