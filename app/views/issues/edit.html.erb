@@ -36,10 +36,12 @@
                                         <%= @issue.name %>
                                     <% end %>
                                 </div>
+                                <% if @issue.start_date %>
                                 <div class="card-issue-little__datetime">
                                     <span><%= fa_icon "calendar" %> <%= @issue.start_date.strftime('%d.%m.%y') %></span>
                                     <span><%= fa_icon "history" %> <%= @issue.start_date.strftime('%Hh%M') %></span>
                                 </div>
+                                <% end %>
                             </div>
                         </div>
                     </div>
