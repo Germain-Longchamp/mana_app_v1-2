@@ -122,6 +122,13 @@ $(document).on('ready turbolinks:load', function() {
         disable_search_threshold: 1
     });
 
+    $('#issue_type_id').chosen({
+        max_selected_options: 1,
+        allow_single_deselect: true,
+        width: '100%',
+        disable_search_threshold: 1
+    });
+
     //------------- Manipulate simple calendar next and previous month
     // Previous Link
     var firstLinkElem = $('.calendar-heading a:first-child');

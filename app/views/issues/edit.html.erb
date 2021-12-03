@@ -32,8 +32,8 @@
                         <div class="card-issue-little">
                             <div class="card-issue-little__inner">
                                 <div class="card-issue-little__name">
-                                    <% if @issue.name %>
-                                        <%= @issue.name %>
+                                    <% if @issue.type %>
+                                        <%= @issue.type.name %>
                                     <% end %>
                                 </div>
                                 <% if @issue.start_date %>

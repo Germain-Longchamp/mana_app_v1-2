@@ -8,9 +8,10 @@ var numberIssues = $('#renderIssues .card-issue').length;
 $('#numberIssues').html(numberIssues);
 
 $('#issue_name').val('');
-$('#issue_engine_id').val('');
+$('#issue_engine_id').val('').trigger('chosen:updated');
 $('#issue_start_date').val('');
 $('#issue_info_trix_input_issue_2').val('');
+$('trix-editor#issue_info > div').html('');
 
 setTimeout(
   function() 
