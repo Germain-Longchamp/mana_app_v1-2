@@ -85,14 +85,14 @@ $(document).on('ready turbolinks:load', function() {
 
     // ---------- Open/Close Pop Ups
 
-    // Open Pop Up on click
+    // Open Pop Up on click by delegating on parent list for AJAX Append
     $('.list-issues__table').on('click', '.js-pop-open', function() {
         var dataTrigger = $(this).attr('data-name');
         var popToOpen = $(".js-screen-open[data-open=" + dataTrigger + "]");
         popToOpen.addClass('open');
     });
 
-    // Close Pop Up on click 
+    // Close Pop Up on click by delegating on parent list for AJAX Append
     $('.list-issues__table').on('click', '.js-screen__close', function() {
         var popToClose = $(this).parents('.js-screen-open');
         popToClose.removeClass('open');
