@@ -33,7 +33,7 @@ $(document).on('ready turbolinks:load', function() {
 
     // On click
     $('.tabs-elem__tab').each(function() {
-        $(this).click(function() {
+        $(this).on('click', function() {
             let dataTab = $(this).attr('data-tab');
             let otherTabs = $(this).siblings();
 
@@ -55,7 +55,7 @@ $(document).on('ready turbolinks:load', function() {
     });
 
     // ------------Close panel add tag
-    $('.sidebar-adding__close').click(function() {
+    $('.sidebar-adding__close').on('click', function() {
         $('#formTag').removeClass('slided');
         $('#formRoom').removeClass('slided');
         $('#formUser').removeClass('slided');
@@ -70,7 +70,7 @@ $(document).on('ready turbolinks:load', function() {
         var popInfo = $(this).find('.sp-list-actions__item-info__pop');
         var othersPop = $(this).siblings().find('.sp-list-actions__item-info__pop');
 
-        triggerBtn.click(function() {
+        triggerBtn.on('click', function() {
             if (popInfo.hasClass('opened')) {
                 triggerBtn.html('Voir');
                 popInfo.removeClass('opened');
@@ -83,21 +83,19 @@ $(document).on('ready turbolinks:load', function() {
         });
     });
 
-    // ---------- Open Pop Up
-    $('.js-pop-open').each(function() {
+    // ---------- Open/Close Pop Ups
+
+    // Open Pop Up on click
+    $('.list-issues__table').on('click', '.js-pop-open', function() {
         var dataTrigger = $(this).attr('data-name');
         var popToOpen = $(".js-screen-open[data-open=" + dataTrigger + "]");
-        var triggerClose = popToOpen.find('.js-screen__close');
+        popToOpen.addClass('open');
+    });
 
-        // Open Pop Up on click
-        $(this).on("click", function() {
-            popToOpen.addClass('open');
-        });
-
-        // Close Pop Up on click 
-        triggerClose.on("click", function() {
-            popToOpen.removeClass('open');
-        });
+    // Close Pop Up on click 
+    $('.list-issues__table').on('click', '.js-screen__close', function() {
+        var popToClose = $(this).parents('.js-screen-open');
+        popToClose.removeClass('open');
     });
 
     //------------- Chosen Library
