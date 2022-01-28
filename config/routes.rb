@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
    
-  resources :intervention_categories
     # Routes for Interventions
     resources :interventions
+
+    # Routes for Intervention Categories
+    resources :intervention_categories, only: [:create, :destroy, :update, :new, :edit]
+    get 'settings/intervention-categories', to: 'intervention_categories#index'
 
     # Routes for Companies
     resources :companies
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
     # Routes for Engines
     resources :engines
 
-    # link tags to engines with the respective tag
+    # Routes for link tags to engines with the respective tag
     get 'tags/:tag', to: 'engines#index', as: :tag
     get 'rooms/:room', to: 'engines#index', as: :room
 
@@ -41,7 +44,6 @@ Rails.application.routes.draw do
     # Routes for Issues Types
     resources :types, only: [:create, :destroy, :update, :new, :edit]
     get 'settings/types', to: 'types#index'
-
 
     # About pages
     get 'about', to: 'about#index'

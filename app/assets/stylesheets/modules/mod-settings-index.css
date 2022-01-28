@@ -12,4 +12,9 @@
 .settings-row__list-cards {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
+}
+
+.settings-row__list-cards .settings-card {
+    margin-bottom: 24px;
 }
