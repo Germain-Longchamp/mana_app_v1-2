@@ -14,34 +14,49 @@
                         <h2>Parc d'exploitation</h2>
                     </div>
                     <div class="settings-row__list-cards">
-                        <a href="<%= settings_tags_path %>" class="settings-card no-decoration">
-                            <div class="settings-card__icon">
-                                <%= fa_icon 'tags' %>
-                            </div>
-                            <div class="settings-card__txt">
-                                Modifier les catégories affectées aux machines
-                            </div>
-                            <div class="settings-card__arrow">
-                                <%= fa_icon 'arrow-right' %>
-                            </div>
-                        </a>
+                        <!-- Salles disponibles -->
                         <a href="<%= settings_rooms_path %>" class="settings-card no-decoration">
                             <div class="settings-card__icon">
                                 <%= fa_icon 'map-marker' %>
                             </div>
                             <div class="settings-card__txt">
-                                Modifier les salles affectées aux machines
+                                Salles disponibles
                             </div>
                             <div class="settings-card__arrow">
                                 <%= fa_icon 'arrow-right' %>
                             </div>
                         </a>
+                        <!-- Categories Machine -->
+                        <a href="<%= settings_tags_path %>" class="settings-card no-decoration">
+                            <div class="settings-card__icon">
+                                <%= fa_icon 'tags' %>
+                            </div>
+                            <div class="settings-card__txt">
+                                Catégories machines
+                            </div>
+                            <div class="settings-card__arrow">
+                                <%= fa_icon 'arrow-right' %>
+                            </div>
+                        </a>
+                        <!-- Categories Incidents -->
                         <a href="<%= settings_types_path %>" class="settings-card no-decoration">
                             <div class="settings-card__icon">
                                 <%= fa_icon 'exclamation-circle' %>
                             </div>
                             <div class="settings-card__txt">
-                                Modifier les catégories d'incidents
+                                Catégories d'incidents
+                            </div>
+                            <div class="settings-card__arrow">
+                                <%= fa_icon 'arrow-right' %>
+                            </div>
+                        </a>
+                        <!-- Categories Interventions -->
+                        <a href="<%= settings_intervention_categories_path %>" class="settings-card no-decoration">
+                            <div class="settings-card__icon">
+                                <%= fa_icon 'wrench' %>
+                            </div>
+                            <div class="settings-card__txt">
+                                Catégories d'interventions
                             </div>
                             <div class="settings-card__arrow">
                                 <%= fa_icon 'arrow-right' %>
@@ -64,7 +79,7 @@
                                 <%= fa_icon 'building' %>
                             </div>
                             <div class="settings-card__txt">
-                                Vue d'ensemble de l'organisation
+                                Organisation et utilisateurs
                             </div>
                             <div class="settings-card__arrow">
                                 <%= fa_icon 'arrow-right' %>

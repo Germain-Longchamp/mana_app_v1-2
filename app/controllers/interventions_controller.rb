@@ -5,7 +5,16 @@ class InterventionsController < ApplicationController
 
   # GET /interventions or /interventions.json
   def index
-    @interventions = Intervention.all
+    # Get all interventions
+    @interventions = Intervention.where(:company_id => current_user.company_id).order("created_at DESC")
+
+    # Get In progress Interventions -- TO DO
+
+    # Get resolved Interventions -- TO DO
+
+    # Get Archived Interventions -- TO DO
+
+    # Get all Interventions Categories -- TO DO
   end
 
   # GET /interventions/1 or /interventions/1.json
