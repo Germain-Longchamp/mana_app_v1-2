@@ -1,29 +1,61 @@
-<p id="notice"><%= notice %></p>
+<%###### Start Module Index Issues #####%>
+<section class="mod mod-index-intervention-categories">
+  <div class="container-fluid">
+    <%# Row Go Back %>
+    <div class="row go-back">
+        <div class="col-md-12">
+            <%= link_to settings_path, class: 'action-btn__grey' do %>
+            <%= fa_icon 'chevron-left' %> Retour
+            <% end %>
+        </div>
+    </div>
+    <%# Row heading %>
+    <div class="row heading">
+      <div class="col-md-9 p0">
+        <%# Breadcrumbs %>
+        <ul class="breadcrumbs no-styles">
+            <li><a href="<%= settings_path %>">Paramètres</a></li>
+            <li><span><%= fa_icon 'chevron-right' %></span></li>
+            <li><span>Catégories interventions</span></li>
+        </ul>
+        <div class="d-flex align-items-center justify-content-between">
+            <h1>Catégories interventions</h1>
+        </div>     
+      </div>
+    </div>
 
-<h1>Intervention Categories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @intervention_categories.each do |intervention_category| %>
-      <tr>
-        <td><%= intervention_category.name %></td>
-        <td><%= intervention_category.description %></td>
-        <td><%= link_to 'Show', intervention_category %></td>
-        <td><%= link_to 'Edit', edit_intervention_category_path(intervention_category) %></td>
-        <td><%= link_to 'Destroy', intervention_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="row">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<br>
+        <tbody>
+          <% @intervention_categories.each do |intervention_category| %>
+            <tr>
+              <td><%= intervention_category.name %></td>
+              <td><%= intervention_category.description %></td>
+              <td><%= link_to 'Show', intervention_category %></td>
+              <td><%= link_to 'Edit', edit_intervention_category_path(intervention_category) %></td>
+              <td><%= link_to 'Destroy', intervention_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-<%= link_to 'New Intervention Category', new_intervention_category_path %>
+    <%= link_to 'New Intervention Category', new_intervention_category_path %>
+    <p id="notice"><%= notice %></p>
+
+</section>
+
+
+
+
+
