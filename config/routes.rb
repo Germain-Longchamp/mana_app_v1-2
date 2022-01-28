@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    
+  resources :intervention_categories
     # Routes for Interventions
     resources :interventions
 
