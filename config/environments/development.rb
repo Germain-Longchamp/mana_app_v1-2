@@ -32,6 +32,7 @@ Rails.application.configure do
 
   # Store uploaded files on the cloudinary service (see config/storage.yml for options).
   
+  config.log_level = :debug
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

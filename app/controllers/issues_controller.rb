@@ -36,6 +36,16 @@ class IssuesController < ApplicationController
   end
 
   def edit
+    Rails.logger.debug("-----------------------------------------")
+    Rails.logger.debug(request.referrer)
+
+    url = request.referrer
+
+    if request.referrer.include?("/issues")
+      Rails.logger.debug(url)
+    else
+      Rails.logger.debug("on redirige sur engine")
+    end
   end
 
   def create
@@ -57,9 +67,9 @@ class IssuesController < ApplicationController
 
   def update
     @issue.status = 'resolu'
+
     respond_to do |format|
      if @issue.update(issue_params)
-       format.js
        format.html { redirect_to issues_path, notice: "Issue was successfully updated." }
        format.json { render :show, status: :created, location: @issue }
      else
