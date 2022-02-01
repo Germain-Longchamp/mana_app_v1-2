@@ -1,0 +1,16 @@
+$('#renderInterventionCategories').append('<%= j render @intervention_category %>');
+//$('#messageIssueCategory').show();
+
+$('#formInterventionCategory').removeClass('slided');
+$('.overlay-sidebar').hide();
+
+$('input#intervention_category_name').val('');
+$('input#intervention_category_description').val('');
+
+/*
+setTimeout(
+  function() 
+  {
+    $('#messageIssueCategory').fadeOut();
+}, 2000);
+*/

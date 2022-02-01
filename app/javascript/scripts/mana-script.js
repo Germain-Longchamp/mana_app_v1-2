@@ -1,3 +1,10 @@
+// Before cache
+$(document).on('turbolinks:before-cache', function() {
+    $('#issue_type_id, #issue_engine_id, #engine_tag_ids, #engine_room_id, #select_name_engine').chosen('destroy');
+});
+
+
+// On ready turbolinks
 $(document).on('ready turbolinks:load', function() {
 
     // -------------------------Init tabs on engine show
@@ -61,6 +68,7 @@ $(document).on('ready turbolinks:load', function() {
         $('#formUser').removeClass('slided');
         $('#formIssue').removeClass('slided');
         $('#formIssueCategory').removeClass('slided');
+        $('#formInterventionCategory').removeClass('slided');
         $('.overlay-sidebar').hide();
     });
 

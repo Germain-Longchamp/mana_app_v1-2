@@ -1,9 +1,10 @@
 class InterventionCategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_intervention_category, only: %i[ show edit update destroy ]
 
   # GET /intervention_categories or /intervention_categories.json
   def index
-    @intervention_categories = InterventionCategory.all
+    @intervention_categories = InterventionCategory.where(:company_id => current_user.company_id)
   end
 
   # GET /intervention_categories/1 or /intervention_categories/1.json
@@ -22,9 +23,11 @@ class InterventionCategoriesController < ApplicationController
   # POST /intervention_categories or /intervention_categories.json
   def create
     @intervention_category = InterventionCategory.new(intervention_category_params)
+    @intervention_category.company_id = current_user.company_id
 
     respond_to do |format|
       if @intervention_category.save
+        format.js
         format.html { redirect_to @intervention_category, notice: "Intervention category was successfully created." }
         format.json { render :show, status: :created, location: @intervention_category }
       else
@@ -51,7 +54,7 @@ class InterventionCategoriesController < ApplicationController
   def destroy
     @intervention_category.destroy
     respond_to do |format|
-      format.html { redirect_to intervention_categories_url, notice: "Intervention category was successfully destroyed." }
+      format.html { redirect_to settings_intervention_categories_path, notice: "Intervention category was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -64,6 +67,6 @@ class InterventionCategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def intervention_category_params
-      params.require(:intervention_category).permit(:name, :description)
+      params.require(:intervention_category).permit(:name, :description, :company_id)
     end
 end

@@ -3,28 +3,30 @@
   <div class="container-fluid">
     <%# Row Go Back %>
     <div class="row go-back">
-        <div class="col-md-12">
-            <%= link_to settings_path, class: 'action-btn__grey' do %>
-            <%= fa_icon 'chevron-left' %> Retour
-            <% end %>
-        </div>
+      <div class="col-md-12">
+        <%= link_to settings_path, class: 'action-btn__grey' do %>
+        <%= fa_icon 'chevron-left' %> Retour
+        <% end %>
+      </div>
     </div>
     <%# Row heading %>
     <div class="row heading">
       <div class="col-md-9 p0">
         <%# Breadcrumbs %>
         <ul class="breadcrumbs no-styles">
-            <li><a href="<%= settings_path %>">Paramètres</a></li>
-            <li><span><%= fa_icon 'chevron-right' %></span></li>
-            <li><span>Catégories interventions</span></li>
+          <li><a href="<%= settings_path %>">Paramètres</a></li>
+          <li><span><%= fa_icon 'chevron-right' %></span></li>
+          <li><span>Catégories interventions</span></li>
         </ul>
         <div class="d-flex align-items-center justify-content-between">
-            <h1>Catégories interventions</h1>
+          <h1>Catégories interventions</h1>
+
+          <%= link_to new_intervention_category_path, class: "action-btn__add", remote: true do %>
+          <%= fa_icon "plus" %>Ajouter une catégorie      
+          <% end %>
         </div>     
       </div>
     </div>
-
-
 
     <div class="row">
       <table>
@@ -36,22 +38,46 @@
           </tr>
         </thead>
 
-        <tbody>
-          <% @intervention_categories.each do |intervention_category| %>
-            <tr>
-              <td><%= intervention_category.name %></td>
-              <td><%= intervention_category.description %></td>
-              <td><%= link_to 'Show', intervention_category %></td>
-              <td><%= link_to 'Edit', edit_intervention_category_path(intervention_category) %></td>
-              <td><%= link_to 'Destroy', intervention_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
+        <tbody id="renderInterventionCategories">
+          <%= render @intervention_categories %>
         </tbody>
       </table>
     </div>
 
-    <%= link_to 'New Intervention Category', new_intervention_category_path %>
     <p id="notice"><%= notice %></p>
+  </div>
+
+  <%# Side bar for adding category %>
+  <div class="overlay-sidebar"></div>
+  <div class="sidebar-adding" id="formInterventionCategory" style="display:block;">
+    <div class="sidebar-adding__inner">
+      <div class="sidebar-adding__title">Ajouter une catégorie d'intervention</div>
+      <hr>
+      <div class="form-lay1">
+        <form>
+
+          <div class="form-lay1__fields d-flex justify-content-between">
+            <div class="form-lay1__input full border-box">
+              <label>Nom</label>
+              <input type="text" id="intervention_category_name" name="intervention_category[name]">
+            </div>
+          </div>
+
+          <div class="form-lay1__fields d-flex justify-content-between">
+            <div class="form-lay1__input full border-box">
+              <label>Description (optionnel)</label>
+              <input type="text" id="intervention_category_description" name="intervention_category[description]">
+            </div>
+          </div>
+
+          <div class="form-lay1__action">
+            <input type="submit" value="Ajouter" name="commit">
+          </div>
+        </form>
+      </div>
+      <div class="sidebar-adding__close"><%= fa_icon 'close' %></div>
+    </div>
+  </div>
 
 </section>
 

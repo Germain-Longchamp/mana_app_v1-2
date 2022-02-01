@@ -6,4 +6,5 @@ class Company < ApplicationRecord
     has_many :issues, dependent: :delete_all
     has_many :issue_categories, dependent: :delete_all
     has_many :interventions, dependent: :delete_all
+    has_many :intervention_categories, dependent: :delete_all
 end
