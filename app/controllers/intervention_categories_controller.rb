@@ -54,6 +54,7 @@ class InterventionCategoriesController < ApplicationController
   def destroy
     @intervention_category.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to settings_intervention_categories_path, notice: "Intervention category was successfully destroyed." }
       format.json { head :no_content }
     end

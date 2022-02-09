@@ -8,7 +8,7 @@
         </div>
         <div class="sp-list-actions__item-actions">  
             <%= link_to 'Mettre à jour', edit_intervention_category_path(intervention_category), class: "action-btn__small white" %>
-            <%= link_to 'Supprimer', { controller: "intervention_categories", action: "destroy", id: intervention_category.id }, data: { confirm: 'Êtes-vous sûr ?' }, method: :delete, remote: :true, class: "action-btn__small white issue-category-delete"  %>       
+            <%= link_to 'Supprimer', { controller: "intervention_categories", action: "destroy", id: intervention_category.id }, data: { confirm: 'Êtes-vous sûr ?' }, method: :delete, remote: :true, class: "action-btn__small delete intervention-category-delete"  %>       
         </div>
     </div>
 </div>

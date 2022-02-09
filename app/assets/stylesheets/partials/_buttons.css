@@ -46,6 +46,17 @@
     border: 1px solid var(--main-color);
 }
 
+.action-btn__small.delete {
+    background: var(--error-color);
+    border: 1px solid var(--error-color);
+    color: #fff;
+}
+
+.action-btn__small.delete:hover {
+    background: #fff;
+    color: var(--error-color);
+}
+
 /*--Button Grey action--*/
 .action-btn__grey {
     background-color: var(--light-grey-color);
