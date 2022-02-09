@@ -1,14 +1,21 @@
 
 <%= simple_form_for(@intervention_category) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
+<div class="form-lay1__fields d-flex justify-content-between">
+  <div class="form-lay1__input full border-box">
+    <%= f.input :name, :label => "Nom de la catégorie"  %>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+<div class="form-lay1__fields d-flex justify-content-between">
+  <div class="form-lay1__input full border-box">
+    <%= f.input :description, :label => "Description (optionnel)"  %>
   </div>
+</div>
+
+<div class="form-lay1__action">
+  <%= f.submit "Mettre à jour"%>
+</div>
 <% end %>

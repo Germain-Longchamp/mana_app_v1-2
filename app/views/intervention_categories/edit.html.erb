@@ -1,6 +1,41 @@
-<h1>Editing Intervention Category</h1>
+<%#-------Module Edit Tag-------%>
+<div class="mod mod-intervention-category-edit">
+    <div class="container-fluid">
 
-<%= render 'form', intervention_category: @intervention_category %>
+        <%# Row Go Back %>
+        <div class="row go-back">
+            <div class="col-md-9">
+                <%= link_to settings_intervention_categories_path, class: 'action-btn__grey' do %>
+                <%= fa_icon 'chevron-left' %> Retour
+                <% end %>
+            </div>
+        </div>
 
-<%= link_to 'Show', @intervention_category %> |
-<%= link_to 'Back', intervention_categories_path %>
+        <%# Row heading %>
+        <div class="row heading">
+            <div class="col-md-9">
+                <%# Breadcrumbs %>
+                <ul class="breadcrumbs no-styles">
+                    <li><a href="<%= settings_path %>">Paramètres</a></li>
+                    <li><span><%= fa_icon 'chevron-right' %></span></li>
+                    <li><a href="<%= settings_intervention_categories_path %>">Catégories interventions</a></li>
+                    <li><span><%= fa_icon 'chevron-right' %></span></li>
+                    <li><span>Modifier <%= @intervention_category.name %></span></li>
+                </ul>
+                <%# Title %>
+                <div class="d-flex align-items-center justify-content-between">
+                    <h1>Modifier <%= @intervention_category.name %></h1>
+                </div>                 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9">
+                <div class="form-lay1">
+                    <%= render 'form', intervention_category: @intervention_category %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
