@@ -53,6 +53,7 @@
               <th>Entreprise</th>
               <th>User</th>
               <th>Catégorie</th>
+              <th>Machine</th>
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -67,6 +68,8 @@
               <% if intervention.intervention_category %>
               <td><%= intervention.intervention_category.name %></td>
               <% end %>
+
+              <td><%= intervention.engine.name %></td>
 
 
               <td><%= link_to 'Show', intervention %></td>

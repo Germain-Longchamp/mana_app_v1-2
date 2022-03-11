@@ -68,6 +68,11 @@ $(document).on('ready turbolinks:load', function() {
         $('.overlay-sidebar').hide();
     });
 
+    $('.overlay-sidebar').on('click', function() {
+        $('.sidebar-adding').removeClass('slided');
+        $(this).hide();
+    });
+
     //------------- Open List engines on click tags
     $('.sp-list-actions__item').each(function() {
         var triggerBtn = $(this).find('.open-engines');

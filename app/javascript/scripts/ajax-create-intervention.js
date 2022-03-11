@@ -6,7 +6,6 @@ $(document).on('ready turbolinks:load', function() {
 
         console.log(datas);
 
-
         $.ajax({
             type: 'POST',
             url: '/interventions',
@@ -14,8 +13,6 @@ $(document).on('ready turbolinks:load', function() {
             success: function(data) {},
             error: function(response) {}
         });
-
-
 
     });
 });
