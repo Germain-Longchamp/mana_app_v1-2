@@ -8,7 +8,8 @@ class InterventionsController < ApplicationController
     # Get all interventions
     @interventions = Intervention.where(:company_id => current_user.company_id).order("created_at DESC")
 
-    # Get In progress Interventions -- TO DO
+    # Get In progress Interventions
+    @progress_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'encours').order("created_at DESC")
 
     # Get resolved Interventions -- TO DO
 

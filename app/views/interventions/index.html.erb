@@ -109,9 +109,13 @@
 
             <div class="form-lay1__fields d-flex justify-content-between">
               <div class="form-lay1__input full border-box">
-                <label>Machine concernée</label>
+                <label>Incident concernée</label>
                 <select>
                 </select>
+                <% @progress_issues.each do |issue| %>
+                  <%= issue.type.name %>
+                  <%= issue.engine.name %>
+                <% end %>
               </div>
             </div>
 
