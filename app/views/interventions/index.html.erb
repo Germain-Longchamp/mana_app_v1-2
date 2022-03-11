@@ -9,6 +9,11 @@
           <h1>
             Interventions
           </h1>
+          <div class="mod-index-issues__top-actions">
+            <%= link_to new_intervention_path, class: "action-btn__add", remote: true do %>
+            <%= fa_icon "plus" %>Enregistrer une intervention    
+            <% end %>
+          </div>
         </div>      
       </div>
     </div>
@@ -74,6 +79,55 @@
       </div>
     </div>
   </div>
+
+
   <p id="notice"><%= notice %></p>
   <%= link_to 'New Intervention', new_intervention_path %>
+
+
+
+
+    <%# Side bar for adding intervention %>
+    <div class="overlay-sidebar"></div>
+    <div class="sidebar-adding" id="formIntervention" style="display:block;">
+      <div class="sidebar-adding__inner">
+        <div class="sidebar-adding__title">Enregistrer une intervention</div>
+        <hr>
+        <div class="form-lay1">
+          <form novalidate>
+
+            <div class="form-lay1__fields d-flex justify-content-between">
+              <div class="form-lay1__input full border-box">
+                <label>Catégorie intervention</label>
+                <select name="intervention[intervention_category_id]" id="intervention_intervention_category_id" required>
+                  <% @interventions_categories.each do |category| %>
+                  <option value="<%= category.id %>"><%= category.name %></option>
+                  <% end %>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-lay1__fields d-flex justify-content-between">
+              <div class="form-lay1__input full border-box">
+                <label>Machine concernée</label>
+                <select>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-lay1__fields d-flex justify-content-between">
+              <div class="form-lay1__input full border-box">
+                <label>Description intervention</label>
+              </div>
+            </div>
+
+            <div class="form-lay1__action">
+              <input type="submit" value="Ajouter" name="commit">
+            </div>
+
+          </form>
+        </div>
+        <div class="sidebar-adding__close"><%= fa_icon 'close' %></div>
+      </div>
+    </div>
 </section>

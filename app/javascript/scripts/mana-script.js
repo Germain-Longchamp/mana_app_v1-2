@@ -26,6 +26,7 @@ $(document).on('ready turbolinks:load', function() {
 
     // On load
     let activeParam = getUrlParameter('tab');
+
     if (activeParam) {
         let tabActive = $('.tabs-elem__tab[data-tab = "' + activeParam + '"]');
         let tabActiveContent = $('.tabs-elem__tab-content[data-target="' + activeParam + '"]');
@@ -63,12 +64,7 @@ $(document).on('ready turbolinks:load', function() {
 
     // ------------Close panel add tag
     $('.sidebar-adding__close').on('click', function() {
-        $('#formTag').removeClass('slided');
-        $('#formRoom').removeClass('slided');
-        $('#formUser').removeClass('slided');
-        $('#formIssue').removeClass('slided');
-        $('#formIssueCategory').removeClass('slided');
-        $('#formInterventionCategory').removeClass('slided');
+        $(this).parents('.sidebar-adding').removeClass('slided');
         $('.overlay-sidebar').hide();
     });
 

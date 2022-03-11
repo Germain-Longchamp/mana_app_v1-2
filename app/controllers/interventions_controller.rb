@@ -14,7 +14,9 @@ class InterventionsController < ApplicationController
 
     # Get Archived Interventions -- TO DO
 
-    # Get all Interventions Categories -- TO DO
+
+    # Get all Interventions Categories
+    @interventions_categories = InterventionCategory.where(:company_id => current_user.company_id)
   end
 
   # GET /interventions/1 or /interventions/1.json
