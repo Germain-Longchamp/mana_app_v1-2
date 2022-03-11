@@ -72,11 +72,11 @@
 }
 
 /*----Custom FOrm Adding Issue---*/
-.sidebar-adding#formIssue #trix-toolbar-1 {
+.sidebar-adding #trix-toolbar-1 {
     width: 486px;
 }
 
-.sidebar-adding#formIssue ::-webkit-scrollbar {
+.sidebar-adding ::-webkit-scrollbar {
     height: 3px;
     width: 3px;
 }

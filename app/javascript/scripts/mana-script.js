@@ -106,7 +106,7 @@ $(document).on('ready turbolinks:load', function() {
     // Override placeholder tags chosen
     $('select#engine_tag_ids').attr('data-placeholder', 'Sélectionner une famille');
 
-    $('#engine_tag_ids, #engine_room_id').chosen({
+    $('#engine_tag_ids, #engine_room_id, #intervention_engine_id').chosen({
         max_selected_options: 1,
         allow_single_deselect: true,
         width: '100%'
@@ -117,19 +117,13 @@ $(document).on('ready turbolinks:load', function() {
         allow_single_deselect: true,
     });
 
-    $('#issue_engine_id').chosen({
+    $('#issue_engine_id, #issue_type_id').chosen({
         max_selected_options: 1,
         allow_single_deselect: true,
         width: '100%',
         disable_search_threshold: 1
     });
 
-    $('#issue_type_id').chosen({
-        max_selected_options: 1,
-        allow_single_deselect: true,
-        width: '100%',
-        disable_search_threshold: 1
-    });
 
     //------------- Manipulate simple calendar next and previous month
     // Previous Link

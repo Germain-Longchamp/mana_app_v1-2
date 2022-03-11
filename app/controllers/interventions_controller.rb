@@ -8,6 +8,10 @@ class InterventionsController < ApplicationController
     # Get all interventions
     @interventions = Intervention.where(:company_id => current_user.company_id).order("created_at DESC")
 
+    # Get all engines
+    @engines = Engine.where(:company_id => current_user.company_id)
+
+
     # Get In progress Interventions
     @progress_issues = Issue.where(:company_id => current_user.company_id).where(:status => 'encours').order("created_at DESC")
 

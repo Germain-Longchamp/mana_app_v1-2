@@ -107,21 +107,27 @@
               </div>
             </div>
 
-            <div class="form-lay1__fields d-flex justify-content-between">
+             <div class="form-lay1__fields d-flex justify-content-between">
               <div class="form-lay1__input full border-box">
-                <label>Incident concernée</label>
-                <select>
+                <label>Machine concernée</label>
+                <select name="intervention[engine_id]" id="intervention_engine_id" multiple="multiple" required>
+                  <% @engines.each do |engine| %>
+                  <option value="<%= engine.id %>"><%= engine.has_name? %></option>
+                  <% end %>
                 </select>
-                <% @progress_issues.each do |issue| %>
-                  <%= issue.type.name %>
-                  <%= issue.engine.name %>
-                <% end %>
               </div>
             </div>
 
             <div class="form-lay1__fields d-flex justify-content-between">
               <div class="form-lay1__input full border-box">
                 <label>Description intervention</label>
+
+                <input type="hidden" name="intervention[detail]" id="intervention_detail_trix_input_intervention">
+
+                <trix-toolbar id="trix-toolbar-1"></trix-toolbar>
+
+                <trix-editor id="intervention_detail" input="intervention_detail_trix_input_intervention" class="trix-content" data-direct-upload-url="http://localhost:3000/rails/active_storage/direct_uploads" data-blob-url-template="http://localhost:3000/rails/active_storage/blobs/:signed_id/:filename" contenteditable="" role="textbox" trix-id="1" toolbar="trix-toolbar-1"></trix-editor>
+
               </div>
             </div>
 
