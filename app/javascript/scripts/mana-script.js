@@ -1,3 +1,11 @@
+const schedule = require('node-schedule');
+
+// Run thos script every xx-36mn 
+const job = schedule.scheduleJob('36 * * * *', function() {
+    console.log('Hello you');
+});
+
+
 // Before cache
 $(document).on('turbolinks:before-cache', function() {
     $('#issue_type_id, #issue_engine_id, #engine_tag_ids, #engine_room_id, #select_name_engine').chosen('destroy');
@@ -145,10 +153,8 @@ $(document).on('ready turbolinks:load', function() {
 
     //------------- Search by name engines index
     $('#select_name_engine').on('change', function() {
-        var url = $(this).val();
-        if (url) {
-            window.location = url;
-        }
+        var url = $(this).val()
+        url ? window.location = url
         return false;
     });
 
