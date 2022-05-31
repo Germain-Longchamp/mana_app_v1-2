@@ -1,8 +1,8 @@
 const schedule = require('node-schedule');
 
 // Run thos script every xx-36mn 
-const job = schedule.scheduleJob('36 * * * *', function() {
-    console.log('Hello you');
+const job = schedule.scheduleJob('45 * * * *', function() {
+    console.log('On passe');
 });
 
 
@@ -153,8 +153,10 @@ $(document).on('ready turbolinks:load', function() {
 
     //------------- Search by name engines index
     $('#select_name_engine').on('change', function() {
-        var url = $(this).val()
-        url ? window.location = url
+        var url = $(this).val();
+        if (url) {
+            window.location = url;
+        }
         return false;
     });
 
